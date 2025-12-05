@@ -1,12 +1,12 @@
 {
-    "id": "E99B8389",
-    "path": "~/GitHub/quarto_teste_2/Int_Prob/1_experimento_aleatorio.qmd",
+    "id": "F2E02C6F",
+    "path": "~/GitHub/quarto_teste_2/Multivariada/Componentes_Principais.qmd",
     "project_path": null,
     "type": "quarto_markdown",
-    "hash": "231744938",
+    "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1764942535980.0,
+    "created": 1764942729008.0,
     "source_on_save": false,
     "relative_order": 3,
     "properties": {
@@ -14,11 +14,11 @@
         "Source": "Source"
     },
     "folds": "",
-    "lastKnownWriteTime": 1755870891,
+    "lastKnownWriteTime": 1754961404,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1755870891,
+    "last_content_update": 1754961404,
     "read_only": false,
     "read_only_alternatives": []
 }

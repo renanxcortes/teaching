@@ -1,0 +1,80 @@
+---
+title: "Componentes Principais"
+lang: pt # Equações ficarem referenciadas em Português
+#sidebar: multivariada
+
+toc: true
+toc-title: "Nesta página"
+#toc-location: right-body
+toc-location: right
+
+execute: 
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+::: hidden
+$$
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+$$
+:::
+
+<!-- Com relação aos comandos latex, deve-se evitar ter linhas quebradas dentro dos environments (por exemplo, dentro de um "aligned", caso contrário ficará um "$$" renderizado no documento final) -->
+
+# Introdução
+
+Segundo @johnson2007applied, a análise de componentes principais é designada para explicar a estrutura de variância-covariância de um conjunto de variáveis através de uma *pequena quantidade de combinações lineares* destas variáveis. Seus objetivos principais são:
+
+-   Redução de dados;
+-   Interpretação.
+
+É importante destacar que a análise de componentes principais depende somente da matriz de covariância $\bs{\Sigma}$ (ou correlação $\bs{\rho}$). Ou seja, ela não faz nenhuma suposição da distribuição dos dados dos $X_i$'s como, por exemplo, normalidade multivariada.
+
+## Formulação
+
+Seja $X_1, X_2, ..., X_p$ variáveis aleatórias e assuma $\bs{X'} = [X_1, X_2, ..., X_p]$ ser toda a sua base de dados[^1] tendo uma matriz de covariância $\bs{\Sigma}$ com os pares de autovalores e autovetores associados $(\lambda_1, \bs{e_1}), (\lambda_2, \bs{e_2}), ..., (\lambda_p, \bs{e_p})$ onde $\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_p \ge 0$ e $||\bs{e_i}|| = 1, \forall i$. Então, o i-ésimo componente principal será dado por:
+
+[^1]: @johnson2007applied chama essa quantidade de "vetor aleatório". No entanto, imagino que pensar como sendo uma base de dados com "p" colunas mais intuitivo.
+
+$$
+Y_i = \bs{e_i'X} = e_{i1}X_1 + e_{i2}X_2 + ... +  e_{ip}X_p, \ \ \ \ i = 1, ..., p
+$$
+
+Especificamente com essas escolhas:
+
+$$
+\begin{align*}
+Var(Y_i) = \bs{e_i'\Sigma e_i} &= \lambda_i  \ \ \ \ i = 1, ..., p \\
+Cov(Y_i,Y_k) = \bs{e_i'\Sigma e_k} &= 0,  \ \ \ \ i \ne k
+\end{align*}
+$$
+
+As quantidades $Y_i$'s são considerados os *componentes principais* da base de dados $\bs{X'}$. Observe que $Y_i$'s são **novas variáveis** criadas a partir das variáveis $X_i$'s originais. Além disso, os $Y_i$'s **não são correlacionados entre si**.
+
+A análise de componentes principais nada mais é do que uma aplicação prática da [Decomposição Espectral](https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix) da matriz de covariância/correlação de uma base de dados.
+
+Expandindo a notação, os $p$ componentes principais podem ser escritos como:
+
+$$
+\begin{align*}
+Y_1 = \bs{e_1'X} &= e_{11}X_1 + e_{12}X_2 + ... +  e_{1p}X_p \\
+Y_2 = \bs{e_2'X} &= e_{21}X_1 + e_{22}X_2 + ... +  e_{2p}X_p \\
+&\;\;\vdots \notag \\
+Y_p = \bs{e_p'X} &= e_{p1}X_1 + e_{p2}X_2 + ... +  e_{pp}X_p
+\end{align*}
+$$
+
+As quantidades $e_{ij}$ são denominadas *loadings* associado do componente $i$ à variável $j$.
+
+## Componentes Principais na Matriz de Correlação $\bs{\rho}$
+
+Incluir aqui
+
+## O cuidado com a arbitrariedade do sentido dos autovetores
+
+Incluir aqui...

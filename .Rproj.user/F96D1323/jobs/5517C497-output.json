@@ -1,0 +1,6 @@
+[1,"==> quarto preview Componentes_Principais.qmd --to html --no-watch-inputs --no-browse\n\n"]
+[1,"pandoc \n  to: html\n  output-file: Componentes_Principais.html\n  standalone: true\n  title-prefix: Teaching\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  css:\n    - ../styles.css\n  toc: true\n  \nmetadata\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: pt\n  editor: visual\n  bibliography:\n    - ../references.bib\n  theme:\n    - cosmo\n  title: Componentes Principais\n  toc-title: Nesta página\n  toc-location: right\n  code-summary: Mostrar Código\n  \n"]
+[1,"Output created: ..\\docs\\Multivariada\\Componentes_Principais.html\n\nTerminating existing preview server....DONE\n\nPreparing to preview\n"]
+[1,"\n"]
+[1,"Watching files for changes\nBrowse at http://localhost:6054/Multivariada/Componentes_Principais.html\n"]
+[1,"GET: /Multivariada/Componentes_Principais.html\n"]

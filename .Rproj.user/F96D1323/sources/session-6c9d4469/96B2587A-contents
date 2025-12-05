@@ -1,0 +1,65 @@
+---
+title: "O Caso do Paradoxo de Simpson"
+lang: pt # Equações ficarem referenciadas em Português
+#sidebar: multivariada
+
+toc: true
+toc-title: "Nesta página"
+#toc-location: right-body
+toc-location: right
+
+execute: 
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+O paradoxo é ilustrado abaixo:
+
+```{r}
+# paradoxo_simpson_unico.R
+# -------------------------------------------
+# Ilustração do Paradoxo de Simpson em um único gráfico
+# -------------------------------------------
+
+library(ggplot2)
+library(dplyr)
+
+set.seed(42)
+
+# 1) Gerar dados
+gerar_grupo <- function(g, n, media_x, intercepto, inclinação = 0.6, desvio_x = 4, desvio_erro = 3) {
+  x <- rnorm(n, mean = media_x, sd = desvio_x)
+  y <- intercepto + inclinação * x + rnorm(n, 0, desvio_erro)
+  tibble(grupo = g, x = x, y = y)
+}
+
+dados <- bind_rows(
+  gerar_grupo("A", 80,  10, 30),  # intercepto alto, valores baixos de x
+  gerar_grupo("B", 150, 20, 20),  # intercepto médio, valores médios de x
+  gerar_grupo("C", 270, 30, 10)   # intercepto baixo, valores altos de x
+)
+
+# 2) Gráfico: pontos, retas por grupo e reta geral tracejada
+p <- ggplot(dados, aes(x, y, color = grupo)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, size = 1.1) +                # ajustes por grupo
+  geom_smooth(aes(color = NULL), method = "lm", se = FALSE,           # ajuste geral
+              linetype = "dashed", color = "black", size = 1.2) +
+  labs(
+    title = "Paradoxo de Simpson em um único gráfico",
+    subtitle = "Preto tracejado = tendência geral (negativa)\nLinhas coloridas = tendências dentro dos grupos (positivas)",
+    x = "Variável X", y = "Variável Y", color = "Grupo"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank())
+
+print(p)
+```
+
