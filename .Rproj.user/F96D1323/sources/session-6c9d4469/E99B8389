@@ -1,24 +1,24 @@
 {
-    "id": "12F73062",
-    "path": "~/GitHub/quarto_teste_2/Int_Prob/4_probabilidade_condicional_e_independencia.qmd",
+    "id": "E99B8389",
+    "path": "~/GitHub/quarto_teste_2/Int_Prob/1_experimento_aleatorio.qmd",
     "project_path": null,
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "231744938",
     "contents": "",
     "dirty": false,
-    "created": 1764942375281.0,
+    "created": 1764942535980.0,
     "source_on_save": false,
-    "relative_order": 6,
+    "relative_order": 3,
     "properties": {
         "source_window_id": "",
         "Source": "Source"
     },
     "folds": "",
-    "lastKnownWriteTime": 1755947073,
+    "lastKnownWriteTime": 1755870891,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1755947073,
+    "last_content_update": 1755870891,
     "read_only": false,
     "read_only_alternatives": []
 }
