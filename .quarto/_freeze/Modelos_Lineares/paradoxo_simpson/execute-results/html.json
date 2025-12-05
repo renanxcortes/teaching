@@ -1,0 +1,17 @@
+{
+  "hash": "cccfbe50e12c31b79686839fe80daede",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"O Caso do Paradoxo de Simpson\"\nlang: pt # Equações ficarem referenciadas em Português\n#sidebar: multivariada\n\ntoc: true\ntoc-title: \"Nesta página\"\n#toc-location: right-body\ntoc-location: right\n\nexecute: \n  warning: false\n  message: false\n\nformat:\n  html:\n    code-fold: true\n    code-summary: \"Mostrar Código\"\n---\n\n\n\n\n# Introdução\n\nO paradoxo é ilustrado abaixo:\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# paradoxo_simpson_unico.R\n# -------------------------------------------\n# Ilustração do Paradoxo de Simpson em um único gráfico\n# -------------------------------------------\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\nset.seed(42)\n\n# 1) Gerar dados\ngerar_grupo <- function(g, n, media_x, intercepto, inclinação = 0.6, desvio_x = 4, desvio_erro = 3) {\n  x <- rnorm(n, mean = media_x, sd = desvio_x)\n  y <- intercepto + inclinação * x + rnorm(n, 0, desvio_erro)\n  tibble(grupo = g, x = x, y = y)\n}\n\ndados <- bind_rows(\n  gerar_grupo(\"A\", 80,  10, 30),  # intercepto alto, valores baixos de x\n  gerar_grupo(\"B\", 150, 20, 20),  # intercepto médio, valores médios de x\n  gerar_grupo(\"C\", 270, 30, 10)   # intercepto baixo, valores altos de x\n)\n\n# 2) Gráfico: pontos, retas por grupo e reta geral tracejada\np <- ggplot(dados, aes(x, y, color = grupo)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE, size = 1.1) +                # ajustes por grupo\n  geom_smooth(aes(color = NULL), method = \"lm\", se = FALSE,           # ajuste geral\n              linetype = \"dashed\", color = \"black\", size = 1.2) +\n  labs(\n    title = \"Paradoxo de Simpson em um único gráfico\",\n    subtitle = \"Preto tracejado = tendência geral (negativa)\\nLinhas coloridas = tendências dentro dos grupos (positivas)\",\n    x = \"Variável X\", y = \"Variável Y\", color = \"Grupo\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(panel.grid.minor = element_blank())\n\nprint(p)\n```\n\n::: {.cell-output-display}\n![](paradoxo_simpson_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "paradoxo_simpson_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
