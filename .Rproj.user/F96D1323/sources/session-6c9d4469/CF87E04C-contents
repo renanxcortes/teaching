@@ -1,0 +1,108 @@
+---
+title: "Renan Xavier Cortes"
+description-meta: "Renan é..."
+image: "figs/renan_ucr.png"
+page-navigation: false
+toc: false
+#sidebar: false
+page-layout: full
+
+about:
+  id: hero-heading
+  template: trestles
+  image-width: 70%
+  links:
+    - icon: globe
+      text: Website
+      href: https://renanxcortes.github.io/
+      target: _blank
+    - icon: envelope
+      text: E-mail
+      href: mailto:renanxcortes@gmail.com
+    - icon: github
+      text: Github
+      href: https://github.com/renanxcortes
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/renan-cortes-a3583a33/
+   # - text: "{{< ai google-scholar >}} Google Scholar"
+   #   href: https://scholar.google.com/citations?user=vf90AuEAAAAJ
+   #   target: _blank
+   # - icon: "![](icons/lattes.svg)" # Discussão de como incorporar o símbolo do lattes como ícone: https://github.com/simple-icons/simple-icons/issues/13127
+    - text: "Lattes"
+      href: http://lattes.cnpq.br/2352000783745031
+      target: _blank
+   # - text: "{{< ai researchgate >}} Research Gate"
+   #   href: https://www.researchgate.net/profile/Gang-He-19
+   #   target: _blank
+
+listing:
+  - id: recent-posts
+    contents: 
+      - posts
+      - posts/post-links.yml
+#    exclude:
+#      title: " "
+    type: grid
+    max-items: 3
+#    image-height: 150px
+    page-size: 3 #set same as max-times to remove the page number setting
+    fields: [image, date, title, subtitle]
+    max-description-length: 75
+    sort: 
+      - "date desc"
+      - "title asc"
+---
+
+::: {#hero-heading}
+Este é um Website do
+
+Constante Evolução
+
+Conceitos Gerais de Probabilidade, Estatística e afins
+
+Falar que ao longo do site códigos serão abordados.. seguindo planos de ensino
+
+Sinta-se livre para sugerir melhorias abrindo uma issue [neste link](https://github.com/renanxcortes/teaching/issues)
+
+Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empresa [Posit](https://posit.co/).
+
+# Links interessantes que me inspiram e que podem te inspirar também
+
+[Templates de Quarto úteis do prof. Gang He](https://drganghe.github.io/quarto-academic-site-examples.html)
+
+[Site da Disciplina de Probabilidade e Estatística EDA da UFRGS](https://www.ufrgs.br/probabilidade-estatistica/)
+
+[Livro de Estatística Básica do Prof. Filipe Zabala](https://filipezabala.com/fe)
+
+[Livro R for Data Science](https://r4ds.hadley.nz/)
+
+[Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html)
+
+[Livro de Probabilidade de Leonardo T. Rolla e Bernardo N. B. de Lima](https://www.ime.usp.br/~leorolla/probabilidade/)
+:::
+
+````{=html}
+<!--
+
+# Considerações de Desenvolvimento do Site
+
+O código para geração deste site por ser acessado [neste link](https://github.com/renanxcortes/teaching).
+
+Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate. Especificamente, o Quarto cria um ambiente virtual temporário chamado `r-reticulate`. Ou seja, [as bibliotecas usadas durante a geração do site serão as bibliotecas instaladas neste ambiente](https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio).
+
+Exemplo de instalação de biblioteca do Python usando o `reticulate`:
+
+```         
+reticulate::py_install("matplotlib")
+reticulate::py_install("scipy")
+```
+
+Além disso, cuidado com o gerenciamento das engines no momento de compilar o website. Segundo a documentação do Quarto, é importante sabermos as diferentes distinções de engine e suas coexistências conforme a seguir:
+
+**Engine Conflicts:**
+
+-   **Knitr vs. Jupyter:** *If you explicitly set the `engine` to `jupyter` in your YAML, R code chunks will not be executed, and only Python (or the kernel's language) will run. For mixed R and Python, `engine: knitr` is typically used, relying on `reticulate` for Python execution.*
+
+-->
+````

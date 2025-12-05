@@ -1,0 +1,99 @@
+project:
+  type: website
+  output-dir: docs
+
+# # Layout horizontal (menus)
+# website:
+#   title: "Teaching"
+#   navbar:
+#     left:
+#       - text: "Sobre"
+#         href: index.qmd
+#       - text: "Probabilidade"
+#         menu:
+#           - Probabilidade/LGN.qmd
+#           - Probabilidade/TCL.qmd 
+# 
+# 
+# Layout vertical (contents e sections)
+website:
+  title: "Teaching"
+  repo-url: https://github.com/renanxcortes/teaching
+  repo-actions: [edit, source, issue]
+  reader-mode: true
+  favicon: figs/logo.png
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Sobre"
+        href: index.qmd
+      - text: "Temas"
+        menu:
+          - sidebar:int_prob
+          - sidebar:probabilidade_B
+          - sidebar:modelos_lineares
+          - sidebar:multivariada
+
+  sidebar:
+    - id: int_prob
+      title: "Introdução à Probabilidade"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Probabilidade"
+          contents:
+            - Int_Prob/1_experimento_aleatorio.qmd
+            - Int_Prob/2_conceitos_de_probabilidade.qmd
+            - Int_Prob/3_aplicacoes_probabilidade_combinatoria.qmd
+            - Int_Prob/4_probabilidade_condicional_e_independencia.qmd
+        - section: "Variáveis Aleatórias"
+          contents:
+            - Int_Prob/5_variaveis_aleatorias_conceitos_basicos.qmd
+            - Int_Prob/6_vetores_aleatorios.qmd
+            - Int_Prob/7_funcoes_de_variaveis_aleatorias.qmd
+
+    - id: probabilidade_B
+      title: "Probabilidade Avançada"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Grandes Amostras"
+          contents:
+            - Probabilidade_B/LGN.qmd
+            - Probabilidade_B/TCL.qmd
+
+    - id: modelos_lineares
+      title: "Modelos Lineares"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Confundimento"
+          contents:
+            - Modelos_Lineares/paradoxo_simpson.qmd
+
+    - id: multivariada
+      title: "Análise Multivariada"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Principais Tópicos"
+          contents:
+            - Multivariada/Componentes_Principais.qmd
+            - Multivariada/Cluster.qmd
+
+
+
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+
+editor: visual
+
+bibliography: references.bib
