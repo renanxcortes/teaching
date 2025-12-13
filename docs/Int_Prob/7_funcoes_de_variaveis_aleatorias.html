@@ -278,7 +278,8 @@ window.Quarto = {
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
   <li><a href="#funções-de-variáveis-aleatórias-discretas" id="toc-funções-de-variáveis-aleatórias-discretas" class="nav-link" data-scroll-target="#funções-de-variáveis-aleatórias-discretas">Funções de Variáveis Aleatórias Discretas</a></li>
   <li><a href="#funções-de-variáveis-aleatórias-contínuas" id="toc-funções-de-variáveis-aleatórias-contínuas" class="nav-link" data-scroll-target="#funções-de-variáveis-aleatórias-contínuas">Funções de Variáveis Aleatórias Contínuas</a></li>
-  <li><a href="#funções-de-vetores-aleatórios" id="toc-funções-de-vetores-aleatórios" class="nav-link" data-scroll-target="#funções-de-vetores-aleatórios">Funções de Vetores Aleatórios</a></li>
+  <li><a href="#função-da-soma-de-variáveis-aleatórias-independentes" id="toc-função-da-soma-de-variáveis-aleatórias-independentes" class="nav-link" data-scroll-target="#função-da-soma-de-variáveis-aleatórias-independentes">Função da Soma de variáveis aleatórias independentes</a></li>
+  <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/7_funcoes_de_variaveis_aleatorias.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/7_funcoes_de_variaveis_aleatorias.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -314,7 +315,7 @@ window.Quarto = {
 <p><span class="math display">\[
 f_Y(y) = P(Y = y) = P(g(X) = y) = \sum_{x:g(x) = y}f_X(x).
 \]</span></p>
-<p>Isto é, devemos somar os valores da dsitribuição original de <span class="math inline">\(x\)</span> nos novos pontos do novo domínio, isto é, o domínio de <span class="math inline">\(y\)</span>.</p>
+<p>Isto é, devemos somar os valores da distribuição original de <span class="math inline">\(x\)</span> nos novos pontos do novo domínio, isto é, o domínio de <span class="math inline">\(y\)</span>.</p>
 <p><strong>Teorema</strong> Seja <span class="math inline">\(X\)</span> uma distribuição discreta com distribuição massa de probabilidade <span class="math inline">\(f_X\)</span>. Seja <span class="math inline">\(a \in \mathbb{R}, a \ne 0\)</span> and <span class="math inline">\(b \in \mathbb{R}\)</span>, e seja <span class="math inline">\(Y = aX + b\)</span>. Então, <span class="math inline">\(f_Y(y) = P(Y = y) = P(aX + b = y) = P \left( X = \frac{y-b}{a} \right) = f_X\left(\frac{y-b}{a} \right)\)</span></p>
 <p><strong>Exemplo</strong> Seja <span class="math inline">\(X\)</span> uma V.A. discreta com a seguinte forma:</p>
 <div style="width: fit-content; margin: auto;">
@@ -485,18 +486,80 @@ f_Y(y) = \begin{cases}
 \end{cases}
 \]</span></p>
 </section>
-<section id="funções-de-vetores-aleatórios" class="level1">
-<h1>Funções de Vetores Aleatórios</h1>
-<p>https://www.youtube.com/watch?v=tH-wuwvXmsk</p>
-<p>https://www.youtube.com/watch?v=hC2idx2-GME</p>
-<p>3.8 do degroot</p>
-<p>convolucao</p>
+<section id="função-da-soma-de-variáveis-aleatórias-independentes" class="level1">
+<h1>Função da Soma de variáveis aleatórias independentes</h1>
+<p>Vimos em uma seção anterior que se as variáveis aleatórias <span class="math inline">\(X_1, X_2, ..., X_p\)</span> são independentes então:</p>
+<p><span class="math display">\[
+P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p) = P(X_1 = x_1)P(X_2 = x_2)...P(X_p = x_p).
+\]</span></p>
+<p>Vamos usar esse resultado para ilustrar a distribuição da soma de variáveis aleatórias independentes.</p>
+<p><strong>Exemplo</strong> (Exemplo 3.3.1 e 3.3.2 de <span class="citation" data-cites="dantas2013probabilidade">Dantas (<a href="#ref-dantas2013probabilidade" role="doc-biblioref">2013</a>)</span>)</p>
+<p>Uma urna contém três bolas vermelhas e cinco brancas. Retiram-se sucessivamente três bolas da urna, <strong>com reposiçao</strong> da bola a cada retirada. Tendo em vista que o experimento é <strong>com reposição</strong>, podemos assumir independência entre as retiradas. Vamos definir as variáveis <span class="math inline">\(X_i = 1\)</span>, se a <span class="math inline">\(i\)</span>-ésima bola retirada for vermelha, e <span class="math inline">\(X_i = 0\)</span>, se for branca, para <span class="math inline">\(i = 1,2,3\)</span> e determinar a distribuição conjunta de <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span> e <span class="math inline">\(X_3\)</span>.</p>
+<p>Dado que são indepnedentes, as probabilidadesconjuntas podem ser facilmente calculadas através da multiplicação. Por exemplo:</p>
+<p><span class="math display">\[
+P(X_1 = 1, X_2 = 1, X_3 = 1) = P(X_1 = 1)P(X_2 = 1)P(X_3 = 1) = \left( \frac{3}{8}\right)^3
+\]</span></p>
+<p>Usando-se esta fórmula, podemos calcular as probabilidades conjuntas de todas as combinações possíveis:</p>
+<div style="width: fit-content; margin: auto;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\((X_1, X_2, X_3)\)</span></th>
+<th>Probabilidades</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\((1,1,1)\)</span></td>
+<td><span class="math inline">\(\left( \frac{3}{8}\right)^3\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((1,1,0)\)</span></td>
+<td><span class="math inline">\(\left( \frac{3}{8}\right)^2 \frac{5}{8}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((1,0,1)\)</span></td>
+<td><span class="math inline">\(\left( \frac{3}{8}\right)^2 \frac{5}{8}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((0,1,1)\)</span></td>
+<td><span class="math inline">\(\left( \frac{3}{8}\right)^2 \frac{5}{8}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((0,0,1)\)</span></td>
+<td><span class="math inline">\(\frac{3}{8} \left(\frac{5}{8}\right)^2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((0,1,0)\)</span></td>
+<td><span class="math inline">\(\frac{3}{8} \left(\frac{5}{8}\right)^2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((1,0,0)\)</span></td>
+<td><span class="math inline">\(\frac{3}{8} \left(\frac{5}{8}\right)^2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((0,0,0)\)</span></td>
+<td><span class="math inline">\(\left(\frac{5}{8}\right)^3\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Posteriormente veremos que este exemplo simples trata-se de uma distribuição Binomial.</p>
+<p>A forma geral da distribuição da soma é chamada de <a href="https://en.wikipedia.org/wiki/Convolution_of_probability_distributions">Convolução</a>.</p>
+</section>
+<section id="links-úteis" class="level1">
+<h1>Links Úteis</h1>
+<p><a href="https://www.youtube.com/watch?v=tH-wuwvXmsk">Transformations of Random Variables: Linear Transformations</a></p>
+<p><a href="https://www.youtube.com/watch?v=hC2idx2-GME">Functions of a Random Variable</a></p>
 
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-dantas2013probabilidade" class="csl-entry" role="listitem">
+Dantas, C. A. B. 2013. <em>Probabilidade: Um Curso Introdut<span>ó</span>rio Vol. 10</em>. EDUSP.
+</div>
 <div id="ref-degroot2012probability" class="csl-entry" role="listitem">
 DeGroot, M. H., e M. J. Schervish. 2012. <em>Probability and Statistics</em>. Addison-Wesley.
 </div>

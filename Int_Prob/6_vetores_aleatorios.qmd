@@ -299,7 +299,6 @@ $$
 f_{X_1}(x_1) = \overbrace{\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} ... \int_{-\infty}^{+\infty}}^{\text{p-1 integrais}} f(x_1, x_2, ..., x_p) dx_2dx_3...dx_p
 $$
 
-
 ### Vetores Aleatórios Independentes
 
 **Definição** As variáveis aleatórias $X$ e $Y$, cuja densidade conjunta é $f(x,y)$, para $x,y \in \mathbb{R}$, e cujas densidades marginais são denotadas $f_X(x)$ e $f_Y(y)$, são ditas independentes se para todo o par de valores $(x,y)$ tivermos

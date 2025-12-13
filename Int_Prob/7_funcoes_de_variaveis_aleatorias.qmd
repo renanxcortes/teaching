@@ -25,52 +25,41 @@ $$
 f_Y(y) = P(Y = y) = P(g(X) = y) = \sum_{x:g(x) = y}f_X(x).
 $$
 
-Isto é, devemos somar os valores da dsitribuição original de $x$ nos novos pontos do novo domínio, isto é, o domínio de $y$. 
+Isto é, devemos somar os valores da distribuição original de $x$ nos novos pontos do novo domínio, isto é, o domínio de $y$.
 
 **Teorema** Seja $X$ uma distribuição discreta com distribuição massa de probabilidade $f_X$. Seja $a \in \mathbb{R}, a \ne 0$ and $b \in \mathbb{R}$, e seja $Y = aX + b$. Então, $f_Y(y) = P(Y = y) = P(aX + b = y) = P \left( X = \frac{y-b}{a} \right) = f_X\left(\frac{y-b}{a} \right)$
 
-
 **Exemplo** Seja $X$ uma V.A. discreta com a seguinte forma:
 
-<div style="width: fit-content; margin: auto;">
-
+::: {style="width: fit-content; margin: auto;"}
 | $x$        | -2  | -1  | 0   | 1   | 2   |
-|----------|-----|-----|-----|-----|-----|
+|------------|-----|-----|-----|-----|-----|
 | $P(X = x)$ | 1/5 | 1/5 | 1/5 | 1/5 | 1/5 |
-
-</div>
+:::
 
 A distribuição de $Y = X + 2$ é
 
-<div style="width: fit-content; margin: auto;">
-
-| $y$        | 0  | 1  | 2   | 3   | 4   |
-|----------|-----|-----|-----|-----|-----|
+::: {style="width: fit-content; margin: auto;"}
+| $y$        | 0   | 1   | 2   | 3   | 4   |
+|------------|-----|-----|-----|-----|-----|
 | $P(Y = y)$ | 1/5 | 1/5 | 1/5 | 1/5 | 1/5 |
-
-</div>
+:::
 
 A distribuição de $W = 10X - 1$ é
 
-<div style="width: fit-content; margin: auto;">
-
-| $W$        | -1  | 9  | 19   | 29   | 39   |
-|----------|-----|-----|-----|-----|-----|
+::: {style="width: fit-content; margin: auto;"}
+| $W$        | -1  | 9   | 19  | 29  | 39  |
+|------------|-----|-----|-----|-----|-----|
 | $P(W = w)$ | 1/5 | 1/5 | 1/5 | 1/5 | 1/5 |
-
-</div>
+:::
 
 A distribuição de $Z = X^2$ é
 
-<div style="width: fit-content; margin: auto;">
-
-| $z$        | 0  | 1  | 2   |
-|----------|-----|-----|-----|
+::: {style="width: fit-content; margin: auto;"}
+| $z$        | 0   | 1   | 2   |
+|------------|-----|-----|-----|
 | $P(Z = z)$ | 1/5 | 2/5 | 2/5 |
-
-</div>
-
-
+:::
 
 # Funções de Variáveis Aleatórias Contínuas
 
@@ -99,9 +88,7 @@ $$
 
 Seja $Y = 3x+1$. Primeiramente, notemos que, neste caso, se $0<x<1 \implies 1<y<4$.
 
-
 ![Extraído de @meyer2006probabilidade](figs/exemplo_meyer_funcao_de_va.png){width="25%"}
-
 
 Então, para obter a função densidade de $Y$ teremos
 
@@ -130,9 +117,7 @@ f_Y(y) = \begin{cases}
 \end{cases}
 $$
 
-
-**Exemplo** (Exemplo 3.8.4 de @degroot2012probability) Suponha que $X$ tenha a
-distribuição uniforme no intervalo $[−1, 1]$, então
+**Exemplo** (Exemplo 3.8.4 de @degroot2012probability) Suponha que $X$ tenha a distribuição uniforme no intervalo $[−1, 1]$, então
 
 $$
 f_X(x) = \begin{cases}
@@ -141,7 +126,7 @@ f_X(x) = \begin{cases}
 \end{cases}
 $$
 
-Determinaremos a função densidade da variável aleatória $Y = X^2$. Primeiramente, notemos que, neste caso, se $-1<x<1 \implies 0<y<1$. 
+Determinaremos a função densidade da variável aleatória $Y = X^2$. Primeiramente, notemos que, neste caso, se $-1<x<1 \implies 0<y<1$.
 
 Então, para obter a função densidade de $Y$ teremos
 
@@ -155,13 +140,11 @@ $$
 F_X(\sqrt{y}) -  F_X(-\sqrt{y}) = \int_{-\sqrt{y}}^{\sqrt{y}}f_X(x)\ dx = \int_{-\sqrt{y}}^{\sqrt{y}}\frac{1}{2}\ dx = \frac{x}{2} \Big|_{-\sqrt{y}}^{\sqrt{y}} = \frac{\sqrt{y}}{2} + \frac{\sqrt{y}}{2} = \sqrt{y} = y^{1/2}
 $$
 
-
 Consequentemente,
 
 $$
 f_Y(y) = \frac{dF_Y(y)}{dy} = \frac{d}{dy}\left[y^{1/2}\right] = \frac{1}{2\sqrt{y}}, \quad 0<y<1
 $$
-
 
 Logo, a resposta é:
 
@@ -172,12 +155,51 @@ f_Y(y) = \begin{cases}
 \end{cases}
 $$
 
-# Funções de Vetores Aleatórios
+# Função da Soma de variáveis aleatórias independentes
 
-https://www.youtube.com/watch?v=tH-wuwvXmsk
+Vimos em uma seção anterior que se as variáveis aleatórias $X_1, X_2, ..., X_p$ são independentes então:
 
-https://www.youtube.com/watch?v=hC2idx2-GME
+$$
+P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p) = P(X_1 = x_1)P(X_2 = x_2)...P(X_p = x_p).
+$$
 
-3.8 do degroot
+Vamos usar esse resultado para ilustrar a distribuição da soma de variáveis aleatórias independentes.
 
-convolucao
+**Exemplo** (Exemplo 3.3.1 e 3.3.2 de @dantas2013probabilidade)
+
+Uma urna contém três bolas vermelhas e cinco brancas. Retiram-se sucessivamente três bolas da urna, **com reposiçao** da bola a cada retirada. Tendo em vista que o experimento é **com reposição**, podemos assumir independência entre as retiradas. Vamos definir as variáveis $X_i = 1$, se a $i$-ésima bola retirada for vermelha, e $X_i = 0$, se for branca, para $i = 1,2,3$ e determinar a distribuição conjunta de $X_1$, $X_2$ e $X_3$.
+
+Dado que são indepnedentes, as probabilidadesconjuntas podem ser facilmente calculadas através da multiplicação. Por exemplo:
+
+$$
+P(X_1 = 1, X_2 = 1, X_3 = 1) = P(X_1 = 1)P(X_2 = 1)P(X_3 = 1) = \left( \frac{3}{8}\right)^3
+$$
+
+Usando-se esta fórmula, podemos calcular as probabilidades conjuntas de todas as combinações possíveis:
+
+::: {style="width: fit-content; margin: auto;"}
+| $(X_1, X_2, X_3)$ | Probabilidades |
+|-----------|-----|
+| $(1,1,1)$ | $\left( \frac{3}{8}\right)^3$ |
+| $(1,1,0)$ | $\left( \frac{3}{8}\right)^2 \frac{5}{8}$ |
+| $(1,0,1)$ | $\left( \frac{3}{8}\right)^2 \frac{5}{8}$  |
+| $(0,1,1)$ | $\left( \frac{3}{8}\right)^2 \frac{5}{8}$  |
+| $(0,0,1)$ | $\frac{3}{8} \left(\frac{5}{8}\right)^2$  |
+| $(0,1,0)$ | $\frac{3}{8} \left(\frac{5}{8}\right)^2$ |
+| $(1,0,0)$ | $\frac{3}{8} \left(\frac{5}{8}\right)^2$ |
+| $(0,0,0)$ | $\left(\frac{5}{8}\right)^3$ |
+:::
+
+
+Posteriormente veremos que este exemplo simples trata-se de uma distribuição Binomial.
+
+
+A forma geral da distribuição da soma é chamada de [Convolução](https://en.wikipedia.org/wiki/Convolution_of_probability_distributions).
+
+
+# Links Úteis
+
+[Transformations of Random Variables: Linear Transformations](https://www.youtube.com/watch?v=tH-wuwvXmsk)
+
+[Functions of a Random Variable](https://www.youtube.com/watch?v=hC2idx2-GME)
+
