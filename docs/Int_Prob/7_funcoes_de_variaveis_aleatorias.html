@@ -544,7 +544,40 @@ P(X_1 = 1, X_2 = 1, X_3 = 1) = P(X_1 = 1)P(X_2 = 1)P(X_3 = 1) = \left( \frac{3}{
 </tbody>
 </table>
 </div>
-<p>Definamos a variável aleatória <span class="math inline">\(S = X_1 + X_2 + X_3\)</span></p>
+<p>Definamos a variável aleatória <span class="math inline">\(S = X_1 + X_2 + X_3\)</span>, sendo igual ao número de bolas vermelhas entre as três retiradas. Determinaremos a distribuição de probabilidade de <span class="math inline">\(S\)</span>.</p>
+<p><span class="math inline">\(S\)</span> assume os valores de <span class="math inline">\(0,1,2 \ \text{e} \ 3\)</span>. Seja <span class="math inline">\(k\)</span> o valor de <span class="math inline">\(S\)</span>. Para calcular <span class="math inline">\(P(S = k)\)</span> determinamos as triplas <span class="math inline">\((x_1, x_2, x_3)\)</span> tais que <span class="math inline">\(S = x_1 + x_3 + x_3 = k\)</span> e somamos as probabilidades. Por exemplo, para <span class="math inline">\(k = 2\)</span> temos:</p>
+<p><span class="math display">\[
+P(S = 2) = P(X_1=1, X_2=1, X_3=0) + P(X_1=1, X_2=0, X_3=1) + P(X_1=0, X_2=1, X_3=1) = 3 \left(\frac{3}{8}\right)^2\frac{5}{8}.
+\]</span></p>
+<p>Observe que podemos calcular todas as demais probabilidades somando os respectivos valores da tabela apresentada anteriormente. Portanto:</p>
+<div style="width: fit-content; margin: auto;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(S\)</span></th>
+<th>Probabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(\left( \frac{5}{8}\right)^3\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(3\frac{3}{8} \left(\frac{5}{8}\right)^2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2\)</span></td>
+<td><span class="math inline">\(3\left( \frac{3}{8}\right)^2 \frac{5}{8}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(3\)</span></td>
+<td><span class="math inline">\(\left(\frac{3}{8}\right)^3\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Posteriormente veremos que este exemplo simples trata-se de uma distribuição Binomial.</p>
 <p>A forma geral da distribuição da soma é chamada de <a href="https://en.wikipedia.org/wiki/Convolution_of_probability_distributions">Convolução</a>.</p>
 </section>
