@@ -191,6 +191,9 @@ Usando-se esta fórmula, podemos calcular as probabilidades conjuntas de todas a
 :::
 
 
+Definamos a variável aleatória $S = X_1 + X_2 + X_3$
+
+
 Posteriormente veremos que este exemplo simples trata-se de uma distribuição Binomial.
 
 
