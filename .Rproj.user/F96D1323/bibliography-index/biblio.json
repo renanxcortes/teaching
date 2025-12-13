@@ -1,0 +1,344 @@
+{
+    "sources": [
+        {
+            "ISBN": "978-85-244-0455-9",
+            "author": [
+                {
+                    "family": "James",
+                    "given": "Barry R."
+                }
+            ],
+            "edition": "5",
+            "id": "barryjames2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "IMPA",
+            "title": "Probabilidade: Um curso em nível intermediário",
+            "title-short": "Probabilidade",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Curtiss",
+                    "given": "J. H."
+                }
+            ],
+            "container-title": "Ann. Math. Stat.",
+            "id": "curtiss1942note",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1942
+                    ]
+                ]
+            },
+            "page": "430-433",
+            "title": "A note on the theory of moment generating functions",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "ISBN": "9788531409455",
+            "author": [
+                {
+                    "family": "Magalhães",
+                    "given": "M. N."
+                }
+            ],
+            "edition": "3",
+            "id": "magalhaes2006probabilidade",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "publisher": "Edusp",
+            "title": "Probabilidade e variáveis aleatórias",
+            "type": "book"
+        },
+        {
+            "ISBN": "9780321500465",
+            "author": [
+                {
+                    "family": "DeGroot",
+                    "given": "M. H."
+                },
+                {
+                    "family": "Schervish",
+                    "given": "M. J."
+                }
+            ],
+            "id": "degroot2012probability",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "publisher": "Addison-Wesley",
+            "title": "Probability and statistics",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-0-13-187715-3",
+            "author": [
+                {
+                    "family": "Johnson",
+                    "given": "Richard A."
+                },
+                {
+                    "family": "Wichern",
+                    "given": "Dean W."
+                }
+            ],
+            "edition": "6",
+            "id": "johnson2007applied",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "publisher": "Pearson Education Inc",
+            "title": "Applied multivariate statistical analysis",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kolmogorov",
+                    "given": "Andrei Nikolaevich"
+                }
+            ],
+            "id": "Kolmogorov1933",
+            "issued": {
+                "date-parts": [
+                    [
+                        1933
+                    ]
+                ]
+            },
+            "title": "Foundations of the theory of probability",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-3-030-33143-6",
+            "author": [
+                {
+                    "family": "Axler",
+                    "given": "Sheldon"
+                }
+            ],
+            "collection-title": "Graduate texts in mathematics",
+            "id": "axler2020measure",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "title": "Measure, integration & real analysis",
+            "type": "book",
+            "volume": "282"
+        },
+        {
+            "ISBN": "9780070854659",
+            "author": [
+                {
+                    "family": "Mood",
+                    "given": "A. M. F."
+                },
+                {
+                    "family": "Graybill",
+                    "given": "F. A."
+                },
+                {
+                    "family": "Boes",
+                    "given": "D. C."
+                }
+            ],
+            "collection-title": "McGraw-hill international editions: Statistics series",
+            "id": "mood1974introduction",
+            "issued": {
+                "date-parts": [
+                    [
+                        1974
+                    ]
+                ]
+            },
+            "publisher": "McGraw-Hill",
+            "title": "Introduction to the theory of statistics",
+            "type": "book"
+        },
+        {
+            "ISBN": "9788534610629",
+            "author": [
+                {
+                    "family": "Morettin",
+                    "given": "L. G."
+                }
+            ],
+            "collection-title": "Estatı́stica básica",
+            "id": "morettin1999estatística",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "publisher": "Pearson Makron Books",
+            "title": "Estatı́stica básica: Probabilidade, 7.ed",
+            "title-short": "Estatı́stica básica",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Curtiss",
+                    "given": "J. H."
+                }
+            ],
+            "container-title": "Ann. Math. Stat.",
+            "id": "curtiss1942note",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1942
+                    ]
+                ]
+            },
+            "page": "430-433",
+            "title": "A note on the theory of moment generating functions",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "URL": "https://www.ime.usp.br/~leorolla/papers/intro-probab.pdf",
+            "author": [
+                {
+                    "family": "Rolla",
+                    "given": "L. T."
+                }
+            ],
+            "id": "rolla2021intprob",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "title": "Introdução à probabilidade — notas de aula",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.ime.usp.br/~leorolla/probabilidade/index.html",
+            "author": [
+                {
+                    "family": "Rolla",
+                    "given": "Leonardo T."
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Lima",
+                    "given": "Bernardo N. B."
+                }
+            ],
+            "id": "rollalima2025prob",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "publisher": "Coleção Projeto Euclides, IMPA",
+            "title": "Probabilidade",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.ime.usp.br/~leorolla/papers/ST342-2021.pdf",
+            "author": [
+                {
+                    "family": "Rolla",
+                    "given": "Leonardo T."
+                }
+            ],
+            "id": "rolla2022measureprob",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Measure theory for probability",
+            "type": "article-journal"
+        },
+        {
+            "ISBN": "9788531403996",
+            "author": [
+                {
+                    "family": "Dantas",
+                    "given": "C. A. B."
+                }
+            ],
+            "id": "dantas2013probabilidade",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "publisher": "EDUSP",
+            "title": "Probabilidade: Um curso introdutório vol. 10",
+            "title-short": "Probabilidade",
+            "type": "book"
+        },
+        {
+            "ISBN": "9788521602941",
+            "author": [
+                {
+                    "family": "Meyer",
+                    "given": "P. L."
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Carvalho Bergström Lourenço Filho",
+                    "given": "R."
+                }
+            ],
+            "id": "meyer2006probabilidade",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "publisher": "LTC",
+            "title": "Probabilidade: Aplicações à estatı́stica",
+            "title-short": "Probabilidade",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}

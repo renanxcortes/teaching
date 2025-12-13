@@ -71,7 +71,9 @@ $$
 
 As quantidades $e_{ij}$ são denominadas *loadings* associado do componente $i$ à variável $j$.
 
-## Componentes Principais na Matriz de Correlação $\bs{\rho}$
+## Componentes Principais na Matriz de Correlação $\boldsymbol{\rho}$
+
+<!-- O comando "bs" não funcion em headers de seções, logo, tive que colocar o boldsymbol para renderizar o título -->
 
 Incluir aqui
 
