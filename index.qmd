@@ -1,7 +1,7 @@
 ---
 title: "Renan Xavier Cortes"
 description-meta: "Renan é..."
-image: "figs/renan_ucr.png"
+image: "figs/ufrgs_foto_short.jpg"
 page-navigation: false
 toc: false
 #sidebar: false
@@ -55,10 +55,9 @@ listing:
 ---
 
 ::: {#hero-heading}
-
 Bem-vindo ao site de materiais didáticos do Prof. [Renan Xavier Cortes](https://renanxcortes.github.io/). Nele, você encontrará conceitos diversos de disciplinas de Estatística (probabilidade, inferência, modelagem, etc.) na aba **Temas**. Além de conceitos teóricos, você irá encontrar também códigos na linguagem [R](https://www.r-project.org/) e [Python](https://www.python.org/) como suporte para compreensão e estudos.
 
-Este é um site 100% autoral, mas o material busca seguir os planos de ensino das disciplinas do curso de [Bacharelado em Estatística da UFRGS](https://www.ufrgs.br/ime/bacharelado-em-estatistica/). 
+Este é um site 100% autoral, mas o material busca seguir os planos de ensino das disciplinas do curso de [Bacharelado em Estatística da UFRGS](https://www.ufrgs.br/ime/bacharelado-em-estatistica/).
 
 Este material está em constante evolução e, portanto, sinta-se livre para sugerir melhorias abrindo uma issue [neste link](https://github.com/renanxcortes/teaching/issues). Ele foi criado utilizando o framework [Quarto](https://quarto.org/docs/websites) da empresa [Posit](https://posit.co/).
 
