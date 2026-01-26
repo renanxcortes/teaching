@@ -30,12 +30,24 @@ website:
         href: index.qmd
       - text: "Temas"
         menu:
+          - sidebar:met_est
           - sidebar:int_prob
           - sidebar:probabilidade_B
           - sidebar:modelos_lineares
           - sidebar:multivariada
 
   sidebar:
+    - id: met_est
+      title: "Métodos Estatísticos"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Área 1"
+          contents:
+            - Metodos_Estatisticos/1_introducao_exploratoria.qmd
+            - Metodos_Estatisticos/2_descritiva_medidas.qmd
+            
     - id: int_prob
       title: "Introdução à Probabilidade"
       collapse-level: 2

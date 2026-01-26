@@ -1,0 +1,21 @@
+---
+title: "Estatística descritiva - medidas"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute: 
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Material presente em [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_3_a_4.pptx)

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Experimento Aleatório, Espaço Amostral e Eventos – Teaching</title>
+<title>Estatística descritiva - medidas – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -90,35 +70,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -189,7 +140,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Probabilidade</a></li><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Experimento Aleatório, Espaço Amostral e Eventos</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística descritiva - medidas</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -216,7 +167,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Probabilidade</span></a>
+ <span class="menu-text">Área 1</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,55 +175,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/1_experimento_aleatorio.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Experimento Aleatório, Espaço Amostral e Eventos</span></a>
+  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introdução à Estatística e análise exploratória de dados</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/2_conceitos_de_probabilidade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conceitos de Probabilidade</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/3_aplicacoes_probabilidade_combinatoria.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Aplicações de Probabilidade em arranjos, permutações e combinações</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/4_probabilidade_condicional_e_independencia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probabilidade Condicional e Independência</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Variáveis Aleatórias</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/5_variaveis_aleatorias_conceitos_basicos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conceitos Básicos</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/6_vetores_aleatorios.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vetores Aleatórios</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/7_funcoes_de_variaveis_aleatorias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Funções de Variáveis Aleatórias</span></a>
+  <a href="../Metodos_Estatisticos/2_descritiva_medidas.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Estatística descritiva - medidas</span></a>
   </div>
 </li>
       </ul>
@@ -287,24 +197,16 @@ window.Quarto = {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
-  <ul class="collapse">
-  <li><a href="#eventosconjuntos" id="toc-eventosconjuntos" class="nav-link" data-scroll-target="#eventosconjuntos">Eventos/Conjuntos</a>
-  <ul class="collapse">
-  <li><a href="#operações-básicas-e-definições" id="toc-operações-básicas-e-definições" class="nav-link" data-scroll-target="#operações-básicas-e-definições">Operações Básicas e Definições</a></li>
-  <li><a href="#digramas-de-venn" id="toc-digramas-de-venn" class="nav-link" data-scroll-target="#digramas-de-venn">Digramas de Venn</a></li>
-  <li><a href="#leis-de-demorgan" id="toc-leis-de-demorgan" class="nav-link" data-scroll-target="#leis-de-demorgan">Leis de DeMorgan</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Probabilidade</a></li><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Experimento Aleatório, Espaço Amostral e Eventos</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística descritiva - medidas</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Experimento Aleatório, Espaço Amostral e Eventos</h1>
+<h1 class="title">Estatística descritiva - medidas</h1>
 </div>
 
 
@@ -323,90 +225,12 @@ window.Quarto = {
 
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
-<p><em>Experimentos aleatórios</em> são situação na natureza que envolvem incertezas. A busca por avaliar as diversas probabilidades de ocorrência é um dos objetivos no estudo desses fenômenos.</p>
-<p>O <em>espaço amostral</em> é o conjunto de todos os possíveis resultados de um experimento aleatório e é representado por <span class="math inline">\(\Omega\)</span>. Cada resultado possível é denominado <em>ponto</em> ou <em>elemento</em> de <span class="math inline">\(\Omega\)</span> e denotado por <span class="math inline">\(\omega\)</span>. Assim, escrevemos <span class="math inline">\(\omega \in \Omega\)</span> para indicar que <span class="math inline">\(\omega\)</span> está em <span class="math inline">\(\Omega\)</span>. O conjunto sem elementos é o <em>conjunto vazio</em>, denotado por <span class="math inline">\(\emptyset\)</span>. Muitos autores (<span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>), denominam <em>eventos</em> (ou conjunto) como sendo letras maiúsculas do alfabeto, tais como A, B, etc. Assim:</p>
-<p><strong>Definição</strong> Seja <span class="math inline">\(\Omega\)</span> o espaço amostral do experimento. Todo subconjunto <span class="math inline">\(A \in \Omega\)</span> será chamado <em>evento</em>. <span class="math inline">\(\Omega\)</span> é o evento <em>certo</em>, <span class="math inline">\(\emptyset\)</span> o evento <em>impossível</em>. Se <span class="math inline">\(\omega \in \Omega\)</span>, o evento <span class="math inline">\(\{\omega\}\)</span> é dito <em>elementar</em> (ou simples).</p>
-<section id="eventosconjuntos" class="level2">
-<h2 class="anchored" data-anchor-id="eventosconjuntos">Eventos/Conjuntos</h2>
-<section id="operações-básicas-e-definições" class="level3">
-<h3 class="anchored" data-anchor-id="operações-básicas-e-definições">Operações Básicas e Definições</h3>
-<ul>
-<li><p>Lei Comutativa: <span class="math inline">\(A \cup B = B \cup A\)</span> e, também, <span class="math inline">\(A \cap B = B \cap A\)</span></p></li>
-<li><p>Lei Associativa: <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span> e, também, <span class="math inline">\(A \cap (B \cap C) = (A \cap B) \cap C\)</span></p></li>
-<li><p>Lei Distributiva: <span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span> e, também, <span class="math inline">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></p></li>
-<li><p><span class="math inline">\(A^c\)</span> (ou <span class="math inline">\(\bar{A}\)</span>) é o complementar de <span class="math inline">\(A\)</span>, isto é, todos os elementos de <span class="math inline">\(\Omega\)</span> exceto os de <span class="math inline">\(A\)</span></p></li>
-<li><p><span class="math inline">\(A_1 \cup A_2 ... \cup A_n\)</span> ou <span class="math inline">\(\bigcup\limits_{i=1}^{n}A_i\)</span> é a <em>união</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem à pelo menos um <span class="math inline">\(A_i\)</span></p></li>
-<li><p><span class="math inline">\(A_1 \cap A_2 ... \cap A_n\)</span> ou <span class="math inline">\(\bigcap\limits_{i=1}^{n}A_i\)</span> é a <em>intersecção</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem simultaneamente à todos os <span class="math inline">\(A_i\)</span>’s.</p></li>
-<li><p><span class="math inline">\(A-B\)</span> é a <em>diferença</em> entre <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, isto é, todos os elementos de <span class="math inline">\(A\)</span>, exceto os que estão em <span class="math inline">\(B\)</span>. Outra forma de notação é <span class="math inline">\(A \cap B^c\)</span>, pois <span class="math inline">\(A-B = A \cap B^c\)</span></p></li>
-<li><p>Se todo o elemento de <span class="math inline">\(A\)</span> é também um elemento de <span class="math inline">\(B\)</span>, então <span class="math inline">\(A\)</span> é definido como um subconjunto de <span class="math inline">\(B\)</span> e escrevemos <span class="math inline">\(A \subset B\)</span> ou <span class="math inline">\(B \supset A\)</span>. Interpretamos como sendo “<span class="math inline">\(A\)</span> está contido em <span class="math inline">\(B\)</span>” ou “<span class="math inline">\(B\)</span> contém <span class="math inline">\(A\)</span>”</p></li>
-<li><p>Dois conjuntos são <em>disjuntos</em> ou <em>mutuamente excludentes</em> se a sua interseção é vazio. Assim, <span class="math inline">\(A\ e\ B\ disjuntos \iff A \cap B = \emptyset\)</span></p></li>
-</ul>
-</section>
-<section id="digramas-de-venn" class="level3">
-<h3 class="anchored" data-anchor-id="digramas-de-venn">Digramas de Venn</h3>
-<p>Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via <a href="https://pt.wikipedia.org/wiki/Diagrama_de_Venn">Diagramas de Venn</a>. Abaixo, podemos ver algumas das relações:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figs/venn.png" class="img-fluid figure-img"></p>
-<figcaption>Extraído do <span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span></figcaption>
-</figure>
-</div>
-</section>
-<section id="leis-de-demorgan" class="level3">
-<h3 class="anchored" data-anchor-id="leis-de-demorgan">Leis de DeMorgan</h3>
-<p>As <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">Leis de DeMorgan</a>, ilustrada também no Diagrama de Venn anterior, são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.</p>
-<p>O caso simples pode ser descrito abaixo:</p>
-<p><span class="math display">\[
-\begin{align*}
-(A \cup B)^c = A^c \cap B^c \\
-(A \cap B)^c = A^c \cup B^c
-\end{align*}
-\]</span></p>
-<p>Imagine as duas frases:</p>
-<ul>
-<li>A: “Está chovendo”</li>
-<li>B: “Está frio”</li>
-</ul>
-<p>Portanto:</p>
-<ul>
-<li><p>A negação de “Está chovendo e está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo ou não está frio” (<span class="math inline">\(A^c \cup B^c\)</span>);</p></li>
-<li><p>A negação de “Está chovendo ou está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo e não está frio” (<span class="math inline">\(A^c \cap B^c\)</span>).</p></li>
-</ul>
-<p>Caso geral:</p>
-<p><span class="math display">\[
-\begin{align*}
-\left( \bigcup\limits_{i=1}^{n} A_i \right)^c = \bigcap\limits_{i=1}^{n} A_i^c \\
-\left( \bigcap\limits_{i=1}^{n} A_i \right)^c = \bigcup\limits_{i=1}^{n} A_i^c
-\end{align*}
-\]</span></p>
-<p>Vale ressaltar também que essa relação vale também quando <span class="math inline">\(n = \infty\)</span>, ou seja:</p>
-<p><span class="math display">\[
-\begin{align*}
-\left( \bigcup\limits_{i=1}^{\infty} A_i \right)^c = \bigcap\limits_{i=1}^{\infty} A_i^c \\
-\left( \bigcap\limits_{i=1}^{\infty} A_i \right)^c = \bigcup\limits_{i=1}^{\infty} A_i^c
-\end{align*}
-\]</span></p>
-
+<p>Material presente em <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_3_a_4.pptx">AQUI</a></p>
 
 
 </section>
-</section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-degroot2012probability" class="csl-entry" role="listitem">
-DeGroot, M. H., e M. J. Schervish. 2012. <em>Probability and Statistics</em>. Addison-Wesley.
-</div>
-<div id="ref-barryjames2023" class="csl-entry" role="listitem">
-James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
-</div>
-<div id="ref-magalhaes2006probabilidade" class="csl-entry" role="listitem">
-Magalhães, M. N. 2006. <em>Probabilidade e Vari<span>á</span>veis Aleat<span>ó</span>rias</em>. 3.ª ed. Edusp.
-</div>
-<div id="ref-mood1974introduction" class="csl-entry" role="listitem">
-Mood, A. M. F., F. A. Graybill, e D. C. Boes. 1974. <em>Introduction to the Theory of Statistics</em>. McGraw-Hill international editions: Statistics series. McGraw-Hill.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -812,4 +636,4 @@ Mood, A. M. F., F. A. Graybill, e D. C. Boes. 1974. <em>Introduction to the Theo
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
