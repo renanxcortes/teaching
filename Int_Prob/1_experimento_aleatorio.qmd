@@ -93,5 +93,3 @@ $$
 \left( \bigcap\limits_{i=1}^{\infty} A_i \right)^c = \bigcup\limits_{i=1}^{\infty} A_i^c
 \end{align*}
 $$
-
-

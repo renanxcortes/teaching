@@ -67,7 +67,7 @@ Este material está em constante evolução e, portanto, sinta-se livre para sug
 
 [Site da Disciplina de Probabilidade e Estatística EDA da UFRGS](https://www.ufrgs.br/probabilidade-estatistica/)
 
-[Livro de Estatística Básica do Prof. Filipe Zabala](https://filipezabala.com/fe)
+[Fundamentos de Estatística com aplicações em R e Python do Prof. Filipe Zabala](https://filipezabala.com/fe)
 
 [Livro R for Data Science](https://r4ds.hadley.nz/)
 
