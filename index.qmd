@@ -65,7 +65,7 @@ Este material está em constante evolução e, portanto, sinta-se livre para sug
 
 [Templates de Quarto úteis do Prof. Gang He](https://drganghe.github.io/quarto-academic-site-examples.html)
 
-[Site da Disciplina de Probabilidade e Estatística EDA da UFRGS](https://www.ufrgs.br/probabilidade-estatistica/)
+[Site da Disciplina de Probabilidade e Estatística EAD da UFRGS](https://www.ufrgs.br/probabilidade-estatistica/)
 
 [Livro de Estatística Básica do Prof. Filipe Zabala](https://filipezabala.com/fe)
 
