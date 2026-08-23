@@ -168,7 +168,7 @@ Principais atividades da preparação dos dados:
 
 Muitas vezes as bases possuem problemas que só ficam evidentes nesta etapa:
 
-![Exemplo de problemas em uma base de dados durante a preparação dos dados](figs/parte2/parte2_slide018_img049.jpg)
+![Exemplo de problemas em uma base de dados durante a preparação dos dados](figs/parte2/parte2_slide018_img049.jpg){width="350px"}
 
 # Etapa 4 — Modelagem
 
