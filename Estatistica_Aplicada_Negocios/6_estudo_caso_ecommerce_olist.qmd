@@ -295,7 +295,15 @@ base_analise %>%
   count(review_alto) %>%
   ggplot(aes(x = review_alto, y = n)) +
   geom_bar(stat ='identity')
+```
 
+::: {layout-ncol=2}
+![Contagem por nota de review](figs/olist_charts/01_review_score.png)
+
+![Contagem por review alto](figs/olist_charts/02_review_alto.png)
+:::
+
+```r
 # Algumas Variáveis Categóricas ----
 
 # Estado
@@ -325,7 +333,15 @@ base_analise %>%
 base_analise %>%
   count(product_category_name, sort = T) %>%
   mutate(prop = n / sum(n))
+```
 
+::: {layout-ncol=2}
+![Contagem por estado do cliente](figs/olist_charts/03_customer_state.png)
+
+![Contagem por tipo de pagamento](figs/olist_charts/04_payment_type.png)
+:::
+
+```r
 # Algumas Variáveis Numéricas ----
 
 # Preço
@@ -439,8 +455,29 @@ base_analise %>%
   count(product_photos_qty) %>%
   mutate(prop = n / sum(n))
 # Seria interessante imputar 0 nos NA e reclassificar essa variável
+```
 
+Os gráficos abaixo são as saídas reais desse trecho, geradas a partir da base de dados verdadeira da Olist (o preço apresenta outliers extremos — pedidos acima de R\$ 6.000 — o que motiva a transformação logarítmica; o mesmo vale para o frete):
 
+::: {layout="[[1,1], [1,1], [1,1], [1,1]]"}
+![Boxplot e densidade de preço](figs/olist_charts/05_price_boxplot_density.png)
+
+![Boxplot e densidade de log(preço) — mais estável](figs/olist_charts/06_log_price_boxplot_density.png)
+
+![Densidade de frete](figs/olist_charts/07_freight_density.png)
+
+![Densidade de log(frete)](figs/olist_charts/08_log_freight_density.png)
+
+![Densidade de frete sobre preço](figs/olist_charts/10_frete_sobre_preco_density.png)
+
+![Densidade de log(frete sobre preço)](figs/olist_charts/11_log_frete_sobre_preco_density.png)
+
+![Frete vs. preço (log-log), com tendência de crescimento](figs/olist_charts/12_price_vs_freight_scatter.png)
+
+![Densidade de dias de antecipação na entrega](figs/olist_charts/13_dias_antecipacao_density.png)
+:::
+
+```r
 # Análises Bivariadas relacionando com a var. dependente/resposta (review_alto) ----
 
 # Estado vs. Review
@@ -459,22 +496,39 @@ base_analise %>%
                      flag_interesse = 'Nota Máxima')
 
 # Aparentemente o Estado não influencia tanto o Review
+```
 
+`plota_tx_interesse()` (definida em `funcoes_plot.R`) gera um gráfico combinado em `plotly`: barras verdes com a frequência (`Fq.`) por categoria no eixo primário, e uma linha vermelha com a taxa de interesse (`Tx.`) no eixo secundário. Como a página não executa `plotly` interativo, as versões abaixo foram recriadas de forma estática (mesmo dado real, mesmo desenho de gráfico: barras + linha em eixo secundário), preservando a mesma escala fixa (0 a 1) usada por padrão na função:
+
+![Taxa de Nota Máxima e frequência por estado do cliente (escala fixa 0–1, padrão da função)](figs/olist_charts/22_tx_customer_state_ylim01.png)
+
+Com a escala fixa em 0–1, o estado aparenta não influenciar muito a taxa de review alto — é a leitura que o próprio comentário do script faz.
+
+```r
 # Interlúdio: O poder da Escala!
 base_analise %>%
   plota_tx_interesse(var_x = 'customer_state',
                      var_y = 'review_alto',
                      flag_interesse = 'Nota Máxima',
                      ylim = NA)
+```
 
+![Taxa de Nota Máxima e frequência por estado do cliente (escala livre)](figs/olist_charts/23_tx_customer_state_ylimNA.png)
 
+Este é o "Interlúdio: O poder da Escala" do próprio script: a mesma informação, com a escala do eixo secundário liberada (em vez de fixa em 0–1), parece mostrar uma variação muito mais dramática entre estados — mesmo a diferença real sendo pequena (todas as taxas ficam entre ~0,48 e ~0,62). Um lembrete de como a escolha da escala pode enganar (ou exagerar) uma leitura visual.
+
+```r
 # payment_type vs. Review
 base_analise %>%
   plota_tx_interesse(var_x = 'payment_type',
                      var_y = 'review_alto',
                      flag_interesse = 'Nota Máxima',
                      ylim = NA)
+```
 
+![Taxa de Nota Máxima e frequência por tipo de pagamento](figs/olist_charts/24_tx_payment_type.png)
+
+```r
 # product_category_name vs. Review
 base_analise %>%
   plota_tx_interesse(var_x = 'product_category_name',
@@ -489,7 +543,13 @@ base_analise %>%
                      var_y = 'review_alto',
                      flag_interesse = 'Nota Máxima',
                      ylim = NA)
+```
 
+A versão com `product_category_name` bruto tem dezenas de categorias e fica ilegível num gráfico de barras; por isso, abaixo está a versão já agrupada (top 7 categorias + "Other"), que é o objetivo do `fct_lump`:
+
+![Taxa de Nota Máxima e frequência por categoria de produto (top 7 + Other)](figs/olist_charts/25_tx_product_category_lump.png)
+
+```r
 # Preço/Frete/Frete sobre Preço vs. Review
 
 # Preço
@@ -563,9 +623,19 @@ base_analise %>%
 
 
 # ---- Fim do Interlúdio ---- #
+```
 
+::: {layout-ncol=3}
+![Densidade de log(preço) por categoria — difícil de visualizar](figs/olist_charts/16_density_by_category.png)
 
+![Ridgeline de log(preço) por categoria — melhor de visualizar](figs/olist_charts/17_ridgeline_by_category.png)
 
+![Boxplot de log(preço) por categoria — pode não refletir a distribuição real](figs/olist_charts/18_boxplot_by_category.png)
+:::
+
+O "interlúdio" do próprio script ilustra bem a limitação do boxplot: ao comparar as três visualizações acima da mesma variável (log do preço) por categoria de produto, a densidade sobreposta é difícil de interpretar, o ridgeline (gráfico de cristas) mostra claramente a forma e a posição de cada distribuição, e o boxplot — apesar de compacto — esconde nuances como multimodalidade.
+
+```r
 # Dias de Antecipação na entrega/Atrasou vs. Review
 
 base_analise %>%
@@ -579,17 +649,26 @@ base_analise %>%
 base_analise %>%
   ggplot(aes(x = dias_antecipacao_na_entrega, fill = as.factor(review_alto))) +
   geom_density(alpha = 0.5)
+```
 
-# Analisando pela quantidade de dias não é tão clara a diferença,
-# mas analisando pela variável dicotômica "Atrasou", fica clara a relevância
+![Densidade de dias de antecipação na entrega, por review alto](figs/olist_charts/19_dias_antecipacao_by_review.png)
 
+Analisando pela quantidade de dias não é tão clara a diferença entre os dois grupos — mas, como o script comenta, analisando pela variável dicotômica "Atrasou" a relevância fica mais clara:
+
+```r
 base_analise %>%
   mutate(atrasou = ifelse(atrasou == 1, 'Sim', 'Não')) %>%
   plota_tx_interesse(var_x = 'atrasou',
                      var_y = 'review_alto',
                      flag_interesse = 'Nota Máxima',
                      ylim = NA)
+```
 
+![Taxa de Nota Máxima e frequência por atraso na entrega](figs/olist_charts/26_tx_atrasou.png)
+
+A diferença fica bem mais evidente aqui: quem teve o pedido atrasado deu nota máxima com frequência bem menor do que quem recebeu no prazo.
+
+```r
 # product_photos_qty vs. Review
 # Imputando NA's e Categorizando uma variável numérica!
 base_analise %>%
@@ -599,7 +678,13 @@ base_analise %>%
                      flag_interesse = 'Nota Máxima',
                      ylim = NA)
 # Diferença pontual entre taxas ainda pequena
+```
 
+![Taxa de Nota Máxima e frequência por quantidade de fotos do produto (quebrada em quantis)](figs/olist_charts/27_tx_product_photos_qty.png)
+
+Como `product_photos_qty` é numérica, `plota_tx_interesse()` primeiro a quebra em quantis (`k = 10` por padrão, aqui colapsados para 5 faixas por haver poucos valores distintos) antes de calcular a taxa por faixa — confirmando o comentário do script: a diferença entre faixas é pequena.
+
+```r
 # Visualização múltipla: o poder do Grammar of Graphics
 
 # Gráfico de dispersão: Preço vs. Frete vs. Review vs. Estado vs. Atrasou vs. Qtd. de Photos
@@ -618,7 +703,13 @@ base_analise %>%
              ) +
   ggtitle('Preço vs. Frete vs. Review vs. Estado vs. Atrasou vs. Qtd. de Photos') +
   theme_light()
+```
 
+![Preço vs. Frete vs. Review vs. Estado vs. Atrasou vs. Qtd. de Fotos — 6 variáveis em um único gráfico via facetas, cor e tamanho](figs/olist_charts/20_multivar_facet_scatter.png)
+
+O gráfico acima ilustra bem o poder do *Grammar of Graphics*: 6 variáveis (preço, frete, review, estado, atraso e quantidade de fotos) combinadas em um único gráfico usando eixos, cor, tamanho e facetas — e fica visualmente claro que atrasos (`atrasou == 1`, linha de baixo) são bem mais raros que entregas dentro do prazo.
+
+```r
 # Observação: é possível incluir interatividade no gráfico acima facilmente
 # Com a função "ggplotly" (alguns ajustes podem ser requeridos como o scales = "free")
 
@@ -641,8 +732,11 @@ base_analise %>%
   geom_density(alpha = 0.5) +
   facet_wrap(~variavel, scales = "free") +
   labs(fill = "Review Alto")
+```
 
+![Densidade de log(preço), log(frete sobre preço) e dias de antecipação na entrega, por review alto](figs/olist_charts/21_final_facet_density.png)
 
+```r
 # salva a base de Dados para modelagem posterior
 
 base_model <- base_analise %>%

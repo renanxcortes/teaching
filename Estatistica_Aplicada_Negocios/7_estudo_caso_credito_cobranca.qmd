@@ -223,26 +223,56 @@ introduce(combinado)
 
 # Visão geral do dataset
 plot_intro(combinado)
+```
 
+![Resumo geral do conjunto de dados (introduce / plot_intro)](figs/credito_charts/01_plot_intro.png)
+
+```r
 # Estrutura e tipos das variáveis
 plot_str(combinado)
+```
 
+`plot_str()` gera um diagrama de árvore (via `igraph`) com a estrutura aninhada de tipos de colunas — não reproduzido nesta página por não ser, tecnicamente, um gráfico `ggplot2`.
+
+```r
 # Verificação de valores ausentes
 plot_missing(combinado)
 # E muito comum no meio de banco a informação de ocupação ser a mais "pobre" em termos de dados "confiáveis", tanto em termos de missing quanto de atualização. As pessoas em geral, trocam de emprego com alta frequência.
+```
 
+![Verificação de valores ausentes (plot_missing)](figs/credito_charts/02_plot_missing.png)
+
+Confirmando o comentário do script: `OCCUPATION_TYPE` é, de fato, a única coluna com valores ausentes na base combinada (cerca de 30%) — um exemplo prático do tipo de inconsistência discutido na página de [Desafios de Bases Alinhadas ao Negócio](4_desafios_base_negocio.qmd).
+
+```r
 # Distribuição da variável resposta
 plot_bar(combinado["y"])
+```
 
+![Distribuição da variável resposta (plot_bar)](figs/credito_charts/03_plot_bar_y.png){width="50%"}
+
+```r
 # Distribuição das variáveis numéricas
 plot_histogram(combinado)
+```
 
+![Distribuição das variáveis numéricas (plot_histogram)](figs/credito_charts/04_plot_histogram.png)
+
+```r
 # Distribuição das variáveis categóricas
 plot_bar(combinado)
+```
 
+![Distribuição das variáveis categóricas — top 10 classes por variável (plot_bar)](figs/credito_charts/05_plot_bar_categorical.png)
+
+```r
 # Correlação entre variáveis numéricas
 plot_correlation(combinado)
+```
 
+![Correlação entre variáveis numéricas (plot_correlation)](figs/credito_charts/06_plot_correlation.png){width="70%"}
+
+```r
 # Comparação das variáveis numéricas por classe
 plot_boxplot(combinado, by = "y")
 
@@ -250,7 +280,9 @@ plot_boxplot(combinado, by = "y")
 # create_report(combinado)
 ```
 
-Vale notar o comentário do próprio script sobre a variável de ocupação (`OCCUPATION_TYPE`): é comum, em bases de crédito, que justamente esse tipo de variável cadastral seja a mais "suja"/desatualizada, já que pessoas trocam de emprego com frequência — um exemplo prático do tipo de inconsistência discutido na página de [Desafios de Bases Alinhadas ao Negócio](4_desafios_base_negocio.qmd).
+![Comparação das variáveis numéricas por classe (plot_boxplot, by = "y")](figs/credito_charts/07_plot_boxplot_by_y.png)
+
+Todos os gráficos acima foram gerados a partir da base real (`application_record.csv` + `credit_record.csv`, já com a mesma regra de negócio de duplicidade e construção do *y* mostrada acima) — e confirmam, na prática, o comentário do próprio script sobre a variável de ocupação (`OCCUPATION_TYPE`): é comum, em bases de crédito, que justamente esse tipo de variável cadastral seja a mais "suja"/desatualizada, já que pessoas trocam de emprego com frequência.
 
 # Modelagem
 
