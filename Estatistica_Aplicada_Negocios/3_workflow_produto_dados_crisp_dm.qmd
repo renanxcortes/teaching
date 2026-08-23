@@ -28,7 +28,7 @@ E o processo operacional? Um "produto de dados" não precisa ser necessariamente
 >
 > Fonte: Wickham, Hadley, and Garrett Grolemund. *R for Data Science: import, tidy, transform, visualize, and model data*. O'Reilly Media, Inc., 2016.
 
-![Diagrama do processo operacional de um projeto de dados até o deploy](figs/parte2/parte2_slide004_img015.png)
+![Diagrama do processo operacional de um projeto de dados (Import, Tidy, Transform, Visualise, Model, Communicate), do livro *R for Data Science*, de Hadley Wickham](figs/parte2/parte2_slide004_img010.png)
 
 Slides originais disponíveis [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/2_workflow_crisp_dm.pdf).
 
@@ -195,6 +195,20 @@ Checar se o modelo estimado atende ao problema de negócio:
 # Etapa 6.1 — Implantação/Deploy em Produção
 
 Um modelo pode ser exposto de maneira assíncrona (em batch/offline) ou síncrona (online). Nesta etapa, provavelmente haverá atuação de outras equipes — MLOps, DevOps, Engenheiros de Dados — para auxiliar na implantação ou no pipeline de geração dos dados. Ferramentas potenciais: MLflow, Amazon SageMaker, etc.
+
+Alguns exemplos de tecnologias comumente associadas à etapa de deploy:
+
+::: {layout-ncol=5}
+![Docker](figs/parte2/parte2_slide004_img016.png)
+
+![FastAPI](figs/parte2/parte2_slide004_img017.png)
+
+![plumber](figs/parte2/parte2_slide004_img018.png)
+
+![Jenkins](figs/parte2/parte2_slide004_img019.png)
+
+![Kubernetes](figs/parte2/parte2_slide004_img015.png)
+:::
 
 # Etapa 6.2 — Monitoramento
 

@@ -384,8 +384,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figs/parte2/parte2_slide004_img015.png" class="img-fluid figure-img"></p>
-<figcaption>Diagrama do processo operacional de um projeto de dados até o deploy</figcaption>
+<p><img src="figs/parte2/parte2_slide004_img010.png" class="img-fluid figure-img"></p>
+<figcaption>Diagrama do processo operacional de um projeto de dados (Import, Tidy, Transform, Visualise, Model, Communicate), do livro <em>R for Data Science</em>, de Hadley Wickham</figcaption>
 </figure>
 </div>
 <p>Slides originais disponíveis <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/2_workflow_crisp_dm.pdf">AQUI</a>.</p>
@@ -553,6 +553,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="etapa-6.1-implantaçãodeploy-em-produção" class="level1">
 <h1>Etapa 6.1 — Implantação/Deploy em Produção</h1>
 <p>Um modelo pode ser exposto de maneira assíncrona (em batch/offline) ou síncrona (online). Nesta etapa, provavelmente haverá atuação de outras equipes — MLOps, DevOps, Engenheiros de Dados — para auxiliar na implantação ou no pipeline de geração dos dados. Ferramentas potenciais: MLflow, Amazon SageMaker, etc.</p>
+<p>Alguns exemplos de tecnologias comumente associadas à etapa de deploy:</p>
+<div class="quarto-layout-panel" data-layout-ncol="5">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte2/parte2_slide004_img016.png" class="img-fluid figure-img"></p>
+<figcaption>Docker</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte2/parte2_slide004_img017.png" class="img-fluid figure-img"></p>
+<figcaption>FastAPI</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte2/parte2_slide004_img018.png" class="img-fluid figure-img"></p>
+<figcaption>plumber</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte2/parte2_slide004_img019.png" class="img-fluid figure-img"></p>
+<figcaption>Jenkins</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte2/parte2_slide004_img015.png" class="img-fluid figure-img"></p>
+<figcaption>Kubernetes</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="etapa-6.2-monitoramento" class="level1">
 <h1>Etapa 6.2 — Monitoramento</h1>
