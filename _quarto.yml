@@ -30,12 +30,12 @@ website:
         href: index.qmd
       - text: "Temas"
         menu:
+          - sidebar:est_neg
           - sidebar:met_est
           - sidebar:int_prob
           - sidebar:probabilidade_B
           - sidebar:modelos_lineares
           - sidebar:multivariada
-          - sidebar:est_neg
 
   sidebar:
     - id: est_neg
