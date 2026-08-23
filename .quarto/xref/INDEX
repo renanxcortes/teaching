@@ -43,5 +43,38 @@
   },
   "Metodos_Estatisticos/2_descritiva_medidas.qmd": {
     "2_descritiva_medidas.html": "243a78a9"
+  },
+  "Estatistica_Aplicada_Negocios/10_estudo_caso_dashboards_looker_studio.qmd": {
+    "10_estudo_caso_dashboards_looker_studio.html": "2ac31c97"
+  },
+  "Estatistica_Aplicada_Negocios/11_estudo_caso_deteccao_fraudes_clustering.qmd": {
+    "11_estudo_caso_deteccao_fraudes_clustering.html": "f481619e"
+  },
+  "Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.qmd": {
+    "1_apresentacao_da_disciplina.html": "c560f46f"
+  },
+  "Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.qmd": {
+    "2_introducao_teorica_estatistica_negocios.html": "548652fb"
+  },
+  "Estatistica_Aplicada_Negocios/3_workflow_produto_dados_crisp_dm.qmd": {
+    "3_workflow_produto_dados_crisp_dm.html": "58c0fec6"
+  },
+  "Estatistica_Aplicada_Negocios/4_desafios_base_negocio.qmd": {
+    "4_desafios_base_negocio.html": "de70bfc0"
+  },
+  "Estatistica_Aplicada_Negocios/5_desafios_base_operacional.qmd": {
+    "5_desafios_base_operacional.html": "a5b95cd8"
+  },
+  "Estatistica_Aplicada_Negocios/6_estudo_caso_ecommerce_olist.qmd": {
+    "6_estudo_caso_ecommerce_olist.html": "a89210e2"
+  },
+  "Estatistica_Aplicada_Negocios/7_estudo_caso_credito_cobranca.qmd": {
+    "7_estudo_caso_credito_cobranca.html": "6f50bed2"
+  },
+  "Estatistica_Aplicada_Negocios/8_estudo_caso_imoveis.qmd": {
+    "8_estudo_caso_imoveis.html": "c3bceaa3"
+  },
+  "Estatistica_Aplicada_Negocios/9_estudo_caso_setor_publico.qmd": {
+    "9_estudo_caso_setor_publico.html": "6935eece"
   }
 }

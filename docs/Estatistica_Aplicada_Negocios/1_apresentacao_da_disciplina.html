@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estatística descritiva - medidas – Teaching</title>
+<title>Apresentação da Disciplina – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -144,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística descritiva - medidas</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">Apresentação</a></li><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">Apresentação da Disciplina</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -171,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Área 1</span></a>
+ <span class="menu-text">Apresentação</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,14 +208,112 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introdução à Estatística e análise exploratória de dados</span></a>
+  <a href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Apresentação da Disciplina</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução Teórica (Semanas 1-2)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introdução Teórica da Estatística no Mundo dos Negócios</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workflow de um Produto de Dados (Semanas 3-4)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/3_workflow_produto_dados_crisp_dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Workflow de um Produto de Dados: metodologia CRISP-DM</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Desafios de Bases de Dados (Semanas 5-7)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/4_desafios_base_negocio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Desafios de Criação de Bases de Dados Alinhadas ao Problema de Negócio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Metodos_Estatisticos/2_descritiva_medidas.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Estatística descritiva - medidas</span></a>
+  <a href="../Estatistica_Aplicada_Negocios/5_desafios_base_operacional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Desafios de Criação de Bases de Dados do Ponto de Vista Operacional</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Técnicas Estatísticas em Diferentes Contextos (Semanas 8-18)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/6_estudo_caso_ecommerce_olist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: E-commerce (Olist)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/7_estudo_caso_credito_cobranca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Crédito e Cobrança</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/8_estudo_caso_imoveis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Precificação de Imóveis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/9_estudo_caso_setor_publico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Setor Público</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/10_estudo_caso_dashboards_looker_studio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Dashboards (Looker Studio)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/11_estudo_caso_deteccao_fraudes_clustering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Detecção de Fraudes e Segmentação de Clientes (Clustering)</span></a>
   </div>
 </li>
       </ul>
@@ -201,16 +328,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
+  <ul class="collapse">
+  <li><a href="#conteúdo-programático-visão-geral" id="toc-conteúdo-programático-visão-geral" class="nav-link" data-scroll-target="#conteúdo-programático-visão-geral">Conteúdo programático (visão geral)</a></li>
+  <li><a href="#critérios-de-avaliação" id="toc-critérios-de-avaliação" class="nav-link" data-scroll-target="#critérios-de-avaliação">Critérios de avaliação</a></li>
+  <li><a href="#recuperação" id="toc-recuperação" class="nav-link" data-scroll-target="#recuperação">Recuperação</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística descritiva - medidas</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">Apresentação</a></li><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">Apresentação da Disciplina</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Estatística descritiva - medidas</h1>
+<h1 class="title">Apresentação da Disciplina</h1>
 </div>
 
 
@@ -229,9 +361,50 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
-<p>Material presente em <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_3_a_4.pptx">AQUI</a></p>
+<p>A disciplina <strong>Estatística Aplicada a Negócios</strong> (MAT02053) tem como objetivo capacitar, em nível introdutório, os(as) discentes nos principais conceitos do mundo dos negócios relacionados a produtos e desafios de dados, bem como na aplicação de técnicas estatísticas para a análise e resolução de problemas presentes em contextos do mercado de trabalho.</p>
+<p><strong>Súmula:</strong> Análise estatística de casos práticos do mercado de trabalho. Ligação entre Técnicas Estatísticas, Ferramentas Computacionais e Problemas de Negócios.</p>
+<section id="conteúdo-programático-visão-geral" class="level2">
+<h2 class="anchored" data-anchor-id="conteúdo-programático-visão-geral">Conteúdo programático (visão geral)</h2>
+<ul>
+<li><strong>Semanas 1 a 2</strong> — Introdução teórica da estatística no mundo dos negócios</li>
+<li><strong>Semanas 3 a 4</strong> — Workflow de um produto de dados (metodologia CRISP-DM)</li>
+<li><strong>Semana 5</strong> — Desafios de criação de bases de dados alinhadas ao problema de negócio</li>
+<li><strong>Semanas 6 a 7</strong> — Desafios de criação de bases de dados do ponto de vista operacional</li>
+<li><strong>Semanas 8 a 18</strong> — Técnicas estatísticas aplicadas em diferentes contextos (estudos de caso)</li>
+</ul>
+</section>
+<section id="critérios-de-avaliação" class="level2">
+<h2 class="anchored" data-anchor-id="critérios-de-avaliação">Critérios de avaliação</h2>
+<p>Os critérios de avaliação desta disciplina incluem a realização das seguintes tarefas, com os respectivos pesos:</p>
+<ul>
+<li><strong>Trabalho</strong> — peso 0,6</li>
+<li><strong>Prova</strong> — peso 0,4</li>
+</ul>
+<p>A Média Final (MF) é calculada como a média ponderada do trabalho e da prova. O conceito final é atribuído da seguinte maneira:</p>
+<ul>
+<li>Conceito A para MF ≥ 9,0</li>
+<li>Conceito B para 7,5 ≤ MF &lt; 9,0</li>
+<li>Conceito C para 6,0 ≤ MF &lt; 7,5</li>
+<li>Conceito D para MF &lt; 6,0</li>
+<li>Conceito FF caso a frequência seja inferior a 75% da carga horária prevista no plano da disciplina</li>
+</ul>
+<p>Sobre o trabalho: o(a) aluno(a) deve escolher <strong>uma</strong> das duas opções abaixo (instruções completas e links de postagem no Moodle da disciplina):</p>
+<ul>
+<li><strong>Opção 1</strong>: Relatório de Impressões</li>
+<li><strong>Opção 2</strong>: Relatório de Análise de Dados</li>
+</ul>
+</section>
+<section id="recuperação" class="level2">
+<h2 class="anchored" data-anchor-id="recuperação">Recuperação</h2>
+<p>Os alunos que não atingirem o conceito mínimo para aprovação poderão fazer uma (única) avaliação de recuperação, presencial, abrangendo todo o conteúdo programático da disciplina. A nova Média Final é calculada como:</p>
+<p><span class="math display">\[
+\text{Média final após recuperação} = (0{,}4 \times MF) + (0{,}6 \times \text{Nota da avaliação de recuperação})
+\]</span></p>
+<p>Note a importância da consistência ao longo do semestre para garantir uma boa MF antes mesmo de se pensar em recuperação.</p>
+<p>Os slides de apresentação da disciplina (ementa, metodologia, critérios de avaliação, cronograma) estão disponíveis <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/apresentacao_da_disciplina.pdf">AQUI</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -640,4 +813,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>

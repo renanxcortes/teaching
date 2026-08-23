@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introdução Teórica da Estatística no Mundo dos Negócios – Teaching</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../figs/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-eef78bce6e6d37c27bc985c3ac861da9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Teaching</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-temas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Temas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-temas">    
+        <li>
+    <a class="dropdown-item" href="../Metodos_Estatisticos/1_introducao_exploratoria.html">
+ <span class="dropdown-text">Métodos Estatísticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Int_Prob/1_experimento_aleatorio.html">
+ <span class="dropdown-text">Introdução à Probabilidade</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Probabilidade_B/LGN.html">
+ <span class="dropdown-text">Probabilidade Avançada</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Modelos_Lineares/paradoxo_simpson.html">
+ <span class="dropdown-text">Modelos Lineares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Multivariada/Componentes_Principais.html">
+ <span class="dropdown-text">Análise Multivariada</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.html">Introdução Teórica (Semanas 1-2)</a></li><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.html">Introdução Teórica da Estatística no Mundo dos Negócios</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apresentação</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação da Disciplina</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução Teórica (Semanas 1-2)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introdução Teórica da Estatística no Mundo dos Negócios</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workflow de um Produto de Dados (Semanas 3-4)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/3_workflow_produto_dados_crisp_dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Workflow de um Produto de Dados: metodologia CRISP-DM</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Desafios de Bases de Dados (Semanas 5-7)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/4_desafios_base_negocio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Desafios de Criação de Bases de Dados Alinhadas ao Problema de Negócio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/5_desafios_base_operacional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Desafios de Criação de Bases de Dados do Ponto de Vista Operacional</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Técnicas Estatísticas em Diferentes Contextos (Semanas 8-18)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/6_estudo_caso_ecommerce_olist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: E-commerce (Olist)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/7_estudo_caso_credito_cobranca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Crédito e Cobrança</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/8_estudo_caso_imoveis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Precificação de Imóveis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/9_estudo_caso_setor_publico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Setor Público</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/10_estudo_caso_dashboards_looker_studio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Dashboards (Looker Studio)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Estatistica_Aplicada_Negocios/11_estudo_caso_deteccao_fraudes_clustering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estudo de Caso: Detecção de Fraudes e Segmentação de Clientes (Clustering)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#papéis-e-profissionais-da-área-de-dados" id="toc-papéis-e-profissionais-da-área-de-dados" class="nav-link" data-scroll-target="#papéis-e-profissionais-da-área-de-dados">Papéis e Profissionais da Área de Dados</a></li>
+  <li><a href="#conceitos-tecnológicos" id="toc-conceitos-tecnológicos" class="nav-link" data-scroll-target="#conceitos-tecnológicos">Conceitos Tecnológicos</a>
+  <ul class="collapse">
+  <li><a href="#data-vs.-big-data" id="toc-data-vs.-big-data" class="nav-link" data-scroll-target="#data-vs.-big-data">Data vs.&nbsp;Big Data</a></li>
+  <li><a href="#data-lake" id="toc-data-lake" class="nav-link" data-scroll-target="#data-lake">Data Lake</a></li>
+  <li><a href="#computação-em-nuvem" id="toc-computação-em-nuvem" class="nav-link" data-scroll-target="#computação-em-nuvem">Computação em Nuvem</a></li>
+  <li><a href="#etl" id="toc-etl" class="nav-link" data-scroll-target="#etl">ETL</a></li>
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
+  <li><a href="#spark" id="toc-spark" class="nav-link" data-scroll-target="#spark">Spark</a></li>
+  <li><a href="#dashboards" id="toc-dashboards" class="nav-link" data-scroll-target="#dashboards">Dashboards</a></li>
+  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine Learning</a>
+  <ul class="collapse">
+  <li><a href="#overfitting-e-underfitting" id="toc-overfitting-e-underfitting" class="nav-link" data-scroll-target="#overfitting-e-underfitting">Overfitting e Underfitting</a></li>
+  </ul></li>
+  <li><a href="#implantaçãodeploy" id="toc-implantaçãodeploy" class="nav-link" data-scroll-target="#implantaçãodeploy">Implantação/Deploy</a></li>
+  <li><a href="#llm" id="toc-llm" class="nav-link" data-scroll-target="#llm">LLM</a></li>
+  <li><a href="#genai" id="toc-genai" class="nav-link" data-scroll-target="#genai">GenAI</a>
+  <ul class="collapse">
+  <li><a href="#gpts" id="toc-gpts" class="nav-link" data-scroll-target="#gpts">GPTs</a></li>
+  </ul></li>
+  <li><a href="#exemplos-de-ferramentas-de-uma-data-scientist" id="toc-exemplos-de-ferramentas-de-uma-data-scientist" class="nav-link" data-scroll-target="#exemplos-de-ferramentas-de-uma-data-scientist">Exemplos de ferramentas de um(a) Data Scientist</a></li>
+  </ul></li>
+  <li><a href="#jargões-de-negócio" id="toc-jargões-de-negócio" class="nav-link" data-scroll-target="#jargões-de-negócio">Jargões de Negócio</a>
+  <ul class="collapse">
+  <li><a href="#kpis" id="toc-kpis" class="nav-link" data-scroll-target="#kpis">KPIs</a></li>
+  <li><a href="#mvp" id="toc-mvp" class="nav-link" data-scroll-target="#mvp">MVP</a></li>
+  <li><a href="#metodologia-ágil" id="toc-metodologia-ágil" class="nav-link" data-scroll-target="#metodologia-ágil">Metodologia Ágil</a></li>
+  </ul></li>
+  <li><a href="#considerações-mercado-vs.-academia" id="toc-considerações-mercado-vs.-academia" class="nav-link" data-scroll-target="#considerações-mercado-vs.-academia">Considerações Mercado vs.&nbsp;Academia</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.html">Introdução Teórica (Semanas 1-2)</a></li><li class="breadcrumb-item"><a href="../Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.html">Introdução Teórica da Estatística no Mundo dos Negócios</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Introdução Teórica da Estatística no Mundo dos Negócios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>Antes de aplicar técnicas estatísticas em contextos de negócios, é importante situar o vocabulário e os principais conceitos utilizados no mercado de trabalho ao redor de dados: <strong>Papéis e Profissionais da Área de Dados</strong>, <strong>Conceitos Tecnológicos</strong> e <strong>Jargões de Negócio</strong>, encerrando com uma reflexão sobre <strong>Mercado vs.&nbsp;Academia</strong>.</p>
+<p>Slides originais disponíveis <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/1_introducao_teorica.pdf">AQUI</a>.</p>
+</section>
+<section id="papéis-e-profissionais-da-área-de-dados" class="level1">
+<h1>Papéis e Profissionais da Área de Dados</h1>
+<p>Qual a diferença entre os papéis e profissionais da área de dados (Cientista, Analista, Engenheiro, etc.)? Antes de responder, vale um contexto histórico sobre como esses papéis surgiram e ganharam destaque.</p>
+<blockquote class="blockquote">
+<p>“the sexiest job in the next 10 years will be statisticians.” — Hal Varian (2009), economista-chefe do Google de 2002 até agosto de 2025 (aposentou-se).</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide004_img010.jpg" class="img-fluid figure-img" width="300"></p>
+<figcaption>Foto ilustrativa associada à citação de Hal Varian</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>“Statistics is now the sexiest job around” — Hans Rosling (2011), em documentário da BBC.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide005_img013.jpg" class="img-fluid figure-img" width="300"></p>
+<figcaption>Foto ilustrativa associada à citação de Hans Rosling</figcaption>
+</figure>
+</div>
+<p>Em outubro de 2012, Thomas H. Davenport e D.J. Patil publicaram o famoso artigo <em>“Data Scientist: The Sexiest Job of the 21st Century”</em>, no qual afirmam:</p>
+<blockquote class="blockquote">
+<p>“Cientistas de Dados hoje são como os <em>quants</em> de Wall Street nas décadas de 80 e 90.”</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide006_img017.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração relacionada ao artigo Data Scientist: The Sexiest Job of the 21st Century</figcaption>
+</figure>
+</div>
+<p>Mas, apesar de tanto destaque na mídia:</p>
+<blockquote class="blockquote">
+<p>“Não existe espaço para heroísmo em Data Science” — Neylson Crepalde (2020), Data Scientist e Sr.&nbsp;Generative AI Strategist @ AWS | PhD</p>
+</blockquote>
+<p>Ou seja: existe de fato esse profissional “unicórnio” no mercado? E será que as empresas sabem como procurá-lo?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide010_img030.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração sobre a dificuldade de definir e recrutar o perfil de Cientista de Dados</figcaption>
+</figure>
+</div>
+<p>Evidentemente que existe muita intersecção entre os papéis de Cientista, Analista e Engenheiro de Dados:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide011_img031.png" class="img-fluid figure-img"></p>
+<figcaption>Diagrama comparando os papéis de Cientista de Dados, Analista de Dados e Engenheiro de Dados</figcaption>
+</figure>
+</div>
+<p>Eventualmente, por exemplo, um(a) Cientista de Dados pode desempenhar o papel (fala-se muito em “usar o chapéu”) de um(a) Engenheiro(a) de Dados, ou vice-versa. No entanto, é importante ter estas distinções claras para saber qual a responsabilidade “principal” de cada profissional envolvido.</p>
+<p>Outros termos também aparecem no mundo dos negócios, como Analistas de BI e Analistas de Negócios. O termo <strong>Business Intelligence (BI)</strong>, de acordo com a IBM, é:</p>
+<blockquote class="blockquote">
+<p>“Business intelligence (BI) is a set of technological processes for collecting, managing and analyzing organizational data to yield insights that inform business strategies and operations. Business intelligence analysts transform raw data into meaningful insights that drive strategic decision-making within an organization.”</p>
+<p>Fonte: <a href="https://www.ibm.com/think/topics/business-intelligence">ibm.com/think/topics/business-intelligence</a></p>
+</blockquote>
+<p>Note que BI tem mais relação com a pergunta <em>“O que aconteceu?”</em> do que com a pergunta <em>“O que vai acontecer?”</em>. Logo, tem mais relação com Analistas de Dados do que com Cientistas de Dados.</p>
+<p>Mais recentemente, outros termos também apareceram no mercado, como <em>Data Steward</em>, Engenheiro de IA, Engenheiro de ML, Engenheiro de Prompt, Engenheiro de Analytics, MLOps, DevOps, FinOps, etc. Enfim, o mundo dos negócios é muito criativo em ficar dando nomes pras coisas, criando <em>hypes</em>, etc. — mas tente não surtar com tantos termos nesse início de disciplina.</p>
+</section>
+<section id="conceitos-tecnológicos" class="level1">
+<h1>Conceitos Tecnológicos</h1>
+<p>Que tipo de tecnologia é utilizada no mundo dos negócios? Alguns dos principais conceitos abordados nesta seção:</p>
+<p>Big Data · Data Lake · Computação em Nuvem · ETL · SQL · Spark · Dashboards · Machine Learning · Implantação/Deploy · LLM · GenAI</p>
+<section id="data-vs.-big-data" class="level2">
+<h2 class="anchored" data-anchor-id="data-vs.-big-data">Data vs.&nbsp;Big Data</h2>
+<p><strong>Big Data</strong>: “estudo e aplicações de dados que são muito complexos para software de processamento de dados tradicionais” (Wikipedia). A pergunta que fica é: será que sempre precisamos de novas ferramentas para lidar com esse cenário? Um <a href="https://www.theverge.com/2020/10/5/21502141/uk-missing-coronavirus-cases-excel-spreadsheet-error">famoso caso na Inglaterra</a> mostrou o problema de tentar lidar com uma quantidade de dados grande demais para uma ferramenta como o Excel durante a pandemia de COVID-19, resultando na perda de milhares de casos da contagem oficial.</p>
+<p>Os <strong>3 V’s (ou 5) do Big Data</strong>:</p>
+<ul>
+<li>Volume</li>
+<li>Velocidade</li>
+<li>Variedade</li>
+<li>Valor</li>
+<li>Veracidade</li>
+</ul>
+<p>Qual a infraestrutura necessária para lidar com essa quantidade de dados? Isso nos leva a um novo paradoxo — e, lembre-se, “não existe heroísmo em Data Science”: nem todo problema de negócio precisa, de fato, de ferramentas de Big Data.</p>
+</section>
+<section id="data-lake" class="level2">
+<h2 class="anchored" data-anchor-id="data-lake">Data Lake</h2>
+<p>Segundo a Google: “Um data lake é um repositório centralizado, escalonável e seguro projetado para armazenar, processar e analisar grandes quantidades de dados estruturados, semiestruturados e não estruturados no formato nativo.” (Fonte: <a href="https://cloud.google.com/learn/what-is-a-data-lake">cloud.google.com/learn/what-is-a-data-lake</a>)</p>
+<p>Na prática, é um conjunto de tabelas mais genérico que abrange uma grande possibilidade/variedade de tipos de dados, sem uma estrutura de “conexão” entre as tabelas bem definida.</p>
+<p>Quem mantém a “qualidade” de um Data Lake são, em geral, Engenheiros de Dados. Você interage com Data Lakes de maneira “remota”: você não trabalha localmente com um Data Lake, mas sim através de uma interface, pois ele fica na nuvem. A interação com os dados é feita com frameworks que rodam em <em>clusters</em> de computadores, devido à quantidade massiva de dados.</p>
+</section>
+<section id="computação-em-nuvem" class="level2">
+<h2 class="anchored" data-anchor-id="computação-em-nuvem">Computação em Nuvem</h2>
+<p>Computação em Nuvem (<em>Cloud Computing</em>), segundo a Amazon, é “…a entrega de recursos de TI sob demanda por meio da Internet com preço conforme o uso. Em vez de comprar, ter e manter data centers e servidores físicos, você pode acessar serviços de tecnologia, como capacidade computacional, armazenamento e bancos de dados, conforme a necessidade, usando um provedor de nuvem…” (Fonte: <a href="https://aws.amazon.com/pt/what-is-cloud-computing/">aws.amazon.com/pt/what-is-cloud-computing</a>)</p>
+<p>Trabalhar “na Nuvem” é o oposto de trabalhar “localmente”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide026_img065.jpg" class="img-fluid figure-img"></p>
+<figcaption>Datacenter do Facebook no Ártico, exemplo de infraestrutura física por trás da computação em nuvem</figcaption>
+</figure>
+</div>
+</section>
+<section id="etl" class="level2">
+<h2 class="anchored" data-anchor-id="etl">ETL</h2>
+<p><strong>ETL</strong> é a sigla para <em>Extract, Transform and Load</em> (Fonte: <a href="https://wiki.databurst.tech/docs/roadmap/data-integration/etl/">wiki.databurst.tech</a>):</p>
+<ol type="1">
+<li><strong>Extract</strong>: extrair os dados de diferentes fontes de maneira mais “bruta”</li>
+<li><strong>Transform</strong>: processar/transformar/organizar os dados extraídos para serem “utilizáveis”</li>
+<li><strong>Load</strong>: depositar os dados transformados em uma base para uso posterior</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide027_img068.png" class="img-fluid figure-img"></p>
+<figcaption>Diagrama do processo ETL: Extract, Transform, Load</figcaption>
+</figure>
+</div>
+<p>Por mais que esse conceito esteja mais presente em processos de pipelines de Engenharia de Dados, essa “lógica” de trabalhar com dados está no dia a dia de praticamente qualquer profissional de dados (Cientistas, Analistas, etc.). Lembre-se: você praticamente <strong>nunca</strong> vai receber uma base pronta para um modelo/análise trabalhar diretamente.</p>
+<p>Esse conceito de “níveis de qualidade” de um dado está bastante presente nas tabelas disponibilizadas para os times de dados — é comum um Data Lake apresentar “camadas” (a chamada <a href="https://piethein.medium.com/medallion-architecture-best-practices-for-managing-bronze-silver-and-gold-486de7c90055">arquitetura <em>medalhão</em></a>: <em>bronze</em>, <em>silver</em> e <em>gold</em>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide029_img074.jpg" class="img-fluid figure-img"></p>
+<figcaption>Ilustração da arquitetura medalhão (bronze, silver, gold) de camadas de qualidade de dados</figcaption>
+</figure>
+</div>
+</section>
+<section id="sql" class="level2">
+<h2 class="anchored" data-anchor-id="sql">SQL</h2>
+<p><strong>SQL</strong> é a sigla para <em>Structured Query Language</em>. Pronuncia-se “éssiqueéle” ou até mesmo “siquou”. É a linguagem mais “padrão” para se interagir com bases de dados, tanto em <em>data warehouses</em> (relacionais) quanto em bases não-relacionais (como Data Lakes).</p>
+<p>SQL não é a única maneira de interagir com esses dados, mas é o framework mais utilizado. Existem diferentes programas para “executar” a linguagem SQL, como MySQL, PostgreSQL, Microsoft SQL Server, Oracle, etc. Algumas funções centrais: <code>SELECT</code>, <code>FROM</code>, <code>INNER JOIN</code>, <code>WHERE</code>.</p>
+</section>
+<section id="spark" class="level2">
+<h2 class="anchored" data-anchor-id="spark">Spark</h2>
+<p>Framework usado para dados distribuídos e processados em <em>clusters</em> de computadores.</p>
+<blockquote class="blockquote">
+<p>“Apache Spark is an open-source unified analytics engine for large-scale data processing. Spark provides an interface for programming clusters with implicit data parallelism and fault tolerance. Originally developed at the University of California, Berkeley’s AMPLab starting in 2009…”</p>
+<p>Fonte: <a href="https://en.wikipedia.org/wiki/Apache_Spark">en.wikipedia.org/wiki/Apache_Spark</a></p>
+</blockquote>
+<p>Principais interfaces: PySpark, sparklyr, SparkSQL.</p>
+</section>
+<section id="dashboards" class="level2">
+<h2 class="anchored" data-anchor-id="dashboards">Dashboards</h2>
+<blockquote class="blockquote">
+<p>“Um dashboard é uma interface visual que reúne métricas principais […] e visualizações de dados de uma ou mais fontes em uma única tela” (Databricks)</p>
+<p>Fonte: <a href="https://www.databricks.com/br/blog/what-are-dashboards">databricks.com/br/blog/what-are-dashboards</a></p>
+</blockquote>
+</section>
+<section id="machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning">Machine Learning</h2>
+<p>O aprendizado de máquina (<em>Machine Learning</em>, ML) é um subcampo da inteligência artificial no qual os computadores aprendem a partir de dados e identificam padrões. Em geral, pode ser um aprendizado <strong>supervisionado</strong> ou <strong>não supervisionado</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide035_img090.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração comparando aprendizado supervisionado e não supervisionado</figcaption>
+</figure>
+</div>
+<p>Alguns dos principais algoritmos:</p>
+<p><strong>Supervisionado</strong></p>
+<ul>
+<li>Classificação
+<ul>
+<li>Regressão Logística</li>
+<li><em>Support Vector Machines</em></li>
+</ul></li>
+<li>Regressão
+<ul>
+<li>Regressão Linear</li>
+<li>Regressão Ridge/Lasso</li>
+</ul></li>
+<li>Modelos Baseados em Árvore</li>
+<li>K-Nearest Neighbors</li>
+</ul>
+<p><strong>Não supervisionado</strong></p>
+<ul>
+<li>Análise de Componentes Principais</li>
+<li>Análise de Cluster
+<ul>
+<li>K-Means</li>
+<li>Hierárquico</li>
+</ul></li>
+<li>Escalonamento Multidimensional</li>
+</ul>
+<section id="overfitting-e-underfitting" class="level3">
+<h3 class="anchored" data-anchor-id="overfitting-e-underfitting">Overfitting e Underfitting</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide040_img103.jpg" class="img-fluid figure-img"></p>
+<figcaption>Ilustração de estratégias de validação para overfitting e underfitting: holdout e k-fold cross-validation</figcaption>
+</figure>
+</div>
+<p>Principais estratégias de validação:</p>
+<ul>
+<li><em>Holdout set</em> simples</li>
+<li><em>K-Fold Cross-Validation</em></li>
+</ul>
+<p>Se estamos em um cenário com muitos dados, podemos “nos dar ao luxo” de criar também uma amostra de validação apartada da amostra de teste.</p>
+<p>Fonte: Friedman, Jerome, Trevor Hastie, and Robert Tibshirani. <em>The elements of statistical learning</em>. Vol. 1. No.&nbsp;10. New York: Springer series in statistics, 2001.</p>
+<p>Leituras complementares: <a href="https://stats.stackexchange.com/questions/52274/how-to-choose-a-predictive-model-after-k-fold-cross-validation">How to Choose a Predictive Model After k-fold Cross-Validation</a> e <a href="https://machinelearningmastery.com/train-final-machine-learning-model/">How to Train a Final Machine Learning Model</a>.</p>
+</section>
+</section>
+<section id="implantaçãodeploy" class="level2">
+<h2 class="anchored" data-anchor-id="implantaçãodeploy">Implantação/Deploy</h2>
+<p>O modelo de Machine Learning não tem muita utilidade pro negócio se ele não for colocado em produção! “Colocar em produção” significa “expor” o modelo para fazer predições/inferências/decisões em dados reais que irão impactar o negócio — é uma parte extremamente crítica do processo de Ciência de Dados.</p>
+<p>Em geral, essa exposição pode ser feita de duas maneiras, a depender da natureza do problema e de como os <em>stakeholders</em> vão interagir com/analisar o modelo:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Em batch/Assíncrona</th>
+<th>Online/Real-Time/Síncrona</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dados preditos já calculados e só serão acessados em uma base</td>
+<td>Dados preditos serão calculados pelo modelo (exposto em uma API) em tempo real</td>
+</tr>
+</tbody>
+</table>
+<p>Nessa etapa, em geral, profissionais de MLOps (cientistas de dados ou engenheiros de software) auxiliam no processo. Muitos detalhes devem ser levados em consideração, como a maneira que os dados estão estruturados para o processo de inferência (“fazer o <em>predict</em>”). Após um modelo estar em produção, é importante monitorar sua qualidade e fazer perguntas como:</p>
+<ul>
+<li>As predições estão estáveis?</li>
+<li>Os dados de entrada estão estáveis ou apresentam <em>data drift</em>?</li>
+<li>A estrutura que sustenta o modelo está disponível e tempestiva?</li>
+</ul>
+<p>Um dos frameworks mais utilizados para gerenciar esse ciclo de vida é o <strong>MLflow</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide048_img126.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração do ciclo de vida de um modelo em produção com MLflow</figcaption>
+</figure>
+</div>
+<p>Vídeo complementar recomendado: assista à pergunta feita no segundo 37:55 <a href="https://www.youtube.com/watch?v=Lvt3hFQUhHY&amp;t=6s">deste vídeo</a>.</p>
+</section>
+<section id="llm" class="level2">
+<h2 class="anchored" data-anchor-id="llm">LLM</h2>
+<p>Do inglês <em>“Large Language Models”</em>:</p>
+<blockquote class="blockquote">
+<p>“A large language model (LLM) is a neural network trained on a vast amount of text for natural language processing tasks, especially language generation. LLMs can typically generate, summarize, translate, and analyze text in many contexts, and are a foundational technology behind modern chatbots.” (Wikipedia)</p>
+</blockquote>
+</section>
+<section id="genai" class="level2">
+<h2 class="anchored" data-anchor-id="genai">GenAI</h2>
+<p>De acordo com a Amazon: “A inteligência artificial generativa (GenAI) constitui uma modalidade de IA capaz de criar novos conteúdos e ideias, como diálogos, narrativas, imagens, vídeos e música. Ela pode aprender linguagem humana, linguagens de programação, arte, química, biologia ou qualquer assunto complexo.”</p>
+<p>A principal diferença da GenAI para a IA “tradicional” é que ela gera dados novos a partir de um modelo de machine learning <strong>probabilístico</strong>. A palavra “probabilística” advém do fato de que a geração do modelo assume uma “probabilidade” de estar correta (ex.: probabilidade da próxima palavra estar correta). Além disso, um modelo de GenAI pode gerar diferentes dados para o mesmo <em>input</em>/prompt.</p>
+<p>Em IA Generativa, o parâmetro de <strong>temperatura</strong> (<em>temperature</em>) é uma configuração que controla o grau de aleatoriedade, criatividade e previsibilidade das respostas geradas por um modelo.</p>
+<section id="gpts" class="level3">
+<h3 class="anchored" data-anchor-id="gpts">GPTs</h3>
+<p>GPT é uma arquitetura de modelo de linguagem baseada em <em>transformers</em> que utiliza aprendizado de máquina para gerar texto coerente e contextualmente relevante. É utilizado em uma variedade de tarefas de processamento de linguagem natural e visão computacional, como tradução, resumo e geração de texto, criação de imagens e vídeos. Aplicações comuns: ChatGPT, Perplexity, Gemini.</p>
+<p>Vídeo complementar recomendado sobre o processo de predição de um GPT: <a href="https://www.youtube.com/watch?v=wjZofJX0v4M&amp;t=1172s">assista aqui</a>.</p>
+</section>
+</section>
+<section id="exemplos-de-ferramentas-de-uma-data-scientist" class="level2">
+<h2 class="anchored" data-anchor-id="exemplos-de-ferramentas-de-uma-data-scientist">Exemplos de ferramentas de um(a) Data Scientist</h2>
+<p>O ecossistema de ferramentas de um(a) profissional de dados costuma ser dividido em algumas frentes:</p>
+<ul>
+<li><strong>Extração de Dados e Manipulação de Dados</strong> (ex.: SQL, R, Python, planilhas)</li>
+<li><strong>Visualização de Dados</strong> (ex.: Power BI, Tableau, Looker Studio)</li>
+<li><strong>Modelagem</strong> (ex.: bibliotecas de Machine Learning em R e Python)</li>
+<li><strong>Comunicação</strong> (ex.: relatórios, apresentações, dashboards)</li>
+<li><strong>Ferramentas de IA Generativa</strong> (ex.: assistentes de código, chatbots)</li>
+</ul>
+</section>
+</section>
+<section id="jargões-de-negócio" class="level1">
+<h1>Jargões de Negócio</h1>
+<p>Quais termos e jargões é possível encontrar no mundo dos negócios? Nesta seção: <strong>KPIs</strong>, <strong>MVP</strong> e <strong>Metodologia Ágil</strong>.</p>
+<section id="kpis" class="level2">
+<h2 class="anchored" data-anchor-id="kpis">KPIs</h2>
+<p><em>Key Performance Indicators</em> (indicadores-chave de desempenho). Note que KPIs são métricas de <strong>negócio</strong>, e não métricas técnicas. Por exemplo, a medida de qualidade de um modelo de ML (como AUC) não é considerada um KPI.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide059_img208.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração de KPIs de negócio</figcaption>
+</figure>
+</div>
+</section>
+<section id="mvp" class="level2">
+<h2 class="anchored" data-anchor-id="mvp">MVP</h2>
+<p>Do inglês <em>“Minimum Viable Product”</em> (produto mínimo viável).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide060_img211.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração do conceito de MVP (Produto Mínimo Viável)</figcaption>
+</figure>
+</div>
+</section>
+<section id="metodologia-ágil" class="level2">
+<h2 class="anchored" data-anchor-id="metodologia-ágil">Metodologia Ágil</h2>
+<p>É uma abordagem de gestão de projetos baseada em ciclos iterativos, entregas contínuas e flexibilidade. É um conceito concebido originalmente para desenvolvimento de software. Pode ser adaptado para ciência de dados, porém, devido à natureza mais imprevisível de se trabalhar com dados de negócio, é mais difícil adotar a metodologia ágil “ao pé da letra” nos fluxos de dados.</p>
+</section>
+</section>
+<section id="considerações-mercado-vs.-academia" class="level1">
+<h1>Considerações Mercado vs.&nbsp;Academia</h1>
+<p>Palestra complementar recomendada: <a href="https://www.youtube.com/watch?v=Lvt3hFQUhHY">Rodrigo Mello (UFSCar)</a>.</p>
+<p>E o futuro da nossa profissão? Opinião do professor: <strong>aprenda bem os fundamentos e mantenha-se atualizado(a)!</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/parte1/parte1_slide063_img222.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração de reflexão sobre o futuro da profissão de dados</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>

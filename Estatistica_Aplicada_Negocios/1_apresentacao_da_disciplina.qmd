@@ -30,4 +30,34 @@ A disciplina **Estatística Aplicada a Negócios** (MAT02053) tem como objetivo 
 - **Semanas 6 a 7** — Desafios de criação de bases de dados do ponto de vista operacional
 - **Semanas 8 a 18** — Técnicas estatísticas aplicadas em diferentes contextos (estudos de caso)
 
+## Critérios de avaliação
+
+Os critérios de avaliação desta disciplina incluem a realização das seguintes tarefas, com os respectivos pesos:
+
+- **Trabalho** — peso 0,6
+- **Prova** — peso 0,4
+
+A Média Final (MF) é calculada como a média ponderada do trabalho e da prova. O conceito final é atribuído da seguinte maneira:
+
+- Conceito A para MF ≥ 9,0
+- Conceito B para 7,5 ≤ MF < 9,0
+- Conceito C para 6,0 ≤ MF < 7,5
+- Conceito D para MF < 6,0
+- Conceito FF caso a frequência seja inferior a 75% da carga horária prevista no plano da disciplina
+
+Sobre o trabalho: o(a) aluno(a) deve escolher **uma** das duas opções abaixo (instruções completas e links de postagem no Moodle da disciplina):
+
+- **Opção 1**: Relatório de Impressões
+- **Opção 2**: Relatório de Análise de Dados
+
+## Recuperação
+
+Os alunos que não atingirem o conceito mínimo para aprovação poderão fazer uma (única) avaliação de recuperação, presencial, abrangendo todo o conteúdo programático da disciplina. A nova Média Final é calculada como:
+
+$$
+\text{Média final após recuperação} = (0{,}4 \times MF) + (0{,}6 \times \text{Nota da avaliação de recuperação})
+$$
+
+Note a importância da consistência ao longo do semestre para garantir uma boa MF antes mesmo de se pensar em recuperação.
+
 Os slides de apresentação da disciplina (ementa, metodologia, critérios de avaliação, cronograma) estão disponíveis [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/apresentacao_da_disciplina.pdf).
