@@ -1,0 +1,43 @@
+---
+title: "Introdução Teórica da Estatística no Mundo dos Negócios"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Antes de aplicar técnicas estatísticas em contextos de negócios, é importante situar o vocabulário e os principais conceitos utilizados no mercado de trabalho ao redor de dados. Esta parte da disciplina apresenta, em nível introdutório, termos como:
+
+- Análise de Dados
+- Ciência de Dados
+- Business Intelligence (BI)
+- Engenharia de Dados
+- Engenharia de Software
+- Big Data
+- ETL
+- SQL
+- Data Lake
+- Data Cloud
+- Dashboards
+- Machine Learning
+- Implantação/Deploy
+- LLM (Large Language Models)
+- GenAI (Inteligência Artificial Generativa)
+- KPI (Key Performance Indicator)
+- MVP (Minimum Viable Product)
+
+Esses conceitos formam a base de vocabulário necessária para transitar entre a estatística acadêmica e sua aplicação prática em produtos e problemas de negócio.
+
+Material presente em [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/1_introducao_teorica.pdf)

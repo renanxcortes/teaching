@@ -1,0 +1,25 @@
+---
+title: "Estudo de Caso: Precificação de Imóveis"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Este estudo de caso utiliza o [Housing Prices Dataset](https://www.kaggle.com/datasets/yasserh/housing-prices-dataset), disponível no Kaggle, com características de imóveis (área, número de quartos, banheiros, garagem, presença de porão, ar-condicionado, entre outras) e seu respectivo preço de venda.
+
+É um exemplo clássico de problema de **regressão** aplicado a negócios: como diferentes características observáveis de um imóvel se relacionam com o seu valor de mercado, e como essa relação pode apoiar decisões de precificação.
+
+Contexto de negócio relacionado: setor Imobiliário.

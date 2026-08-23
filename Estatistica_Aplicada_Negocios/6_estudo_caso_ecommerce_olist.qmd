@@ -1,0 +1,30 @@
+---
+title: "Estudo de Caso: E-commerce (Olist)"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Esta parte da disciplina (semanas 8 a 18) aplica técnicas estatísticas — estatística descritiva, dashboards, modelagem/machine learning, RFV — em diferentes contextos de negócio, como Seguro, Crédito e Cobrança, RH, Marketing, Vendas, CRM, Fraudes, Jurídico e Setor Público.
+
+Este estudo de caso utiliza o [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), uma base pública com cerca de 100 mil pedidos realizados entre 2016 e 2018 em múltiplos marketplaces no Brasil. A base é composta por diversas tabelas relacionais (pedidos, itens, pagamentos, avaliações, produtos, vendedores, clientes e geolocalização), o que a torna um bom exemplo prático de:
+
+- **Joins** entre múltiplas fontes/tabelas de um mesmo negócio
+- **Estatística descritiva** sobre vendas, frete e prazos de entrega
+- **Dashboards** de acompanhamento comercial e logístico
+- Potencial de **modelagem** (ex.: previsão de atraso de entrega, satisfação do cliente)
+
+Contextos de negócio relacionados: Vendas, Marketing, CRM.

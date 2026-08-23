@@ -1,0 +1,33 @@
+---
+title: "Apresentação da Disciplina"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+A disciplina **Estatística Aplicada a Negócios** (MAT02053) tem como objetivo capacitar, em nível introdutório, os(as) discentes nos principais conceitos do mundo dos negócios relacionados a produtos e desafios de dados, bem como na aplicação de técnicas estatísticas para a análise e resolução de problemas presentes em contextos do mercado de trabalho.
+
+**Súmula:** Análise estatística de casos práticos do mercado de trabalho. Ligação entre Técnicas Estatísticas, Ferramentas Computacionais e Problemas de Negócios.
+
+## Conteúdo programático (visão geral)
+
+- **Semanas 1 a 2** — Introdução teórica da estatística no mundo dos negócios
+- **Semanas 3 a 4** — Workflow de um produto de dados (metodologia CRISP-DM)
+- **Semana 5** — Desafios de criação de bases de dados alinhadas ao problema de negócio
+- **Semanas 6 a 7** — Desafios de criação de bases de dados do ponto de vista operacional
+- **Semanas 8 a 18** — Técnicas estatísticas aplicadas em diferentes contextos (estudos de caso)
+
+Os slides de apresentação da disciplina (ementa, metodologia, critérios de avaliação, cronograma) estão disponíveis [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/apresentacao_da_disciplina.pdf).

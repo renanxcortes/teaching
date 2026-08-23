@@ -1,0 +1,35 @@
+---
+title: "Estudo de Caso: Crédito e Cobrança"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Este estudo de caso utiliza a base [Credit Card Approval Prediction](https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction), disponível no Kaggle, composta por duas tabelas:
+
+- `application_record`: dados cadastrais dos solicitantes de cartão de crédito
+- `credit_record`: histórico mensal de pagamento (status de atraso) de cada cliente
+
+O desafio central é construir a própria variável resposta ("bom" ou "mau" pagador) a partir do histórico de pagamentos, para então modelar a concessão de crédito — um exemplo real de como, em problemas de negócio, o *y* de um modelo nem sempre está pronto na base.
+
+Pontos de destaque discutidos a partir deste caso:
+
+- Tratamento de **cadastros duplicados**
+- Cuidado com **data leakage**: a definição do *y* deve usar apenas informações prévias à concessão do crédito
+- Uso de `anti_join`/`inner_join` para compor a base final de modelagem
+- Variáveis sensíveis (raça, gênero, idade, religião, etc.) que são expressamente vedadas em modelos de crédito, tanto pela legislação norte-americana (*Equal Credit Opportunity Act*) quanto pela regulação do Banco Central do Brasil (BACEN)
+
+Contexto de negócio relacionado: Crédito e Cobrança.

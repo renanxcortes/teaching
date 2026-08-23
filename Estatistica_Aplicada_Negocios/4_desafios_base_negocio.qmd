@@ -1,0 +1,28 @@
+---
+title: "Desafios de Criação de Bases de Dados Alinhadas ao Problema de Negócio"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Nem todo desafio de uma base de dados é técnico: muitos deles nascem da própria organização do negócio. Esta parte da disciplina discute desafios como:
+
+- **Governança** de dados
+- **Descentralização** de fontes e responsabilidades
+- **Inconsistência/quebras de fontes** de dados ao longo do tempo
+- **Regras de negócio** que precisam estar refletidas (ou documentadas) na base
+
+Material presente em [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/3_desafios_base_negocio.pdf)

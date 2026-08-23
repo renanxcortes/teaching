@@ -1,0 +1,29 @@
+---
+title: "Desafios de Criação de Bases de Dados do Ponto de Vista Operacional"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Além dos desafios organizacionais, existem desafios mais operacionais/técnicos na construção de uma base de dados para um problema de negócio, tais como:
+
+- **Obtenção de dados**, potencialmente vindos de diferentes fontes/origens
+- **Combinação de diferentes bases de dados** (*joins*)
+- **Limpeza de dados** (*data cleaning*)
+- **Manipulação de dados** (*data wrangling*)
+- **Data leakage**: cuidado com o vazamento de informação futura (posterior ao evento que se quer prever) para dentro das variáveis explicativas de um modelo
+
+Material presente em [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/4_desafios_base_operacional.pdf)

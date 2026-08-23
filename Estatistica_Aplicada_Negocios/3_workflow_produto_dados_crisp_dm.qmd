@@ -1,0 +1,23 @@
+---
+title: "Workflow de um Produto de Dados: metodologia CRISP-DM"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Todo problema de negócio que envolva dados percorre, implícita ou explicitamente, um fluxo de trabalho (*workflow*). Nesta parte da disciplina, esse fluxo é estudado através da metodologia [CRISP-DM](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining) (*Cross Industry Standard Process for Data Mining*), que organiza um projeto de dados nas etapas de: entendimento do negócio, entendimento dos dados, preparação dos dados, modelagem, avaliação e implantação (*deployment*).
+
+Material presente em [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/slides/2_workflow_crisp_dm.pdf)

@@ -35,8 +35,37 @@ website:
           - sidebar:probabilidade_B
           - sidebar:modelos_lineares
           - sidebar:multivariada
+          - sidebar:est_neg
 
   sidebar:
+    - id: est_neg
+      title: "Estatística Aplicada a Negócios"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Apresentação"
+          contents:
+            - Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.qmd
+        - section: "Introdução Teórica (Semanas 1-2)"
+          contents:
+            - Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.qmd
+        - section: "Workflow de um Produto de Dados (Semanas 3-4)"
+          contents:
+            - Estatistica_Aplicada_Negocios/3_workflow_produto_dados_crisp_dm.qmd
+        - section: "Desafios de Bases de Dados (Semanas 5-7)"
+          contents:
+            - Estatistica_Aplicada_Negocios/4_desafios_base_negocio.qmd
+            - Estatistica_Aplicada_Negocios/5_desafios_base_operacional.qmd
+        - section: "Técnicas Estatísticas em Diferentes Contextos (Semanas 8-18)"
+          contents:
+            - Estatistica_Aplicada_Negocios/6_estudo_caso_ecommerce_olist.qmd
+            - Estatistica_Aplicada_Negocios/7_estudo_caso_credito_cobranca.qmd
+            - Estatistica_Aplicada_Negocios/8_estudo_caso_imoveis.qmd
+            - Estatistica_Aplicada_Negocios/9_estudo_caso_setor_publico.qmd
+            - Estatistica_Aplicada_Negocios/10_estudo_caso_dashboards_looker_studio.qmd
+            - Estatistica_Aplicada_Negocios/11_estudo_caso_deteccao_fraudes_clustering.qmd
+
     - id: met_est
       title: "Métodos Estatísticos"
       collapse-level: 2
