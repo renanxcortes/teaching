@@ -504,23 +504,23 @@
   {
     "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html",
     "href": "Metodos_Estatisticos/1_introducao_exploratoria.html",
-    "title": "Introdução à Estatística e análise exploratória de dados",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
     "section": "",
-    "text": "Introdução\nMaterial presente em AQUI",
+    "text": "Este material cobre as Semanas 1 e 2 do plano de ensino: noções gerais sobre Estatística, alfabetização científica, população e amostra, classificação de variáveis, níveis de mensuração, coleta e representação de dados, e distribuição de frequências (histograma e boxplot).\nSlides originais disponíveis AQUI.",
     "crumbs": [
-      "Área 1",
-      "Introdução à Estatística e análise exploratória de dados"
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
     ]
   },
   {
     "objectID": "Metodos_Estatisticos/2_descritiva_medidas.html",
     "href": "Metodos_Estatisticos/2_descritiva_medidas.html",
-    "title": "Estatística descritiva - medidas",
+    "title": "Estatística Descritiva - Medidas",
     "section": "",
-    "text": "Introdução\nMaterial presente em AQUI",
+    "text": "Este material cobre as Semanas 3 e 4 do plano de ensino: medidas de tendência central (moda, mediana, média), medidas de variabilidade (amplitude, variância, desvio padrão, coeficiente de variação), suas propriedades, e o tratamento de dados isolados ou agrupados em intervalos de classe.\nSlides originais disponíveis AQUI.\nDiferente das demais semanas, o material de aula para este bloco é propositalmente enxuto: o professor ancora esta parte da matéria diretamente no material de referência do site de Probabilidade e Estatística EAD da UFRGS — Descritiva: medidas descritivas — complementado por aplicativos interativos: Análise Exploratória de Dados e Média vs. Mediana (código-fonte dos demais aplicativos interativos disponível no Moodle). O resumo abaixo organiza os conceitos que serão trabalhados em aula, com exemplos aplicados às áreas de Agronomia e Zootecnia.",
     "crumbs": [
-      "Área 1",
-      "Estatística descritiva - medidas"
+      "Estatística Descritiva - Medidas",
+      "Estatística Descritiva - Medidas"
     ]
   },
   {
@@ -862,6 +862,688 @@
     "crumbs": [
       "Introdução Teórica (Semanas 1-2)",
       "Introdução Teórica da Estatística no Mundo dos Negócios"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/8_avaliacoes_e_recuperacao.html",
+    "href": "Metodos_Estatisticos/8_avaliacoes_e_recuperacao.html",
+    "title": "Avaliações e Recuperação",
+    "section": "",
+    "text": "Cronograma de avaliações\nDe acordo com o plano de ensino oficial (Período Letivo 2026/2), a disciplina possui três avaliações parciais e uma avaliação de recuperação:\n\n\n\n\n\n\n\n\n\nAvaliação\nSemanas do conteúdo cobrado\nPeso\nData prevista\n\n\n\n\nProva 1\nSemanas 1 a 6 (Estatística Descritiva e Probabilidade)\n1/3\n21/09/2026\n\n\nProva 2\nSemanas 7 a 10 (Amostragem, Estimação e Testes z/t)\n1/3\n30/10/2026\n\n\nProva 3\nSemanas 11 a 18 (ANOVA, Correlação, Regressão e Qui-Quadrado)\n1/3\n07/12/2026\n\n\nRecuperação (presencial)\nTodo o conteúdo programático\n—\n14/12/2026\n\n\n\nA Média Final (MF) é calculada como a média aritmética simples das três provas. Consulte a página de Apresentação da Disciplina para os critérios completos de atribuição de conceito e a fórmula de recuperação.\n\n\nSobre a recuperação\nOs(as) alunos(as) que não atingirem o conceito mínimo para aprovação e tiverem frequência mínima de 75% da carga horária prevista poderão fazer uma (única) avaliação de recuperação, presencial, abrangendo todo o conteúdo programático da disciplina — e não apenas a área com menor desempenho. A nova Média Final é calculada como:\n\\[\n\\text{Média final após recuperação} = (0{,}4 \\times MF) + (0{,}6 \\times \\text{Nota da avaliação de recuperação})\n\\]\nNote a importância da consistência ao longo do semestre para garantir uma boa MF, já que ela ainda pesa 40% na média final mesmo após a recuperação.\n\n\nDatas e formato exato\nDatas, formato (prova escrita, trabalho, etc.) e conteúdo detalhado de cada avaliação são divulgados e atualizados ao longo do semestre no Moodle da disciplina.",
+    "crumbs": [
+      "Avaliações e Recuperação",
+      "Avaliações e Recuperação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html",
+    "href": "Metodos_Estatisticos/6_anova.html",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "",
+    "text": "Este material cobre as Semanas 11 a 15 do plano de ensino: princípios de experimentação, Análise de Variância (ANOVA) para o Delineamento Inteiramente Casualizado (DCC) e para o Delineamento em Blocos Casualizados (DBC), com respectivos testes de comparações múltiplas, experimentos fatoriais (com e sem blocos) e delineamento em parcelas subdivididas, sempre ilustrados com exemplos de artigos científicos.\nO conteúdo desta página é baseado em material didático elaborado por Paula Bracco (adaptado do material da prof. Lisiane Selau), especificamente voltado ao ensino de Análise de Variância aplicada à experimentação agronômica. Os exemplos em R reproduzidos ao longo da página vêm da coleção de scripts do professor (pasta codigos/, com prefixo area_3), aplicados aos mesmos exemplos apresentados nos slides. Todos os materiais originais — slides e scripts — estão disponíveis para download ao final desta página, na seção Materiais e Referências.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html",
+    "title": "Amostragem e Estimação",
+    "section": "",
+    "text": "Este material cobre as Semanas 7 e 8 do plano de ensino: revisão de amostra vs. população, amostragem aleatória simples (randomização), amostragem não aleatória (conveniência, intencional, sequencial e por cotas), introdução à estimação (estimadores, estimativas e parâmetros), estimação por ponto e por intervalo, e intervalo de confiança para a média e para proporção.\nSlides originais disponíveis AQUI.\nAlguns materiais desta seção são inspirados em Pedro A. Barbetta, Estatística Aplicada às Ciências Sociais, 6ª ed., Editora da UFSC, 2006.",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html#censo-vs.-amostragem",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html#censo-vs.-amostragem",
+    "title": "Amostragem e Estimação",
+    "section": "Censo vs. amostragem",
+    "text": "Censo vs. amostragem\n\nCenso: estudo através da observação de todos os elementos da população.\nAmostragem: estudo por meio da observação de uma amostra (processo de seleção da amostra).\n\nPor que fazer amostragem? Economia; menor tempo; maior qualidade nos dados levantados (é mais fácil garantir qualidade em uma amostra pequena do que em uma população inteira); a população pode ser infinita (ou impossível de acessar por completo); e, de modo geral, é mais fácil obter resultados satisfatórios com uma amostra bem planejada.\nQuando fazer censo? Quando a população é pequena (o tamanho da amostra ficaria muito próximo do da população); quando se exige o resultado exato; ou quando já se dispõe dos dados de toda a população (por exemplo, registros administrativos completos).",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-aleatória-simples-aas",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-aleatória-simples-aas",
+    "title": "Amostragem e Estimação",
+    "section": "Amostragem Aleatória Simples (AAS)",
+    "text": "Amostragem Aleatória Simples (AAS)\nÉ a técnica mais comum e “desejável” de amostragem probabilística. Faz-se uma lista da população e sorteiam-se os elementos que farão parte da amostra (pode-se utilizar uma tabela de números aleatórios). Propriedade básica: cada subconjunto da população com o mesmo número de elementos tem a mesma chance de ser incluído na amostra — em particular, cada elemento da população tem probabilidade \\(p = n/N\\) de pertencer à amostra. Um exemplo popular de AAS: os 6 números sorteados na Mega-Sena são uma amostragem aleatória simples das 60 dezenas.\nExemplo: suponha que você tenha \\(N=100\\) vacas e sorteie aleatoriamente \\(n=10\\) vacas, onde todas têm a mesma probabilidade de serem sorteadas (\\(p = 10/100 = 10\\%\\) cada).\nA AAS é frequentemente considerada o “padrão ouro” para reduzir o viés de seleção e garantir que todos os membros de uma população tenham chances iguais de serem escolhidos. No entanto, nem sempre é a “melhor” técnica em todos os cenários, pois sua eficácia depende muito do tamanho da população, da homogeneidade dos elementos e dos recursos disponíveis para realizar o sorteio.",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-conveniência",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-conveniência",
+    "title": "Amostragem e Estimação",
+    "section": "Amostragem não-probabilística: conveniência",
+    "text": "Amostragem não-probabilística: conveniência\nTécnica de pesquisa em que a seleção dos elementos da amostra (plantas, animais, solos, etc.) é feita com base na facilidade de acesso, proximidade ou disponibilidade imediata para o pesquisador, e não por sorteio aleatório. Pode conter vieses em suas estimativas — um viés é um erro sistemático (constante) que faz com que uma estimativa seja sempre maior ou sempre menor do que o valor real que se quer descobrir.",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-intencional",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-intencional",
+    "title": "Amostragem e Estimação",
+    "section": "Amostragem não-probabilística: intencional",
+    "text": "Amostragem não-probabilística: intencional\nTécnica em que o pesquisador escolhe propositalmente os elementos da amostra com base em seu próprio conhecimento, julgamento profissional ou em critérios específicos, acreditando que esses elementos fornecerão as informações mais relevantes para o estudo. Tem alta suscetibilidade a vieses — pode não representar a média da população, pois ignora casos “típicos” ou ruins, focando apenas no que o pesquisador quer investigar. Como vantagem, é rápida e barata.\nExemplo: imagine uma pesquisadora que quer saber a qualidade do café de uma fazenda de 100 hectares. Ela não vai querer colher um fruto de cada árvore ao acaso — ela vai diretamente às árvores que estão mais maduras e com os melhores frutos, porque seu objetivo é avaliar a qualidade máxima da colheita atual. Ela intencionalmente escolheu o que melhor representava o seu objetivo (mas essa amostra não deve ser usada, por exemplo, para estimar a qualidade média de toda a colheita).",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-sequencial",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-sequencial",
+    "title": "Amostragem e Estimação",
+    "section": "Amostragem não-probabilística: sequencial",
+    "text": "Amostragem não-probabilística: sequencial\nTécnica em que o pesquisador escolhe a amostra em sequência, e o tamanho da amostra (\\(n\\)) não é definido previamente. Suponha que você está testando a qualidade de produtos em uma linha de montagem: pega-se um produto, verifica-se, depois pega-se outro e verifica-se, continuando esse processo um por um até ter certeza se o lote é bom ou ruim.\nCaracterísticas: a amostra é coletada em etapas — após cada item (ou grupo) coletado, analisa-se o dado para decidir “já sei o suficiente para concluir?” ou “preciso de mais amostras?”. O tamanho final não é fixo, permitindo parar assim que os resultados se tornarem conclusivos, economizando tempo e recursos.\nExemplo aplicado — controle de pragas:\n\n\n\nExemplo de amostragem sequencial: um agrônomo decide, etapa por etapa, se aplica inseticida contra o bicho-mineiro em uma lavoura de café, parando assim que o resultado acumulado for suficientemente claro\n\n\nImagine um agrônomo que precisa decidir se aplica um inseticida para controlar o bicho-mineiro (Leucoptera coffeella) em uma lavoura de café, conforme exemplificado em estudos da Embrapa:\n\nObjetivo: decidir entre aplicar o produto (infestação alta) ou não aplicar (infestação baixa).\nEtapa 1: o agrônomo caminha até um local conveniente da lavoura e coleta folhas de 5 cafeeiros (a primeira amostra sequencial).\nAnálise 1: conta quantas folhas estão atacadas. Se o número for extremamente alto (ex.: &gt; 80% das folhas), ele para e recomenda a aplicação imediata; se for extremamente baixo (ex.: &lt; 10%), ele para e decide não aplicar.\nEtapa 2 (a sequência): se o valor for “médio” (incerto), ele caminha mais alguns metros e coleta folhas de mais 5 cafeeiros, somando os resultados anteriores com os novos.\nResultado: o processo continua sequencialmente até que o número total de folhas atacadas cruze uma linha de decisão (“aplicar” ou “não aplicar”).",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-por-cotas",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html#amostragem-não-probabilística-por-cotas",
+    "title": "Amostragem e Estimação",
+    "section": "Amostragem não-probabilística: por cotas",
+    "text": "Amostragem não-probabilística: por cotas\nEtapas: classificar a população, determinar a proporção da população para cada classe, e fixar cotas em observância à proporção das classes consideradas. É utilizada quando não existe um cadastro da população que possibilite o sorteio necessário para a amostragem aleatória, mas, ao mesmo tempo, existe informação suficiente sobre o perfil populacional (por exemplo, dados de um Censo do IBGE anterior). É um método considerado não-probabilístico, muito comum em pesquisa eleitoral e de mercado — por exemplo, entrevistar 75% de adultos e 25% de idosos, se essa for a proporção conhecida da população. Material complementar: Amostragem por Cotas (UFPB).",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/4_amostragem_estimacao.html#estimação-de-parâmetros",
+    "href": "Metodos_Estatisticos/4_amostragem_estimacao.html#estimação-de-parâmetros",
+    "title": "Amostragem e Estimação",
+    "section": "Estimação de parâmetros",
+    "text": "Estimação de parâmetros\nComo os estimadores dependem da amostra aleatória sorteada, eles também são considerados variáveis aleatórias. Logo, é importante avaliar como eles se comportariam caso tivéssemos obtido diferentes amostras da mesma população — esse estudo é chamado de distribuição amostral dos estimadores, e é a base teórica que permite construir intervalos de confiança (a incerteza de uma estimativa vem justamente da variabilidade que ela teria se repetíssemos o processo de amostragem muitas vezes).\nOs maiores detalhamentos sobre distribuição amostral são ancorados nos materiais suplementares do Moodle. Dois aplicativos didáticos são especialmente recomendados para desenvolver intuição visual sobre o tema: Sampling Distribution (Univ. Aberdeen) e Sampling Distribution / Inference / Explore Coverage (Art of Stat).\nExemplo aplicado — estimação de proporção: retomando o exemplo do rebanho e da doença da vaca louca, a imagem abaixo situa visualmente os dois sentidos do processo. A foto completa do rebanho representa a população (todos os animais da fazenda); o recorte em destaque representa a amostra (o subconjunto de animais efetivamente testados). A amostragem é o caminho que vai da população até a amostra — sorteamos alguns animais dentre todos; a inferência é o caminho inverso — a partir do resultado observado na amostra (por exemplo, \\(\\hat{p}\\) = proporção de animais doentes entre os testados), concluímos algo sobre o parâmetro \\(p\\) da população inteira, que nunca chegamos a observar por completo.\n\n\n\nA população é o rebanho completo da fazenda; a amostra é o recorte de animais efetivamente testados. A amostragem segue da população para a amostra; a inferência estatística percorre o caminho inverso, da amostra de volta à população",
+    "crumbs": [
+      "Amostragem e Estimação (Semanas 7-8)",
+      "Amostragem e Estimação"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/2_descritiva_medidas.html#propriedades-das-medidas",
+    "href": "Metodos_Estatisticos/2_descritiva_medidas.html#propriedades-das-medidas",
+    "title": "Estatística Descritiva - Medidas",
+    "section": "Propriedades das medidas",
+    "text": "Propriedades das medidas\nAlgumas propriedades úteis para interpretar essas medidas corretamente:\n\nSomar uma constante a todos os valores desloca a média e a mediana pela mesma constante, mas não altera a variância, o desvio padrão nem a amplitude (a dispersão dos dados em torno do centro não muda).\nMultiplicar todos os valores por uma constante \\(k\\) multiplica a média, a mediana e o desvio padrão por \\(k\\), mas multiplica a variância por \\(k^2\\).\nA soma dos desvios de cada observação em relação à média é sempre zero: \\(\\sum_{i=1}^n (x_i - \\bar{x}) = 0\\). É por isso que a variância trabalha com desvios ao quadrado — caso contrário, os desvios positivos e negativos sempre se cancelariam.\nPara dados fortemente assimétricos ou com outliers, a mediana costuma ser preferível à média como medida de tendência central; nesses casos, uma medida de dispersão baseada em quartis (como o intervalo interquartil, base do boxplot visto na seção anterior) é preferível à variância/desvio padrão.",
+    "crumbs": [
+      "Estatística Descritiva - Medidas",
+      "Estatística Descritiva - Medidas"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html",
+    "href": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html",
+    "title": "Apresentação da Disciplina",
+    "section": "",
+    "text": "A disciplina Métodos Estatísticos (MAT02201) é oferecida pelo Departamento de Estatística do Instituto de Matemática e Estatística da UFRGS aos cursos de Agronomia e Zootecnia, sendo pré-requisito ter cursado Matemática para Ciências Agrárias (MAT01019).\nSúmula: Introdução ao método e conceitos de análise estatística na área de ciências agronômicas. Obtenção, apresentação e descrição de dados de observação. Boxplot. Probabilidade. Distribuição normal. Amostragem. Estimação, intervalos de confiança e testes de significância. Comparação de médias. Princípios de experimentação: delineamento inteiramente casualizado, delineamento em blocos casualizados e experimentos fatoriais. Correlação e regressão linear. Distribuição Qui-Quadrado.\nA disciplina visa fornecer ao(à) aluno(a) uma introdução aos métodos estatísticos utilizados na análise e interpretação de dados das áreas de Agronomia e Zootecnia, buscando:\n\nFamiliarizar o(a) aluno(a) com as técnicas estatísticas e a terminologia mais usada nessas áreas;\nFornecer os instrumentos mais comuns de análise estatística, ensinando a usá-los e a interpretar os resultados obtidos;\nDesenvolver o espírito crítico e a capacidade de julgar publicações e relatórios no que tange à análise dos dados e às consequentes conclusões.\n\n\n\nO conteúdo programático segue o plano de ensino oficial da disciplina e está organizado nos seguintes blocos de conteúdo:\n\nIntrodução à Estatística e análise exploratória de dados\nEstatística descritiva: medidas de tendência central e de variabilidade\nProbabilidade e distribuição normal\nAmostragem e estimação\nTeste de hipóteses: teste z e teste t de Student\nTeste de hipóteses: ANOVA e princípios de experimentação\nTeste de hipóteses: correlação, regressão linear e Qui-Quadrado\n\nCada bloco corresponde a uma seção na barra lateral desta disciplina, à esquerda.\n\n\n\nO conteúdo programático é desenvolvido em aulas teórico-práticas, com exposição do tema pelo professor e realização de exercícios, com ênfase na aplicação e na interpretação dos resultados (poucos cálculos manuais). Ao longo do semestre são utilizados softwares estatísticos, aplicativos didáticos interativos, discussão de artigos científicos publicados em revistas indexadas e incentivo ao uso crítico da IA (Inteligência Artificial) como recurso de aprendizagem. O ambiente Moodle é utilizado como repositório de material de apoio e para entrega das atividades.\n\n\n\n\nTurma A1 — aulas às segundas e sextas-feiras, das 07:30 às 09:10, na Faculdade de Agronomia (Prédio Central).\nAtendimento: Sala B118, Campus do Vale.\nE-mail: renan.cortes@ufrgs.br\nMateriais complementares da disciplina são disponibilizados no Moodle.\n\nOs slides originais de apresentação da disciplina (ementa e cronograma) estão disponíveis AQUI.",
+    "crumbs": [
+      "Apresentação",
+      "Apresentação da Disciplina"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#conteúdo-programático-visão-geral",
+    "href": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#conteúdo-programático-visão-geral",
+    "title": "Apresentação da Disciplina",
+    "section": "",
+    "text": "O conteúdo programático segue o plano de ensino oficial da disciplina e está organizado nos seguintes blocos de conteúdo:\n\nIntrodução à Estatística e análise exploratória de dados\nEstatística descritiva: medidas de tendência central e de variabilidade\nProbabilidade e distribuição normal\nAmostragem e estimação\nTeste de hipóteses: teste z e teste t de Student\nTeste de hipóteses: ANOVA e princípios de experimentação\nTeste de hipóteses: correlação, regressão linear e Qui-Quadrado\n\nCada bloco corresponde a uma seção na barra lateral desta disciplina, à esquerda.",
+    "crumbs": [
+      "Apresentação",
+      "Apresentação da Disciplina"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#critérios-de-avaliação",
+    "href": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#critérios-de-avaliação",
+    "title": "Apresentação da Disciplina",
+    "section": "",
+    "text": "Os critérios de avaliação desta disciplina incluem a realização de três provas, com pesos iguais:\n\n\n\nAvaliação\nPeso\nData prevista\n\n\n\n\nProva 1\n1/3\n21/09/2026\n\n\nProva 2\n1/3\n30/10/2026\n\n\nProva 3\n1/3\n07/12/2026\n\n\n\nA Média Final (MF) é calculada como a média aritmética simples das três provas. O conceito final é atribuído da seguinte maneira:\n\nConceito A para MF ≥ 9,0\nConceito B para 7,5 ≤ MF &lt; 9,0\nConceito C para 6,0 ≤ MF &lt; 7,5\nConceito D para MF &lt; 6,0\nConceito FF caso a frequência seja inferior a 75% da carga horária prevista no plano da disciplina\n\nConforme a Seção IV, Art. 44, § 2º da Resolução nº 11/2013 do CEPE, para ser aprovado(a) o(a) aluno(a) deve frequentar no mínimo 75% da carga horária prevista.",
+    "crumbs": [
+      "Apresentação",
+      "Apresentação da Disciplina"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#recuperação",
+    "href": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#recuperação",
+    "title": "Apresentação da Disciplina",
+    "section": "",
+    "text": "Os(as) alunos(as) que não atingirem o conceito mínimo para aprovação e tiverem frequência mínima de 75% poderão fazer uma (única) avaliação de recuperação presencial, abrangendo todo o conteúdo programático da disciplina, no dia 14/12/2026. A nova Média Final é calculada como:\n\\[\n\\text{Média final após recuperação} = (0{,}4 \\times MF) + (0{,}6 \\times \\text{Nota da avaliação de recuperação})\n\\]\nNote a importância da consistência ao longo do semestre para garantir uma boa MF antes mesmo de se pensar em recuperação.",
+    "crumbs": [
+      "Apresentação",
+      "Apresentação da Disciplina"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#metodologia-e-experiências-de-aprendizagem",
+    "href": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#metodologia-e-experiências-de-aprendizagem",
+    "title": "Apresentação da Disciplina",
+    "section": "",
+    "text": "O conteúdo programático é desenvolvido em aulas teórico-práticas, com exposição do tema pelo professor e realização de exercícios, com ênfase na aplicação e na interpretação dos resultados (poucos cálculos manuais). Ao longo do semestre são utilizados softwares estatísticos, aplicativos didáticos interativos, discussão de artigos científicos publicados em revistas indexadas e incentivo ao uso crítico da IA (Inteligência Artificial) como recurso de aprendizagem. O ambiente Moodle é utilizado como repositório de material de apoio e para entrega das atividades.",
+    "crumbs": [
+      "Apresentação",
+      "Apresentação da Disciplina"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#turma-e-contato",
+    "href": "Metodos_Estatisticos/0_apresentacao_da_disciplina.html#turma-e-contato",
+    "title": "Apresentação da Disciplina",
+    "section": "",
+    "text": "Turma A1 — aulas às segundas e sextas-feiras, das 07:30 às 09:10, na Faculdade de Agronomia (Prédio Central).\nAtendimento: Sala B118, Campus do Vale.\nE-mail: renan.cortes@ufrgs.br\nMateriais complementares da disciplina são disponibilizados no Moodle.\n\nOs slides originais de apresentação da disciplina (ementa e cronograma) estão disponíveis AQUI.",
+    "crumbs": [
+      "Apresentação",
+      "Apresentação da Disciplina"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#alfabetização-científica",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#alfabetização-científica",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Alfabetização científica",
+    "text": "Alfabetização científica\nAlfabetização científica é a capacidade de interpretar dados e resultados científicos: compreender gráficos, tabelas e conclusões estatísticas. Ela é fundamental para a leitura de artigos científicos em Agronomia e Zootecnia, e evita interpretações equivocadas de resultados experimentais — um problema mais comum do que se imagina, inclusive na cobertura jornalística de dados (veja, por exemplo, o vídeo disponível no Moodle sobre interpretações equivocadas de dados durante a pandemia de Covid-19, que motivou inclusive um workshop de letramento estatístico para jornalistas).\nUm bom ponto de partida para pensar em alfabetização científica é entender as etapas de uma pesquisa científica e onde a Estatística entra nesse processo — tanto na metodologia da área de estudo quanto na metodologia estatística propriamente dita:\n\n\n\nPrincipais etapas da pesquisa científica: definição do problema, planejamento, coleta, análise, resultados e conclusões (adaptado da Prof. Lisiane Selau)",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#variáveis-exemplo-motivacional",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#variáveis-exemplo-motivacional",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Variáveis: exemplo motivacional",
+    "text": "Variáveis: exemplo motivacional\nConsidere uma população — o rebanho total de vacas de uma fazenda — e uma característica observável \\(X\\) nesse rebanho (por exemplo, \\(X_1\\), \\(X_2\\), \\(X_3\\), …). Um exemplo concreto: estimar a proporção de vacas com a doença da vaca louca.\n\n\n\nRebanho bovino conduzido em uma fazenda — foto ilustrativa do exemplo motivacional de população e variável\n\n\n\nPopulação: rebanho total de vacas de uma fazenda.\nCaracterística \\(X\\) observável: “Tem a doença da vaca louca? Sim ou não?”\nAmostra: um subconjunto do rebanho, sobre o qual observamos \\(X\\).\n\nO esquema geral é: partimos do universo do estudo (população), observamos uma parte dele através da amostragem, e usamos os dados observados (amostra) para fazer inferência sobre a população como um todo. Esse ciclo — população → amostragem → amostra → inferência → conclusão sobre a população — é a espinha dorsal de toda a Estatística Inferencial, e retornaremos a ele repetidamente ao longo da disciplina (por exemplo, nas semanas de Amostragem/Estimação e de Testes de Hipótese).",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#classificação-de-variáveis",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#classificação-de-variáveis",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Classificação de variáveis",
+    "text": "Classificação de variáveis\nAs variáveis podem ser classificadas em dois grandes grupos, cada um com dois subtipos:\n\n\n\nClassificação de variáveis: qualitativas (nominais e ordinais) e quantitativas (discretas e contínuas)\n\n\n\nQualitativas (categóricas)\n\nNominal: não possui ordem/hierarquia. Exemplo: raça animal (Raça A, Raça B, Raça C, …).\nOrdinal: possui ordem/ranking/escala lógica. Exemplo: estágios de crescimento (Pequeno, Médio, Grande).\n\nOutros exemplos aplicados à Agronomia e Zootecnia:\nNominais: tipo de cultura (Soja, Milho, Cana-de-açúcar, Café, Algodão); raça de gado (Nelore, Angus, Holandesa, Jersey, Brangus); tipo de solo (Argiloso, Arenoso, Franco); sistema de produção (Intensivo, Extensivo, Orgânico, Convencional); marca de fertilizante ou defensivo agrícola.\nOrdinais: intensidade de infestação de pragas (Baixa, Média, Alta); classificação da qualidade do fruto (Primeira, Segunda, Descarte); nível de maturação do fruto (Verde, Maduro, Passado); escore de condição corporal em bovinos (Magro, Ideal, Obeso); nível de severidade de uma doença como a ferrugem (Leve, Moderada, Severa).\n\n\nQuantitativas (numéricas)\n\nDiscretas: valores inteiros contáveis. Exemplo: número de leitões por parto (1, 2, 3, …, 14, …).\nContínuas: valores em escala real. Exemplo: peso de animais, altura de plantas (12,4 kg, 14,85 kg, etc.).\n\nOutros exemplos:\nDiscretas: número de frutos por planta; quantidade de animais por piquete; número de perfilhos por planta de trigo; quantidade de tratores na fazenda; número de ovos produzidos por galinha por dia.\nContínuas: produtividade da cultura (t/ha ou sc/ha); peso do animal (kg); índice pluviométrico (mm); teor de umidade do grão (%); temperatura ambiente no aviário (°C).",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#escalas-níveis-de-mensuração",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#escalas-níveis-de-mensuração",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Escalas (níveis) de mensuração",
+    "text": "Escalas (níveis) de mensuração\nEscalas de medida — também chamadas de níveis de mensuração — são importantes porque determinam quais análises estatísticas podem ser realizadas com segurança e como os dados devem ser interpretados. Existem quatro escalas distintas, organizadas hierarquicamente: à medida que se sobe de nível, aumentam tanto a complexidade quanto a informação disponível para a metodologia estatística.\n\n\n\nAs quatro escalas de medida — nominal, ordinal, intervalar e racional (de razão) — e a hierarquia de complexidade/informação entre elas (adaptado da Prof. Lisiane Selau)\n\n\nUma pergunta importante para fixar o conceito: faz sentido calcular uma média em uma base de dados em que estão codificados os números “1 – Angus” e “2 – Hereford”? E se fosse “1 – Pequeno” e “2 – Médio”? E se fosse “0 – Não” e “1 – Sim”? Em nenhum desses casos a média tem uma interpretação sensata, porque os números ali são apenas rótulos (nominal) ou indicam ordem sem distância fixa entre categorias (ordinal) — não são medidas na escala intervalar ou de razão.\n\nIntervalar vs. razão: o que muda na prática?\nA distinção entre escala intervalar e de razão costuma ser a mais sutil das quatro. A ideia central: nas duas escalas, o intervalo entre dois pontos quaisquer tem sempre o mesmo “tamanho” (16 graus de diferença entre 32°C e 16°C é a mesma coisa que entre 66°C e 50°C; 10 kg a 20 kg é a mesma diferença que 75 kg a 85 kg). A diferença é que a escala de razão tem um zero absoluto (zero significa “ausência” da grandeza), e a intervalar não.\n\n\n\nExplicação de por que temperatura (°C) é uma escala intervalar, mas peso e distância são de razão — o zero absoluto marca a diferença\n\n\n\n\n\nContinuação: por que “10 graus C é o dobro de 5 graus C” não faz sentido em Celsius (intervalar), mas “10 kg é o dobro de 5 kg” faz sentido em quilogramas (razão)\n\n\nPor exemplo: temperatura em °C/°F é intervalar, porque você pode ter valores negativos (-20°C é um valor válido) — não existe “zero absoluto” de temperatura nessas escalas. Já o peso em kg é de razão, porque o menor valor possível é 0,00 kg, que representa de fato ausência de peso. Isso implica que “10 kg é o dobro de 5 kg” faz sentido (razão), mas “10°C é duas vezes mais quente que 5°C” não faz sentido — a comparação correta precisaria ser feita em Kelvin, que tem zero absoluto.\nNa prática, quase todas as variáveis contínuas medidas em Agronomia e Zootecnia (peso, produtividade, altura, precipitação) são de razão. A escala intervalar aparece com menos frequência (temperatura em °C sendo o exemplo clássico).",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#tabelas",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#tabelas",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Tabelas",
+    "text": "Tabelas\nA forma mais básica de organizar dados coletados é uma tabela. É importante lembrar que a Associação Brasileira de Normas Técnicas (ABNT) estabelece alguns padrões mínimos para tabelas, como a presença de fonte e título.\n\n\n\nExemplo de tabela de dados agrícolas: ano, cultura, qualidade (variável ordinal), produção (ton) e área (ha)",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#gráficos",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#gráficos",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Gráficos",
+    "text": "Gráficos\nOs principais tipos de gráfico para representar dados são: linha, série temporal, coluna, barra e setor/pizza. A escolha do tipo de gráfico depende da natureza da variável e do que se quer comunicar — evolução ao longo do tempo, comparação entre categorias, ou composição/proporção de um total.\n\n\n\n\n\n\nGráfico de linha/série temporal: produção agropecuária ao longo dos anos\n\n\n\n\n\n\n\nGráfico de coluna: produção média por cultura (Milho, Soja, Trigo)\n\n\n\n\n\n\n\n\nGráfico de setor (pizza): participação da produção por cultura\n\n\nPara mais exemplos de representações gráficas, recomenda-se o material Representações Gráficas do site de Probabilidade e Estatística EAD da UFRGS, além dos materiais suplementares no Moodle. Dois aplicativos interativos também são recomendados: Análise Exploratória — Variáveis Quantitativas e Análise Exploratória — Variáveis Categóricas.",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#histograma",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#histograma",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Histograma",
+    "text": "Histograma\nO histograma é a representação gráfica mais usada para visualizar a distribuição de uma variável quantitativa: os dados são agrupados em faixas (classes) e a altura de cada barra representa a frequência de observações naquela faixa.\nQuando um valor está muito distante do restante dos dados — um outlier (valor extremo) — ele aparece isolado no histograma, geralmente afastado do “corpo” principal da distribuição:\n\n\n\nHistograma com a presença de um outlier: a maior parte das observações se concentra entre 400 e 750 toneladas, mas há uma observação isolada próxima de 1500",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/1_introducao_exploratoria.html#boxplot",
+    "href": "Metodos_Estatisticos/1_introducao_exploratoria.html#boxplot",
+    "title": "Introdução à Estatística e Análise Exploratória de Dados",
+    "section": "Boxplot",
+    "text": "Boxplot\nAntes de discutir boxplots propriamente, vale revisar rapidamente as medidas de posição que os compõem (quartis, mediana) — assunto que será aprofundado na próxima seção (Estatística Descritiva - Medidas). O boxplot (ou diagrama de caixa) resume a distribuição de uma variável quantitativa através de cinco números: mínimo, primeiro quartil, mediana, terceiro quartil e máximo, além de sinalizar explicitamente a presença de outliers (geralmente marcados como pontos fora dos “bigodes” da caixa):\n\n\n\nBoxplot da produção agropecuária, evidenciando um outlier (ponto vermelho) bem acima da caixa\n\n\nNote como o mesmo conjunto de dados do histograma acima aparece resumido de forma mais compacta no boxplot — a caixa concentra a maior parte dos dados, e o outlier fica claramente destacado como um ponto isolado.",
+    "crumbs": [
+      "Introdução e Análise Exploratória",
+      "Introdução à Estatística e Análise Exploratória de Dados"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html",
+    "href": "Metodos_Estatisticos/3_probabilidade.html",
+    "title": "Probabilidade",
+    "section": "",
+    "text": "Este material cobre as Semanas 5 e 6 do plano de ensino: noções de probabilidade, axiomas, probabilidade condicional e sua aplicação, eventos independentes, distribuição normal e suas aplicações. Como complemento, a página também introduz as distribuições t de Student e F de Snedecor — que reaparecerão nas páginas de Testes de Hipóteses e ANOVA — sempre ilustradas com exemplos motivacionais de Agronomia e Zootecnia.\nSlides originais disponíveis AQUI.\nPara aprofundamento teórico, recomenda-se a leitura de Probabilidade: introdução e teoremas e Probabilidade condicional e Bayes (exceto os itens de Teorema da Probabilidade Total e Teorema de Bayes, fora do escopo desta disciplina), além do item 3 (Distribuição Normal) de Variáveis aleatórias contínuas e distribuições.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#mas-por-que-estudar-probabilidade",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#mas-por-que-estudar-probabilidade",
+    "title": "Probabilidade",
+    "section": "Mas… por que estudar probabilidade?",
+    "text": "Mas… por que estudar probabilidade?\nEm resumo, de maneira simplificada:\n\\[\n\\text{Estatística} = \\text{Matemática} + \\text{Erro}\n\\]\nSe conseguimos estudar/medir esse “erro” com probabilidade, temos uma informação útil — é exatamente essa a ponte entre a Estatística Descritiva, que vimos até aqui, e a Estatística Inferencial, que veremos a partir de agora.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#conceitos-fundamentais",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#conceitos-fundamentais",
+    "title": "Probabilidade",
+    "section": "Conceitos fundamentais",
+    "text": "Conceitos fundamentais\n\nProbabilidade: mede o grau de incerteza associado a eventos aleatórios.\nExperimento aleatório: processo cujo resultado não é previsível com certeza.\nEspaço amostral (notação \\(\\Omega\\) ou \\(S\\)): conjunto de todos os resultados possíveis de um experimento aleatório.\nRealização de um elemento do espaço amostral (notação \\(x\\)).\nEvento: subconjunto do espaço amostral (usualmente denotado por letras como \\(A\\), \\(B\\), \\(C\\), …).\n\nExemplo: a ocorrência de chuva em um dia de plantio é um evento aleatório — não sabemos com certeza se vai chover, mas podemos atribuir uma probabilidade a esse evento com base em dados históricos e modelos meteorológicos.\n\n\n\nChuva sobre uma lavoura: um exemplo clássico de evento aleatório relevante para o planejamento agrícola\n\n\nUm exemplo simples de espaço amostral e eventos climáticos: suponha que, para um determinado dia, temos \\(P(A) = 0{,}4\\) (40% de chance de chuva), \\(P(B) = 0{,}5\\) (50% de chance de sol) e \\(P(C) = 0{,}1\\) (10% de chance de neve). Note que \\(P(A) + P(B) + P(C) = 1\\) — os três eventos esgotam o espaço amostral (axioma de que a probabilidade do espaço amostral inteiro é igual a 1).\n\n\n\nExemplo de espaço amostral climático com três eventos mutuamente exclusivos: chuva, sol e neve",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#um-exemplo-de-referência-combinatória-simples",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#um-exemplo-de-referência-combinatória-simples",
+    "title": "Probabilidade",
+    "section": "Um exemplo de referência (combinatória simples)",
+    "text": "Um exemplo de referência (combinatória simples)\nPara revisar a definição clássica de probabilidade (número de casos favoráveis sobre número de casos possíveis) em um espaço amostral finito, considere o seguinte exemplo, adaptado do material de referência bendeivide.github.io/book-estbasica: considere o nascimento de três bezerros em sequência, observando o sexo de cada um (macho ou fêmea). O espaço amostral tem \\(n=8\\) eventos simples, \\(\\Omega = \\{(M,M,M), (M,M,F), (M,F,M), (F,M,M), (M,F,F), (F,M,F), (F,F,M), (F,F,F)\\}\\). Defina o evento \\(A\\): “nascer exatamente duas fêmeas” e o evento \\(B\\): “nascer pelo menos uma fêmea”.\n\n\n\nIlustração de um dos resultados do evento A — nascer exatamente duas fêmeas: a sequência (fêmea, fêmea, macho) é um dos elementos de A\n\n\n\n\n\nExemplo de cálculo de probabilidade por contagem de casos favoráveis, a partir do espaço amostral do nascimento de três bezerros: P(A) = 3/8 = 37,5% e P(B) = 7/8 = 87,5%\n\n\nEsse tipo de raciocínio — contar quantos resultados do espaço amostral satisfazem o evento de interesse e dividir pelo total de resultados possíveis — é a base da definição clássica (ou “de Laplace”) de probabilidade, válida quando todos os resultados do espaço amostral são igualmente prováveis.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#exemplo-diagnóstico-de-doença-em-rebanho",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#exemplo-diagnóstico-de-doença-em-rebanho",
+    "title": "Probabilidade",
+    "section": "Exemplo: diagnóstico de doença em rebanho",
+    "text": "Exemplo: diagnóstico de doença em rebanho\nEste é um dos exemplos mais importantes da disciplina para entender probabilidade condicional na prática, e ilustra por que interpretar corretamente o resultado de um teste diagnóstico não é tão trivial quanto parece.\n\n\n\nFotos originais do slide, ilustrando o cenário de diagnóstico de doença em rebanho: coleta de amostra para o teste, animal doente debilitado, e exame veterinário do animal\n\n\n\n\n\nCenário: um produtor de leite quer saber a probabilidade de um animal estar realmente doente, dado que o teste rápido deu positivo\n\n\nConsidere um teste rápido para diagnóstico de Tristeza Parasitária Bovina (TPB) aplicado a 100 vacas de um rebanho. A tabela de contingência a seguir mostra o resultado real (com ou sem a doença) cruzado com o resultado do teste:\n\n\n\nTabela de contingência com os resultados reais de 100 animais testados: 10 verdadeiros positivos, 8 falsos positivos, 2 falsos negativos e 80 verdadeiros negativos\n\n\nRepare que, dos 18 animais que testaram positivo, apenas 10 estão de fato doentes — os outros 8 são falsos positivos. Isso significa que, se um animal testar positivo, a probabilidade de ele estar realmente doente não é 100%, mesmo que o teste pareça “bom” à primeira vista (apenas 12 vacas do rebanho de fato têm a doença, e o teste “acerta” 90 dos 100 casos no total). O cálculo formal, usando a definição de probabilidade condicional:\n\n\n\nAplicação da fórmula de probabilidade condicional: P(Doença | Positivo) = 10/18 ≈ 55,6%\n\n\n\n\n\nConclusão: apesar do teste positivo, a probabilidade do animal estar realmente doente é de apenas 55,6%, devido ao número de falsos positivos\n\n\nPor que isso é útil na agropecuária? O produtor sabe que, ao isolar todos os 18 animais que testaram positivo, está separando muitos animais sadios desnecessariamente — o que pode motivar a busca por um teste mais específico para confirmar o diagnóstico antes de tomar decisões custosas (como o descarte de um animal). Este mesmo tipo de raciocínio aparece em qualquer teste diagnóstico — de doenças humanas a testes de qualidade industrial — e é a essência do chamado paradoxo do falso positivo.\nPara quem quiser se aprofundar no raciocínio por trás desse tipo de exemplo (na perspectiva do Teorema de Bayes), recomenda-se fortemente este vídeo do canal Veritasium.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#exemplo-o-caso-das-sementes-e-da-máquina",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#exemplo-o-caso-das-sementes-e-da-máquina",
+    "title": "Probabilidade",
+    "section": "Exemplo: o caso das sementes e da máquina",
+    "text": "Exemplo: o caso das sementes e da máquina\n\n\n\nExemplo de eventos independentes, com as fotos originais do slide: germinação de uma semente de soja (evento A) e funcionamento perfeito de um trator (evento B) — os dois processos não têm relação um com o outro\n\n\nUm produtor rural quer saber a probabilidade de dois processos distintos darem certo no mesmo dia:\n\nEvento A (Germinação): uma semente de soja germinar em um vaso de teste, com taxa de germinação de 90% (\\(P(A) = 0{,}9\\)).\nEvento B (Manutenção): um trator, que acabou de sair da revisão, não apresentar falhas mecânicas, com probabilidade de 95% (\\(P(B) = 0{,}95\\)).\n\nPor que são independentes? O fato da semente de soja germinar no laboratório não tem nenhuma relação biológica ou física com o funcionamento do motor do trator no campo. Saber que a semente germinou não dá nenhuma pista extra sobre se o trator vai quebrar ou não — logo, \\(P(A \\cap B) = P(A) \\times P(B) = 0{,}9 \\times 0{,}95 = 0{,}855\\) (85,5% de chance de que ambos os processos deem certo no mesmo dia).\nEsse tipo de raciocínio contrasta diretamente com o exemplo anterior (diagnóstico de doença), em que evento (ter a doença) e evento (testar positivo) são claramente dependentes — saber o resultado do teste muda nossa crença sobre a doença. Comparar os dois exemplos lado a lado ajuda a fixar a diferença entre eventos dependentes e independentes, um dos pontos mais frequentemente confundidos por quem está aprendendo probabilidade pela primeira vez.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#aplicação-peso-de-bovinos-ao-abate",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#aplicação-peso-de-bovinos-ao-abate",
+    "title": "Probabilidade",
+    "section": "Aplicação: peso de bovinos ao abate",
+    "text": "Aplicação: peso de bovinos ao abate\n\n\n\nExemplo passo a passo de aplicação da distribuição normal: cálculo do escore Z e uso da tabela normal padrão para responder qual porcentagem de um lote de bovinos está acima de determinado peso\n\n\nEnunciado: um lote de bois possui peso médio (\\(\\mu\\)) de 500 kg, com desvio padrão (\\(\\sigma\\)) de 20 kg. O produtor deseja saber qual a porcentagem de animais prontos para o abate, considerando apenas aqueles com peso (\\(X\\)) acima de 520 kg.\nPasso a passo:\n\nIdentifique os dados: \\(\\mu = 500\\); \\(\\sigma = 20\\); \\(X = 520\\).\nCalcule o escore \\(Z\\): \\(Z = \\dfrac{520 - 500}{20} = \\dfrac{20}{20} = 1\\).\nInterprete: \\(Z=1\\) significa que o valor-alvo está um desvio padrão acima da média.\nConsulte a tabela normal padrão: a área acumulada até \\(Z=1\\) é 84,13%. Como queremos os valores superiores, subtraímos de 100%.\nResultado: \\(100\\% - 84{,}13\\% = 15{,}87\\%\\) do lote está pronto para o abate segundo esse critério.\n\nEste mesmo procedimento — padronizar com o escore \\(Z\\) e consultar a tabela normal — é a base de praticamente todas as aplicações da distribuição normal que veremos ao longo da disciplina, incluindo os testes de hipótese das próximas semanas (teste \\(z\\)) e o cálculo de intervalos de confiança. Vale a pena explorar o aplicativo NormalDist para visualizar como a área sob a curva muda conforme alteramos \\(\\mu\\), \\(\\sigma\\) e os limites de integração.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html",
+    "href": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html",
+    "title": "Teste de Hipóteses: Teste z e Teste t de Student",
+    "section": "",
+    "text": "Este material cobre as Semanas 9 e 10 do plano de ensino: conceitos fundamentais de teste de hipóteses, teste para a média populacional (teste \\(z\\) com variância conhecida ou \\(n&gt;30\\); teste \\(t\\) de Student com variância desconhecida e \\(n\\) até 30), teste \\(t\\) para amostras pareadas, teste \\(z\\)/\\(t\\) para amostras independentes, e análise contextualizada de artigo científico.\nSlides originais disponíveis AQUI.\nAlguns materiais desta seção são adaptados de Pedro A. Barbetta, Estatística Aplicada às Ciências Sociais, 6ª ed., Editora da UFSC, 2006.",
+    "crumbs": [
+      "Teste de Hipóteses: z e t (Semanas 9-10)",
+      "Teste de Hipóteses: Teste z e Teste t de Student"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#hipótese-nula-e-hipótese-alternativa",
+    "href": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#hipótese-nula-e-hipótese-alternativa",
+    "title": "Teste de Hipóteses: Teste z e Teste t de Student",
+    "section": "Hipótese nula e hipótese alternativa",
+    "text": "Hipótese nula e hipótese alternativa\nTodo teste de hipótese contrapõe duas afirmações sobre a população:\n\nHipótese nula (\\(H_0\\)): a afirmação “padrão” ou de “não-efeito”, que assumimos verdadeira até que haja evidência suficiente para rejeitá-la.\nHipótese alternativa (\\(H_1\\)): a afirmação que estamos, de fato, interessados em sustentar com os dados.\n\nExemplos aplicados:\n\nProblema: Em uma região em estudo, a propensão de fumar nos homens é diferente da das mulheres? \\(H_0\\): a proporção de homens fumantes é igual à de mulheres fumantes, na população em estudo. \\(H_1\\): essas proporções são diferentes.\nProblema: Um agrônomo deseja saber se uma nova cultivar de soja (Cultivar B) produz mais que a cultivar tradicional (Cultivar A). \\(H_0\\): a produtividade entre os dois cultivares é igual, na população em estudo. \\(H_1\\): a produtividade entre os dois cultivares é diferente.\n\n\n\n\nColheita de soja: pano de fundo do exemplo de comparação de produtividade entre duas cultivares\n\n\n\nProblema: um pesquisador quer saber se o pH médio de uma amostra de solo em um talhão é diferente de 6,0 (por exemplo, encontrou uma média amostral de 6,3). \\(H_0\\): o pH médio populacional do talhão é igual a 6,0. \\(H_1\\): o pH médio é diferente de 6,0.",
+    "crumbs": [
+      "Teste de Hipóteses: z e t (Semanas 9-10)",
+      "Teste de Hipóteses: Teste z e Teste t de Student"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#exemplo-de-referência-a-moeda-desequilibrada",
+    "href": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#exemplo-de-referência-a-moeda-desequilibrada",
+    "title": "Teste de Hipóteses: Teste z e Teste t de Student",
+    "section": "Exemplo de referência: a moeda desequilibrada",
+    "text": "Exemplo de referência: a moeda desequilibrada\nPara fixar a lógica do teste de hipótese de forma bem concreta, considere o exemplo clássico da moeda: suspeita-se que uma moeda não seja perfeitamente equilibrada (probabilidade de cara \\(\\neq\\) probabilidade de coroa \\(\\neq 0{,}5\\)). Definindo o parâmetro \\(\\pi\\) = probabilidade de cara:\n\\[\nH_0: \\pi = 0{,}5 \\qquad \\text{vs.} \\qquad H_1: \\pi \\neq 0{,}5\n\\]\nAmostragem para o exemplo: realiza-se \\(n=10\\) lançamentos da moeda. A estatística do teste é \\(Y\\) = número total de caras nos 10 lançamentos. Na amostra observada, obtivemos 7 caras (e 3 coroas). Qual deve ser a decisão do teste — aceitar \\(H_0\\) ou rejeitar \\(H_0\\) em favor de \\(H_1\\)?\n\nDistribuição de referência\nO que pode ocorrer na amostra de \\(n=10\\) lançamentos, se \\(H_0\\) for verdadeira (moeda honesta)? Nesse caso, \\(Y\\) segue uma distribuição binomial com \\(n=10\\) e \\(\\pi=0{,}5\\). A ideia central de um teste de hipótese é comparar o resultado observado (7 caras) com essa distribuição de referência — se o resultado for muito “estranho” para essa distribuição, o teste rejeita \\(H_0\\).\n\n\n\nDistribuição da estatística Y = número de caras em 10 lançamentos de uma moeda honesta (H0 verdadeira): os resultados mais prováveis estão em torno de 5 caras\n\n\n\n\nValor-p\nO valor-p é a probabilidade da estatística de teste acusar um resultado tão ou mais distante do esperado por \\(H_0\\) quanto o da amostra observada. Em outras palavras, um valor-p muito baixo significa que seria muito improvável que aquela amostra (no exemplo, 7 caras) tivesse vindo da distribuição assumindo \\(H_0\\) verdadeira (moeda honesta). O valor-p é calculado com base na distribuição de referência:\n\n\n\nCálculo do valor-p para o exemplo da moeda: somando as probabilidades dos resultados tão ou mais extremos que 7 caras (em ambas as direções), obtém-se p = 0,344 (34,4%)\n\n\n\\[\np = p(0) + p(1) + p(2) + p(3) + p(7) + p(8) + p(9) + p(10) = 0{,}344 \\; (34{,}4\\%)\n\\]",
+    "crumbs": [
+      "Teste de Hipóteses: z e t (Semanas 9-10)",
+      "Teste de Hipóteses: Teste z e Teste t de Student"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#nível-de-significância-e-regra-de-decisão",
+    "href": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#nível-de-significância-e-regra-de-decisão",
+    "title": "Teste de Hipóteses: Teste z e Teste t de Student",
+    "section": "Nível de significância e regra de decisão",
+    "text": "Nível de significância e regra de decisão\nEm Estatística nunca trabalhamos com erro zero — “na prática”, nunca saberemos com certeza absoluta se a moeda é verdadeiramente honesta ou não. Para decidir entre aceitar ou rejeitar \\(H_0\\), precisamos primeiro estabelecer qual “grau de erro” estamos dispostos a cometer: o nível de significância, representado pela letra grega \\(\\alpha\\).\n\nNível de significância (\\(\\alpha\\)): é a probabilidade de o teste rejeitar \\(H_0\\) quando \\(H_0\\) for, na verdade, verdadeira (uma decisão errada). É comum usar \\(\\alpha = 0{,}05\\) (5%), arbitrado pelo(a) pesquisador(a).\nRegra de decisão baseada no valor-p:\n\nse valor-p \\(&gt; \\alpha\\): aceita \\(H_0\\);\nse valor-p \\(\\leq \\alpha\\): rejeita \\(H_0\\), em favor de \\(H_1\\).\n\n\nVoltando ao exemplo da moeda: como valor-p \\(= 0{,}344\\) não é uma probabilidade desprezível frente a \\(\\alpha = 5\\%\\), é mais prudente não rejeitar \\(H_0\\) e assumir que a moeda é honesta.",
+    "crumbs": [
+      "Teste de Hipóteses: z e t (Semanas 9-10)",
+      "Teste de Hipóteses: Teste z e Teste t de Student"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#um-pouco-da-filosofia-por-trás-das-interpretações",
+    "href": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#um-pouco-da-filosofia-por-trás-das-interpretações",
+    "title": "Teste de Hipóteses: Teste z e Teste t de Student",
+    "section": "Um pouco da “filosofia” por trás das interpretações",
+    "text": "Um pouco da “filosofia” por trás das interpretações\nQuando o teste rejeita \\(H_0\\) em favor de \\(H_1\\), a probabilidade de estarmos tomando a decisão errada é, no máximo, igual ao nível de significância \\(\\alpha\\) adotado — temos, portanto, “certa garantia” da veracidade de \\(H_1\\).\nA interpretação é um pouco diferente quando o teste aceita a hipótese nula \\(H_0\\) (valor-p \\(&gt; \\alpha\\)): dizemos que os dados estão em conformidade com a hipótese nula. Isso não implica que \\(H_0\\) seja realmente verdadeira, mas sim que os dados não mostraram evidência suficiente para rejeitá-la — por isso, continuamos acreditando em sua veracidade até prova em contrário (Barbetta, 2006).",
+    "crumbs": [
+      "Teste de Hipóteses: z e t (Semanas 9-10)",
+      "Teste de Hipóteses: Teste z e Teste t de Student"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#tipos-de-erro-em-um-teste-estatístico",
+    "href": "Metodos_Estatisticos/5_teste_hipoteses_z_t.html#tipos-de-erro-em-um-teste-estatístico",
+    "title": "Teste de Hipóteses: Teste z e Teste t de Student",
+    "section": "Tipos de erro em um teste estatístico",
+    "text": "Tipos de erro em um teste estatístico\nComo toda decisão estatística envolve incerteza, existem dois tipos possíveis de erro, organizados em uma tabela 2×2 cruzando a decisão tomada com a realidade (desconhecida) do parâmetro:\n\n\n\nTabela de tipos de erro em um teste de hipótese: Erro Tipo I (rejeitar H0 quando H0 é verdadeira, com probabilidade alfa) e Erro Tipo II (aceitar H0 quando H0 é falsa, com probabilidade beta)\n\n\n\nErro Tipo I (probabilidade \\(\\alpha\\)): rejeitar \\(H_0\\) quando \\(H_0\\) é, na verdade, verdadeira — um “falso alarme”. É o erro que controlamos diretamente ao escolher o nível de significância.\nErro Tipo II (probabilidade \\(\\beta\\)): aceitar \\(H_0\\) quando \\(H_0\\) é, na verdade, falsa — deixar passar um efeito real que existia. Está relacionado ao conceito de poder do teste (\\(1-\\beta\\)): a capacidade do teste de detectar corretamente um efeito real, quando ele de fato existe.\n\nExiste uma tensão inerente entre os dois tipos de erro: para um tamanho de amostra fixo, reduzir \\(\\alpha\\) (ser mais rigoroso para rejeitar \\(H_0\\)) tende a aumentar \\(\\beta\\) (maior chance de deixar passar um efeito real), e vice-versa. Aumentar o tamanho da amostra é, em geral, a forma mais eficaz de reduzir os dois tipos de erro simultaneamente — outra conexão direta com a discussão de tamanho de amostra da seção anterior.",
+    "crumbs": [
+      "Teste de Hipóteses: z e t (Semanas 9-10)",
+      "Teste de Hipóteses: Teste z e Teste t de Student"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.html",
+    "href": "Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.html",
+    "title": "Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado",
+    "section": "",
+    "text": "Em construção\nEsta página cobrirá as Semanas 16 a 18 do plano de ensino, ainda em elaboração. Segundo o plano de ensino oficial da disciplina, o conteúdo previsto para este bloco é:\nVariáveis métricas\n\nCorrelação linear de Pearson.\nRegressão linear.\n\nVariáveis categóricas\n\nTeste não paramétrico: Qui-Quadrado.\nQui-Quadrado de Aderência (Goodness-of-Fit): frequências esperadas iguais e frequências esperadas diferentes.\nQui-Quadrado de Independência (Tabelas de Contingência).\nQui-Quadrado de Homogeneidade (Comparação de proporções entre grupos).\n\nO material será publicado nesta página conforme for produzido.",
+    "crumbs": [
+      "Correlação, Regressão e Qui-Quadrado (Semanas 16-18)",
+      "Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#planejamento-do-experimento",
+    "href": "Metodos_Estatisticos/6_anova.html#planejamento-do-experimento",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Planejamento do experimento",
+    "text": "Planejamento do experimento\nO planejamento de um experimento envolve, essencialmente, quatro decisões:\n\nVariável resposta: qual característica será estudada (altura ou comprimento das plantas, produção de grãos/rendimento, etc.).\nFatores e níveis: quais fatores afetam essa resposta e quais os níveis de cada fator — importante identificar quais podem e quais não podem ser controlados (variedade, adubação, irrigação, qualidade da semente, temperatura, incidência de luz, etc.). Em um experimento simples, apenas um fator é estudado (os demais são mantidos constantes); em experimentos complexos (fatoriais), estudamos simultaneamente o efeito de dois ou mais fatores.\nUnidade experimental (ou parcela): onde os diferentes níveis do tratamento são aplicados — idealmente as unidades experimentais devem ser as mais semelhantes/uniformes possível, para reduzir a variação aleatória. Exemplos: uma área de campo, um vaso com solo, uma sementeira, uma placa de Petri, um tubo de ensaio, uma árvore, uma folha da planta.\nNúmero de repetições: depende do número de tratamentos utilizados; é usual que os experimentos possuam pelo menos 3 repetições.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#princípios-básicos-da-experimentação",
+    "href": "Metodos_Estatisticos/6_anova.html#princípios-básicos-da-experimentação",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Princípios básicos da experimentação",
+    "text": "Princípios básicos da experimentação\nRepetição. O princípio da repetição consiste na reprodução do experimento básico. O fato de um tratamento se comportar melhor que outro em uma única unidade experimental pouco ou nada significa, pois pode ter havido um comportamento superior por simples acaso — por isso, consideramos o comportamento médio de cada tratamento ao longo de várias parcelas. As repetições são necessárias para estimar o erro experimental (a variabilidade da resposta entre unidades experimentais que receberam o mesmo tratamento) e para avaliar, de forma mais precisa, o efeito de cada tratamento.\nCasualização (aleatorização). É a distribuição dos tratamentos às unidades experimentais de forma casual (aleatória, randômica), para evitar que um determinado tratamento venha a ser beneficiado por sucessivas repetições em parcelas melhores. É a alocação dos tratamentos aleatoriamente sobre as unidades experimentais — sorteando qual unidade receberá cada tratamento e cada repetição.\n\n\n\n\n\n\nCasualização correta: alocação aleatória dos tratamentos A, B, C, D (4 repetições cada) reduz a chance de que a diferença observada seja apenas devido a fatores não controlados\n\n\n\n\n\n\n\nCasualização incorreta: alocação sistemática (não aleatória) dos tratamentos — se houver alguma diferença entre as linhas, não conseguiríamos isolar o efeito de “linhas diferentes” do efeito de “tratamentos diferentes”\n\n\n\n\n\nControle local / blocos. Não é de uso obrigatório: quando conhecemos um fator que pode ser uma fonte de variação, podemos controlá-lo com o uso de blocos. Trata-se da formação de grupos de unidades experimentais o mais homogêneos possível (cada grupo constitui um bloco), de modo a reduzir o erro experimental — os tratamentos são sorteados dentro de cada bloco.\n\n\n\nControle local / blocos: cada bloco (coluna) recebe uma repetição completa dos 4 tratamentos, sabendo de antemão que os blocos diferem entre si",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#anova-a-ideia-geral",
+    "href": "Metodos_Estatisticos/6_anova.html#anova-a-ideia-geral",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "ANOVA: a ideia geral",
+    "text": "ANOVA: a ideia geral\nA Análise de Variância (ANOVA) é a técnica que nos permite decompor a variabilidade total da resposta (a variação da resposta de interesse entre todas as unidades experimentais) em partes atribuídas a: (i) variação devido a causas conhecidas e independentes (níveis do tratamento); (ii) variação relacionada a causas controladas pelo delineamento experimental (blocos, quando existirem); e (iii) uma porção residual, de origem desconhecida e natureza aleatória (devida aos fatores não controlados).",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#exemplo-de-referência",
+    "href": "Metodos_Estatisticos/6_anova.html#exemplo-de-referência",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Exemplo de referência",
+    "text": "Exemplo de referência\nOs dados a seguir referem-se ao rendimento (t/ha) de 4 variedades de cana-de-açúcar (A, B, C e D) em um experimento de competição, com 6 repetições por variedade, instalado no DCC. Objetivo: identificar a(s) variedade(s) que produz(em) maior rendimento médio.\n\n\n\nDados do exemplo: rendimento de 4 variedades de cana-de-açúcar (6 repetições cada), com médias e desvios-padrão por grupo\n\n\nCada grupo tem uma variabilidade interna (o quanto a resposta varia entre unidades que receberam o mesmo tratamento) — essa variabilidade é atribuída ao acaso ou erro experimental. Há também uma variabilidade entre grupos, medida pela dispersão das médias de cada grupo em torno da média geral — essa variabilidade tem uma causa conhecida: os diferentes tratamentos aos quais cada grupo foi exposto.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#decomposição-da-variabilidade",
+    "href": "Metodos_Estatisticos/6_anova.html#decomposição-da-variabilidade",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Decomposição da variabilidade",
+    "text": "Decomposição da variabilidade\nNo DCC, a variação total é decomposta em duas partes: devida aos tratamentos e devida ao erro experimental. A Soma de Quadrados Total é dada por:\n\\[\nSQ_{Total} = \\sum_i \\sum_j \\left(y_{ij} - \\bar{y}_{..}\\right)^2 = \\underbrace{r\\sum_i \\left(\\bar{y}_{i.} - \\bar{y}_{..}\\right)^2}_{SQ_{Tratamentos}} + \\underbrace{\\sum_i \\sum_j \\left(y_{ij} - \\bar{y}_{i.}\\right)^2}_{SQ_{Erro}}\n\\]\n\\(SQ_{Tratamentos}\\) representa a variação das médias dos tratamentos em torno da média geral; \\(SQ_{Erro}\\) representa a variação dentro de cada tratamento (entre unidades experimentais que receberam o mesmo tratamento). Os graus de liberdade se decompõem de forma análoga: \\((rt-1) = (t-1) + t(r-1)\\), sendo \\(t\\) o número de tratamentos e \\(r\\) o número de repetições.\n\n\n\nEstrutura da tabela ANOVA para o DCC: causas de variação, graus de liberdade (GL), soma de quadrados (SQ), quadrado médio (QM) e estatística F\n\n\nHipóteses do teste:\n\\[\nH_0: \\mu_1 = \\mu_2 = \\ldots = \\mu_t \\qquad \\text{vs.} \\qquad H_A: \\text{pelo menos uma média difere das demais}\n\\]\nA estatística do teste é \\(F = QM_{Tratamento}/QM_{Erro}\\). O \\(QM_{Erro}\\) estima a variação ao acaso; o \\(QM_{Tratamento}\\) estima a variação ao acaso mais a variação devida aos diferentes níveis do tratamento. Se a variação entre as médias dos tratamentos for semelhante à variação do erro experimental, \\(F\\) será próximo de 1 e a diferença não será significativa; quanto maior \\(F\\) em relação a 1, maior a evidência de que os tratamentos realmente diferem entre si.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#resultado-do-exemplo",
+    "href": "Metodos_Estatisticos/6_anova.html#resultado-do-exemplo",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Resultado do exemplo",
+    "text": "Resultado do exemplo\n\n\n\nTabela ANOVA preenchida para o exemplo da cana-de-açúcar: F = 5,41 (significativo a 1%) para o fator Variedades\n\n\nComo \\(F = 5{,}41 &gt; F_{0{,}01(3,20)}\\), rejeita-se \\(H_0\\): as variedades de cana-de-açúcar investigadas se diferenciam em termos de rendimento. Mas rejeitar \\(H_0\\) indica apenas que pelo menos um dos grupos difere dos demais — não indica quais grupos diferem entre si quando comparados dois a dois. Para isso, usa-se um teste de comparação múltipla (teste post-hoc), sendo o mais usado o teste de Tukey — similar ao teste \\(t\\), mas controlando o nível de significância (erro Tipo I) ao longo de todas as comparações simultâneas.\nCoeficiente de determinação (\\(R^2\\)): mede a proporção da variação total explicada pela variação devida aos tratamentos, \\(R^2 = SQ_{Trat}/SQ_{Total}\\). No exemplo, \\(R^2 = 1636/3654 = 0{,}4477\\) — aproximadamente 45% da variação total do rendimento é explicada pela variação entre variedades.\nCoeficiente de Variação (CV): dá uma ideia da variabilidade aleatória (sem causa conhecida) do experimento, \\(CV = \\sqrt{QM_{Erro}}/\\bar{y}_{..} \\times 100\\). No exemplo, \\(CV = \\sqrt{100{,}9}/73{,}75 = 13{,}62\\%\\). Como regra geral, experimentos de laboratório não devem ter CV muito maior que 10%, e experimentos de campo costumam ficar em torno de 30% — o mais importante é comparar o CV obtido com o de experimentos semelhantes na literatura.\nVantagens do DCC: é flexível quanto ao número de tratamentos e repetições (o número de repetições pode até variar de tratamento a tratamento, por exemplo por perda de observações durante a execução) e a análise estatística permanece simples mesmo quando o número de repetições não é balanceado.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#dcc-artigos",
+    "href": "Metodos_Estatisticos/6_anova.html#dcc-artigos",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Aplicações em artigos científicos",
+    "text": "Aplicações em artigos científicos\nArtigo 1 — Enxertia em mudas de baruzeiro (DOI: 10.5902/1980509869090). Delineamento: DCC. Tratamento: 3 sistemas de condução (sacos plásticos a pleno sol, sacos plásticos sob sombrite 50%, tubetes em viveiros a pleno sol), com 36 repetições para cada tipo de enxertia. Unidade experimental: mudas. Respostas de interesse: altura, diâmetro e razão altura/diâmetro. Houve diferença significativa em todas as respostas quando os 3 grupos foram comparados; pelo teste de comparação múltipla, a altura média foi diferente entre todos os grupos, sendo a maior altura observada no grupo com enxertia de saco plástico a pleno sol.\nArtigo 2 — Irrigação em feijão-vagem (DOI: 10.1590/S0100-69162011000200012). Delineamento: DCC. Tratamento: reposição de água no solo, com 5 níveis (50%, 75%, 100%, 125% e 150%), 4 repetições cada. Unidade experimental: canteiro de 2,2 × 0,3 m. Respostas: produção, número de vagens, peso médio das vagens e número de sementes por vagem. As diferentes lâminas de irrigação foram uma fonte de variabilidade significativa para o número de vagens e para a produção. Como o tratamento é quantitativo (uma dose de água), os autores complementaram a ANOVA com uma análise de regressão — encontrando uma relação quadrática entre a lâmina de irrigação e o número de vagens por planta, com máximo estimado em 19,5 vagens/planta para uma lâmina de 200 mm.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#estrutura-da-anova-no-dbc",
+    "href": "Metodos_Estatisticos/6_anova.html#estrutura-da-anova-no-dbc",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Estrutura da ANOVA no DBC",
+    "text": "Estrutura da ANOVA no DBC\nA variação total das observações \\(y_{ij}\\) é decomposta em três partes: variação devida a tratamentos (\\(SQ_{Tratamentos}\\)), variação devida a blocos (\\(SQ_{Blocos}\\)) e variação devida ao erro experimental (\\(SQ_{Erro}\\)):\n\\[\n\\sum_i \\sum_j \\left(y_{ij}-\\bar{y}_{..}\\right)^2 = r\\sum_i \\left(\\bar{y}_{i.}-\\bar{y}_{..}\\right)^2 + t\\sum_j\\left(\\bar{y}_{.j}-\\bar{y}_{..}\\right)^2 + \\sum_i\\sum_j\\left(y_{ij}-\\bar{y}_{i.}-\\bar{y}_{.j}+\\bar{y}_{..}\\right)^2\n\\]\n\n\n\nCausas da Variação\nGL\nSQ\nQM\nF\n\n\n\n\nBlocos\n\\(r-1\\)\n\\(SQB\\)\n\\(QMB\\)\n\\(QMB/QME\\)\n\n\nTratamentos\n\\(t-1\\)\n\\(SQT\\)\n\\(QMT\\)\n\\(QMT/QME\\)\n\n\nErro experimental\n\\((t-1)(r-1)\\)\n\\(SQE\\)\n\\(QME\\)\n\n\n\nTotal\n\\(rt-1\\)\n\\(SQ_{Total}\\)\n\n\n\n\n\nO teste de significância da diferença entre as médias dos tratamentos é dado pelo teste \\(F = QMT/QME\\), testando \\(H_0: \\mu_1 = \\mu_2 = \\ldots = \\mu_t\\). É possível, de forma aproximada, calcular também \\(F = QMB/QME\\) para os blocos — mas esse teste é discutível, pois a aleatorização foi feita para os tratamentos e não para os blocos, e geralmente não é reportado.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#exemplo-de-referência-cultivares-de-trigo",
+    "href": "Metodos_Estatisticos/6_anova.html#exemplo-de-referência-cultivares-de-trigo",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Exemplo de referência: cultivares de trigo",
+    "text": "Exemplo de referência: cultivares de trigo\nEm um ensaio comparativo de 5 cultivares de trigo (A, B, C, D, E), usou-se o DBC com 4 repetições. O bloqueamento teve por finalidade controlar diferenças de fertilidade do solo no campo experimental. Os rendimentos de grão por parcela (t/ha) foram:\n\n\n\nDados do exemplo: rendimento de 5 cultivares de trigo em 4 blocos, com totais e médias\n\n\n\n\n\nTabela ANOVA do exemplo: F = 14,19 (p &lt; 0,01) para Tratamentos e F = 5,49 (p &lt; 0,05) para Blocos — as cultivares de trigo investigadas se diferenciam em termos de rendimento\n\n\n\n\n\nTeste F para blocos: F = 5,49 &gt; F crítico, indicando que o bloqueamento foi eficiente para controlar as diferenças de fertilidade do solo (teste aproximado e discutível)\n\n\nComplementando a ANOVA com o teste de Tukey, obtém-se o agrupamento das cultivares: D (2,90) &gt; B (2,53), ambas superiores a E (2,28) e C (2,08), sendo A (1,65) a de menor rendimento — a cultivar D se sobressai em termos de rendimento médio quando comparada às demais.\nEm R, essa análise pode ser conduzida com:\nanova_culti &lt;- aov(Rendimento ~ cultiv_fator + block, data = cultivares)\nsummary(anova_culti)\n\n# Teste de Tukey\nagricolae::HSD.test(anova_culti, 'cultiv_fator', alpha = 0.05, console = TRUE)\nplot(TukeyHSD(anova_culti))\n\n# Coeficiente de variação e R²\nagricolae::cv.model(anova_culti)\nlm_culti &lt;- lm(Rendimento ~ cultiv_fator + block, data = cultivares)\nsummary(lm_culti)\n\n\n\nSaída do R: aov() + summary() para o exemplo do trigo, replicando os valores de F obtidos manualmente\n\n\nNo exemplo, o coeficiente de variação foi de 10,9% (variabilidade residual aceitável) e 85,9% da variabilidade total do rendimento foi explicada pelo modelo (cultivares + blocos).\n\nWorkflow completo em R\nReorganizando os mesmos dados em formato longo (um Fator, com 5 níveis, e um Bloco, com 4 níveis), o workflow completo — estatísticas descritivas, ajuste, diagnóstico e comparações múltiplas — fica:\n# Dados: rendimento (t/ha) das 5 cultivares de trigo, cada bloco com uma repetição de cada nível\ndados &lt;- data.frame(A = c(1.9, 1.7, 1.7, 1.3),\n                     B = c(2.4, 2.8, 2.7, 2.2),\n                     C = c(2.4, 1.9, 2.3, 1.7),\n                     D = c(3.6, 2.8, 2.5, 2.7),\n                     E = c(2.7, 2.3, 2.2, 1.9))\n\ncultivares &lt;- tidyr::pivot_longer(dados, cols = c('A','B','C','D','E'),\n                                   names_to = 'Fator', values_to = 'Resposta') %&gt;%\n  mutate(Fator = factor(Fator)) %&gt;%\n  mutate(Bloco = factor(rep(1:4, each = 5)))\n\ncultivares %&gt;%\n  group_by(Fator) %&gt;%\n  summarise(count = n(), mean = mean(Resposta), sd = sd(Resposta), median = median(Resposta))\n\n# Ajuste da ANOVA (fator + bloco)\nanova_culti &lt;- aov(Resposta ~ Fator + Bloco, data = cultivares)\nsummary(anova_culti)\n\n# Diagnóstico\npar(mfrow = c(2, 2)); plot(anova_culti); par(mfrow = c(1, 1))\n\n# Comparações múltiplas\nagricolae::HSD.test(anova_culti, 'Fator', alpha = 0.05, console = TRUE)\nplot(TukeyHSD(anova_culti))\n\n\nExemplo lúdico em sala de aula: comparação de sabores\nUm experimento em blocos casualizados também pode nascer de uma atividade simples em aula. Sete participantes provaram três sabores (A, B, C) e atribuíram uma nota a cada um — cada participante funciona como um bloco (controlando a variação natural do paladar de cada avaliador), e o sabor é o tratamento de interesse:\nn_alunos_participantes &lt;- 7\nn_niveis_fator &lt;- 3  # quantidade de sabores diferentes\n\n# Notas atribuídas por cada participante a cada sabor\ndados &lt;- data.frame(Sabor_A = c(10, 8, 7, 10, 9, 9, 5.5),\n                     Sabor_B = c(7, 9, 9, 9, 10, 10, 5),\n                     Sabor_C = c(8, 9, 8, 7, 9, 9, 6))\n\ndados_reorg &lt;- tidyr::pivot_longer(dados,\n                                    cols = c('Sabor_A', 'Sabor_B', 'Sabor_C'),\n                                    names_to = 'Fator', values_to = 'Notas') %&gt;%\n  mutate(Fator = factor(Fator)) %&gt;%\n  mutate(Bloco = factor(paste0('Participante_', rep(1:n_alunos_participantes, each = n_niveis_fator))))\n\n# Estatísticas descritivas por sabor e por participante\ndados_reorg %&gt;% group_by(Fator) %&gt;% summarise(mean = mean(Notas), sd = sd(Notas))\ndados_reorg %&gt;% group_by(Bloco) %&gt;% summarise(mean = mean(Notas), sd = sd(Notas))\n\n# Boxplot das notas por sabor\nggplot(dados_reorg, aes(x = Fator, y = Notas, fill = Fator)) +\n  geom_boxplot(alpha = 0.7) +\n  stat_summary(fun = mean, geom = \"point\", size = 4, color = \"black\") +\n  theme_minimal() +\n  labs(title = \"Distribuição das notas por sabor\", x = \"Sabor\", y = \"Nota\")\n\n# ANOVA (Sabor + Participante como bloco)\nanova_blocos &lt;- aov(Notas ~ Fator + Bloco, data = dados_reorg)\nsummary(anova_blocos)\n\n# Comparações múltiplas\nagricolae::HSD.test(anova_blocos, 'Fator', alpha = 0.05, console = TRUE)\nplot(TukeyHSD(anova_blocos))\nEsse tipo de experimento didático ilustra bem a lógica do bloqueamento: ao tratar cada participante como um bloco, isolamos a variação devida ao paladar individual (alguns avaliadores dão notas sistematicamente mais altas ou mais baixas que outros) da variação devida ao sabor em si — o que aumenta a precisão da comparação entre os sabores A, B e C.\nComplementação com regressão. Quando o tratamento é uma variável quantitativa (por exemplo, doses de nitrogênio aplicadas ao solo), a ANOVA pode ser complementada por uma análise de regressão. No exemplo do nitrogênio: \\(\\hat{y} = 2{,}18 + 0{,}0059x\\), com \\(R^2 = 83{,}5\\%\\) — a cada Kg/ha de nitrogênio aplicado, estima-se um incremento médio de 5,9 g/ha no rendimento de trigo, independente do bloco.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#dbc-artigo",
+    "href": "Metodos_Estatisticos/6_anova.html#dbc-artigo",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Aplicação em artigo científico",
+    "text": "Aplicação em artigo científico\nArtigo 3 — Nutrientes do solo em cassava (mandioca) (acesso ao artigo). Tratamento: tipo de nutriente no solo/matéria orgânica, com 6 níveis; blocos: 6 variedades de cassava (cada variedade recebeu os 6 tipos de matéria). Resposta: crescimento (altura) das plantas. O efeito dos diferentes tipos de matéria orgânica foi significativo (p ≈ 0,000), mas o efeito das variedades usadas como bloco não foi significativo (p = 0,699) — sugerindo que, neste caso específico, talvez não fosse necessário ter usado o delineamento em blocos. Pelo teste de comparação múltipla, as matérias cattle dung, palm waste, NPK e poultry waste não diferiram entre si, mas apresentaram crescimento médio significativamente maior do que os solos com green manure e placebo.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#efeito-principal-efeito-simples-e-interação",
+    "href": "Metodos_Estatisticos/6_anova.html#efeito-principal-efeito-simples-e-interação",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Efeito principal, efeito simples e interação",
+    "text": "Efeito principal, efeito simples e interação\n\nEfeito simples: efeito de um fator dentro de cada nível do outro fator.\nEfeito principal: média dos efeitos simples.\nInteração: a magnitude do efeito adicional observado em um dos fatores, na presença de cada nível do outro fator — um efeito que não é produzido por nenhum dos fatores isoladamente.\n\nUm exemplo clássico ilustra a ideia com o tempo de aprendizagem (minutos) segundo sexo e idade:\n\n\n\n\n\n\nSem interação: perfis paralelos indicam que o efeito do sexo independe da idade, e vice-versa\n\n\n\n\n\n\n\nCom interação: perfis não paralelos indicam que o efeito do sexo depende da idade (maior entre idosos/adultos, ausente entre jovens)\n\n\n\n\n\nQuando a interação é forte, os efeitos principais isolados podem até ser enganosos — o efeito “verdadeiro” de um fator só pode ser interpretado dentro de cada nível do outro fator.\nVantagens dos experimentos fatoriais: maior eficiência no uso dos recursos experimentais (permitem conclusões mais amplas sobre vários fatores simultaneamente); informação sobre interação entre fatores; e repetições intrínsecas (os níveis de um fator se repetem em cada nível do outro fator), aumentando a precisão das estimativas dos efeitos principais. Desvantagens: maior dificuldade em selecionar unidades experimentais homogêneas, dado o maior número de tratamentos (combinações); e, com muitos fatores, maior dificuldade na escolha e execução do delineamento.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#exemplo-hormônio-e-sexo-em-cordeiros",
+    "href": "Metodos_Estatisticos/6_anova.html#exemplo-hormônio-e-sexo-em-cordeiros",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Exemplo: hormônio e sexo em cordeiros",
+    "text": "Exemplo: hormônio e sexo em cordeiros\nFoi conduzido um experimento para avaliar o efeito do implante do hormônio Stilbestrol sobre o ganho de peso de cordeiros machos e fêmeas da raça Corriedale, em um intervalo de 180 dias após o implante.\n\n\n\nDados do experimento (ganho de peso) cruzando Hormônio (S = sem, C = com) e Sexo (F, M), com médias por célula e gráfico de perfis\n\n\n\n\n\nTabela ANOVA: efeitos principais de Hormônio (F = 16,36**) e Sexo (F = 5,23*) significativos; interação Hormônio × Sexo não significativa (F = 0,031)\n\n\nComo a interação Hormônio × Sexo não foi significativa, o efeito do hormônio não varia com o sexo (e vice-versa) — as conclusões devem se basear nos efeitos principais: os cordeiros que recebem hormônio ganham, em média, 5,75 kg a mais do que os que não recebem, independentemente do sexo; e há também um efeito principal significativo do sexo (diferença média de 3,25 kg).\nEm R, esse exemplo pode ser reproduzido com:\n# Fator1: Hormônio Stilbestrol (S: Sem, C: Com); Fator2: Sexo (M, F)\ndados &lt;- data.frame(Resposta = c(22,25,27,26, 25,32,29,28, 32,30,28,34, 29,34,36,37),\n                     Fator1 = c('S','S','S','S','S','S','S','S', 'C','C','C','C','C','C','C','C'),\n                     Fator2 = c('F','F','F','F','M','M','M','M', 'F','F','F','F','M','M','M','M'))\n\n# ANOVA fatorial (efeitos principais + interação)\nanova_hormo &lt;- aov(Resposta ~ Fator1 + Fator2 + Fator1:Fator2, data = dados)\nsummary(anova_hormo)\n\npar(mfrow = c(2, 2)); plot(anova_hormo); par(mfrow = c(1, 1))\n\n# Gráfico de interação (base R)\nwith(dados, interaction.plot(x.factor = Fator1, trace.factor = Fator2, response = Resposta,\n                              fun = mean, type = \"b\", pch = 19,\n                              xlab = \"Fator1\", ylab = \"Resposta média\", trace.label = \"Fator2\"))\n\n# Comparações múltiplas para cada fator\nagricolae::HSD.test(anova_hormo, 'Fator1', alpha = 0.05, console = TRUE)\nagricolae::HSD.test(anova_hormo, 'Fator2', alpha = 0.05, console = TRUE)",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#fatorial-cruzado-em-blocos",
+    "href": "Metodos_Estatisticos/6_anova.html#fatorial-cruzado-em-blocos",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Fatorial cruzado em blocos",
+    "text": "Fatorial cruzado em blocos\nQuando o experimento fatorial é conduzido em blocos, a fonte de variação devida aos blocos é conhecida e controlável, reduzindo a variabilidade atribuída ao erro. Exemplo: em um experimento fatorial instalado em blocos casualizados com 4 repetições, avaliaram-se os fatores Adubo Mineral (não/sim) e Adubo Orgânico (não/sim); o bloqueamento teve por finalidade controlar diferenças de fertilidade do solo.\n# Resposta: rendimento; FatorA = Mineral (não/sim), FatorB = Orgânico (não/sim); 4 blocos\ndados &lt;- data.frame(Resposta = c(18, 19.6, 20.6, 19.2, 8.6, 15.0, 21, 19.6,\n                                  9.4, 14.6, 18.6, 18.4, 11.4, 15.8, 20.6, 20.2),\n                     Bloco = rep(c('1','2','3','4'), each = 4),\n                     Mineral = rep(c('1','1','2','2'), times = 4),\n                     Organico = rep(c('1','2','1','2'), times = 4))\n\nanova_adubo &lt;- aov(Resposta ~ Mineral + Organico + Mineral:Organico + Bloco, data = dados)\nsummary(anova_adubo)\nplot(anova_adubo)\n\n# Gráfico de interação (nos dois sentidos)\nmedias &lt;- dados %&gt;% group_by(Mineral, Organico) %&gt;% summarise(Media = mean(Resposta), .groups = \"drop\")\n\nggplot(medias, aes(x = Mineral, y = Media, color = Organico, group = Organico)) +\n  geom_point(size = 3) + geom_line(linewidth = 1) +\n  labs(title = \"Gráfico de interação\", y = \"Resposta média\", x = \"Mineral\") +\n  theme_minimal(base_size = 14)\n\n# Tabela de médias e comparações múltiplas\nmodel.tables(anova_adubo, type = \"means\")\nagricolae::HSD.test(anova_adubo, 'Mineral', alpha = 0.05, console = TRUE)\nagricolae::HSD.test(anova_adubo, 'Organico', alpha = 0.05, console = TRUE)\n\n# Comparações múltiplas de Tukey entre as 4 combinações (efeitos simples)\nlibrary(lsmeans)\ncomparacoes &lt;- lsmeans(anova_adubo, pairwise ~ Mineral/Organico, adjust = \"tukey\")\ncomparacoes\n\n\n\nGráfico de interação (R): as linhas não paralelas indicam interação significativa entre Adubo Mineral e Adubo Orgânico (F = 6,58; p = 0,030)\n\n\n\n\n\nSaída do R: ANOVA mostrando Mineral (p &lt; 0,001), Mineral:Organico (interação, p = 0,030) significativos, e Organico isoladamente não significativo\n\n\nHavendo interação significativa, a conclusão deve ser baseada nos efeitos simples (comparações par a par entre as 4 combinações, obtidas acima com lsmeans), e não apenas nos efeitos principais isolados: neste exemplo, o efeito do Adubo Mineral foi mais efetivo do que o do Adubo Orgânico, sendo a aplicação de Adubo Mineral a mais indicada para maximizar o rendimento.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#vantagens-desvantagens-e-quando-usar",
+    "href": "Metodos_Estatisticos/6_anova.html#vantagens-desvantagens-e-quando-usar",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Vantagens, desvantagens e quando usar",
+    "text": "Vantagens, desvantagens e quando usar\nVantagem: aumento da precisão das comparações entre níveis do fator alocado na subparcela e da interação entre os fatores, em relação a um fatorial cruzado equivalente. Desvantagens: o fator alocado na parcela principal é medido com menor precisão do que seria em um experimento fatorial; e há maior complexidade na análise estatística, principalmente quando há perda de observações.\nO delineamento em parcelas subdivididas é indicado quando: um dos fatores é mais difícil de manejar/alterar (por exemplo, tipo de solo, sistema de cultivo) — esse fator vai para a parcela principal, que exige parcelas maiores; o estudo envolve medidas repetidas ao longo do tempo (avaliações semanais ou mensais — como no caso “dias após o transplantio”, que veremos a seguir); há maior interesse (maior precisão desejada) em um dos fatores — esse vai para a subparcela; ou os recursos experimentais são limitados e o número de parcelas precisa ser otimizado.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#estrutura-da-anova",
+    "href": "Metodos_Estatisticos/6_anova.html#estrutura-da-anova",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Estrutura da ANOVA",
+    "text": "Estrutura da ANOVA\nA análise se divide em duas partes — uma para a parcela principal (fator A) e outra para a subparcela (fator B e a interação A×B):\n\n\n\nEstrutura da tabela ANOVA em parcelas subdivididas: Erro(a) para testar o fator da parcela principal e Erro(b) — mais preciso — para testar o fator da subparcela e a interação A×B\n\n\nO Erro(a) representa a variação não explicada entre as parcelas (com as mesmas subparcelas) nas diferentes repetições, e é usado para testar o fator A (parcela principal): \\(F = QMA/QME(a)\\). O Erro(b) representa a variação não explicada entre as repetições das subparcelas (de um mesmo nível de A), e é usado para testar o fator B (subparcela) e a interação A×B: \\(F = QMB/QME(b)\\) e \\(F = QM_{AxB}/QME(b)\\). Como o Erro(b) tende a ser menor que o Erro(a), o fator alocado na subparcela — e a interação — são estimados com maior precisão.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#exemplo-de-referência-métodos-de-plantio-e-espaçamento-em-soja",
+    "href": "Metodos_Estatisticos/6_anova.html#exemplo-de-referência-métodos-de-plantio-e-espaçamento-em-soja",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Exemplo de referência: métodos de plantio e espaçamento em soja",
+    "text": "Exemplo de referência: métodos de plantio e espaçamento em soja\nUm experimento avaliou o efeito de Métodos de Plantio (4 níveis: convencional — M1, plantio direto com herbicida A — M2, B — M3, C — M4) e Espaçamento entre linhas em cm (4 níveis: 17, 34, 51 e 68 — E1 a E4) sobre o rendimento de soja. Os métodos de plantio constituíram as parcelas principais, arranjadas em blocos casualizados com 4 repetições, e os espaçamentos, as subparcelas (4 repetições por parcela; 16 repetições por subparcela).\n\n\n\nDados de rendimento de soja (kg/ha) para as 16 combinações de método de plantio × espaçamento, em 4 blocos",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#split-plot-artigo",
+    "href": "Metodos_Estatisticos/6_anova.html#split-plot-artigo",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Aplicação em artigo científico",
+    "text": "Aplicação em artigo científico\nCobertura de solo (TNT) e dias após o transplantio em planta ornamental (DOI: 10.1590/S1806-66902013000400016). Nas parcelas, os tratamentos se constituíram de dois sistemas de cultivo (com e sem cobertura de solo em polipropileno preto, TNT); nas subparcelas, as épocas de amostragem das plantas: 14, 28, 42, 56, 70, 84, 98 e 112 dias após o transplantio (DAT), com 4 repetições. Foram avaliados o acúmulo de massa seca em diferentes partes da planta, área foliar e taxas de crescimento.\n\n\n\nArranjo em parcelas subdivididas do experimento com TNT: 4 blocos, cada um com uma parcela sem TNT e uma parcela com TNT, subdivididas nas 8 épocas de amostragem\n\n\nPrincipais resultados: o efeito de TNT (fator da parcela principal) não foi significativo para nenhuma das respostas avaliadas, e não houve interação significativa entre TNT e dias após o transplantio — ou seja, a cobertura de solo não influenciou o acúmulo de massa seca, a área foliar ou as taxas de crescimento. Já o efeito de dias após o transplantio (fator da subparcela, quantitativo) foi significativo para praticamente todas as respostas, sendo complementado por análise de regressão: por exemplo, os frutos se comportaram como dreno preferencial da planta, chegando ao final do ciclo (112 DAT) com 47,77% do total da massa seca acumulada.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#exemplo-em-r",
+    "href": "Metodos_Estatisticos/6_anova.html#exemplo-em-r",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Exemplo em R",
+    "text": "Exemplo em R\nO workflow completo de uma ANOVA no DCC — estatísticas descritivas, gráfico exploratório, ajuste do modelo, diagnóstico das suposições e comparações múltiplas — pode ser reproduzido em R com o mesmo exemplo das variedades de cana-de-açúcar:\n# Pacotes utilizados\npackages &lt;- c(\"dplyr\", \"ggplot2\", \"tidyr\", \"car\", \"agricolae\", \"readr\")\nfor (pkg in packages) {\n  if (!requireNamespace(pkg, quietly = TRUE)) install.packages(pkg, dependencies = TRUE)\n  library(pkg, character.only = TRUE)\n}\n\n# Dados: rendimento (t/ha) de 4 variedades de cana-de-açúcar\ndados &lt;- data.frame(A = c(64,72,68,77,56,95),\n                     B = c(78,91,97,82,85,77),\n                     C = c(75,93,78,71,63,76),\n                     D = c(55,66,49,64,70,68))\n\n# Reorganizando para o formato longo\ndados2 &lt;- tidyr::pivot_longer(dados, cols = c('A','B','C','D'),\n                               names_to = 'Fator', values_to = 'Resposta') %&gt;%\n  mutate(Fator = factor(Fator))\n\n# Estatísticas descritivas por grupo\ndados2 %&gt;%\n  group_by(Fator) %&gt;%\n  summarise(count = n(), mean = mean(Resposta), sd = sd(Resposta), median = median(Resposta))\n\n# Boxplot exploratório (com a média sobreposta)\nggplot(dados2, aes(x = Fator, y = Resposta, fill = Fator)) +\n  geom_boxplot(alpha = 0.7) +\n  stat_summary(fun = mean, geom = \"point\", size = 4, color = \"black\") +\n  theme_minimal() +\n  labs(title = \"Distribuição da resposta por nível do fator\", x = \"Fator\", y = \"Resposta\")\n\n# Ajuste da ANOVA de um fator\nmodelo &lt;- aov(Resposta ~ Fator, data = dados2)\nsummary(modelo)\n\n# Diagnóstico das suposições\npar(mfrow = c(2, 2)); plot(modelo); par(mfrow = c(1, 1))\nshapiro.test(residuals(modelo))                  # normalidade dos resíduos\nbartlett.test(Resposta ~ Fator, data = dados2)    # homogeneidade de variâncias (Bartlett)\ncar::leveneTest(Resposta ~ Fator, data = dados2)  # homogeneidade de variâncias (Levene)\n\n# Médias por grupo e comparações múltiplas\nmodel.tables(modelo, type = \"means\")\nTukeyHSD(modelo)\nplot(TukeyHSD(modelo))\n\n# Alternativa com o pacote agricolae\nagricolae::HSD.test(modelo, trt = 'Fator')",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#experimentos-fatoriais-com-três-fatores",
+    "href": "Metodos_Estatisticos/6_anova.html#experimentos-fatoriais-com-três-fatores",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Experimentos fatoriais com três fatores",
+    "text": "Experimentos fatoriais com três fatores\nO mesmo raciocínio se estende para três (ou mais) fatores simultâneos — com a diferença de que, além dos três efeitos principais, passam a existir três interações duplas (A×B, A×C, B×C) e uma interação tripla (A×B×C). Como exemplo didático dessa extensão — já que o material de Paula Bracco cobre o caso de dois fatores — usamos um exemplo clássico do livro Design and Analysis of Experiments, de Douglas Montgomery: um engarrafador de refrigerante deseja entender as fontes de variação na altura de enchimento das garrafas, controlando três variáveis do processo — percentual de carbonatação (Fator A: 10, 12, 14), pressão de operação da enchedora (Fator B: 25, 30) e velocidade da linha, em garrafas por minuto (Fator C: 200, 250).\ndados &lt;- data.frame(\n  Resposta = c(-3,-1,-1,1,-1,0,0,1,0,2,2,6,\n                1,1,3,5,5,7,7,10,4,6,9,11),\n  FatorA = factor(rep(c('10', '12', '14'), c(12, 8, 4))),\n  FatorB = factor(rep(c('25', '25', '30', '30'), times = 6)),\n  FatorC = factor(rep(c('200', '250'), times = 12))\n)\n\n# ANOVA fatorial completa: 3 efeitos principais + 3 interações duplas + 1 interação tripla\nanova_drink &lt;- aov(Resposta ~ FatorA * FatorB * FatorC, data = dados)\nsummary(anova_drink)\n\npar(mfrow = c(2, 2)); plot(anova_drink); par(mfrow = c(1, 1))\n\n# Gráficos de interação dois a dois (mantendo o terceiro fator fixo)\ninteraction.plot(dados$FatorA, dados$FatorB, dados$Resposta,\n                  xlab = \"Fator A (carbonatação)\", ylab = \"Resposta média\", trace.label = \"Fator B\")\ninteraction.plot(dados$FatorA, dados$FatorC, dados$Resposta,\n                  xlab = \"Fator A (carbonatação)\", ylab = \"Resposta média\", trace.label = \"Fator C\")\ninteraction.plot(dados$FatorB, dados$FatorC, dados$Resposta,\n                  xlab = \"Fator B (pressão)\", ylab = \"Resposta média\", trace.label = \"Fator C\")\n\n# Médias ajustadas para gráficos de interação por painel (usando emmeans)\nlibrary(emmeans)\nmedias &lt;- as.data.frame(emmeans(anova_drink, ~ FatorA * FatorB * FatorC))\n\nggplot(medias, aes(x = FatorA, y = emmean, color = FatorB, group = FatorB)) +\n  geom_point(size = 3) + geom_line(linewidth = 1) +\n  facet_wrap(~ FatorC) +\n  labs(title = \"Interação Fator A × Fator B\", subtitle = \"Painéis por Fator C\",\n       x = \"Carbonatação (%)\", y = \"Média ajustada\", color = \"Pressão\") +\n  theme_bw()\nA leitura dos resultados segue a mesma lógica do caso com dois fatores: interpretamos primeiro a interação tripla (se significativa, as interações duplas — e os efeitos principais — devem ser interpretadas dentro de cada nível do terceiro fator); se a interação tripla não for significativa, passamos a interpretar as interações duplas; e, na ausência de qualquer interação, interpretamos diretamente os três efeitos principais.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/6_anova.html#exemplo-em-r-resistência-à-tração-do-papel",
+    "href": "Metodos_Estatisticos/6_anova.html#exemplo-em-r-resistência-à-tração-do-papel",
+    "title": "Teste de Hipóteses: ANOVA",
+    "section": "Exemplo em R: resistência à tração do papel",
+    "text": "Exemplo em R: resistência à tração do papel\nEm R, a estrutura de dois erros (Erro(a) para a parcela principal, Erro(b) para a subparcela) é declarada explicitamente com o termo Error() dentro do aov(). O exemplo a seguir — também um clássico do livro de Montgomery — avalia a resistência à tração do papel em função do método de preparo da polpa (fator da parcela principal, 3 níveis) e da temperatura de cozimento (fator da subparcela, 4 níveis), em 3 repetições (blocos):\n# Whole-plot factor: método de preparo da polpa (3 níveis)\n# Subplot factor: temperatura de cozimento (4 níveis)\n# Réplicas (blocos): 3\npaper &lt;- data.frame(\n  Replicate = factor(rep(1:3, each = 12)),\n  Method = factor(rep(rep(c(1,2,3), each = 4), 3)),\n  Temperature = factor(rep(c(200,225,250,275), 9)),\n  Strength = c(\n    # Réplica 1\n    30,35,37,36,  34,41,38,42,  29,26,33,36,\n    # Réplica 2\n    28,32,40,41,  31,36,42,40,  31,30,32,40,\n    # Réplica 3\n    31,37,41,40,  35,40,39,44,  32,34,39,45\n  )\n)\n\n# Erro(a) = Replicate/Method (parcela principal); Erro(b) = resíduo (subparcela)\npaper.aov &lt;- aov(Strength ~ Method * Temperature + Error(Replicate/Method), data = paper)\nsummary(paper.aov)\nA saída do summary() retorna duas tabelas de ANOVA separadas — uma dentro de Error: Replicate:Method (o Erro(a), usado para testar o efeito do Método) e outra dentro de Error: Within (o Erro(b), usado para testar o efeito da Temperatura e a interação Método×Temperatura) — exatamente a estrutura de dois estratos de erro apresentada acima.",
+    "crumbs": [
+      "Teste de Hipóteses: ANOVA (Semanas 11-15)",
+      "Teste de Hipóteses: ANOVA"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#outros-exemplos-motivacionais",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#outros-exemplos-motivacionais",
+    "title": "Probabilidade",
+    "section": "Outros exemplos motivacionais",
+    "text": "Outros exemplos motivacionais\nO mesmo procedimento (calcular o escore \\(Z\\) e consultar a tabela normal) se aplica a praticamente qualquer variável contínua que se distribua aproximadamente como um “sino” em torno de uma média — o que é extremamente comum em variáveis biológicas mensuradas na Agronomia e na Zootecnia.\nExemplo (Agronomia) — produtividade de soja. Em uma lavoura, a produtividade de soja segue aproximadamente uma distribuição normal com média \\(\\mu = 55\\) sacas/ha e desvio padrão \\(\\sigma = 6\\) sacas/ha. O produtor quer saber qual a proporção da área plantada com produtividade insatisfatória, definida como abaixo de 45 sacas/ha. O escore \\(Z = \\dfrac{45-55}{6} = -1{,}67\\), e a área abaixo de \\(Z=-1{,}67\\) na tabela normal é de aproximadamente 4,75% — ou seja, cerca de 4,75% da lavoura deve produzir abaixo do patamar considerado satisfatório.\n\n\n\nDistribuição normal da produtividade de soja (μ=55, σ=6 sacas/ha): área sombreada representa a proporção da lavoura com produtividade abaixo de 45 sacas/ha\n\n\nExemplo (Zootecnia) — produção de leite. Em um rebanho leiteiro, a produção diária de leite por vaca segue aproximadamente uma distribuição normal com média \\(\\mu = 25\\) L/dia e desvio padrão \\(\\sigma = 4\\) L/dia. O produtor quer identificar vacas de baixo desempenho, definidas como as que produzem menos de 18 L/dia — candidatas a serem investigadas (saúde, nutrição) ou descartadas do plantel. O escore \\(Z = \\dfrac{18-25}{4} = -1{,}75\\), e a área abaixo de \\(Z=-1{,}75\\) é de aproximadamente 4,01% — ou seja, cerca de 4% do rebanho se enquadra nesse critério de baixo desempenho.\nRepare que, nos dois exemplos, o raciocínio é idêntico ao do exemplo dos bovinos acima — muda apenas o contexto (grão vs. animal) e os valores de \\(\\mu\\), \\(\\sigma\\) e do ponto de corte. Essa é a grande vantagem de padronizar com o escore \\(Z\\): uma única tabela (ou um único software) resolve qualquer problema de distribuição normal, independentemente da escala ou unidade da variável original.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#exemplo-agronomia-teor-de-proteína-em-silagem",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#exemplo-agronomia-teor-de-proteína-em-silagem",
+    "title": "Probabilidade",
+    "section": "Exemplo (Agronomia): teor de proteína em silagem",
+    "text": "Exemplo (Agronomia): teor de proteína em silagem\nUm pesquisador coleta \\(n=10\\) amostras de silagem de milho e mede o teor de proteína bruta, obtendo média amostral \\(\\bar{X} = 8{,}2\\%\\) e desvio padrão amostral \\(s = 0{,}6\\%\\). Como a variância populacional é desconhecida e a amostra é pequena (\\(n=10\\)), a distribuição de referência para construir um intervalo de confiança para a média populacional é a t de Student, com \\(gl = n - 1 = 9\\) graus de liberdade — e não a normal padrão.\nO valor crítico \\(t_{0{,}975; \\, 9} = 2{,}262\\) é maior do que o correspondente valor crítico da normal padrão, \\(z_{0{,}975} = 1{,}96\\) — essa diferença é exatamente o “preço” pago pela incerteza extra de estimar \\(\\sigma\\) com uma amostra pequena. O intervalo de confiança de 95% para a média populacional é dado por:\n\\[\nIC(\\mu; 95\\%) = \\bar{X} \\pm t_{0{,}975;9} \\times \\frac{s}{\\sqrt{n}} = 8{,}2 \\pm 2{,}262 \\times \\frac{0{,}6}{\\sqrt{10}} = 8{,}2 \\pm 0{,}43\n\\]\nou seja, o intervalo de confiança de 95% para o teor médio de proteína bruta na silagem é aproximadamente \\((7{,}77\\%; \\, 8{,}63\\%)\\).\n\n\n\nDistribuição t de Student com gl=9: os valores críticos ±2,262 delimitam a região central de 95% de probabilidade, usada na construção do intervalo de confiança do exemplo da silagem\n\n\nEsse mesmo raciocínio — usar a distribuição t ao invés da normal quando a amostra é pequena e \\(\\sigma\\) é desconhecido — é a base do teste \\(t\\) de Student que veremos na página de Teste de Hipóteses: Teste z e Teste t de Student, e reaparece constantemente em experimentos agronômicos e zootécnicos, nos quais o número de repetições (parcelas experimentais, animais) costuma ser pequeno. Um aplicativo interativo para visualizar a distribuição t está disponível em istats.shinyapps.io/tdist.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Metodos_Estatisticos/3_probabilidade.html#exemplo-zootecnia-comparação-da-variabilidade-de-ganho-de-peso-entre-duas-rações",
+    "href": "Metodos_Estatisticos/3_probabilidade.html#exemplo-zootecnia-comparação-da-variabilidade-de-ganho-de-peso-entre-duas-rações",
+    "title": "Probabilidade",
+    "section": "Exemplo (Zootecnia): comparação da variabilidade de ganho de peso entre duas rações",
+    "text": "Exemplo (Zootecnia): comparação da variabilidade de ganho de peso entre duas rações\nUm zootecnista testa duas rações (A e B) para o ganho de peso de suínos em fase de terminação. Na ração A, \\(n_1 = 10\\) animais, com variância amostral \\(s_1^2 = 25 \\text{ kg}^2\\); na ração B, \\(n_2 = 8\\) animais, com variância amostral \\(s_2^2 = 9 \\text{ kg}^2\\). Antes de comparar as médias de ganho de peso entre as duas rações (por exemplo, com um teste \\(t\\)), é importante verificar se as variâncias dos dois grupos podem ser consideradas homogêneas — um pressuposto do teste \\(t\\) com variâncias iguais (e também da ANOVA, como vimos na página anterior).\nCalcula-se a estatística F como a razão entre a maior e a menor variância amostral:\n\\[\nF = \\frac{s_1^2}{s_2^2} = \\frac{25}{9} = 2{,}78, \\qquad gl_1 = 9, \\;\\; gl_2 = 7\n\\]\n\n\n\nDistribuição F (gl1=9, gl2=7): o F observado (2,78) está abaixo do valor crítico a 5% de significância (3,68), na região onde não se rejeita a igualdade de variâncias\n\n\nConsultando a tabela F (ou calculando em R com qf(0.95, 9, 7)), o valor crítico é \\(F_{0{,}05; \\, 9,7} \\approx 3{,}68\\). Como o F observado (\\(2{,}78\\)) é menor que o F crítico (\\(3{,}68\\)), não há evidência suficiente para rejeitar a hipótese de que as variâncias do ganho de peso são homogêneas entre as duas rações — é razoável prosseguir com um teste \\(t\\) assumindo variâncias iguais.\nEsta é exatamente a mesma lógica que sustenta o teste F das tabelas de ANOVA vistas na página de Teste de Hipóteses: ANOVA: lá, o F comparava a variabilidade entre tratamentos com a variabilidade dentro dos tratamentos (o erro experimental); aqui, comparamos diretamente a variabilidade entre dois grupos. Em ambos os casos, um valor de F “grande” (muito maior que 1) indica que a razão entre as duas fontes de variabilidade dificilmente ocorreria só por acaso. Um aplicativo interativo para visualizar a distribuição F está disponível em istats.shinyapps.io/FDist.",
+    "crumbs": [
+      "Probabilidade (Semanas 5-6)",
+      "Probabilidade"
     ]
   }
 ]

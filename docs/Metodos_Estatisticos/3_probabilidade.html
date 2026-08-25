@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Probabilidade – Teaching</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../figs/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-eef78bce6e6d37c27bc985c3ac861da9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Teaching</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-temas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Temas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-temas">    
+        <li>
+    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Métodos Estatísticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Int_Prob/1_experimento_aleatorio.html">
+ <span class="dropdown-text">Introdução à Probabilidade</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Probabilidade_B/LGN.html">
+ <span class="dropdown-text">Probabilidade Avançada</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Modelos_Lineares/paradoxo_simpson.html">
+ <span class="dropdown-text">Modelos Lineares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Multivariada/Componentes_Principais.html">
+ <span class="dropdown-text">Análise Multivariada</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/3_probabilidade.html">Probabilidade (Semanas 5-6)</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/3_probabilidade.html">Probabilidade</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apresentação</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação da Disciplina</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução e Análise Exploratória</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introdução à Estatística e Análise Exploratória de Dados</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/2_descritiva_medidas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Probabilidade (Semanas 5-6)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/3_probabilidade.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Probabilidade</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Amostragem e Estimação (Semanas 7-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/4_amostragem_estimacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Amostragem e Estimação</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: z e t (Semanas 9-10)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Teste z e Teste t de Student</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: ANOVA (Semanas 11-15)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/6_anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: ANOVA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Correlação, Regressão e Qui-Quadrado (Semanas 16-18)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#noções-de-probabilidade" id="toc-noções-de-probabilidade" class="nav-link" data-scroll-target="#noções-de-probabilidade">Noções de Probabilidade</a>
+  <ul class="collapse">
+  <li><a href="#mas-por-que-estudar-probabilidade" id="toc-mas-por-que-estudar-probabilidade" class="nav-link" data-scroll-target="#mas-por-que-estudar-probabilidade">Mas… por que estudar probabilidade?</a></li>
+  <li><a href="#conceitos-fundamentais" id="toc-conceitos-fundamentais" class="nav-link" data-scroll-target="#conceitos-fundamentais">Conceitos fundamentais</a></li>
+  <li><a href="#um-exemplo-de-referência-combinatória-simples" id="toc-um-exemplo-de-referência-combinatória-simples" class="nav-link" data-scroll-target="#um-exemplo-de-referência-combinatória-simples">Um exemplo de referência (combinatória simples)</a></li>
+  </ul></li>
+  <li><a href="#probabilidade-condicional" id="toc-probabilidade-condicional" class="nav-link" data-scroll-target="#probabilidade-condicional">Probabilidade Condicional</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-diagnóstico-de-doença-em-rebanho" id="toc-exemplo-diagnóstico-de-doença-em-rebanho" class="nav-link" data-scroll-target="#exemplo-diagnóstico-de-doença-em-rebanho">Exemplo: diagnóstico de doença em rebanho</a></li>
+  </ul></li>
+  <li><a href="#eventos-independentes" id="toc-eventos-independentes" class="nav-link" data-scroll-target="#eventos-independentes">Eventos Independentes</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-o-caso-das-sementes-e-da-máquina" id="toc-exemplo-o-caso-das-sementes-e-da-máquina" class="nav-link" data-scroll-target="#exemplo-o-caso-das-sementes-e-da-máquina">Exemplo: o caso das sementes e da máquina</a></li>
+  </ul></li>
+  <li><a href="#distribuição-normal" id="toc-distribuição-normal" class="nav-link" data-scroll-target="#distribuição-normal">Distribuição Normal</a>
+  <ul class="collapse">
+  <li><a href="#aplicação-peso-de-bovinos-ao-abate" id="toc-aplicação-peso-de-bovinos-ao-abate" class="nav-link" data-scroll-target="#aplicação-peso-de-bovinos-ao-abate">Aplicação: peso de bovinos ao abate</a></li>
+  <li><a href="#outros-exemplos-motivacionais" id="toc-outros-exemplos-motivacionais" class="nav-link" data-scroll-target="#outros-exemplos-motivacionais">Outros exemplos motivacionais</a></li>
+  </ul></li>
+  <li><a href="#distribuição-t-de-student" id="toc-distribuição-t-de-student" class="nav-link" data-scroll-target="#distribuição-t-de-student">Distribuição t de Student</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-agronomia-teor-de-proteína-em-silagem" id="toc-exemplo-agronomia-teor-de-proteína-em-silagem" class="nav-link" data-scroll-target="#exemplo-agronomia-teor-de-proteína-em-silagem">Exemplo (Agronomia): teor de proteína em silagem</a></li>
+  </ul></li>
+  <li><a href="#distribuição-f-de-snedecor" id="toc-distribuição-f-de-snedecor" class="nav-link" data-scroll-target="#distribuição-f-de-snedecor">Distribuição F de Snedecor</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-zootecnia-comparação-da-variabilidade-de-ganho-de-peso-entre-duas-rações" id="toc-exemplo-zootecnia-comparação-da-variabilidade-de-ganho-de-peso-entre-duas-rações" class="nav-link" data-scroll-target="#exemplo-zootecnia-comparação-da-variabilidade-de-ganho-de-peso-entre-duas-rações">Exemplo (Zootecnia): comparação da variabilidade de ganho de peso entre duas rações</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/3_probabilidade.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/3_probabilidade.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/3_probabilidade.html">Probabilidade (Semanas 5-6)</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/3_probabilidade.html">Probabilidade</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Probabilidade</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>Este material cobre as <strong>Semanas 5 e 6</strong> do plano de ensino: noções de probabilidade, axiomas, probabilidade condicional e sua aplicação, eventos independentes, distribuição normal e suas aplicações. Como complemento, a página também introduz as distribuições t de Student e F de Snedecor — que reaparecerão nas páginas de Testes de Hipóteses e ANOVA — sempre ilustradas com exemplos motivacionais de Agronomia e Zootecnia.</p>
+<p>Slides originais disponíveis <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_5_a_6.pptx">AQUI</a>.</p>
+<p>Para aprofundamento teórico, recomenda-se a leitura de <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-6_Probabilidade_introducao%20e%20teoremas.pdf">Probabilidade: introdução e teoremas</a> e <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-7_Probabilidade_condicional%20e%20bayes.pdf">Probabilidade condicional e Bayes</a> (exceto os itens de Teorema da Probabilidade Total e Teorema de Bayes, fora do escopo desta disciplina), além do item 3 (Distribuição Normal) de <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_2/2-2_Var%20aleatorias%20continuas%20e%20distribuicoes.pdf">Variáveis aleatórias contínuas e distribuições</a>.</p>
+</section>
+<section id="noções-de-probabilidade" class="level1">
+<h1>Noções de Probabilidade</h1>
+<section id="mas-por-que-estudar-probabilidade" class="level2">
+<h2 class="anchored" data-anchor-id="mas-por-que-estudar-probabilidade">Mas… por que estudar probabilidade?</h2>
+<p>Em resumo, de maneira simplificada:</p>
+<p><span class="math display">\[
+\text{Estatística} = \text{Matemática} + \text{Erro}
+\]</span></p>
+<p>Se conseguimos estudar/medir esse “erro” com probabilidade, temos uma informação útil — é exatamente essa a ponte entre a Estatística Descritiva, que vimos até aqui, e a Estatística Inferencial, que veremos a partir de agora.</p>
+</section>
+<section id="conceitos-fundamentais" class="level2">
+<h2 class="anchored" data-anchor-id="conceitos-fundamentais">Conceitos fundamentais</h2>
+<ul>
+<li><strong>Probabilidade</strong>: mede o grau de incerteza associado a eventos aleatórios.</li>
+<li><strong>Experimento aleatório</strong>: processo cujo resultado não é previsível com certeza.</li>
+<li><strong>Espaço amostral</strong> (notação <span class="math inline">\(\Omega\)</span> ou <span class="math inline">\(S\)</span>): conjunto de todos os resultados possíveis de um experimento aleatório.</li>
+<li><strong>Realização</strong> de um elemento do espaço amostral (notação <span class="math inline">\(x\)</span>).</li>
+<li><strong>Evento</strong>: subconjunto do espaço amostral (usualmente denotado por letras como <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, …).</li>
+</ul>
+<p><strong>Exemplo:</strong> a ocorrência de chuva em um dia de plantio é um evento aleatório — não sabemos com certeza se vai chover, mas podemos atribuir uma probabilidade a esse evento com base em dados históricos e modelos meteorológicos.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/evento_chuva.jpg" class="img-fluid figure-img"></p>
+<figcaption>Chuva sobre uma lavoura: um exemplo clássico de evento aleatório relevante para o planejamento agrícola</figcaption>
+</figure>
+</div>
+<p>Um exemplo simples de espaço amostral e eventos climáticos: suponha que, para um determinado dia, temos <span class="math inline">\(P(A) = 0{,}4\)</span> (40% de chance de chuva), <span class="math inline">\(P(B) = 0{,}5\)</span> (50% de chance de sol) e <span class="math inline">\(P(C) = 0{,}1\)</span> (10% de chance de neve). Note que <span class="math inline">\(P(A) + P(B) + P(C) = 1\)</span> — os três eventos esgotam o espaço amostral (<strong>axioma de que a probabilidade do espaço amostral inteiro é igual a 1</strong>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/exemplo_eventos_climaticos.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo de espaço amostral climático com três eventos mutuamente exclusivos: chuva, sol e neve</figcaption>
+</figure>
+</div>
+</section>
+<section id="um-exemplo-de-referência-combinatória-simples" class="level2">
+<h2 class="anchored" data-anchor-id="um-exemplo-de-referência-combinatória-simples">Um exemplo de referência (combinatória simples)</h2>
+<p>Para revisar a definição clássica de probabilidade (número de casos favoráveis sobre número de casos possíveis) em um espaço amostral finito, considere o seguinte exemplo, adaptado do material de referência <a href="https://bendeivide.github.io/book-estbasica/">bendeivide.github.io/book-estbasica</a>: considere o nascimento de <strong>três bezerros em sequência</strong>, observando o sexo de cada um (macho ou fêmea). O espaço amostral tem <span class="math inline">\(n=8\)</span> eventos simples, <span class="math inline">\(\Omega = \{(M,M,M), (M,M,F), (M,F,M), (F,M,M), (M,F,F), (F,M,F), (F,F,M), (F,F,F)\}\)</span>. Defina o evento <span class="math inline">\(A\)</span>: “nascer exatamente duas fêmeas” e o evento <span class="math inline">\(B\)</span>: “nascer pelo menos uma fêmea”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/exemplo_duas_femeas_bezerros.jpg" class="img-fluid figure-img"></p>
+<figcaption>Ilustração de um dos resultados do evento A — nascer exatamente duas fêmeas: a sequência (fêmea, fêmea, macho) é um dos elementos de A</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/exemplo_bezerros_probabilidade.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo de cálculo de probabilidade por contagem de casos favoráveis, a partir do espaço amostral do nascimento de três bezerros: P(A) = 3/8 = 37,5% e P(B) = 7/8 = 87,5%</figcaption>
+</figure>
+</div>
+<p>Esse tipo de raciocínio — contar quantos resultados do espaço amostral satisfazem o evento de interesse e dividir pelo total de resultados possíveis — é a base da definição clássica (ou “de Laplace”) de probabilidade, válida quando todos os resultados do espaço amostral são igualmente prováveis.</p>
+</section>
+</section>
+<section id="probabilidade-condicional" class="level1">
+<h1>Probabilidade Condicional</h1>
+<p>A <strong>probabilidade condicional</strong> mede a probabilidade de um evento <span class="math inline">\(A\)</span> ocorrer, <em>dado que</em> já sabemos que outro evento <span class="math inline">\(B\)</span> ocorreu. Formalmente:</p>
+<p><span class="math display">\[
+P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \quad \text{com } P(B) &gt; 0
+\]</span></p>
+<p>onde <span class="math inline">\(A \cap B\)</span> (a <strong>interseção</strong> de <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>) representa a ocorrência simultânea dos dois eventos:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/venn_intersecao.png" class="img-fluid figure-img"></p>
+<figcaption>Diagrama de Venn ilustrando a interseção A ∩ B entre dois eventos</figcaption>
+</figure>
+</div>
+<section id="exemplo-diagnóstico-de-doença-em-rebanho" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-diagnóstico-de-doença-em-rebanho">Exemplo: diagnóstico de doença em rebanho</h2>
+<p>Este é um dos exemplos mais importantes da disciplina para entender probabilidade condicional na prática, e ilustra por que interpretar corretamente o resultado de um teste diagnóstico não é tão trivial quanto parece.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/diagnostico_fotos_reais.jpg" class="img-fluid figure-img"></p>
+<figcaption>Fotos originais do slide, ilustrando o cenário de diagnóstico de doença em rebanho: coleta de amostra para o teste, animal doente debilitado, e exame veterinário do animal</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/diagnostico_cenario.png" class="img-fluid figure-img"></p>
+<figcaption>Cenário: um produtor de leite quer saber a probabilidade de um animal estar realmente doente, dado que o teste rápido deu positivo</figcaption>
+</figure>
+</div>
+<p>Considere um teste rápido para diagnóstico de <strong>Tristeza Parasitária Bovina (TPB)</strong> aplicado a 100 vacas de um rebanho. A tabela de contingência a seguir mostra o resultado real (com ou sem a doença) cruzado com o resultado do teste:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/diagnostico_tabela_dados.png" class="img-fluid figure-img"></p>
+<figcaption>Tabela de contingência com os resultados reais de 100 animais testados: 10 verdadeiros positivos, 8 falsos positivos, 2 falsos negativos e 80 verdadeiros negativos</figcaption>
+</figure>
+</div>
+<p>Repare que, dos 18 animais que testaram positivo, apenas 10 estão de fato doentes — os outros 8 são <strong>falsos positivos</strong>. Isso significa que, se um animal testar positivo, a probabilidade de ele estar <em>realmente</em> doente não é 100%, mesmo que o teste pareça “bom” à primeira vista (apenas 12 vacas do rebanho de fato têm a doença, e o teste “acerta” 90 dos 100 casos no total). O cálculo formal, usando a definição de probabilidade condicional:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/diagnostico_calculo.png" class="img-fluid figure-img"></p>
+<figcaption>Aplicação da fórmula de probabilidade condicional: P(Doença | Positivo) = 10/18 ≈ 55,6%</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/diagnostico_conclusao.png" class="img-fluid figure-img"></p>
+<figcaption>Conclusão: apesar do teste positivo, a probabilidade do animal estar realmente doente é de apenas 55,6%, devido ao número de falsos positivos</figcaption>
+</figure>
+</div>
+<p><strong>Por que isso é útil na agropecuária?</strong> O produtor sabe que, ao isolar todos os 18 animais que testaram positivo, está separando muitos animais sadios desnecessariamente — o que pode motivar a busca por um teste mais específico para confirmar o diagnóstico antes de tomar decisões custosas (como o descarte de um animal). Este mesmo tipo de raciocínio aparece em qualquer teste diagnóstico — de doenças humanas a testes de qualidade industrial — e é a essência do chamado <em>paradoxo do falso positivo</em>.</p>
+<p>Para quem quiser se aprofundar no raciocínio por trás desse tipo de exemplo (na perspectiva do Teorema de Bayes), recomenda-se fortemente <a href="https://www.youtube.com/watch?v=R13BD8qKeTg">este vídeo do canal Veritasium</a>.</p>
+</section>
+</section>
+<section id="eventos-independentes" class="level1">
+<h1>Eventos Independentes</h1>
+<p>Dois eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são <strong>independentes</strong> quando a ocorrência de um não fornece nenhuma informação sobre a probabilidade de ocorrência do outro — ou seja, <span class="math inline">\(P(A \mid B) = P(A)\)</span>, o que equivale a <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span>.</p>
+<section id="exemplo-o-caso-das-sementes-e-da-máquina" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-o-caso-das-sementes-e-da-máquina">Exemplo: o caso das sementes e da máquina</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/eventos_independentes_sementes_real.jpg" class="img-fluid figure-img"></p>
+<figcaption>Exemplo de eventos independentes, com as fotos originais do slide: germinação de uma semente de soja (evento A) e funcionamento perfeito de um trator (evento B) — os dois processos não têm relação um com o outro</figcaption>
+</figure>
+</div>
+<p>Um produtor rural quer saber a probabilidade de dois processos distintos darem certo no mesmo dia:</p>
+<ol type="1">
+<li><strong>Evento A (Germinação)</strong>: uma semente de soja germinar em um vaso de teste, com taxa de germinação de 90% (<span class="math inline">\(P(A) = 0{,}9\)</span>).</li>
+<li><strong>Evento B (Manutenção)</strong>: um trator, que acabou de sair da revisão, não apresentar falhas mecânicas, com probabilidade de 95% (<span class="math inline">\(P(B) = 0{,}95\)</span>).</li>
+</ol>
+<p><strong>Por que são independentes?</strong> O fato da semente de soja germinar no laboratório não tem nenhuma relação biológica ou física com o funcionamento do motor do trator no campo. Saber que a semente germinou não dá nenhuma pista extra sobre se o trator vai quebrar ou não — logo, <span class="math inline">\(P(A \cap B) = P(A) \times P(B) = 0{,}9 \times 0{,}95 = 0{,}855\)</span> (85,5% de chance de que ambos os processos deem certo no mesmo dia).</p>
+<p>Esse tipo de raciocínio contrasta diretamente com o exemplo anterior (diagnóstico de doença), em que evento (ter a doença) e evento (testar positivo) são claramente <strong>dependentes</strong> — saber o resultado do teste muda nossa crença sobre a doença. Comparar os dois exemplos lado a lado ajuda a fixar a diferença entre eventos dependentes e independentes, um dos pontos mais frequentemente confundidos por quem está aprendendo probabilidade pela primeira vez.</p>
+</section>
+</section>
+<section id="distribuição-normal" class="level1">
+<h1>Distribuição Normal</h1>
+<p>Para a parte conceitual da distribuição Normal, o material suplementar do Moodle é a referência principal, complementado por <a href="https://www.youtube.com/watch?v=8kDmCdkRtCw&amp;list=PLtp3GnkVc7KiqrD6r9S23Twjl5aaCRmNb&amp;index=7">este vídeo</a> e pelo item 3 (Distribuição Normal) de <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_2/2-2_Var%20aleatorias%20continuas%20e%20distribuicoes.pdf">Variáveis aleatórias contínuas e distribuições</a>. Gráficos interativos da distribuição normal estão disponíveis em <a href="https://istats.shinyapps.io/NormalDist/">istats.shinyapps.io/NormalDist</a>, parte do portal <a href="https://artofstat.com/web-apps">artofstat.com/web-apps</a>.</p>
+<p>A distribuição normal (ou “curva em sino”) é a distribuição de probabilidade contínua mais importante da Estatística, caracterizada por dois parâmetros: a média <span class="math inline">\(\mu\)</span> (que define o centro da curva) e o desvio padrão <span class="math inline">\(\sigma\)</span> (que define sua dispersão). Uma observação <span class="math inline">\(X\)</span> pode ser padronizada através do <strong>escore <span class="math inline">\(Z\)</span></strong>:</p>
+<p><span class="math display">\[
+Z = \frac{X - \mu}{\sigma}
+\]</span></p>
+<p>que informa a quantos desvios padrão a observação está distante da média — permitindo consultar tabelas de probabilidade padronizadas (tabela <span class="math inline">\(Z\)</span>) independentemente da escala original da variável.</p>
+<section id="aplicação-peso-de-bovinos-ao-abate" class="level2">
+<h2 class="anchored" data-anchor-id="aplicação-peso-de-bovinos-ao-abate">Aplicação: peso de bovinos ao abate</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/zscore_peso_bovinos.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo passo a passo de aplicação da distribuição normal: cálculo do escore Z e uso da tabela normal padrão para responder qual porcentagem de um lote de bovinos está acima de determinado peso</figcaption>
+</figure>
+</div>
+<p><strong>Enunciado:</strong> um lote de bois possui peso médio (<span class="math inline">\(\mu\)</span>) de 500 kg, com desvio padrão (<span class="math inline">\(\sigma\)</span>) de 20 kg. O produtor deseja saber qual a porcentagem de animais prontos para o abate, considerando apenas aqueles com peso (<span class="math inline">\(X\)</span>) acima de 520 kg.</p>
+<p><strong>Passo a passo:</strong></p>
+<ol type="1">
+<li>Identifique os dados: <span class="math inline">\(\mu = 500\)</span>; <span class="math inline">\(\sigma = 20\)</span>; <span class="math inline">\(X = 520\)</span>.</li>
+<li>Calcule o escore <span class="math inline">\(Z\)</span>: <span class="math inline">\(Z = \dfrac{520 - 500}{20} = \dfrac{20}{20} = 1\)</span>.</li>
+<li>Interprete: <span class="math inline">\(Z=1\)</span> significa que o valor-alvo está um desvio padrão acima da média.</li>
+<li>Consulte a tabela normal padrão: a área acumulada até <span class="math inline">\(Z=1\)</span> é 84,13%. Como queremos os valores <em>superiores</em>, subtraímos de 100%.</li>
+<li>Resultado: <span class="math inline">\(100\% - 84{,}13\% = 15{,}87\%\)</span> do lote está pronto para o abate segundo esse critério.</li>
+</ol>
+<p>Este mesmo procedimento — padronizar com o escore <span class="math inline">\(Z\)</span> e consultar a tabela normal — é a base de praticamente todas as aplicações da distribuição normal que veremos ao longo da disciplina, incluindo os testes de hipótese das próximas semanas (teste <span class="math inline">\(z\)</span>) e o cálculo de intervalos de confiança. Vale a pena explorar o aplicativo <a href="https://istats.shinyapps.io/NormalDist/">NormalDist</a> para visualizar como a área sob a curva muda conforme alteramos <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> e os limites de integração.</p>
+</section>
+<section id="outros-exemplos-motivacionais" class="level2">
+<h2 class="anchored" data-anchor-id="outros-exemplos-motivacionais">Outros exemplos motivacionais</h2>
+<p>O mesmo procedimento (calcular o escore <span class="math inline">\(Z\)</span> e consultar a tabela normal) se aplica a praticamente qualquer variável contínua que se distribua aproximadamente como um “sino” em torno de uma média — o que é extremamente comum em variáveis biológicas mensuradas na Agronomia e na Zootecnia.</p>
+<p><strong>Exemplo (Agronomia) — produtividade de soja.</strong> Em uma lavoura, a produtividade de soja segue aproximadamente uma distribuição normal com média <span class="math inline">\(\mu = 55\)</span> sacas/ha e desvio padrão <span class="math inline">\(\sigma = 6\)</span> sacas/ha. O produtor quer saber qual a proporção da área plantada com produtividade insatisfatória, definida como abaixo de 45 sacas/ha. O escore <span class="math inline">\(Z = \dfrac{45-55}{6} = -1{,}67\)</span>, e a área abaixo de <span class="math inline">\(Z=-1{,}67\)</span> na tabela normal é de aproximadamente 4,75% — ou seja, cerca de 4,75% da lavoura deve produzir abaixo do patamar considerado satisfatório.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/normal_soja_exemplo.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição normal da produtividade de soja (μ=55, σ=6 sacas/ha): área sombreada representa a proporção da lavoura com produtividade abaixo de 45 sacas/ha</figcaption>
+</figure>
+</div>
+<p><strong>Exemplo (Zootecnia) — produção de leite.</strong> Em um rebanho leiteiro, a produção diária de leite por vaca segue aproximadamente uma distribuição normal com média <span class="math inline">\(\mu = 25\)</span> L/dia e desvio padrão <span class="math inline">\(\sigma = 4\)</span> L/dia. O produtor quer identificar vacas de baixo desempenho, definidas como as que produzem menos de 18 L/dia — candidatas a serem investigadas (saúde, nutrição) ou descartadas do plantel. O escore <span class="math inline">\(Z = \dfrac{18-25}{4} = -1{,}75\)</span>, e a área abaixo de <span class="math inline">\(Z=-1{,}75\)</span> é de aproximadamente 4,01% — ou seja, cerca de 4% do rebanho se enquadra nesse critério de baixo desempenho.</p>
+<p>Repare que, nos dois exemplos, o raciocínio é idêntico ao do exemplo dos bovinos acima — muda apenas o contexto (grão vs.&nbsp;animal) e os valores de <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> e do ponto de corte. Essa é a grande vantagem de padronizar com o escore <span class="math inline">\(Z\)</span>: uma única tabela (ou um único software) resolve qualquer problema de distribuição normal, independentemente da escala ou unidade da variável original.</p>
+</section>
+</section>
+<section id="distribuição-t-de-student" class="level1">
+<h1>Distribuição t de Student</h1>
+<p>Até aqui, sempre assumimos que o desvio padrão populacional <span class="math inline">\(\sigma\)</span> era conhecido — o que raramente acontece na prática. Quando <span class="math inline">\(\sigma\)</span> é <strong>desconhecido</strong> e precisa ser estimado a partir do desvio padrão amostral <span class="math inline">\(s\)</span>, e a amostra é <strong>pequena</strong> (regra prática: <span class="math inline">\(n \leq 30\)</span>, já usada na seção de Testes de Hipóteses), o escore padronizado não segue mais exatamente uma distribuição normal — ele passa a seguir uma <strong>distribuição t de Student</strong>, com <span class="math inline">\(n-1\)</span> graus de liberdade (gl):</p>
+<p><span class="math display">\[
+T = \frac{\bar{X} - \mu}{s/\sqrt{n}} \sim t_{(n-1)}
+\]</span></p>
+<p>A distribuição t de Student tem o mesmo formato de sino, centrado em 0, mas com <strong>caudas mais pesadas</strong> do que a normal — refletindo a incerteza adicional de estimarmos <span class="math inline">\(\sigma\)</span> a partir de uma amostra pequena. Quanto maior o número de graus de liberdade (ou seja, quanto maior a amostra), mais a distribuição t se aproxima da normal padrão — para <span class="math inline">\(n&gt;30\)</span>, a diferença já é praticamente desprezível, o que justifica a “regra do <span class="math inline">\(n&gt;30\)</span>” usada para decidir entre o teste <span class="math inline">\(z\)</span> e o teste <span class="math inline">\(t\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/t_student_comparacao.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição t de Student comparada à Normal padrão, para diferentes graus de liberdade (gl=1, 5, 30): quanto maior o gl, mais a curva t se aproxima da normal</figcaption>
+</figure>
+</div>
+<section id="exemplo-agronomia-teor-de-proteína-em-silagem" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-agronomia-teor-de-proteína-em-silagem">Exemplo (Agronomia): teor de proteína em silagem</h2>
+<p>Um pesquisador coleta <span class="math inline">\(n=10\)</span> amostras de silagem de milho e mede o teor de proteína bruta, obtendo média amostral <span class="math inline">\(\bar{X} = 8{,}2\%\)</span> e desvio padrão amostral <span class="math inline">\(s = 0{,}6\%\)</span>. Como a variância populacional é desconhecida e a amostra é pequena (<span class="math inline">\(n=10\)</span>), a distribuição de referência para construir um intervalo de confiança para a média populacional é a t de Student, com <span class="math inline">\(gl = n - 1 = 9\)</span> graus de liberdade — e não a normal padrão.</p>
+<p>O valor crítico <span class="math inline">\(t_{0{,}975; \, 9} = 2{,}262\)</span> é maior do que o correspondente valor crítico da normal padrão, <span class="math inline">\(z_{0{,}975} = 1{,}96\)</span> — essa diferença é exatamente o “preço” pago pela incerteza extra de estimar <span class="math inline">\(\sigma\)</span> com uma amostra pequena. O intervalo de confiança de 95% para a média populacional é dado por:</p>
+<p><span class="math display">\[
+IC(\mu; 95\%) = \bar{X} \pm t_{0{,}975;9} \times \frac{s}{\sqrt{n}} = 8{,}2 \pm 2{,}262 \times \frac{0{,}6}{\sqrt{10}} = 8{,}2 \pm 0{,}43
+\]</span></p>
+<p>ou seja, o intervalo de confiança de 95% para o teor médio de proteína bruta na silagem é aproximadamente <span class="math inline">\((7{,}77\%; \, 8{,}63\%)\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/t_student_exemplo_silagem.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição t de Student com gl=9: os valores críticos ±2,262 delimitam a região central de 95% de probabilidade, usada na construção do intervalo de confiança do exemplo da silagem</figcaption>
+</figure>
+</div>
+<p>Esse mesmo raciocínio — usar a distribuição t ao invés da normal quando a amostra é pequena e <span class="math inline">\(\sigma\)</span> é desconhecido — é a base do teste <span class="math inline">\(t\)</span> de Student que veremos na página de <a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html">Teste de Hipóteses: Teste z e Teste t de Student</a>, e reaparece constantemente em experimentos agronômicos e zootécnicos, nos quais o número de repetições (parcelas experimentais, animais) costuma ser pequeno. Um aplicativo interativo para visualizar a distribuição t está disponível em <a href="https://istats.shinyapps.io/tdist/">istats.shinyapps.io/tdist</a>.</p>
+</section>
+</section>
+<section id="distribuição-f-de-snedecor" class="level1">
+<h1>Distribuição F de Snedecor</h1>
+<p>A <strong>distribuição F de Snedecor</strong> surge naturalmente quando comparamos a variabilidade (variância) de duas populações ou de dois grupos experimentais. Ela é definida como a razão entre duas variâncias amostrais independentes:</p>
+<p><span class="math display">\[
+F = \frac{s_1^2}{s_2^2} \sim F_{(gl_1, \, gl_2)}, \qquad gl_1 = n_1 - 1, \;\; gl_2 = n_2 - 1
+\]</span></p>
+<p>onde <span class="math inline">\(gl_1\)</span> e <span class="math inline">\(gl_2\)</span> são os graus de liberdade associados, respectivamente, ao numerador e ao denominador da razão. Diferentemente da normal e da t (simétricas em torno de zero), a distribuição F <strong>só assume valores positivos</strong> (afinal, é uma razão de variâncias, que são sempre não negativas) e é <strong>assimétrica à direita</strong>, com o formato exato dependendo dos dois graus de liberdade:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/f_snedecor_comparacao.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição F de Snedecor para diferentes combinações de graus de liberdade (gl1, gl2): sempre assimétrica à direita e restrita a valores positivos</figcaption>
+</figure>
+</div>
+<section id="exemplo-zootecnia-comparação-da-variabilidade-de-ganho-de-peso-entre-duas-rações" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-zootecnia-comparação-da-variabilidade-de-ganho-de-peso-entre-duas-rações">Exemplo (Zootecnia): comparação da variabilidade de ganho de peso entre duas rações</h2>
+<p>Um zootecnista testa duas rações (A e B) para o ganho de peso de suínos em fase de terminação. Na ração A, <span class="math inline">\(n_1 = 10\)</span> animais, com variância amostral <span class="math inline">\(s_1^2 = 25 \text{ kg}^2\)</span>; na ração B, <span class="math inline">\(n_2 = 8\)</span> animais, com variância amostral <span class="math inline">\(s_2^2 = 9 \text{ kg}^2\)</span>. Antes de comparar as médias de ganho de peso entre as duas rações (por exemplo, com um teste <span class="math inline">\(t\)</span>), é importante verificar se as variâncias dos dois grupos podem ser consideradas homogêneas — um pressuposto do teste <span class="math inline">\(t\)</span> com variâncias iguais (e também da ANOVA, como vimos na página anterior).</p>
+<p>Calcula-se a estatística F como a razão entre a maior e a menor variância amostral:</p>
+<p><span class="math display">\[
+F = \frac{s_1^2}{s_2^2} = \frac{25}{9} = 2{,}78, \qquad gl_1 = 9, \;\; gl_2 = 7
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_5_a_6/f_snedecor_exemplo_variancias.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição F (gl1=9, gl2=7): o F observado (2,78) está abaixo do valor crítico a 5% de significância (3,68), na região onde não se rejeita a igualdade de variâncias</figcaption>
+</figure>
+</div>
+<p>Consultando a tabela F (ou calculando em R com <code>qf(0.95, 9, 7)</code>), o valor crítico é <span class="math inline">\(F_{0{,}05; \, 9,7} \approx 3{,}68\)</span>. Como o F observado (<span class="math inline">\(2{,}78\)</span>) é menor que o F crítico (<span class="math inline">\(3{,}68\)</span>), não há evidência suficiente para rejeitar a hipótese de que as variâncias do ganho de peso são homogêneas entre as duas rações — é razoável prosseguir com um teste <span class="math inline">\(t\)</span> assumindo variâncias iguais.</p>
+<p>Esta é exatamente a mesma lógica que sustenta o teste F das tabelas de ANOVA vistas na página de <a href="../Metodos_Estatisticos/6_anova.html">Teste de Hipóteses: ANOVA</a>: lá, o F comparava a variabilidade <strong>entre tratamentos</strong> com a variabilidade <strong>dentro dos tratamentos</strong> (o erro experimental); aqui, comparamos diretamente a variabilidade entre dois grupos. Em ambos os casos, um valor de F “grande” (muito maior que 1) indica que a razão entre as duas fontes de variabilidade dificilmente ocorreria só por acaso. Um aplicativo interativo para visualizar a distribuição F está disponível em <a href="https://istats.shinyapps.io/FDist/">istats.shinyapps.io/FDist</a>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/3_probabilidade.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/3_probabilidade.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>

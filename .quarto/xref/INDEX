@@ -76,5 +76,26 @@
   },
   "Estatistica_Aplicada_Negocios/9_estudo_caso_setor_publico.qmd": {
     "9_estudo_caso_setor_publico.html": "6935eece"
+  },
+  "Metodos_Estatisticos/0_apresentacao_da_disciplina.qmd": {
+    "0_apresentacao_da_disciplina.html": "53563b4b"
+  },
+  "Metodos_Estatisticos/3_probabilidade.qmd": {
+    "3_probabilidade.html": "e86a233c"
+  },
+  "Metodos_Estatisticos/4_amostragem_estimacao.qmd": {
+    "4_amostragem_estimacao.html": "be4a4945"
+  },
+  "Metodos_Estatisticos/5_teste_hipoteses_z_t.qmd": {
+    "5_teste_hipoteses_z_t.html": "2399d95e"
+  },
+  "Metodos_Estatisticos/6_anova.qmd": {
+    "6_anova.html": "bd14f811"
+  },
+  "Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.qmd": {
+    "7_correlacao_regressao_qui_quadrado.html": "4ff127c2"
+  },
+  "Metodos_Estatisticos/8_avaliacoes_e_recuperacao.qmd": {
+    "8_avaliacoes_e_recuperacao.html": "08797e51"
   }
 }

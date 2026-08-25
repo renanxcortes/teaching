@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estatística descritiva - medidas – Teaching</title>
+<title>Estatística Descritiva - Medidas – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -103,7 +132,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-temas">    
         <li>
-    <a class="dropdown-item" href="../Metodos_Estatisticos/1_introducao_exploratoria.html">
+    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html">
  <span class="dropdown-text">Métodos Estatísticos</span></a>
   </li>  
         <li>
@@ -121,10 +154,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../Multivariada/Componentes_Principais.html">
  <span class="dropdown-text">Análise Multivariada</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
- <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
   </li>  
     </ul>
   </li>
@@ -144,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística descritiva - medidas</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística Descritiva - Medidas</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística Descritiva - Medidas</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -171,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Área 1</span></a>
+ <span class="menu-text">Apresentação</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,14 +208,127 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introdução à Estatística e análise exploratória de dados</span></a>
+  <a href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação da Disciplina</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução e Análise Exploratória</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introdução à Estatística e Análise Exploratória de Dados</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Metodos_Estatisticos/2_descritiva_medidas.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Estatística descritiva - medidas</span></a>
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Probabilidade (Semanas 5-6)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/3_probabilidade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilidade</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Amostragem e Estimação (Semanas 7-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/4_amostragem_estimacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Amostragem e Estimação</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: z e t (Semanas 9-10)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Teste z e Teste t de Student</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: ANOVA (Semanas 11-15)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/6_anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: ANOVA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Correlação, Regressão e Qui-Quadrado (Semanas 16-18)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado</span></a>
   </div>
 </li>
       </ul>
@@ -202,15 +344,22 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#medidas-de-tendência-central" id="toc-medidas-de-tendência-central" class="nav-link" data-scroll-target="#medidas-de-tendência-central">Medidas de tendência central</a></li>
+  <li><a href="#medidas-de-variabilidade" id="toc-medidas-de-variabilidade" class="nav-link" data-scroll-target="#medidas-de-variabilidade">Medidas de variabilidade</a>
+  <ul class="collapse">
+  <li><a href="#propriedades-das-medidas" id="toc-propriedades-das-medidas" class="nav-link" data-scroll-target="#propriedades-das-medidas">Propriedades das medidas</a></li>
+  </ul></li>
+  <li><a href="#dados-isolados-vs.-agrupados-em-intervalos-de-classe" id="toc-dados-isolados-vs.-agrupados-em-intervalos-de-classe" class="nav-link" data-scroll-target="#dados-isolados-vs.-agrupados-em-intervalos-de-classe">Dados isolados vs.&nbsp;agrupados em intervalos de classe</a></li>
+  <li><a href="#para-praticar" id="toc-para-praticar" class="nav-link" data-scroll-target="#para-praticar">Para praticar</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/2_descritiva_medidas.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística descritiva - medidas</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística Descritiva - Medidas</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/2_descritiva_medidas.html">Estatística Descritiva - Medidas</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Estatística descritiva - medidas</h1>
+<h1 class="title">Estatística Descritiva - Medidas</h1>
 </div>
 
 
@@ -229,7 +378,52 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
-<p>Material presente em <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_3_a_4.pptx">AQUI</a></p>
+<p>Este material cobre as <strong>Semanas 3 e 4</strong> do plano de ensino: medidas de tendência central (moda, mediana, média), medidas de variabilidade (amplitude, variância, desvio padrão, coeficiente de variação), suas propriedades, e o tratamento de dados isolados ou agrupados em intervalos de classe.</p>
+<p>Slides originais disponíveis <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_3_a_4.pptx">AQUI</a>.</p>
+<p>Diferente das demais semanas, o material de aula para este bloco é propositalmente enxuto: o professor ancora esta parte da matéria diretamente no material de referência do site de Probabilidade e Estatística EAD da UFRGS — <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-4_Descritiva_medidas%20descritivas.pdf">Descritiva: medidas descritivas</a> — complementado por aplicativos interativos: <a href="https://istats.shinyapps.io/EDA_quantitative/">Análise Exploratória de Dados</a> e <a href="https://istats.shinyapps.io/MeanvsMedian/">Média vs.&nbsp;Mediana</a> (código-fonte dos demais aplicativos interativos disponível no Moodle). O resumo abaixo organiza os conceitos que serão trabalhados em aula, com exemplos aplicados às áreas de Agronomia e Zootecnia.</p>
+</section>
+<section id="medidas-de-tendência-central" class="level1">
+<h1>Medidas de tendência central</h1>
+<p>As medidas de tendência central resumem um conjunto de dados em um único valor “típico” ou “central”.</p>
+<ul>
+<li><strong>Moda</strong>: o valor que ocorre com maior frequência no conjunto de dados. É a única medida de tendência central que pode ser calculada para variáveis nominais (ex.: a raça de gado mais frequente em um rebanho).</li>
+<li><strong>Mediana</strong>: o valor que divide o conjunto de dados ordenado exatamente ao meio — 50% das observações ficam abaixo dela e 50% acima. É pouco sensível a valores extremos (outliers), o que a torna uma medida robusta.</li>
+<li><strong>Média (aritmética)</strong>: a soma de todos os valores dividida pelo número de observações, <span class="math display">\[
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+\]</span> É a medida de tendência central mais usada, mas é sensível a outliers — um único valor muito discrepante pode distorcer bastante a média.</li>
+</ul>
+<p><strong>Exemplo aplicado:</strong> em um piquete com 9 novilhos de pesos (em kg) 410, 425, 430, 435, 440, 445, 450, 455 e 610 (o último animal claramente mais pesado que os demais), a média seria puxada para cima por esse valor atípico, enquanto a mediana (440 kg) continuaria representando bem o “novilho típico” do lote. Esse é exatamente o tipo de situação explorada no aplicativo <a href="https://istats.shinyapps.io/MeanvsMedian/">Média vs.&nbsp;Mediana</a>: vale a pena experimentá-lo movendo pontos extremos e observando o que acontece com cada medida.</p>
+</section>
+<section id="medidas-de-variabilidade" class="level1">
+<h1>Medidas de variabilidade</h1>
+<p>As medidas de tendência central sozinhas não contam a história toda: dois lotes de animais podem ter o mesmo peso médio e, ainda assim, um deles ser muito mais homogêneo que o outro. Para isso, usamos medidas de variabilidade (ou dispersão):</p>
+<ul>
+<li><strong>Amplitude</strong>: a diferença entre o maior e o menor valor observado, <span class="math inline">\(A = x_{max} - x_{min}\)</span>. É simples de calcular, mas depende só de dois pontos e ignora toda a distribuição intermediária.</li>
+<li><strong>Variância</strong>: a média dos quadrados dos desvios de cada observação em relação à média, <span class="math display">\[
+s^2 = \frac{1}{n-1}\sum_{i=1}^{n} (x_i - \bar{x})^2
+\]</span> (o uso de <span class="math inline">\(n-1\)</span> no denominador, em vez de <span class="math inline">\(n\)</span>, será retomado quando discutirmos estimadores não-viesados, na semana de Amostragem e Estimação).</li>
+<li><strong>Desvio padrão</strong>: a raiz quadrada da variância, <span class="math inline">\(s = \sqrt{s^2}\)</span>. É preferido à variância na prática porque está na mesma unidade da variável original (ex.: kg, e não kg²).</li>
+<li><strong>Coeficiente de variação (CV)</strong>: o desvio padrão expresso como percentual da média, <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span>. Por ser adimensional, o CV é útil para comparar a variabilidade relativa entre grupos com médias muito diferentes — por exemplo, comparar a variabilidade do peso entre bezerros e vacas adultas, ou entre duas culturas com produtividades médias muito distintas.</li>
+</ul>
+<section id="propriedades-das-medidas" class="level2">
+<h2 class="anchored" data-anchor-id="propriedades-das-medidas">Propriedades das medidas</h2>
+<p>Algumas propriedades úteis para interpretar essas medidas corretamente:</p>
+<ul>
+<li>Somar uma constante a todos os valores desloca a média e a mediana pela mesma constante, mas <strong>não altera</strong> a variância, o desvio padrão nem a amplitude (a dispersão dos dados em torno do centro não muda).</li>
+<li>Multiplicar todos os valores por uma constante <span class="math inline">\(k\)</span> multiplica a média, a mediana e o desvio padrão por <span class="math inline">\(k\)</span>, mas multiplica a <strong>variância por <span class="math inline">\(k^2\)</span></strong>.</li>
+<li>A soma dos desvios de cada observação em relação à média é sempre zero: <span class="math inline">\(\sum_{i=1}^n (x_i - \bar{x}) = 0\)</span>. É por isso que a variância trabalha com desvios <em>ao quadrado</em> — caso contrário, os desvios positivos e negativos sempre se cancelariam.</li>
+<li>Para dados fortemente assimétricos ou com outliers, a mediana costuma ser preferível à média como medida de tendência central; nesses casos, uma medida de dispersão baseada em quartis (como o intervalo interquartil, base do boxplot visto na seção anterior) é preferível à variância/desvio padrão.</li>
+</ul>
+</section>
+</section>
+<section id="dados-isolados-vs.-agrupados-em-intervalos-de-classe" class="level1">
+<h1>Dados isolados vs.&nbsp;agrupados em intervalos de classe</h1>
+<p>Quando o número de observações é pequeno (dados isolados), as fórmulas acima podem ser aplicadas diretamente sobre os valores observados. Quando o volume de dados é grande, é comum organizá-los em uma <strong>tabela de distribuição de frequências</strong>, agrupando os valores em intervalos de classe (faixas) — exatamente a mesma lógica usada para construir um histograma, como vimos na seção anterior.</p>
+<p>Nesse caso, as medidas de tendência central e de variabilidade são calculadas usando o <strong>ponto médio de cada classe</strong> como representante de todas as observações daquela faixa, ponderado pela frequência da classe. Essa é uma aproximação: perde-se um pouco de precisão em troca de trabalhar com dados já resumidos — uma situação comum quando se recebe apenas uma tabela de frequências agrupadas de uma pesquisa (por exemplo, um levantamento censitário do IBGE ou de um órgão do setor agropecuário), sem acesso aos dados brutos.</p>
+</section>
+<section id="para-praticar" class="level1">
+<h1>Para praticar</h1>
+<p>O material de referência completo, com a notação formal e exemplos resolvidos passo a passo, está disponível em <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-4_Descritiva_medidas%20descritivas.pdf">Descritiva: medidas descritivas (UFRGS EAD)</a>. Os aplicativos interativos <a href="https://istats.shinyapps.io/EDA_quantitative/">Análise Exploratória de Dados</a> e <a href="https://istats.shinyapps.io/MeanvsMedian/">Média vs.&nbsp;Mediana</a> são altamente recomendados para desenvolver intuição visual sobre como essas medidas se comportam diante de diferentes formatos de distribuição e da presença de outliers.</p>
 
 
 </section>

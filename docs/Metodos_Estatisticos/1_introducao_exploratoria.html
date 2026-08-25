@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introdução à Estatística e análise exploratória de dados – Teaching</title>
+<title>Introdução à Estatística e Análise Exploratória de Dados – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -103,7 +132,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-temas">    
         <li>
-    <a class="dropdown-item" href="../Metodos_Estatisticos/1_introducao_exploratoria.html">
+    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html">
  <span class="dropdown-text">Métodos Estatísticos</span></a>
   </li>  
         <li>
@@ -121,10 +154,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../Multivariada/Componentes_Principais.html">
  <span class="dropdown-text">Análise Multivariada</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
- <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
   </li>  
     </ul>
   </li>
@@ -144,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Introdução à Estatística e análise exploratória de dados</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Introdução e Análise Exploratória</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Introdução à Estatística e Análise Exploratória de Dados</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -171,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Área 1</span></a>
+ <span class="menu-text">Apresentação</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -179,14 +208,127 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Introdução à Estatística e análise exploratória de dados</span></a>
+  <a href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação da Disciplina</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução e Análise Exploratória</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introdução à Estatística e Análise Exploratória de Dados</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Metodos_Estatisticos/2_descritiva_medidas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Estatística descritiva - medidas</span></a>
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Probabilidade (Semanas 5-6)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/3_probabilidade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilidade</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Amostragem e Estimação (Semanas 7-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/4_amostragem_estimacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Amostragem e Estimação</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: z e t (Semanas 9-10)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Teste z e Teste t de Student</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: ANOVA (Semanas 11-15)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/6_anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: ANOVA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Correlação, Regressão e Qui-Quadrado (Semanas 16-18)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado</span></a>
   </div>
 </li>
       </ul>
@@ -202,15 +344,46 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#noções-gerais-sobre-estatística" id="toc-noções-gerais-sobre-estatística" class="nav-link" data-scroll-target="#noções-gerais-sobre-estatística">Noções Gerais sobre Estatística</a>
+  <ul class="collapse">
+  <li><a href="#alfabetização-científica" id="toc-alfabetização-científica" class="nav-link" data-scroll-target="#alfabetização-científica">Alfabetização científica</a></li>
+  </ul></li>
+  <li><a href="#população-e-amostra" id="toc-população-e-amostra" class="nav-link" data-scroll-target="#população-e-amostra">População e Amostra</a>
+  <ul class="collapse">
+  <li><a href="#variáveis-exemplo-motivacional" id="toc-variáveis-exemplo-motivacional" class="nav-link" data-scroll-target="#variáveis-exemplo-motivacional">Variáveis: exemplo motivacional</a></li>
+  </ul></li>
+  <li><a href="#variáveis" id="toc-variáveis" class="nav-link" data-scroll-target="#variáveis">Variáveis</a>
+  <ul class="collapse">
+  <li><a href="#classificação-de-variáveis" id="toc-classificação-de-variáveis" class="nav-link" data-scroll-target="#classificação-de-variáveis">Classificação de variáveis</a>
+  <ul class="collapse">
+  <li><a href="#qualitativas-categóricas" id="toc-qualitativas-categóricas" class="nav-link" data-scroll-target="#qualitativas-categóricas">Qualitativas (categóricas)</a></li>
+  <li><a href="#quantitativas-numéricas" id="toc-quantitativas-numéricas" class="nav-link" data-scroll-target="#quantitativas-numéricas">Quantitativas (numéricas)</a></li>
+  </ul></li>
+  <li><a href="#escalas-níveis-de-mensuração" id="toc-escalas-níveis-de-mensuração" class="nav-link" data-scroll-target="#escalas-níveis-de-mensuração">Escalas (níveis) de mensuração</a>
+  <ul class="collapse">
+  <li><a href="#intervalar-vs.-razão-o-que-muda-na-prática" id="toc-intervalar-vs.-razão-o-que-muda-na-prática" class="nav-link" data-scroll-target="#intervalar-vs.-razão-o-que-muda-na-prática">Intervalar vs.&nbsp;razão: o que muda na prática?</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#coleta-e-representação-de-dados-organização" id="toc-coleta-e-representação-de-dados-organização" class="nav-link" data-scroll-target="#coleta-e-representação-de-dados-organização">Coleta e representação de dados (organização)</a>
+  <ul class="collapse">
+  <li><a href="#tabelas" id="toc-tabelas" class="nav-link" data-scroll-target="#tabelas">Tabelas</a></li>
+  <li><a href="#gráficos" id="toc-gráficos" class="nav-link" data-scroll-target="#gráficos">Gráficos</a></li>
+  </ul></li>
+  <li><a href="#distribuição-de-frequências-histograma-e-boxplot" id="toc-distribuição-de-frequências-histograma-e-boxplot" class="nav-link" data-scroll-target="#distribuição-de-frequências-histograma-e-boxplot">Distribuição de frequências: histograma e boxplot</a>
+  <ul class="collapse">
+  <li><a href="#histograma" id="toc-histograma" class="nav-link" data-scroll-target="#histograma">Histograma</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a></li>
+  </ul></li>
+  <li><a href="#para-saber-mais" id="toc-para-saber-mais" class="nav-link" data-scroll-target="#para-saber-mais">Para saber mais</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/1_introducao_exploratoria.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/1_introducao_exploratoria.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Área 1</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Introdução à Estatística e análise exploratória de dados</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Introdução e Análise Exploratória</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/1_introducao_exploratoria.html">Introdução à Estatística e Análise Exploratória de Dados</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introdução à Estatística e análise exploratória de dados</h1>
+<h1 class="title">Introdução à Estatística e Análise Exploratória de Dados</h1>
 </div>
 
 
@@ -229,7 +402,192 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
-<p>Material presente em <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_1_a_2.pptx">AQUI</a></p>
+<p>Este material cobre as <strong>Semanas 1 e 2</strong> do plano de ensino: noções gerais sobre Estatística, alfabetização científica, população e amostra, classificação de variáveis, níveis de mensuração, coleta e representação de dados, e distribuição de frequências (histograma e boxplot).</p>
+<p>Slides originais disponíveis <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_1_a_2.pptx">AQUI</a>.</p>
+</section>
+<section id="noções-gerais-sobre-estatística" class="level1">
+<h1>Noções Gerais sobre Estatística</h1>
+<p><strong>Estatística</strong> é a ciência que tem por objetivo orientar a coleta, o resumo, a apresentação, a análise e a interpretação dos dados. Em outras palavras, é a ciência que coleta, organiza, analisa e interpreta dados, apoiando a tomada de decisões em situações de incerteza. É muito utilizada em experimentos agrícolas e zootécnicos — por exemplo, na avaliação da produtividade de culturas ou do ganho de peso animal.</p>
+<p>A Estatística se divide em duas grandes frentes:</p>
+<ul>
+<li><strong>Estatística descritiva</strong>: envolvida com o resumo e a apresentação dos dados; e</li>
+<li><strong>Estatística inferencial</strong>: ajuda a concluir sobre o conjunto maior de dados (população) quando apenas uma parte deste conjunto for estudada (amostra).</li>
+</ul>
+<section id="alfabetização-científica" class="level2">
+<h2 class="anchored" data-anchor-id="alfabetização-científica">Alfabetização científica</h2>
+<p><strong>Alfabetização científica</strong> é a capacidade de interpretar dados e resultados científicos: compreender gráficos, tabelas e conclusões estatísticas. Ela é fundamental para a leitura de artigos científicos em Agronomia e Zootecnia, e evita interpretações equivocadas de resultados experimentais — um problema mais comum do que se imagina, inclusive na cobertura jornalística de dados (veja, por exemplo, o vídeo disponível no Moodle sobre interpretações equivocadas de dados durante a pandemia de Covid-19, que motivou inclusive um workshop de letramento estatístico para jornalistas).</p>
+<p>Um bom ponto de partida para pensar em alfabetização científica é entender as etapas de uma pesquisa científica e onde a Estatística entra nesse processo — tanto na metodologia da área de estudo quanto na metodologia estatística propriamente dita:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/etapas_pesquisa_cientifica.png" class="img-fluid figure-img"></p>
+<figcaption>Principais etapas da pesquisa científica: definição do problema, planejamento, coleta, análise, resultados e conclusões (adaptado da Prof.&nbsp;Lisiane Selau)</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="população-e-amostra" class="level1">
+<h1>População e Amostra</h1>
+<ul>
+<li><strong>População</strong>: conjunto total de indivíduos ou observações de interesse que apresentam, pelo menos, uma característica em comum.</li>
+<li><strong>Amostra</strong>: subconjunto representativo (ou não) da população.</li>
+</ul>
+<p>Uma boa intuição para essa distinção: <em>“um chef de cozinha prova seu prato com uma colherada antes de servir toda a panela”</em>. Não é preciso comer o prato inteiro para saber se o tempero está bom.</p>
+<p><strong>Exemplo de população</strong>: todo o rebanho bovino de uma fazenda. <strong>Exemplo de amostra</strong>: 30 animais selecionados para avaliação.</p>
+<section id="variáveis-exemplo-motivacional" class="level2">
+<h2 class="anchored" data-anchor-id="variáveis-exemplo-motivacional">Variáveis: exemplo motivacional</h2>
+<p>Considere uma população — o rebanho total de vacas de uma fazenda — e uma característica observável <span class="math inline">\(X\)</span> nesse rebanho (por exemplo, <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, <span class="math inline">\(X_3\)</span>, …). Um exemplo concreto: estimar a <strong>proporção de vacas com a doença da vaca louca</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/rebanho_variaveis_ilustracao.jpg" class="img-fluid figure-img"></p>
+<figcaption>Rebanho bovino conduzido em uma fazenda — foto ilustrativa do exemplo motivacional de população e variável</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>População</strong>: rebanho total de vacas de uma fazenda.</li>
+<li><strong>Característica <span class="math inline">\(X\)</span> observável</strong>: “Tem a doença da vaca louca? Sim ou não?”</li>
+<li><strong>Amostra</strong>: um subconjunto do rebanho, sobre o qual observamos <span class="math inline">\(X\)</span>.</li>
+</ul>
+<p>O esquema geral é: partimos do <strong>universo do estudo</strong> (população), observamos uma parte dele através da <strong>amostragem</strong>, e usamos os dados observados (amostra) para fazer <strong>inferência</strong> sobre a população como um todo. Esse ciclo — população → amostragem → amostra → inferência → conclusão sobre a população — é a espinha dorsal de toda a Estatística Inferencial, e retornaremos a ele repetidamente ao longo da disciplina (por exemplo, nas semanas de Amostragem/Estimação e de Testes de Hipótese).</p>
+</section>
+</section>
+<section id="variáveis" class="level1">
+<h1>Variáveis</h1>
+<p><strong>Variável</strong> é toda a característica que, observada em uma unidade de pesquisa/experimento, pode variar de unidade para unidade. Exemplos: peso de um animal, raça de um animal, altura de uma planta, número de ovos de uma galinha, etc.</p>
+<blockquote class="blockquote">
+<p>“A existência da variabilidade justifica o estudo da ciência estatística.”</p>
+</blockquote>
+<section id="classificação-de-variáveis" class="level2">
+<h2 class="anchored" data-anchor-id="classificação-de-variáveis">Classificação de variáveis</h2>
+<p>As variáveis podem ser classificadas em dois grandes grupos, cada um com dois subtipos:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/classificacao_variaveis.png" class="img-fluid figure-img"></p>
+<figcaption>Classificação de variáveis: qualitativas (nominais e ordinais) e quantitativas (discretas e contínuas)</figcaption>
+</figure>
+</div>
+<section id="qualitativas-categóricas" class="level3">
+<h3 class="anchored" data-anchor-id="qualitativas-categóricas">Qualitativas (categóricas)</h3>
+<ul>
+<li><strong>Nominal</strong>: não possui ordem/hierarquia. Exemplo: raça animal (Raça A, Raça B, Raça C, …).</li>
+<li><strong>Ordinal</strong>: possui ordem/ranking/escala lógica. Exemplo: estágios de crescimento (Pequeno, Médio, Grande).</li>
+</ul>
+<p>Outros exemplos aplicados à Agronomia e Zootecnia:</p>
+<p><strong>Nominais</strong>: tipo de cultura (Soja, Milho, Cana-de-açúcar, Café, Algodão); raça de gado (Nelore, Angus, Holandesa, Jersey, Brangus); tipo de solo (Argiloso, Arenoso, Franco); sistema de produção (Intensivo, Extensivo, Orgânico, Convencional); marca de fertilizante ou defensivo agrícola.</p>
+<p><strong>Ordinais</strong>: intensidade de infestação de pragas (Baixa, Média, Alta); classificação da qualidade do fruto (Primeira, Segunda, Descarte); nível de maturação do fruto (Verde, Maduro, Passado); escore de condição corporal em bovinos (Magro, Ideal, Obeso); nível de severidade de uma doença como a ferrugem (Leve, Moderada, Severa).</p>
+</section>
+<section id="quantitativas-numéricas" class="level3">
+<h3 class="anchored" data-anchor-id="quantitativas-numéricas">Quantitativas (numéricas)</h3>
+<ul>
+<li><strong>Discretas</strong>: valores inteiros contáveis. Exemplo: número de leitões por parto (1, 2, 3, …, 14, …).</li>
+<li><strong>Contínuas</strong>: valores em escala real. Exemplo: peso de animais, altura de plantas (12,4 kg, 14,85 kg, etc.).</li>
+</ul>
+<p>Outros exemplos:</p>
+<p><strong>Discretas</strong>: número de frutos por planta; quantidade de animais por piquete; número de perfilhos por planta de trigo; quantidade de tratores na fazenda; número de ovos produzidos por galinha por dia.</p>
+<p><strong>Contínuas</strong>: produtividade da cultura (t/ha ou sc/ha); peso do animal (kg); índice pluviométrico (mm); teor de umidade do grão (%); temperatura ambiente no aviário (°C).</p>
+</section>
+</section>
+<section id="escalas-níveis-de-mensuração" class="level2">
+<h2 class="anchored" data-anchor-id="escalas-níveis-de-mensuração">Escalas (níveis) de mensuração</h2>
+<p>Escalas de medida — também chamadas de <strong>níveis de mensuração</strong> — são importantes porque determinam quais análises estatísticas podem ser realizadas com segurança e como os dados devem ser interpretados. Existem quatro escalas distintas, organizadas hierarquicamente: à medida que se sobe de nível, aumentam tanto a complexidade quanto a informação disponível para a metodologia estatística.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/escalas_de_medida.png" class="img-fluid figure-img"></p>
+<figcaption>As quatro escalas de medida — nominal, ordinal, intervalar e racional (de razão) — e a hierarquia de complexidade/informação entre elas (adaptado da Prof.&nbsp;Lisiane Selau)</figcaption>
+</figure>
+</div>
+<p>Uma pergunta importante para fixar o conceito: <em>faz sentido calcular uma média em uma base de dados em que estão codificados os números “1 – Angus” e “2 – Hereford”? E se fosse “1 – Pequeno” e “2 – Médio”? E se fosse “0 – Não” e “1 – Sim”?</em> Em nenhum desses casos a média tem uma interpretação sensata, porque os números ali são apenas rótulos (nominal) ou indicam ordem sem distância fixa entre categorias (ordinal) — não são medidas na escala intervalar ou de razão.</p>
+<section id="intervalar-vs.-razão-o-que-muda-na-prática" class="level3">
+<h3 class="anchored" data-anchor-id="intervalar-vs.-razão-o-que-muda-na-prática">Intervalar vs.&nbsp;razão: o que muda na prática?</h3>
+<p>A distinção entre escala <strong>intervalar</strong> e de <strong>razão</strong> costuma ser a mais sutil das quatro. A ideia central: nas duas escalas, o intervalo entre dois pontos quaisquer tem sempre o mesmo “tamanho” (16 graus de diferença entre 32°C e 16°C é a mesma coisa que entre 66°C e 50°C; 10 kg a 20 kg é a mesma diferença que 75 kg a 85 kg). A diferença é que a escala de razão tem um <strong>zero absoluto</strong> (zero significa “ausência” da grandeza), e a intervalar não.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/intervalar_vs_razao_1.png" class="img-fluid figure-img"></p>
+<figcaption>Explicação de por que temperatura (°C) é uma escala intervalar, mas peso e distância são de razão — o zero absoluto marca a diferença</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/intervalar_vs_razao_2.png" class="img-fluid figure-img"></p>
+<figcaption>Continuação: por que “10 graus C é o dobro de 5 graus C” não faz sentido em Celsius (intervalar), mas “10 kg é o dobro de 5 kg” faz sentido em quilogramas (razão)</figcaption>
+</figure>
+</div>
+<p>Por exemplo: temperatura em °C/°F é intervalar, porque você pode ter valores negativos (-20°C é um valor válido) — não existe “zero absoluto” de temperatura nessas escalas. Já o peso em kg é de razão, porque o menor valor possível é 0,00 kg, que representa de fato ausência de peso. Isso implica que “10 kg é o dobro de 5 kg” faz sentido (razão), mas “10°C é duas vezes mais quente que 5°C” não faz sentido — a comparação correta precisaria ser feita em Kelvin, que tem zero absoluto.</p>
+<p>Na prática, quase todas as variáveis contínuas medidas em Agronomia e Zootecnia (peso, produtividade, altura, precipitação) são de <strong>razão</strong>. A escala intervalar aparece com menos frequência (temperatura em °C sendo o exemplo clássico).</p>
+</section>
+</section>
+</section>
+<section id="coleta-e-representação-de-dados-organização" class="level1">
+<h1>Coleta e representação de dados (organização)</h1>
+<section id="tabelas" class="level2">
+<h2 class="anchored" data-anchor-id="tabelas">Tabelas</h2>
+<p>A forma mais básica de organizar dados coletados é uma tabela. É importante lembrar que a Associação Brasileira de Normas Técnicas (ABNT) estabelece alguns padrões mínimos para tabelas, como a presença de fonte e título.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/exemplo_tabela.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo de tabela de dados agrícolas: ano, cultura, qualidade (variável ordinal), produção (ton) e área (ha)</figcaption>
+</figure>
+</div>
+</section>
+<section id="gráficos" class="level2">
+<h2 class="anchored" data-anchor-id="gráficos">Gráficos</h2>
+<p>Os principais tipos de gráfico para representar dados são: <strong>linha</strong>, <strong>série temporal</strong>, <strong>coluna</strong>, <strong>barra</strong> e <strong>setor/pizza</strong>. A escolha do tipo de gráfico depende da natureza da variável e do que se quer comunicar — evolução ao longo do tempo, comparação entre categorias, ou composição/proporção de um total.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/grafico_linha.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfico de linha/série temporal: produção agropecuária ao longo dos anos</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/grafico_barra.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfico de coluna: produção média por cultura (Milho, Soja, Trigo)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/grafico_pizza.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfico de setor (pizza): participação da produção por cultura</figcaption>
+</figure>
+</div>
+<p>Para mais exemplos de representações gráficas, recomenda-se o material <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-3_Representacoes%20graficas.pdf">Representações Gráficas</a> do site de Probabilidade e Estatística EAD da UFRGS, além dos materiais suplementares no Moodle. Dois aplicativos interativos também são recomendados: <a href="https://istats.shinyapps.io/EDA_quantitative/">Análise Exploratória — Variáveis Quantitativas</a> e <a href="https://istats.shinyapps.io/EDA_categorical/">Análise Exploratória — Variáveis Categóricas</a>.</p>
+</section>
+</section>
+<section id="distribuição-de-frequências-histograma-e-boxplot" class="level1">
+<h1>Distribuição de frequências: histograma e boxplot</h1>
+<section id="histograma" class="level2">
+<h2 class="anchored" data-anchor-id="histograma">Histograma</h2>
+<p>O <strong>histograma</strong> é a representação gráfica mais usada para visualizar a distribuição de uma variável quantitativa: os dados são agrupados em faixas (classes) e a altura de cada barra representa a frequência de observações naquela faixa.</p>
+<p>Quando um valor está muito distante do restante dos dados — um <strong>outlier</strong> (valor extremo) — ele aparece isolado no histograma, geralmente afastado do “corpo” principal da distribuição:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/histograma_outlier.png" class="img-fluid figure-img"></p>
+<figcaption>Histograma com a presença de um outlier: a maior parte das observações se concentra entre 400 e 750 toneladas, mas há uma observação isolada próxima de 1500</figcaption>
+</figure>
+</div>
+</section>
+<section id="boxplot" class="level2">
+<h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
+<p>Antes de discutir boxplots propriamente, vale revisar rapidamente as medidas de posição que os compõem (quartis, mediana) — assunto que será aprofundado na próxima seção (Estatística Descritiva - Medidas). O <strong>boxplot</strong> (ou diagrama de caixa) resume a distribuição de uma variável quantitativa através de cinco números: mínimo, primeiro quartil, mediana, terceiro quartil e máximo, além de sinalizar explicitamente a presença de outliers (geralmente marcados como pontos fora dos “bigodes” da caixa):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_1_a_2/boxplot_outlier.png" class="img-fluid figure-img"></p>
+<figcaption>Boxplot da produção agropecuária, evidenciando um outlier (ponto vermelho) bem acima da caixa</figcaption>
+</figure>
+</div>
+<p>Note como o mesmo conjunto de dados do histograma acima aparece resumido de forma mais compacta no boxplot — a caixa concentra a maior parte dos dados, e o outlier fica claramente destacado como um ponto isolado.</p>
+</section>
+</section>
+<section id="para-saber-mais" class="level1">
+<h1>Para saber mais</h1>
+<p>Para mais exemplos interessantes de representações gráficas, recomenda-se acessar o material <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-3_Representacoes%20graficas.pdf">Representações Gráficas</a>, bem como os materiais suplementares no Moodle e os aplicativos interativos <a href="https://istats.shinyapps.io/EDA_quantitative/">EDA_quantitative</a> e <a href="https://istats.shinyapps.io/EDA_categorical/">EDA_categorical</a>.</p>
 
 
 </section>

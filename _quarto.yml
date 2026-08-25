@@ -47,10 +47,10 @@ website:
         - section: "Apresentação"
           contents:
             - Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.qmd
-        - section: "Introdução Teórica (Semanas 1-2)"
+        - section: "Introdução Teórica"
           contents:
             - Estatistica_Aplicada_Negocios/2_introducao_teorica_estatistica_negocios.qmd
-        - section: "Workflow de um Produto de Dados (Semanas 3-4)"
+        - section: "Workflow de um Produto de Dados"
           contents:
             - Estatistica_Aplicada_Negocios/3_workflow_produto_dados_crisp_dm.qmd
         - section: "Desafios de Bases de Dados (Semanas 5-7)"
@@ -72,11 +72,31 @@ website:
       style: "docked"
       search: true
       contents:
-        - section: "Área 1"
+        - section: "Apresentação"
+          contents:
+            - Metodos_Estatisticos/0_apresentacao_da_disciplina.qmd
+        - section: "Introdução e Análise Exploratória"
           contents:
             - Metodos_Estatisticos/1_introducao_exploratoria.qmd
+        - section: "Estatística Descritiva - Medidas"
+          contents:
             - Metodos_Estatisticos/2_descritiva_medidas.qmd
-            
+        - section: "Probabilidade (Semanas 5-6)"
+          contents:
+            - Metodos_Estatisticos/3_probabilidade.qmd
+        - section: "Amostragem e Estimação (Semanas 7-8)"
+          contents:
+            - Metodos_Estatisticos/4_amostragem_estimacao.qmd
+        - section: "Teste de Hipóteses: z e t (Semanas 9-10)"
+          contents:
+            - Metodos_Estatisticos/5_teste_hipoteses_z_t.qmd
+        - section: "Teste de Hipóteses: ANOVA (Semanas 11-15)"
+          contents:
+            - Metodos_Estatisticos/6_anova.qmd
+        - section: "Correlação, Regressão e Qui-Quadrado (Semanas 16-18)"
+          contents:
+            - Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.qmd
+
     - id: int_prob
       title: "Introdução à Probabilidade"
       collapse-level: 2
