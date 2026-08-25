@@ -46,9 +46,8 @@ Cada bloco corresponde a uma seção na barra lateral desta disciplina, à esque
 
 O conteúdo programático é desenvolvido em aulas teórico-práticas, com exposição do tema pelo professor e realização de exercícios, com ênfase na **aplicação** e na **interpretação dos resultados** (poucos cálculos manuais). Ao longo do semestre são utilizados softwares estatísticos, aplicativos didáticos interativos, discussão de artigos científicos publicados em revistas indexadas e incentivo ao uso crítico da IA (Inteligência Artificial) como recurso de aprendizagem. O ambiente Moodle é utilizado como repositório de material de apoio e para entrega das atividades.
 
-## Turma e contato
+## Contato
 
-- **Turma A1** — aulas às segundas e sextas-feiras, das 07:30 às 09:10, na Faculdade de Agronomia (Prédio Central).
 - **Atendimento:** Sala B118, Campus do Vale.
 - **E-mail:** renan.cortes@ufrgs.br
 - Materiais complementares da disciplina são disponibilizados no Moodle.
