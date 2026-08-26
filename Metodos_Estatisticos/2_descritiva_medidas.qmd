@@ -1,12 +1,12 @@
 ---
-title: "Estatística descritiva - medidas"
+title: "Estatística Descritiva - Medidas"
 lang: pt # Equações ficarem referenciadas em Português
 
 toc: true
 toc-title: "Nesta página"
 toc-location: right
 
-execute: 
+execute:
   warning: false
   message: false
 
@@ -18,4 +18,54 @@ format:
 
 # Introdução
 
-Material presente em [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_3_a_4.pptx)
+Este material cobre as **Semanas 3 e 4** do plano de ensino: medidas de tendência central (moda, mediana, média), medidas de variabilidade (amplitude, variância, desvio padrão, coeficiente de variação), suas propriedades, e o tratamento de dados isolados ou agrupados em intervalos de classe.
+
+Slides originais disponíveis [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_3_a_4.pptx).
+
+Diferente das demais semanas, o material de aula para este bloco é propositalmente enxuto: o professor ancora esta parte da matéria diretamente no material de referência do site de Probabilidade e Estatística EAD da UFRGS — [Descritiva: medidas descritivas](https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-4_Descritiva_medidas%20descritivas.pdf) — complementado por aplicativos interativos: [Análise Exploratória de Dados](https://istats.shinyapps.io/EDA_quantitative/) e [Média vs. Mediana](https://istats.shinyapps.io/MeanvsMedian/) (código-fonte dos demais aplicativos interativos disponível no Moodle). O resumo abaixo organiza os conceitos que serão trabalhados em aula, com exemplos aplicados às áreas de Agronomia e Zootecnia.
+
+# Medidas de tendência central
+
+As medidas de tendência central resumem um conjunto de dados em um único valor "típico" ou "central".
+
+- **Moda**: o valor que ocorre com maior frequência no conjunto de dados. É a única medida de tendência central que pode ser calculada para variáveis nominais (ex.: a raça de gado mais frequente em um rebanho).
+- **Mediana**: o valor que divide o conjunto de dados ordenado exatamente ao meio — 50% das observações ficam abaixo dela e 50% acima. É pouco sensível a valores extremos (outliers), o que a torna uma medida robusta.
+- **Média (aritmética)**: a soma de todos os valores dividida pelo número de observações,
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+É a medida de tendência central mais usada, mas é sensível a outliers — um único valor muito discrepante pode distorcer bastante a média.
+
+**Exemplo aplicado:** em um piquete com 9 novilhos de pesos (em kg) 410, 425, 430, 435, 440, 445, 450, 455 e 610 (o último animal claramente mais pesado que os demais), a média seria puxada para cima por esse valor atípico, enquanto a mediana (440 kg) continuaria representando bem o "novilho típico" do lote. Esse é exatamente o tipo de situação explorada no aplicativo [Média vs. Mediana](https://istats.shinyapps.io/MeanvsMedian/): vale a pena experimentá-lo movendo pontos extremos e observando o que acontece com cada medida.
+
+# Medidas de variabilidade
+
+As medidas de tendência central sozinhas não contam a história toda: dois lotes de animais podem ter o mesmo peso médio e, ainda assim, um deles ser muito mais homogêneo que o outro. Para isso, usamos medidas de variabilidade (ou dispersão):
+
+- **Amplitude**: a diferença entre o maior e o menor valor observado, $A = x_{max} - x_{min}$. É simples de calcular, mas depende só de dois pontos e ignora toda a distribuição intermediária.
+- **Variância**: a média dos quadrados dos desvios de cada observação em relação à média,
+$$
+s^2 = \frac{1}{n-1}\sum_{i=1}^{n} (x_i - \bar{x})^2
+$$
+(o uso de $n-1$ no denominador, em vez de $n$, será retomado quando discutirmos estimadores não-viesados, na semana de Amostragem e Estimação).
+- **Desvio padrão**: a raiz quadrada da variância, $s = \sqrt{s^2}$. É preferido à variância na prática porque está na mesma unidade da variável original (ex.: kg, e não kg²).
+- **Coeficiente de variação (CV)**: o desvio padrão expresso como percentual da média, $CV = \frac{s}{\bar{x}} \times 100\%$. Por ser adimensional, o CV é útil para comparar a variabilidade relativa entre grupos com médias muito diferentes — por exemplo, comparar a variabilidade do peso entre bezerros e vacas adultas, ou entre duas culturas com produtividades médias muito distintas.
+
+## Propriedades das medidas
+
+Algumas propriedades úteis para interpretar essas medidas corretamente:
+
+- Somar uma constante a todos os valores desloca a média e a mediana pela mesma constante, mas **não altera** a variância, o desvio padrão nem a amplitude (a dispersão dos dados em torno do centro não muda).
+- Multiplicar todos os valores por uma constante $k$ multiplica a média, a mediana e o desvio padrão por $k$, mas multiplica a **variância por $k^2$**.
+- A soma dos desvios de cada observação em relação à média é sempre zero: $\sum_{i=1}^n (x_i - \bar{x}) = 0$. É por isso que a variância trabalha com desvios *ao quadrado* — caso contrário, os desvios positivos e negativos sempre se cancelariam.
+- Para dados fortemente assimétricos ou com outliers, a mediana costuma ser preferível à média como medida de tendência central; nesses casos, uma medida de dispersão baseada em quartis (como o intervalo interquartil, base do boxplot visto na seção anterior) é preferível à variância/desvio padrão.
+
+# Dados isolados vs. agrupados em intervalos de classe
+
+Quando o número de observações é pequeno (dados isolados), as fórmulas acima podem ser aplicadas diretamente sobre os valores observados. Quando o volume de dados é grande, é comum organizá-los em uma **tabela de distribuição de frequências**, agrupando os valores em intervalos de classe (faixas) — exatamente a mesma lógica usada para construir um histograma, como vimos na seção anterior.
+
+Nesse caso, as medidas de tendência central e de variabilidade são calculadas usando o **ponto médio de cada classe** como representante de todas as observações daquela faixa, ponderado pela frequência da classe. Essa é uma aproximação: perde-se um pouco de precisão em troca de trabalhar com dados já resumidos — uma situação comum quando se recebe apenas uma tabela de frequências agrupadas de uma pesquisa (por exemplo, um levantamento censitário do IBGE ou de um órgão do setor agropecuário), sem acesso aos dados brutos.
+
+# Para praticar
+
+O material de referência completo, com a notação formal e exemplos resolvidos passo a passo, está disponível em [Descritiva: medidas descritivas (UFRGS EAD)](https://www.ufrgs.br/probabilidade-estatistica/slides/slides_1/1-4_Descritiva_medidas%20descritivas.pdf). Os aplicativos interativos [Análise Exploratória de Dados](https://istats.shinyapps.io/EDA_quantitative/) e [Média vs. Mediana](https://istats.shinyapps.io/MeanvsMedian/) são altamente recomendados para desenvolver intuição visual sobre como essas medidas se comportam diante de diferentes formatos de distribuição e da presença de outliers.

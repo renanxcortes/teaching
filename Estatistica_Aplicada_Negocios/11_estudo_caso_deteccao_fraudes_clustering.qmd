@@ -1,0 +1,37 @@
+---
+title: "Estudo de Caso: Detecção de Fraudes e Segmentação de Clientes (Clustering)"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Este estudo de caso explora dois problemas comuns em contextos de Fraude e Marketing/CRM: **detecção de anomalias** e **segmentação de clientes**.
+
+## Detecção de fraudes/anomalias
+
+Utilizando o [Bank Transaction Dataset for Fraud Detection](https://www.kaggle.com/datasets/valakhorasani/bank-transaction-dataset-for-fraud-detection) (Kaggle), são discutidos alguns algoritmos populares para identificação de transações anômalas:
+
+- **Isolation Forest**: isolamento rápido, baseado em árvores, de pontos de dados, eficiente em dados de alta dimensionalidade
+- **Autoencoders**: redes neurais treinadas para reconstruir padrões normais, sinalizando como anomalia os casos com maior erro de reconstrução
+- **Local Outlier Factor (LOF)**: abordagem baseada em densidade, que mede o desvio local de um ponto em relação aos seus vizinhos
+
+Um notebook de referência aplicando alguns desses conceitos está disponível [AQUI](https://www.kaggle.com/code/annastasy/anomaly-detection-credit-card-fraud).
+
+## Segmentação de clientes (clustering)
+
+Como aplicação complementar de técnicas não supervisionadas em negócios, também é discutida a segmentação de clientes via *clustering*, com um exemplo de referência [AQUI](https://www.kaggle.com/code/karnikakapoor/customer-segmentation-clustering).
+
+Contextos de negócio relacionados: Fraudes, Marketing, CRM.

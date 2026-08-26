@@ -1,0 +1,28 @@
+---
+title: "Estudo de Caso: Dashboards (Looker Studio)"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Além da modelagem estatística, comunicar resultados através de **dashboards** é uma habilidade central em ambientes de negócio. Este estudo de caso é um passo a passo prático de construção de um dashboard de vendas no [Google Looker Studio](https://lookerstudio.google.com/) (antigo Data Studio), a partir de uma base de vendas simulada.
+
+O exercício percorre a criação de cards de indicadores (faturamento, número de pedidos, ticket médio), gráficos de série temporal, gráficos de rosca, treemap, velocímetro, gráficos de barras com variáveis categorizadas, além de filtros e controles interativos.
+
+- Vídeo de referência: [AQUI](https://www.youtube.com/watch?v=7iI-UTHqPLA)
+- Base de vendas de exemplo utilizada no exercício: [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Estatistica_Aplicada_Negocios/dados/base_vendas_exemplo_data_studio.xlsx)
+
+Contextos de negócio relacionados: Vendas, Marketing.
