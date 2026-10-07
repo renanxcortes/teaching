@@ -1,0 +1,35 @@
+---
+title: "Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Em construção
+
+Esta página cobrirá as **Semanas 16 a 18** do plano de ensino, ainda em elaboração. Segundo o plano de ensino oficial da disciplina, o conteúdo previsto para este bloco é:
+
+**Variáveis métricas**
+
+- Correlação linear de Pearson.
+- Regressão linear.
+
+**Variáveis categóricas**
+
+- Teste não paramétrico: Qui-Quadrado.
+- Qui-Quadrado de Aderência (*Goodness-of-Fit*): frequências esperadas iguais e frequências esperadas diferentes.
+- Qui-Quadrado de Independência (Tabelas de Contingência).
+- Qui-Quadrado de Homogeneidade (Comparação de proporções entre grupos).
+
+O material será publicado nesta página conforme for produzido.

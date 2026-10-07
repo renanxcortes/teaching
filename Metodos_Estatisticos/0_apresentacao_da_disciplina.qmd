@@ -1,0 +1,55 @@
+---
+title: "Apresentação da Disciplina"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+A disciplina **Métodos Estatísticos** (MAT02201) é oferecida pelo Departamento de Estatística do Instituto de Matemática e Estatística da UFRGS aos cursos de **Agronomia** e **Zootecnia**, sendo pré-requisito ter cursado Matemática para Ciências Agrárias (MAT01019).
+
+**Súmula:** Introdução ao método e conceitos de análise estatística na área de ciências agronômicas. Obtenção, apresentação e descrição de dados de observação. Boxplot. Probabilidade. Distribuição normal. Amostragem. Estimação, intervalos de confiança e testes de significância. Comparação de médias. Princípios de experimentação: delineamento inteiramente casualizado, delineamento em blocos casualizados e experimentos fatoriais. Correlação e regressão linear. Distribuição Qui-Quadrado.
+
+A disciplina visa fornecer ao(à) aluno(a) uma introdução aos métodos estatísticos utilizados na análise e interpretação de dados das áreas de Agronomia e Zootecnia, buscando:
+
+- Familiarizar o(a) aluno(a) com as técnicas estatísticas e a terminologia mais usada nessas áreas;
+- Fornecer os instrumentos mais comuns de análise estatística, ensinando a usá-los e a interpretar os resultados obtidos;
+- Desenvolver o espírito crítico e a capacidade de julgar publicações e relatórios no que tange à análise dos dados e às consequentes conclusões.
+
+## Conteúdo programático (visão geral)
+
+O conteúdo programático segue o plano de ensino oficial da disciplina e está organizado nos seguintes blocos de conteúdo:
+
+- Introdução à Estatística e análise exploratória de dados
+- Estatística descritiva: medidas de tendência central e de variabilidade
+- Probabilidade e distribuição normal
+- Amostragem e estimação
+- Teste de hipóteses: teste *z* e teste *t* de Student
+- Teste de hipóteses: ANOVA e princípios de experimentação
+- Teste de hipóteses: correlação, regressão linear e Qui-Quadrado
+
+Cada bloco corresponde a uma seção na barra lateral desta disciplina, à esquerda.
+
+## Metodologia e experiências de aprendizagem
+
+O conteúdo programático é desenvolvido em aulas teórico-práticas, com exposição do tema pelo professor e realização de exercícios, com ênfase na **aplicação** e na **interpretação dos resultados** (poucos cálculos manuais). Ao longo do semestre são utilizados softwares estatísticos, aplicativos didáticos interativos, discussão de artigos científicos publicados em revistas indexadas e incentivo ao uso crítico da IA (Inteligência Artificial) como recurso de aprendizagem. O ambiente Moodle é utilizado como repositório de material de apoio e para entrega das atividades.
+
+## Contato
+
+- **Atendimento:** Sala B118, Campus do Vale.
+- **E-mail:** renan.cortes@ufrgs.br
+- Materiais complementares da disciplina são disponibilizados no Moodle.
+
+Os slides originais de apresentação da disciplina (ementa e cronograma) estão disponíveis [AQUI](https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/MAT02201_MET_EST_apresentacao_da_disciplina.pptx).
