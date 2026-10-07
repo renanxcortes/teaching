@@ -138,7 +138,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-temas">    
         <li>
-    <a class="dropdown-item" href="../Metodos_Estatisticos/1_introducao_exploratoria.html">
+    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html">
  <span class="dropdown-text">Métodos Estatísticos</span></a>
   </li>  
         <li>
@@ -156,10 +160,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../Multivariada/Componentes_Principais.html">
  <span class="dropdown-text">Análise Multivariada</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
- <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
   </li>  
     </ul>
   </li>
@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Introdução Teórica (Semanas 1-2)</span></a>
+ <span class="menu-text">Introdução Teórica</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Workflow de um Produto de Dados (Semanas 3-4)</span></a>
+ <span class="menu-text">Workflow de um Produto de Dados</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -441,11 +441,149 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Joins</h1>
 <p>Uma das tarefas <strong>mais comuns e imprescindíveis</strong> para quem trabalha com dados é efetivamente saber combinar informações de múltiplas tabelas.</p>
 <p><strong>Exemplo motivador:</strong> suponha que você é um(a) cientista de dados de um supermercado e precisa calcular os preços com desconto que são aplicados por tipo de produto, a partir de uma <em>tabela de produtos</em> e uma <em>tabela de descontos por tipo</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figs/parte4/parte4_slide005_img014.png" class="img-fluid figure-img"></p>
-<figcaption>Tabela de produtos e tabela de descontos por tipo de produto</figcaption>
-</figure>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Tabela de Produtos</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">ID Produto</th>
+<th style="text-align: left;">Descrição Produto</th>
+<th style="text-align: center;">Valor (R$)</th>
+<th style="text-align: left;">Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Carne Bovina Alcatra</td>
+<td style="text-align: center;">68,9</td>
+<td style="text-align: left;">Açougue</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Peito de Frango</td>
+<td style="text-align: center;">24,5</td>
+<td style="text-align: left;">Açougue</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Refrigerante 2 L</td>
+<td style="text-align: center;">8,99</td>
+<td style="text-align: left;">Bebidas</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Maçã Gala 1 kg</td>
+<td style="text-align: center;">9,8</td>
+<td style="text-align: left;">Hortifruti</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Leite Integral 1 L</td>
+<td style="text-align: center;">5,99</td>
+<td style="text-align: left;">Laticínios</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Queijo Mussarela</td>
+<td style="text-align: center;">42,5</td>
+<td style="text-align: left;">Laticínios</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Manteiga</td>
+<td style="text-align: center;">10,5</td>
+<td style="text-align: left;">Laticínios</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Detergente Líquido</td>
+<td style="text-align: center;">3,49</td>
+<td style="text-align: left;">Limpeza</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Sabão em Pó</td>
+<td style="text-align: center;">24,9</td>
+<td style="text-align: left;">Limpeza</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Amaciante</td>
+<td style="text-align: center;">20,3</td>
+<td style="text-align: left;">Limpeza</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Arroz 5 kg</td>
+<td style="text-align: center;">32,9</td>
+<td style="text-align: left;">Mercearia</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Pão Francês</td>
+<td style="text-align: center;">12,5</td>
+<td style="text-align: left;">Padaria</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Bolo de Chocolate</td>
+<td style="text-align: center;">29,9</td>
+<td style="text-align: left;">Padaria</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Camiseta Básica</td>
+<td style="text-align: center;">39,9</td>
+<td style="text-align: left;">Roupas</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Tabela de Descontos por Tipo</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Alíquota de Desconto (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Limpeza</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Açougue</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Padaria</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Roupas</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Laticínios</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Higiene</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Congelados</td>
+<td style="text-align: center;">18</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <ul>
 <li><strong>Passo 1</strong>: associar cada produto à sua respectiva alíquota de desconto.</li>
@@ -455,7 +593,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>O Passo 1 é um problema típico para ser resolvido via <strong>JOIN</strong>. Suponha que você tenha uma tabela A e uma tabela B; os principais tipos de <em>join</em> são:</p>
 <ul>
 <li><strong>INNER JOIN</strong>: retorna apenas as linhas cujo valor da chave existe em <strong>ambas</strong> as tabelas.</li>
-<li><strong>LEFT JOIN</strong>: mantém todas as linhas da tabela da esquerda (ou direita, dependendo da convenção), adicionando as colunas da outra tabela quando existir correspondência.</li>
+<li><strong>LEFT JOIN</strong>: mantém todas as linhas da tabela da esquerda, adicionando as colunas da outra tabela quando existir correspondência.</li>
 <li><strong>ANTI JOIN</strong>: retorna apenas as linhas de uma tabela cuja chave <strong>não</strong> possui correspondência na outra tabela.</li>
 <li><strong>FULL JOIN</strong>: retorna todos os registros de ambas as tabelas, com ou sem correspondência.</li>
 </ul>

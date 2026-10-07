@@ -103,7 +103,42 @@ Uma das tarefas **mais comuns e imprescindíveis** para quem trabalha com dados 
 
 **Exemplo motivador:** suponha que você é um(a) cientista de dados de um supermercado e precisa calcular os preços com desconto que são aplicados por tipo de produto, a partir de uma *tabela de produtos* e uma *tabela de descontos por tipo*.
 
-![Tabela de produtos e tabela de descontos por tipo de produto](figs/parte4/parte4_slide005_img014.png)
+::::: {layout-ncol=2}
+::: {}
+**Tabela de Produtos**
+
+| ID Produto | Descrição Produto | Valor (R$) | Tipo |
+|:---:|---|:---:|---|
+| 1 | Carne Bovina Alcatra | 68,9 | Açougue |
+| 2 | Peito de Frango | 24,5 | Açougue |
+| 3 | Refrigerante 2 L | 8,99 | Bebidas |
+| 4 | Maçã Gala 1 kg | 9,8 | Hortifruti |
+| 5 | Leite Integral 1 L | 5,99 | Laticínios |
+| 6 | Queijo Mussarela | 42,5 | Laticínios |
+| 7 | Manteiga | 10,5 | Laticínios |
+| 8 | Detergente Líquido | 3,49 | Limpeza |
+| 9 | Sabão em Pó | 24,9 | Limpeza |
+| 10 | Amaciante | 20,3 | Limpeza |
+| 11 | Arroz 5 kg | 32,9 | Mercearia |
+| 12 | Pão Francês | 12,5 | Padaria |
+| 13 | Bolo de Chocolate | 29,9 | Padaria |
+| 14 | Camiseta Básica | 39,9 | Roupas |
+:::
+
+::: {}
+**Tabela de Descontos por Tipo**
+
+| Tipo | Alíquota de Desconto (%) |
+|---|:---:|
+| Limpeza | 15 |
+| Açougue | 8 |
+| Padaria | 10 |
+| Roupas | 20 |
+| Laticínios | 5 |
+| Higiene | 12 |
+| Congelados | 18 |
+:::
+:::::
 
 - **Passo 1**: associar cada produto à sua respectiva alíquota de desconto.
 - **Passo 2**: calcular o valor com desconto.
@@ -113,7 +148,7 @@ Nota: o Passo 1 também seria possível resolver usando a função `PROCV` do Ex
 O Passo 1 é um problema típico para ser resolvido via **JOIN**. Suponha que você tenha uma tabela A e uma tabela B; os principais tipos de *join* são:
 
 - **INNER JOIN**: retorna apenas as linhas cujo valor da chave existe em **ambas** as tabelas.
-- **LEFT JOIN**: mantém todas as linhas da tabela da esquerda (ou direita, dependendo da convenção), adicionando as colunas da outra tabela quando existir correspondência.
+- **LEFT JOIN**: mantém todas as linhas da tabela da esquerda, adicionando as colunas da outra tabela quando existir correspondência.
 - **ANTI JOIN**: retorna apenas as linhas de uma tabela cuja chave **não** possui correspondência na outra tabela.
 - **FULL JOIN**: retorna todos os registros de ambas as tabelas, com ou sem correspondência.
 
