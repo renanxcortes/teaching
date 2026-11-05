@@ -1,7 +1,7 @@
 ---
 title: "Renan Xavier Cortes"
 description-meta: "Renan é..."
-image: "figs/ufrgs_foto_short.jpg"
+image: "figs/IMG_2624.JPG"
 page-navigation: false
 toc: false
 #sidebar: false
