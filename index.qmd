@@ -29,7 +29,8 @@ about:
    #   href: https://scholar.google.com/citations?user=vf90AuEAAAAJ
    #   target: _blank
    # - icon: "![](icons/lattes.svg)" # Discussão de como incorporar o símbolo do lattes como ícone: https://github.com/simple-icons/simple-icons/issues/13127
-    - text: "Lattes"
+    - icon: mortarboard-fill
+      text: "Lattes"
       href: http://lattes.cnpq.br/2352000783745031
       target: _blank
    # - text: "{{< ai researchgate >}} Research Gate"
