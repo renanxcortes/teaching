@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Teste de Hipóteses: ANOVA – Teaching</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../figs/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-eef78bce6e6d37c27bc985c3ac861da9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Teaching</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-temas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Temas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-temas">    
+        <li>
+    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Métodos Estatísticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Int_Prob/1_experimento_aleatorio.html">
+ <span class="dropdown-text">Introdução à Probabilidade</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Probabilidade_B/LGN.html">
+ <span class="dropdown-text">Probabilidade Avançada</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Modelos_Lineares/paradoxo_simpson.html">
+ <span class="dropdown-text">Modelos Lineares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Multivariada/Componentes_Principais.html">
+ <span class="dropdown-text">Análise Multivariada</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/6_anova.html">Teste de Hipóteses: ANOVA (Semanas 11-15)</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/6_anova.html">Teste de Hipóteses: ANOVA</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apresentação</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação da Disciplina</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução e Análise Exploratória</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introdução à Estatística e Análise Exploratória de Dados</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/2_descritiva_medidas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Probabilidade (Semanas 5-6)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/3_probabilidade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilidade</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Amostragem e Estimação (Semanas 7-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/4_amostragem_estimacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Amostragem e Estimação</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: z e t (Semanas 9-10)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Teste z e Teste t de Student</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: ANOVA (Semanas 11-15)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/6_anova.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Teste de Hipóteses: ANOVA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Correlação, Regressão e Qui-Quadrado (Semanas 16-18)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#princípios-da-experimentação" id="toc-princípios-da-experimentação" class="nav-link" data-scroll-target="#princípios-da-experimentação">Princípios da Experimentação</a>
+  <ul class="collapse">
+  <li><a href="#planejamento-do-experimento" id="toc-planejamento-do-experimento" class="nav-link" data-scroll-target="#planejamento-do-experimento">Planejamento do experimento</a></li>
+  <li><a href="#princípios-básicos-da-experimentação" id="toc-princípios-básicos-da-experimentação" class="nav-link" data-scroll-target="#princípios-básicos-da-experimentação">Princípios básicos da experimentação</a></li>
+  <li><a href="#anova-a-ideia-geral" id="toc-anova-a-ideia-geral" class="nav-link" data-scroll-target="#anova-a-ideia-geral">ANOVA: a ideia geral</a></li>
+  </ul></li>
+  <li><a href="#delineamento-inteiramente-casualizado-dcc" id="toc-delineamento-inteiramente-casualizado-dcc" class="nav-link" data-scroll-target="#delineamento-inteiramente-casualizado-dcc">Delineamento Inteiramente Casualizado (DCC)</a>
+  <ul class="collapse">
+  <li><a href="#exemplo-de-referência" id="toc-exemplo-de-referência" class="nav-link" data-scroll-target="#exemplo-de-referência">Exemplo de referência</a></li>
+  <li><a href="#decomposição-da-variabilidade" id="toc-decomposição-da-variabilidade" class="nav-link" data-scroll-target="#decomposição-da-variabilidade">Decomposição da variabilidade</a></li>
+  <li><a href="#resultado-do-exemplo" id="toc-resultado-do-exemplo" class="nav-link" data-scroll-target="#resultado-do-exemplo">Resultado do exemplo</a></li>
+  <li><a href="#exemplo-em-r" id="toc-exemplo-em-r" class="nav-link" data-scroll-target="#exemplo-em-r">Exemplo em R</a></li>
+  <li><a href="#dcc-artigos" id="toc-dcc-artigos" class="nav-link" data-scroll-target="#dcc-artigos">Aplicações em artigos científicos</a></li>
+  </ul></li>
+  <li><a href="#delineamento-em-blocos-casualizados-dbc" id="toc-delineamento-em-blocos-casualizados-dbc" class="nav-link" data-scroll-target="#delineamento-em-blocos-casualizados-dbc">Delineamento em Blocos Casualizados (DBC)</a>
+  <ul class="collapse">
+  <li><a href="#estrutura-da-anova-no-dbc" id="toc-estrutura-da-anova-no-dbc" class="nav-link" data-scroll-target="#estrutura-da-anova-no-dbc">Estrutura da ANOVA no DBC</a></li>
+  <li><a href="#exemplo-de-referência-cultivares-de-trigo" id="toc-exemplo-de-referência-cultivares-de-trigo" class="nav-link" data-scroll-target="#exemplo-de-referência-cultivares-de-trigo">Exemplo de referência: cultivares de trigo</a>
+  <ul class="collapse">
+  <li><a href="#workflow-completo-em-r" id="toc-workflow-completo-em-r" class="nav-link" data-scroll-target="#workflow-completo-em-r">Workflow completo em R</a></li>
+  <li><a href="#exemplo-lúdico-em-sala-de-aula-comparação-de-sabores" id="toc-exemplo-lúdico-em-sala-de-aula-comparação-de-sabores" class="nav-link" data-scroll-target="#exemplo-lúdico-em-sala-de-aula-comparação-de-sabores">Exemplo lúdico em sala de aula: comparação de sabores</a></li>
+  </ul></li>
+  <li><a href="#dbc-artigo" id="toc-dbc-artigo" class="nav-link" data-scroll-target="#dbc-artigo">Aplicação em artigo científico</a></li>
+  </ul></li>
+  <li><a href="#experimentos-fatoriais" id="toc-experimentos-fatoriais" class="nav-link" data-scroll-target="#experimentos-fatoriais">Experimentos Fatoriais</a>
+  <ul class="collapse">
+  <li><a href="#efeito-principal-efeito-simples-e-interação" id="toc-efeito-principal-efeito-simples-e-interação" class="nav-link" data-scroll-target="#efeito-principal-efeito-simples-e-interação">Efeito principal, efeito simples e interação</a></li>
+  <li><a href="#exemplo-hormônio-e-sexo-em-cordeiros" id="toc-exemplo-hormônio-e-sexo-em-cordeiros" class="nav-link" data-scroll-target="#exemplo-hormônio-e-sexo-em-cordeiros">Exemplo: hormônio e sexo em cordeiros</a></li>
+  <li><a href="#fatorial-cruzado-em-blocos" id="toc-fatorial-cruzado-em-blocos" class="nav-link" data-scroll-target="#fatorial-cruzado-em-blocos">Fatorial cruzado em blocos</a></li>
+  <li><a href="#experimentos-fatoriais-com-três-fatores" id="toc-experimentos-fatoriais-com-três-fatores" class="nav-link" data-scroll-target="#experimentos-fatoriais-com-três-fatores">Experimentos fatoriais com três fatores</a></li>
+  </ul></li>
+  <li><a href="#delineamento-em-parcelas-subdivididas" id="toc-delineamento-em-parcelas-subdivididas" class="nav-link" data-scroll-target="#delineamento-em-parcelas-subdivididas">Delineamento em Parcelas Subdivididas</a>
+  <ul class="collapse">
+  <li><a href="#vantagens-desvantagens-e-quando-usar" id="toc-vantagens-desvantagens-e-quando-usar" class="nav-link" data-scroll-target="#vantagens-desvantagens-e-quando-usar">Vantagens, desvantagens e quando usar</a></li>
+  <li><a href="#estrutura-da-anova" id="toc-estrutura-da-anova" class="nav-link" data-scroll-target="#estrutura-da-anova">Estrutura da ANOVA</a></li>
+  <li><a href="#exemplo-em-r-resistência-à-tração-do-papel" id="toc-exemplo-em-r-resistência-à-tração-do-papel" class="nav-link" data-scroll-target="#exemplo-em-r-resistência-à-tração-do-papel">Exemplo em R: resistência à tração do papel</a></li>
+  <li><a href="#exemplo-de-referência-métodos-de-plantio-e-espaçamento-em-soja" id="toc-exemplo-de-referência-métodos-de-plantio-e-espaçamento-em-soja" class="nav-link" data-scroll-target="#exemplo-de-referência-métodos-de-plantio-e-espaçamento-em-soja">Exemplo de referência: métodos de plantio e espaçamento em soja</a></li>
+  <li><a href="#split-plot-artigo" id="toc-split-plot-artigo" class="nav-link" data-scroll-target="#split-plot-artigo">Aplicação em artigo científico</a></li>
+  </ul></li>
+  <li><a href="#exercício-complementar-anova-em-r" id="toc-exercício-complementar-anova-em-r" class="nav-link" data-scroll-target="#exercício-complementar-anova-em-r">Exercício complementar: ANOVA em R</a></li>
+  <li><a href="#materiais-e-referências" id="toc-materiais-e-referências" class="nav-link" data-scroll-target="#materiais-e-referências">Materiais e Referências</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/6_anova.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/6_anova.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/6_anova.html">Teste de Hipóteses: ANOVA (Semanas 11-15)</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/6_anova.html">Teste de Hipóteses: ANOVA</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Teste de Hipóteses: ANOVA</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>Este material cobre as <strong>Semanas 11 a 15</strong> do plano de ensino: princípios de experimentação, Análise de Variância (ANOVA) para o Delineamento Inteiramente Casualizado (DCC) e para o Delineamento em Blocos Casualizados (DBC), com respectivos testes de comparações múltiplas, experimentos fatoriais (com e sem blocos) e delineamento em parcelas subdivididas, sempre ilustrados com exemplos de artigos científicos.</p>
+<p>O conteúdo desta página é baseado em material didático elaborado por <strong>Paula Bracco</strong> (adaptado do material da prof. Lisiane Selau), especificamente voltado ao ensino de Análise de Variância aplicada à experimentação agronômica. Os exemplos em R reproduzidos ao longo da página vêm da coleção de scripts do professor (pasta <code>codigos/</code>, com prefixo <code>area_3</code>), aplicados aos mesmos exemplos apresentados nos slides. Todos os materiais originais — slides e scripts — estão disponíveis para download ao final desta página, na seção <a href="#materiais-e-referências">Materiais e Referências</a>.</p>
+</section>
+<section id="princípios-da-experimentação" class="level1">
+<h1>Princípios da Experimentação</h1>
+<p>A <strong>Estatística Experimental</strong> tem por objetivo o planejamento, a execução, a análise e a interpretação dos resultados obtidos em um experimento. Na agricultura, a experimentação pretende responder perguntas como: qual o melhor cultivar para se plantar (maior rendimento)? Qual o efeito de diferentes herbicidas (menos pragas)? Qual a melhor técnica de semeadura (maior rendimento)?</p>
+<p>Para ser o mais eficiente possível, o experimento deve ser planejado a partir de uma metodologia científica apropriada. O <strong>delineamento (ou planejamento) experimental</strong> é o processo de planejar o experimento de modo que todos os dados apropriados sejam coletados, resultando em conclusões objetivas e válidas — dados apropriados sendo aqueles que possam ser analisados através de métodos estatísticos.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/metodo_cientifico.png" class="img-fluid figure-img"></p>
+<figcaption>Método científico: o ciclo hipótese → planejamento → experimento → dados → teste da hipótese → decisão → conclusões</figcaption>
+</figure>
+</div>
+<p>O objetivo do experimento é que ele seja o mais controlado possível, ou seja, que a única diferença sistemática entre os grupos comparados seja o fator/tratamento de interesse (tipo de semente, tipo de herbicida, quantidade de nutriente do solo, etc.). Como nenhum experimento é 100% controlado, sempre existirão fatores que podem diferir entre os grupos e que não conseguimos controlar (pequenas variações nas lâminas de irrigação, em infestações por pragas, na fertilidade dos solos) — o efeito desses fatores não controlados sobre a resposta de interesse é chamado de <strong>variação aleatória, ao acaso ou residual</strong>.</p>
+<section id="planejamento-do-experimento" class="level2">
+<h2 class="anchored" data-anchor-id="planejamento-do-experimento">Planejamento do experimento</h2>
+<p>O planejamento de um experimento envolve, essencialmente, quatro decisões:</p>
+<ol type="1">
+<li><strong>Variável resposta</strong>: qual característica será estudada (altura ou comprimento das plantas, produção de grãos/rendimento, etc.).</li>
+<li><strong>Fatores e níveis</strong>: quais fatores afetam essa resposta e quais os níveis de cada fator — importante identificar quais podem e quais não podem ser controlados (variedade, adubação, irrigação, qualidade da semente, temperatura, incidência de luz, etc.). Em um <strong>experimento simples</strong>, apenas um fator é estudado (os demais são mantidos constantes); em <strong>experimentos complexos</strong> (fatoriais), estudamos simultaneamente o efeito de dois ou mais fatores.</li>
+<li><strong>Unidade experimental (ou parcela)</strong>: onde os diferentes níveis do tratamento são aplicados — idealmente as unidades experimentais devem ser as mais semelhantes/uniformes possível, para reduzir a variação aleatória. Exemplos: uma área de campo, um vaso com solo, uma sementeira, uma placa de Petri, um tubo de ensaio, uma árvore, uma folha da planta.</li>
+<li><strong>Número de repetições</strong>: depende do número de tratamentos utilizados; é usual que os experimentos possuam pelo menos 3 repetições.</li>
+</ol>
+</section>
+<section id="princípios-básicos-da-experimentação" class="level2">
+<h2 class="anchored" data-anchor-id="princípios-básicos-da-experimentação">Princípios básicos da experimentação</h2>
+<p><strong>Repetição.</strong> O princípio da repetição consiste na reprodução do experimento básico. O fato de um tratamento se comportar melhor que outro em uma única unidade experimental pouco ou nada significa, pois pode ter havido um comportamento superior por simples acaso — por isso, consideramos o comportamento médio de cada tratamento ao longo de várias parcelas. As repetições são necessárias para estimar o <strong>erro experimental</strong> (a variabilidade da resposta entre unidades experimentais que receberam o mesmo tratamento) e para avaliar, de forma mais precisa, o efeito de cada tratamento.</p>
+<p><strong>Casualização (aleatorização).</strong> É a distribuição dos tratamentos às unidades experimentais de forma casual (aleatória, randômica), para evitar que um determinado tratamento venha a ser beneficiado por sucessivas repetições em parcelas melhores. É a alocação dos tratamentos aleatoriamente sobre as unidades experimentais — sorteando qual unidade receberá cada tratamento e cada repetição.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/casualizacao_correta.png" class="img-fluid figure-img"></p>
+<figcaption>Casualização correta: alocação aleatória dos tratamentos A, B, C, D (4 repetições cada) reduz a chance de que a diferença observada seja apenas devido a fatores não controlados</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/casualizacao_incorreta.png" class="img-fluid figure-img"></p>
+<figcaption>Casualização incorreta: alocação sistemática (não aleatória) dos tratamentos — se houver alguma diferença entre as linhas, não conseguiríamos isolar o efeito de “linhas diferentes” do efeito de “tratamentos diferentes”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Controle local / blocos.</strong> Não é de uso obrigatório: quando conhecemos um fator que pode ser uma fonte de variação, podemos controlá-lo com o uso de blocos. Trata-se da formação de grupos de unidades experimentais o mais homogêneos possível (cada grupo constitui um bloco), de modo a reduzir o erro experimental — os tratamentos são sorteados dentro de cada bloco.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/controle_local_blocos.png" class="img-fluid figure-img"></p>
+<figcaption>Controle local / blocos: cada bloco (coluna) recebe uma repetição completa dos 4 tratamentos, sabendo de antemão que os blocos diferem entre si</figcaption>
+</figure>
+</div>
+</section>
+<section id="anova-a-ideia-geral" class="level2">
+<h2 class="anchored" data-anchor-id="anova-a-ideia-geral">ANOVA: a ideia geral</h2>
+<p>A <strong>Análise de Variância (ANOVA)</strong> é a técnica que nos permite decompor a variabilidade total da resposta (a variação da resposta de interesse entre todas as unidades experimentais) em partes atribuídas a: (i) variação devido a causas conhecidas e independentes (níveis do tratamento); (ii) variação relacionada a causas controladas pelo delineamento experimental (blocos, quando existirem); e (iii) uma porção residual, de origem desconhecida e natureza aleatória (devida aos fatores não controlados).</p>
+</section>
+</section>
+<section id="delineamento-inteiramente-casualizado-dcc" class="level1">
+<h1>Delineamento Inteiramente Casualizado (DCC)</h1>
+<p>O <strong>Delineamento Completamente Casualizado (DCC)</strong> é indicado quando as unidades experimentais são homogêneas, ou seja, não há fundamento lógico para a formação de blocos (grupos). Cada unidade recebe, por sorteio, um dos tratamentos que deverão ser comparados — nenhuma restrição é imposta ao processo de casualização, que é feito considerando o conjunto completo das unidades experimentais.</p>
+<section id="exemplo-de-referência" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-de-referência">Exemplo de referência</h2>
+<p>Os dados a seguir referem-se ao rendimento (t/ha) de 4 variedades de cana-de-açúcar (A, B, C e D) em um experimento de competição, com 6 repetições por variedade, instalado no DCC. Objetivo: identificar a(s) variedade(s) que produz(em) maior rendimento médio.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/dcc_dados_variedades_cana.png" class="img-fluid figure-img"></p>
+<figcaption>Dados do exemplo: rendimento de 4 variedades de cana-de-açúcar (6 repetições cada), com médias e desvios-padrão por grupo</figcaption>
+</figure>
+</div>
+<p>Cada grupo tem uma variabilidade interna (o quanto a resposta varia entre unidades que receberam o mesmo tratamento) — essa variabilidade é atribuída ao acaso ou erro experimental. Há também uma variabilidade <strong>entre</strong> grupos, medida pela dispersão das médias de cada grupo em torno da média geral — essa variabilidade tem uma causa conhecida: os diferentes tratamentos aos quais cada grupo foi exposto.</p>
+</section>
+<section id="decomposição-da-variabilidade" class="level2">
+<h2 class="anchored" data-anchor-id="decomposição-da-variabilidade">Decomposição da variabilidade</h2>
+<p>No DCC, a variação total é decomposta em duas partes: devida aos tratamentos e devida ao erro experimental. A Soma de Quadrados Total é dada por:</p>
+<p><span class="math display">\[
+SQ_{Total} = \sum_i \sum_j \left(y_{ij} - \bar{y}_{..}\right)^2 = \underbrace{r\sum_i \left(\bar{y}_{i.} - \bar{y}_{..}\right)^2}_{SQ_{Tratamentos}} + \underbrace{\sum_i \sum_j \left(y_{ij} - \bar{y}_{i.}\right)^2}_{SQ_{Erro}}
+\]</span></p>
+<p><span class="math inline">\(SQ_{Tratamentos}\)</span> representa a variação das médias dos tratamentos em torno da média geral; <span class="math inline">\(SQ_{Erro}\)</span> representa a variação dentro de cada tratamento (entre unidades experimentais que receberam o mesmo tratamento). Os graus de liberdade se decompõem de forma análoga: <span class="math inline">\((rt-1) = (t-1) + t(r-1)\)</span>, sendo <span class="math inline">\(t\)</span> o número de tratamentos e <span class="math inline">\(r\)</span> o número de repetições.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/dcc_tabela_anova_template.png" class="img-fluid figure-img"></p>
+<figcaption>Estrutura da tabela ANOVA para o DCC: causas de variação, graus de liberdade (GL), soma de quadrados (SQ), quadrado médio (QM) e estatística F</figcaption>
+</figure>
+</div>
+<p><strong>Hipóteses do teste:</strong></p>
+<p><span class="math display">\[
+H_0: \mu_1 = \mu_2 = \ldots = \mu_t \qquad \text{vs.} \qquad H_A: \text{pelo menos uma média difere das demais}
+\]</span></p>
+<p>A estatística do teste é <span class="math inline">\(F = QM_{Tratamento}/QM_{Erro}\)</span>. O <span class="math inline">\(QM_{Erro}\)</span> estima a variação ao acaso; o <span class="math inline">\(QM_{Tratamento}\)</span> estima a variação ao acaso <strong>mais</strong> a variação devida aos diferentes níveis do tratamento. Se a variação entre as médias dos tratamentos for semelhante à variação do erro experimental, <span class="math inline">\(F\)</span> será próximo de 1 e a diferença não será significativa; quanto maior <span class="math inline">\(F\)</span> em relação a 1, maior a evidência de que os tratamentos realmente diferem entre si.</p>
+</section>
+<section id="resultado-do-exemplo" class="level2">
+<h2 class="anchored" data-anchor-id="resultado-do-exemplo">Resultado do exemplo</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/dcc_tabela_anova_exemplo.png" class="img-fluid figure-img"></p>
+<figcaption>Tabela ANOVA preenchida para o exemplo da cana-de-açúcar: F = 5,41 (significativo a 1%) para o fator Variedades</figcaption>
+</figure>
+</div>
+<p>Como <span class="math inline">\(F = 5{,}41 &gt; F_{0{,}01(3,20)}\)</span>, rejeita-se <span class="math inline">\(H_0\)</span>: as variedades de cana-de-açúcar investigadas se diferenciam em termos de rendimento. Mas rejeitar <span class="math inline">\(H_0\)</span> indica apenas que <strong>pelo menos um</strong> dos grupos difere dos demais — não indica <strong>quais</strong> grupos diferem entre si quando comparados dois a dois. Para isso, usa-se um teste de comparação múltipla (teste <em>post-hoc</em>), sendo o mais usado o <strong>teste de Tukey</strong> — similar ao teste <span class="math inline">\(t\)</span>, mas controlando o nível de significância (erro Tipo I) ao longo de todas as comparações simultâneas.</p>
+<p><strong>Coeficiente de determinação (<span class="math inline">\(R^2\)</span>)</strong>: mede a proporção da variação total explicada pela variação devida aos tratamentos, <span class="math inline">\(R^2 = SQ_{Trat}/SQ_{Total}\)</span>. No exemplo, <span class="math inline">\(R^2 = 1636/3654 = 0{,}4477\)</span> — aproximadamente 45% da variação total do rendimento é explicada pela variação entre variedades.</p>
+<p><strong>Coeficiente de Variação (CV)</strong>: dá uma ideia da variabilidade aleatória (sem causa conhecida) do experimento, <span class="math inline">\(CV = \sqrt{QM_{Erro}}/\bar{y}_{..} \times 100\)</span>. No exemplo, <span class="math inline">\(CV = \sqrt{100{,}9}/73{,}75 = 13{,}62\%\)</span>. Como regra geral, experimentos de laboratório não devem ter CV muito maior que 10%, e experimentos de campo costumam ficar em torno de 30% — o mais importante é comparar o CV obtido com o de experimentos semelhantes na literatura.</p>
+<p><strong>Vantagens do DCC</strong>: é flexível quanto ao número de tratamentos e repetições (o número de repetições pode até variar de tratamento a tratamento, por exemplo por perda de observações durante a execução) e a análise estatística permanece simples mesmo quando o número de repetições não é balanceado.</p>
+</section>
+<section id="exemplo-em-r" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-em-r">Exemplo em R</h2>
+<p>O workflow completo de uma ANOVA no DCC — estatísticas descritivas, gráfico exploratório, ajuste do modelo, diagnóstico das suposições e comparações múltiplas — pode ser reproduzido em R com o mesmo exemplo das variedades de cana-de-açúcar:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pacotes utilizados</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"dplyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"tidyr"</span>, <span class="st">"car"</span>, <span class="st">"agricolae"</span>, <span class="st">"readr"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (pkg <span class="cf">in</span> packages) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(pkg, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(pkg, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(pkg, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados: rendimento (t/ha) de 4 variedades de cana-de-açúcar</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">A =</span> <span class="fu">c</span>(<span class="dv">64</span>,<span class="dv">72</span>,<span class="dv">68</span>,<span class="dv">77</span>,<span class="dv">56</span>,<span class="dv">95</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">B =</span> <span class="fu">c</span>(<span class="dv">78</span>,<span class="dv">91</span>,<span class="dv">97</span>,<span class="dv">82</span>,<span class="dv">85</span>,<span class="dv">77</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">C =</span> <span class="fu">c</span>(<span class="dv">75</span>,<span class="dv">93</span>,<span class="dv">78</span>,<span class="dv">71</span>,<span class="dv">63</span>,<span class="dv">76</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">D =</span> <span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">66</span>,<span class="dv">49</span>,<span class="dv">64</span>,<span class="dv">70</span>,<span class="dv">68</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Reorganizando para o formato longo</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>dados2 <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(dados, <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'A'</span>,<span class="st">'B'</span>,<span class="st">'C'</span>,<span class="st">'D'</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                               <span class="at">names_to =</span> <span class="st">'Fator'</span>, <span class="at">values_to =</span> <span class="st">'Resposta'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Fator =</span> <span class="fu">factor</span>(Fator))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Estatísticas descritivas por grupo</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>dados2 <span class="sc">%&gt;%</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Fator) <span class="sc">%&gt;%</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">mean =</span> <span class="fu">mean</span>(Resposta), <span class="at">sd =</span> <span class="fu">sd</span>(Resposta), <span class="at">median =</span> <span class="fu">median</span>(Resposta))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot exploratório (com a média sobreposta)</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados2, <span class="fu">aes</span>(<span class="at">x =</span> Fator, <span class="at">y =</span> Resposta, <span class="at">fill =</span> Fator)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribuição da resposta por nível do fator"</span>, <span class="at">x =</span> <span class="st">"Fator"</span>, <span class="at">y =</span> <span class="st">"Resposta"</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuste da ANOVA de um fator</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">aov</span>(Resposta <span class="sc">~</span> Fator, <span class="at">data =</span> dados2)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagnóstico das suposições</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)); <span class="fu">plot</span>(modelo); <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">residuals</span>(modelo))                  <span class="co"># normalidade dos resíduos</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(Resposta <span class="sc">~</span> Fator, <span class="at">data =</span> dados2)    <span class="co"># homogeneidade de variâncias (Bartlett)</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">leveneTest</span>(Resposta <span class="sc">~</span> Fator, <span class="at">data =</span> dados2)  <span class="co"># homogeneidade de variâncias (Levene)</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Médias por grupo e comparações múltiplas</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">model.tables</span>(modelo, <span class="at">type =</span> <span class="st">"means"</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(modelo))</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativa com o pacote agricolae</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(modelo, <span class="at">trt =</span> <span class="st">'Fator'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dcc-artigos" class="level2">
+<h2 class="anchored" data-anchor-id="dcc-artigos">Aplicações em artigos científicos</h2>
+<p><strong>Artigo 1 — Enxertia em mudas de baruzeiro</strong> (<a href="https://doi.org/10.5902/1980509869090">DOI: 10.5902/1980509869090</a>). Delineamento: DCC. Tratamento: 3 sistemas de condução (sacos plásticos a pleno sol, sacos plásticos sob sombrite 50%, tubetes em viveiros a pleno sol), com 36 repetições para cada tipo de enxertia. Unidade experimental: mudas. Respostas de interesse: altura, diâmetro e razão altura/diâmetro. Houve diferença significativa em todas as respostas quando os 3 grupos foram comparados; pelo teste de comparação múltipla, a altura média foi diferente entre <strong>todos</strong> os grupos, sendo a maior altura observada no grupo com enxertia de saco plástico a pleno sol.</p>
+<p><strong>Artigo 2 — Irrigação em feijão-vagem</strong> (<a href="https://doi.org/10.1590/S0100-69162011000200012">DOI: 10.1590/S0100-69162011000200012</a>). Delineamento: DCC. Tratamento: reposição de água no solo, com 5 níveis (50%, 75%, 100%, 125% e 150%), 4 repetições cada. Unidade experimental: canteiro de 2,2 × 0,3 m. Respostas: produção, número de vagens, peso médio das vagens e número de sementes por vagem. As diferentes lâminas de irrigação foram uma fonte de variabilidade significativa para o número de vagens e para a produção. Como o tratamento é quantitativo (uma dose de água), os autores complementaram a ANOVA com uma <strong>análise de regressão</strong> — encontrando uma relação quadrática entre a lâmina de irrigação e o número de vagens por planta, com máximo estimado em 19,5 vagens/planta para uma lâmina de 200 mm.</p>
+</section>
+</section>
+<section id="delineamento-em-blocos-casualizados-dbc" class="level1">
+<h1>Delineamento em Blocos Casualizados (DBC)</h1>
+<p>Um <strong>fator de ruído ou perturbação</strong> é um fator de delineamento que provavelmente tem efeito na resposta, mas que não nos interessa avaliar diretamente — quando esse fator é conhecido e controlável, o <strong>bloqueamento</strong> permite eliminar seu efeito nas comparações estatísticas entre tratamentos.</p>
+<p>O Delineamento em Blocos Casualizados (DBC) é um dos delineamentos mais usados nas pesquisas em diferentes áreas. É um delineamento com uma restrição na aleatorização: as unidades experimentais são primeiro organizadas em grupos homogêneos (blocos) e, então, os tratamentos são alocados aleatoriamente dentro de cada bloco — os tratamentos se repetem em todos os blocos. O objetivo é ter <strong>heterogeneidade entre blocos e homogeneidade dentro dos blocos</strong>, reduzindo a variância do erro experimental e aumentando a precisão das inferências.</p>
+<section id="estrutura-da-anova-no-dbc" class="level2">
+<h2 class="anchored" data-anchor-id="estrutura-da-anova-no-dbc">Estrutura da ANOVA no DBC</h2>
+<p>A variação total das observações <span class="math inline">\(y_{ij}\)</span> é decomposta em três partes: variação devida a tratamentos (<span class="math inline">\(SQ_{Tratamentos}\)</span>), variação devida a blocos (<span class="math inline">\(SQ_{Blocos}\)</span>) e variação devida ao erro experimental (<span class="math inline">\(SQ_{Erro}\)</span>):</p>
+<p><span class="math display">\[
+\sum_i \sum_j \left(y_{ij}-\bar{y}_{..}\right)^2 = r\sum_i \left(\bar{y}_{i.}-\bar{y}_{..}\right)^2 + t\sum_j\left(\bar{y}_{.j}-\bar{y}_{..}\right)^2 + \sum_i\sum_j\left(y_{ij}-\bar{y}_{i.}-\bar{y}_{.j}+\bar{y}_{..}\right)^2
+\]</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Causas da Variação</th>
+<th>GL</th>
+<th>SQ</th>
+<th>QM</th>
+<th>F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Blocos</td>
+<td><span class="math inline">\(r-1\)</span></td>
+<td><span class="math inline">\(SQB\)</span></td>
+<td><span class="math inline">\(QMB\)</span></td>
+<td><span class="math inline">\(QMB/QME\)</span></td>
+</tr>
+<tr class="even">
+<td>Tratamentos</td>
+<td><span class="math inline">\(t-1\)</span></td>
+<td><span class="math inline">\(SQT\)</span></td>
+<td><span class="math inline">\(QMT\)</span></td>
+<td><span class="math inline">\(QMT/QME\)</span></td>
+</tr>
+<tr class="odd">
+<td>Erro experimental</td>
+<td><span class="math inline">\((t-1)(r-1)\)</span></td>
+<td><span class="math inline">\(SQE\)</span></td>
+<td><span class="math inline">\(QME\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td><span class="math inline">\(rt-1\)</span></td>
+<td><span class="math inline">\(SQ_{Total}\)</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>O teste de significância da diferença entre as médias dos tratamentos é dado pelo teste <span class="math inline">\(F = QMT/QME\)</span>, testando <span class="math inline">\(H_0: \mu_1 = \mu_2 = \ldots = \mu_t\)</span>. É possível, de forma aproximada, calcular também <span class="math inline">\(F = QMB/QME\)</span> para os blocos — mas esse teste é discutível, pois a aleatorização foi feita para os tratamentos e não para os blocos, e geralmente não é reportado.</p>
+</section>
+<section id="exemplo-de-referência-cultivares-de-trigo" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-de-referência-cultivares-de-trigo">Exemplo de referência: cultivares de trigo</h2>
+<p>Em um ensaio comparativo de 5 cultivares de trigo (A, B, C, D, E), usou-se o DBC com 4 repetições. O bloqueamento teve por finalidade controlar diferenças de fertilidade do solo no campo experimental. Os rendimentos de grão por parcela (t/ha) foram:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/dbc_dados_trigo.png" class="img-fluid figure-img"></p>
+<figcaption>Dados do exemplo: rendimento de 5 cultivares de trigo em 4 blocos, com totais e médias</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/dbc_tabela_anova_exemplo.png" class="img-fluid figure-img"></p>
+<figcaption>Tabela ANOVA do exemplo: F = 14,19 (p &lt; 0,01) para Tratamentos e F = 5,49 (p &lt; 0,05) para Blocos — as cultivares de trigo investigadas se diferenciam em termos de rendimento</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/dbc_teste_f_blocos.png" class="img-fluid figure-img"></p>
+<figcaption>Teste F para blocos: F = 5,49 &gt; F crítico, indicando que o bloqueamento foi eficiente para controlar as diferenças de fertilidade do solo (teste aproximado e discutível)</figcaption>
+</figure>
+</div>
+<p>Complementando a ANOVA com o <strong>teste de Tukey</strong>, obtém-se o agrupamento das cultivares: D (2,90) &gt; B (2,53), ambas superiores a E (2,28) e C (2,08), sendo A (1,65) a de menor rendimento — a cultivar D se sobressai em termos de rendimento médio quando comparada às demais.</p>
+<p>Em R, essa análise pode ser conduzida com:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>anova_culti <span class="ot">&lt;-</span> <span class="fu">aov</span>(Rendimento <span class="sc">~</span> cultiv_fator <span class="sc">+</span> block, <span class="at">data =</span> cultivares)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_culti)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Teste de Tukey</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(anova_culti, <span class="st">'cultiv_fator'</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">console =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(anova_culti))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Coeficiente de variação e R²</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">cv.model</span>(anova_culti)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>lm_culti <span class="ot">&lt;-</span> <span class="fu">lm</span>(Rendimento <span class="sc">~</span> cultiv_fator <span class="sc">+</span> block, <span class="at">data =</span> cultivares)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_culti)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/dbc_r_aov_output.png" class="img-fluid figure-img"></p>
+<figcaption>Saída do R: aov() + summary() para o exemplo do trigo, replicando os valores de F obtidos manualmente</figcaption>
+</figure>
+</div>
+<p>No exemplo, o coeficiente de variação foi de 10,9% (variabilidade residual aceitável) e 85,9% da variabilidade total do rendimento foi explicada pelo modelo (cultivares + blocos).</p>
+<section id="workflow-completo-em-r" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-completo-em-r">Workflow completo em R</h3>
+<p>Reorganizando os mesmos dados em formato longo (um <code>Fator</code>, com 5 níveis, e um <code>Bloco</code>, com 4 níveis), o workflow completo — estatísticas descritivas, ajuste, diagnóstico e comparações múltiplas — fica:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados: rendimento (t/ha) das 5 cultivares de trigo, cada bloco com uma repetição de cada nível</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">A =</span> <span class="fu">c</span>(<span class="fl">1.9</span>, <span class="fl">1.7</span>, <span class="fl">1.7</span>, <span class="fl">1.3</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">B =</span> <span class="fu">c</span>(<span class="fl">2.4</span>, <span class="fl">2.8</span>, <span class="fl">2.7</span>, <span class="fl">2.2</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">C =</span> <span class="fu">c</span>(<span class="fl">2.4</span>, <span class="fl">1.9</span>, <span class="fl">2.3</span>, <span class="fl">1.7</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">D =</span> <span class="fu">c</span>(<span class="fl">3.6</span>, <span class="fl">2.8</span>, <span class="fl">2.5</span>, <span class="fl">2.7</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">E =</span> <span class="fu">c</span>(<span class="fl">2.7</span>, <span class="fl">2.3</span>, <span class="fl">2.2</span>, <span class="fl">1.9</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>cultivares <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(dados, <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'A'</span>,<span class="st">'B'</span>,<span class="st">'C'</span>,<span class="st">'D'</span>,<span class="st">'E'</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">names_to =</span> <span class="st">'Fator'</span>, <span class="at">values_to =</span> <span class="st">'Resposta'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Fator =</span> <span class="fu">factor</span>(Fator)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Bloco =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">each =</span> <span class="dv">5</span>)))</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>cultivares <span class="sc">%&gt;%</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Fator) <span class="sc">%&gt;%</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">mean =</span> <span class="fu">mean</span>(Resposta), <span class="at">sd =</span> <span class="fu">sd</span>(Resposta), <span class="at">median =</span> <span class="fu">median</span>(Resposta))</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuste da ANOVA (fator + bloco)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>anova_culti <span class="ot">&lt;-</span> <span class="fu">aov</span>(Resposta <span class="sc">~</span> Fator <span class="sc">+</span> Bloco, <span class="at">data =</span> cultivares)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_culti)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagnóstico</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)); <span class="fu">plot</span>(anova_culti); <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparações múltiplas</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(anova_culti, <span class="st">'Fator'</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">console =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(anova_culti))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="exemplo-lúdico-em-sala-de-aula-comparação-de-sabores" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-lúdico-em-sala-de-aula-comparação-de-sabores">Exemplo lúdico em sala de aula: comparação de sabores</h3>
+<p>Um experimento em blocos casualizados também pode nascer de uma atividade simples em aula. Sete participantes provaram três sabores (A, B, C) e atribuíram uma nota a cada um — cada <strong>participante</strong> funciona como um bloco (controlando a variação natural do paladar de cada avaliador), e o <strong>sabor</strong> é o tratamento de interesse:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_alunos_participantes <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n_niveis_fator <span class="ot">&lt;-</span> <span class="dv">3</span>  <span class="co"># quantidade de sabores diferentes</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Notas atribuídas por cada participante a cada sabor</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sabor_A =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="fl">5.5</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Sabor_B =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">5</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Sabor_C =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">6</span>))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>dados_reorg <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(dados,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">'Sabor_A'</span>, <span class="st">'Sabor_B'</span>, <span class="st">'Sabor_C'</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">names_to =</span> <span class="st">'Fator'</span>, <span class="at">values_to =</span> <span class="st">'Notas'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Fator =</span> <span class="fu">factor</span>(Fator)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Bloco =</span> <span class="fu">factor</span>(<span class="fu">paste0</span>(<span class="st">'Participante_'</span>, <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n_alunos_participantes, <span class="at">each =</span> n_niveis_fator))))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Estatísticas descritivas por sabor e por participante</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>dados_reorg <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Fator) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Notas), <span class="at">sd =</span> <span class="fu">sd</span>(Notas))</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>dados_reorg <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Bloco) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Notas), <span class="at">sd =</span> <span class="fu">sd</span>(Notas))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot das notas por sabor</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_reorg, <span class="fu">aes</span>(<span class="at">x =</span> Fator, <span class="at">y =</span> Notas, <span class="at">fill =</span> Fator)) <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribuição das notas por sabor"</span>, <span class="at">x =</span> <span class="st">"Sabor"</span>, <span class="at">y =</span> <span class="st">"Nota"</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA (Sabor + Participante como bloco)</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>anova_blocos <span class="ot">&lt;-</span> <span class="fu">aov</span>(Notas <span class="sc">~</span> Fator <span class="sc">+</span> Bloco, <span class="at">data =</span> dados_reorg)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_blocos)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparações múltiplas</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(anova_blocos, <span class="st">'Fator'</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">console =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">TukeyHSD</span>(anova_blocos))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Esse tipo de experimento didático ilustra bem a lógica do bloqueamento: ao tratar cada participante como um bloco, isolamos a variação devida ao paladar individual (alguns avaliadores dão notas sistematicamente mais altas ou mais baixas que outros) da variação devida ao sabor em si — o que aumenta a precisão da comparação entre os sabores A, B e C.</p>
+<p><strong>Complementação com regressão.</strong> Quando o tratamento é uma variável quantitativa (por exemplo, doses de nitrogênio aplicadas ao solo), a ANOVA pode ser complementada por uma análise de regressão. No exemplo do nitrogênio: <span class="math inline">\(\hat{y} = 2{,}18 + 0{,}0059x\)</span>, com <span class="math inline">\(R^2 = 83{,}5\%\)</span> — a cada Kg/ha de nitrogênio aplicado, estima-se um incremento médio de 5,9 g/ha no rendimento de trigo, independente do bloco.</p>
+</section>
+</section>
+<section id="dbc-artigo" class="level2">
+<h2 class="anchored" data-anchor-id="dbc-artigo">Aplicação em artigo científico</h2>
+<p><strong>Artigo 3 — Nutrientes do solo em cassava (mandioca)</strong> (<a href="https://irjaes.com/wp-content/uploads/2020/10/IRJAES-V5N1P211Y20.pdf">acesso ao artigo</a>). Tratamento: tipo de nutriente no solo/matéria orgânica, com 6 níveis; blocos: 6 variedades de cassava (cada variedade recebeu os 6 tipos de matéria). Resposta: crescimento (altura) das plantas. O efeito dos diferentes tipos de matéria orgânica foi significativo (p ≈ 0,000), mas o efeito das variedades usadas como bloco <strong>não</strong> foi significativo (p = 0,699) — sugerindo que, neste caso específico, talvez não fosse necessário ter usado o delineamento em blocos. Pelo teste de comparação múltipla, as matérias <em>cattle dung</em>, <em>palm waste</em>, NPK e <em>poultry waste</em> não diferiram entre si, mas apresentaram crescimento médio significativamente maior do que os solos com <em>green manure</em> e placebo.</p>
+</section>
+</section>
+<section id="experimentos-fatoriais" class="level1">
+<h1>Experimentos Fatoriais</h1>
+<p>Em um <strong>experimento fatorial</strong>, dois ou mais fatores de tratamento são estudados simultaneamente — os tratamentos passam a ser as combinações dos níveis dos diferentes fatores (por exemplo, em um fatorial 2×2 com fatores A e B, cada um com 2 níveis, temos 4 tratamentos: <span class="math inline">\(a_1b_1\)</span>, <span class="math inline">\(a_1b_2\)</span>, <span class="math inline">\(a_2b_1\)</span>, <span class="math inline">\(a_2b_2\)</span>). Os fatores podem ser <strong>qualitativos</strong> (cultivares, rações, fármacos, dietas) ou <strong>quantitativos</strong> (doses de nitrato, temperatura, pressão).</p>
+<p>Experimentos fatoriais são úteis em pesquisas exploratórias, para encontrar os fatores mais importantes em novas áreas de estudo, e principalmente para investigar <strong>interações</strong> entre fatores: a resposta a um fator depende do nível de um ou mais dos outros fatores.</p>
+<section id="efeito-principal-efeito-simples-e-interação" class="level2">
+<h2 class="anchored" data-anchor-id="efeito-principal-efeito-simples-e-interação">Efeito principal, efeito simples e interação</h2>
+<ul>
+<li><strong>Efeito simples</strong>: efeito de um fator dentro de cada nível do outro fator.</li>
+<li><strong>Efeito principal</strong>: média dos efeitos simples.</li>
+<li><strong>Interação</strong>: a magnitude do efeito adicional observado em um dos fatores, na presença de cada nível do outro fator — um efeito que não é produzido por nenhum dos fatores isoladamente.</li>
+</ul>
+<p>Um exemplo clássico ilustra a ideia com o tempo de aprendizagem (minutos) segundo sexo e idade:</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/fatorial_sem_interacao.png" class="img-fluid figure-img"></p>
+<figcaption>Sem interação: perfis paralelos indicam que o efeito do sexo independe da idade, e vice-versa</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/fatorial_com_interacao.png" class="img-fluid figure-img"></p>
+<figcaption>Com interação: perfis não paralelos indicam que o efeito do sexo depende da idade (maior entre idosos/adultos, ausente entre jovens)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Quando a interação é forte, os efeitos principais isolados podem até ser enganosos — o efeito “verdadeiro” de um fator só pode ser interpretado dentro de cada nível do outro fator.</p>
+<p><strong>Vantagens</strong> dos experimentos fatoriais: maior eficiência no uso dos recursos experimentais (permitem conclusões mais amplas sobre vários fatores simultaneamente); informação sobre interação entre fatores; e repetições intrínsecas (os níveis de um fator se repetem em cada nível do outro fator), aumentando a precisão das estimativas dos efeitos principais. <strong>Desvantagens</strong>: maior dificuldade em selecionar unidades experimentais homogêneas, dado o maior número de tratamentos (combinações); e, com muitos fatores, maior dificuldade na escolha e execução do delineamento.</p>
+</section>
+<section id="exemplo-hormônio-e-sexo-em-cordeiros" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-hormônio-e-sexo-em-cordeiros">Exemplo: hormônio e sexo em cordeiros</h2>
+<p>Foi conduzido um experimento para avaliar o efeito do implante do hormônio Stilbestrol sobre o ganho de peso de cordeiros machos e fêmeas da raça Corriedale, em um intervalo de 180 dias após o implante.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/fatorial_hormonio_sexo_dados.png" class="img-fluid figure-img"></p>
+<figcaption>Dados do experimento (ganho de peso) cruzando Hormônio (S = sem, C = com) e Sexo (F, M), com médias por célula e gráfico de perfis</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/fatorial_hormonio_sexo_anova.png" class="img-fluid figure-img"></p>
+<figcaption>Tabela ANOVA: efeitos principais de Hormônio (F = 16,36**) e Sexo (F = 5,23*) significativos; interação Hormônio × Sexo não significativa (F = 0,031)</figcaption>
+</figure>
+</div>
+<p>Como a interação Hormônio × Sexo não foi significativa, o efeito do hormônio não varia com o sexo (e vice-versa) — as conclusões devem se basear nos <strong>efeitos principais</strong>: os cordeiros que recebem hormônio ganham, em média, 5,75 kg a mais do que os que não recebem, independentemente do sexo; e há também um efeito principal significativo do sexo (diferença média de 3,25 kg).</p>
+<p>Em R, esse exemplo pode ser reproduzido com:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fator1: Hormônio Stilbestrol (S: Sem, C: Com); Fator2: Sexo (M, F)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Resposta =</span> <span class="fu">c</span>(<span class="dv">22</span>,<span class="dv">25</span>,<span class="dv">27</span>,<span class="dv">26</span>, <span class="dv">25</span>,<span class="dv">32</span>,<span class="dv">29</span>,<span class="dv">28</span>, <span class="dv">32</span>,<span class="dv">30</span>,<span class="dv">28</span>,<span class="dv">34</span>, <span class="dv">29</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">37</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Fator1 =</span> <span class="fu">c</span>(<span class="st">'S'</span>,<span class="st">'S'</span>,<span class="st">'S'</span>,<span class="st">'S'</span>,<span class="st">'S'</span>,<span class="st">'S'</span>,<span class="st">'S'</span>,<span class="st">'S'</span>, <span class="st">'C'</span>,<span class="st">'C'</span>,<span class="st">'C'</span>,<span class="st">'C'</span>,<span class="st">'C'</span>,<span class="st">'C'</span>,<span class="st">'C'</span>,<span class="st">'C'</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Fator2 =</span> <span class="fu">c</span>(<span class="st">'F'</span>,<span class="st">'F'</span>,<span class="st">'F'</span>,<span class="st">'F'</span>,<span class="st">'M'</span>,<span class="st">'M'</span>,<span class="st">'M'</span>,<span class="st">'M'</span>, <span class="st">'F'</span>,<span class="st">'F'</span>,<span class="st">'F'</span>,<span class="st">'F'</span>,<span class="st">'M'</span>,<span class="st">'M'</span>,<span class="st">'M'</span>,<span class="st">'M'</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA fatorial (efeitos principais + interação)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>anova_hormo <span class="ot">&lt;-</span> <span class="fu">aov</span>(Resposta <span class="sc">~</span> Fator1 <span class="sc">+</span> Fator2 <span class="sc">+</span> Fator1<span class="sc">:</span>Fator2, <span class="at">data =</span> dados)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_hormo)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)); <span class="fu">plot</span>(anova_hormo); <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de interação (base R)</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dados, <span class="fu">interaction.plot</span>(<span class="at">x.factor =</span> Fator1, <span class="at">trace.factor =</span> Fator2, <span class="at">response =</span> Resposta,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                              <span class="at">fun =</span> mean, <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">pch =</span> <span class="dv">19</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                              <span class="at">xlab =</span> <span class="st">"Fator1"</span>, <span class="at">ylab =</span> <span class="st">"Resposta média"</span>, <span class="at">trace.label =</span> <span class="st">"Fator2"</span>))</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparações múltiplas para cada fator</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(anova_hormo, <span class="st">'Fator1'</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">console =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(anova_hormo, <span class="st">'Fator2'</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">console =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="fatorial-cruzado-em-blocos" class="level2">
+<h2 class="anchored" data-anchor-id="fatorial-cruzado-em-blocos">Fatorial cruzado em blocos</h2>
+<p>Quando o experimento fatorial é conduzido em blocos, a fonte de variação devida aos blocos é conhecida e controlável, reduzindo a variabilidade atribuída ao erro. Exemplo: em um experimento fatorial instalado em blocos casualizados com 4 repetições, avaliaram-se os fatores Adubo Mineral (não/sim) e Adubo Orgânico (não/sim); o bloqueamento teve por finalidade controlar diferenças de fertilidade do solo.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resposta: rendimento; FatorA = Mineral (não/sim), FatorB = Orgânico (não/sim); 4 blocos</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Resposta =</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="fl">19.6</span>, <span class="fl">20.6</span>, <span class="fl">19.2</span>, <span class="fl">8.6</span>, <span class="fl">15.0</span>, <span class="dv">21</span>, <span class="fl">19.6</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="fl">9.4</span>, <span class="fl">14.6</span>, <span class="fl">18.6</span>, <span class="fl">18.4</span>, <span class="fl">11.4</span>, <span class="fl">15.8</span>, <span class="fl">20.6</span>, <span class="fl">20.2</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Bloco =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'1'</span>,<span class="st">'2'</span>,<span class="st">'3'</span>,<span class="st">'4'</span>), <span class="at">each =</span> <span class="dv">4</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Mineral =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'1'</span>,<span class="st">'1'</span>,<span class="st">'2'</span>,<span class="st">'2'</span>), <span class="at">times =</span> <span class="dv">4</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">Organico =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'1'</span>,<span class="st">'2'</span>,<span class="st">'1'</span>,<span class="st">'2'</span>), <span class="at">times =</span> <span class="dv">4</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>anova_adubo <span class="ot">&lt;-</span> <span class="fu">aov</span>(Resposta <span class="sc">~</span> Mineral <span class="sc">+</span> Organico <span class="sc">+</span> Mineral<span class="sc">:</span>Organico <span class="sc">+</span> Bloco, <span class="at">data =</span> dados)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_adubo)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anova_adubo)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de interação (nos dois sentidos)</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>medias <span class="ot">&lt;-</span> dados <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Mineral, Organico) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">Media =</span> <span class="fu">mean</span>(Resposta), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(medias, <span class="fu">aes</span>(<span class="at">x =</span> Mineral, <span class="at">y =</span> Media, <span class="at">color =</span> Organico, <span class="at">group =</span> Organico)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gráfico de interação"</span>, <span class="at">y =</span> <span class="st">"Resposta média"</span>, <span class="at">x =</span> <span class="st">"Mineral"</span>) <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela de médias e comparações múltiplas</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">model.tables</span>(anova_adubo, <span class="at">type =</span> <span class="st">"means"</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(anova_adubo, <span class="st">'Mineral'</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">console =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>agricolae<span class="sc">::</span><span class="fu">HSD.test</span>(anova_adubo, <span class="st">'Organico'</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">console =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparações múltiplas de Tukey entre as 4 combinações (efeitos simples)</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lsmeans)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>comparacoes <span class="ot">&lt;-</span> <span class="fu">lsmeans</span>(anova_adubo, pairwise <span class="sc">~</span> Mineral<span class="sc">/</span>Organico, <span class="at">adjust =</span> <span class="st">"tukey"</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>comparacoes</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/fatorial_blocos_interacao_plot.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfico de interação (R): as linhas não paralelas indicam interação significativa entre Adubo Mineral e Adubo Orgânico (F = 6,58; p = 0,030)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/fatorial_blocos_r_output.png" class="img-fluid figure-img"></p>
+<figcaption>Saída do R: ANOVA mostrando Mineral (p &lt; 0,001), Mineral:Organico (interação, p = 0,030) significativos, e Organico isoladamente não significativo</figcaption>
+</figure>
+</div>
+<p>Havendo interação significativa, a conclusão deve ser baseada nos <strong>efeitos simples</strong> (comparações par a par entre as 4 combinações, obtidas acima com <code>lsmeans</code>), e não apenas nos efeitos principais isolados: neste exemplo, o efeito do Adubo Mineral foi mais efetivo do que o do Adubo Orgânico, sendo a aplicação de Adubo Mineral a mais indicada para maximizar o rendimento.</p>
+</section>
+<section id="experimentos-fatoriais-com-três-fatores" class="level2">
+<h2 class="anchored" data-anchor-id="experimentos-fatoriais-com-três-fatores">Experimentos fatoriais com três fatores</h2>
+<p>O mesmo raciocínio se estende para três (ou mais) fatores simultâneos — com a diferença de que, além dos três efeitos principais, passam a existir três interações duplas (A×B, A×C, B×C) e uma interação tripla (A×B×C). Como exemplo didático dessa extensão — já que o material de Paula Bracco cobre o caso de dois fatores — usamos um exemplo clássico do livro <em>Design and Analysis of Experiments</em>, de Douglas Montgomery: um engarrafador de refrigerante deseja entender as fontes de variação na altura de enchimento das garrafas, controlando três variáveis do processo — percentual de carbonatação (Fator A: 10, 12, 14), pressão de operação da enchedora (Fator B: 25, 30) e velocidade da linha, em garrafas por minuto (Fator C: 200, 250).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Resposta =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">6</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">11</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">FatorA =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'10'</span>, <span class="st">'12'</span>, <span class="st">'14'</span>), <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">4</span>))),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">FatorB =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'25'</span>, <span class="st">'25'</span>, <span class="st">'30'</span>, <span class="st">'30'</span>), <span class="at">times =</span> <span class="dv">6</span>)),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">FatorC =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">'200'</span>, <span class="st">'250'</span>), <span class="at">times =</span> <span class="dv">12</span>))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA fatorial completa: 3 efeitos principais + 3 interações duplas + 1 interação tripla</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>anova_drink <span class="ot">&lt;-</span> <span class="fu">aov</span>(Resposta <span class="sc">~</span> FatorA <span class="sc">*</span> FatorB <span class="sc">*</span> FatorC, <span class="at">data =</span> dados)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_drink)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)); <span class="fu">plot</span>(anova_drink); <span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráficos de interação dois a dois (mantendo o terceiro fator fixo)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">interaction.plot</span>(dados<span class="sc">$</span>FatorA, dados<span class="sc">$</span>FatorB, dados<span class="sc">$</span>Resposta,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">xlab =</span> <span class="st">"Fator A (carbonatação)"</span>, <span class="at">ylab =</span> <span class="st">"Resposta média"</span>, <span class="at">trace.label =</span> <span class="st">"Fator B"</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">interaction.plot</span>(dados<span class="sc">$</span>FatorA, dados<span class="sc">$</span>FatorC, dados<span class="sc">$</span>Resposta,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">xlab =</span> <span class="st">"Fator A (carbonatação)"</span>, <span class="at">ylab =</span> <span class="st">"Resposta média"</span>, <span class="at">trace.label =</span> <span class="st">"Fator C"</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="fu">interaction.plot</span>(dados<span class="sc">$</span>FatorB, dados<span class="sc">$</span>FatorC, dados<span class="sc">$</span>Resposta,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">xlab =</span> <span class="st">"Fator B (pressão)"</span>, <span class="at">ylab =</span> <span class="st">"Resposta média"</span>, <span class="at">trace.label =</span> <span class="st">"Fator C"</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Médias ajustadas para gráficos de interação por painel (usando emmeans)</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>medias <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">emmeans</span>(anova_drink, <span class="sc">~</span> FatorA <span class="sc">*</span> FatorB <span class="sc">*</span> FatorC))</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(medias, <span class="fu">aes</span>(<span class="at">x =</span> FatorA, <span class="at">y =</span> emmean, <span class="at">color =</span> FatorB, <span class="at">group =</span> FatorB)) <span class="sc">+</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> FatorC) <span class="sc">+</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Interação Fator A × Fator B"</span>, <span class="at">subtitle =</span> <span class="st">"Painéis por Fator C"</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Carbonatação (%)"</span>, <span class="at">y =</span> <span class="st">"Média ajustada"</span>, <span class="at">color =</span> <span class="st">"Pressão"</span>) <span class="sc">+</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A leitura dos resultados segue a mesma lógica do caso com dois fatores: interpretamos primeiro a interação tripla (se significativa, as interações duplas — e os efeitos principais — devem ser interpretadas dentro de cada nível do terceiro fator); se a interação tripla não for significativa, passamos a interpretar as interações duplas; e, na ausência de qualquer interação, interpretamos diretamente os três efeitos principais.</p>
+</section>
+</section>
+<section id="delineamento-em-parcelas-subdivididas" class="level1">
+<h1>Delineamento em Parcelas Subdivididas</h1>
+<p>O delineamento em <strong>parcelas subdivididas</strong> (<em>split-plot</em>) é útil quando a aleatorização completa de todos os fatores é pouco prática. Exemplo motivador: um engenheiro quer avaliar o efeito da composição e do tempo de cozimento sobre a resistência de tijolos cerâmicos — um fatorial cruzado 4×3 completamente aleatorizado exigiria escolher ao acaso 1 composição, escolher ao acaso 1 tempo e colocar 1 tijolo no forno, repetindo esse processo 36 vezes: pouco prático e pouco econômico.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/parcela_subdividida_tijolos.png" class="img-fluid figure-img"></p>
+<figcaption>Composição de tijolos: uma composição é escolhida ao acaso, moldam-se três tijolos (subparcelas) e cada um é cozido por um tempo diferente (T1, T2, T3) no mesmo forno</figcaption>
+</figure>
+</div>
+<p>A alternativa prática — moldar todos os tijolos de uma composição de uma só vez — deixaria os efeitos da composição confundidos com as condições ambientais/temporais em que cada lote foi produzido. A solução do delineamento em parcelas subdivididas é: escolher uma composição ao acaso, moldar três tijolos e cozinhar cada um por um tempo diferente; escolher outra composição e repetir; e repetir todo o processo para as demais repetições. São feitas <strong>duas randomizações</strong>: primeiro, qual unidade experimental (parcela) recebe cada composição; depois, dentro de cada parcela, qual subparcela recebe cada tempo de cozimento.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/parcela_subdividida_randomizacao.png" class="img-fluid figure-img"></p>
+<figcaption>Arranjo experimental completo: cada “Parcela Principal” (composição) contém 3 “Subparcelas” (tempos de cozimento), com randomização em dois níveis</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Parcela principal</strong>: unidade experimental do fator alocado na parcela (neste exemplo, a composição).</li>
+<li><strong>Subparcela</strong>: unidade experimental do fator alocado dentro da parcela (neste exemplo, o tempo de cozimento).</li>
+</ul>
+<section id="vantagens-desvantagens-e-quando-usar" class="level2">
+<h2 class="anchored" data-anchor-id="vantagens-desvantagens-e-quando-usar">Vantagens, desvantagens e quando usar</h2>
+<p><strong>Vantagem</strong>: aumento da precisão das comparações entre níveis do fator alocado na subparcela e da interação entre os fatores, em relação a um fatorial cruzado equivalente. <strong>Desvantagens</strong>: o fator alocado na parcela principal é medido com menor precisão do que seria em um experimento fatorial; e há maior complexidade na análise estatística, principalmente quando há perda de observações.</p>
+<p>O delineamento em parcelas subdivididas é indicado quando: um dos fatores é mais difícil de manejar/alterar (por exemplo, tipo de solo, sistema de cultivo) — esse fator vai para a parcela principal, que exige parcelas maiores; o estudo envolve medidas repetidas ao longo do tempo (avaliações semanais ou mensais — como no caso “dias após o transplantio”, que veremos a seguir); há maior interesse (maior precisão desejada) em um dos fatores — esse vai para a subparcela; ou os recursos experimentais são limitados e o número de parcelas precisa ser otimizado.</p>
+</section>
+<section id="estrutura-da-anova" class="level2">
+<h2 class="anchored" data-anchor-id="estrutura-da-anova">Estrutura da ANOVA</h2>
+<p>A análise se divide em duas partes — uma para a parcela principal (fator A) e outra para a subparcela (fator B e a interação A×B):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/parcela_subdividida_tabela_anova.png" class="img-fluid figure-img"></p>
+<figcaption>Estrutura da tabela ANOVA em parcelas subdivididas: Erro(a) para testar o fator da parcela principal e Erro(b) — mais preciso — para testar o fator da subparcela e a interação A×B</figcaption>
+</figure>
+</div>
+<p>O <strong>Erro(a)</strong> representa a variação não explicada entre as parcelas (com as mesmas subparcelas) nas diferentes repetições, e é usado para testar o fator A (parcela principal): <span class="math inline">\(F = QMA/QME(a)\)</span>. O <strong>Erro(b)</strong> representa a variação não explicada entre as repetições das subparcelas (de um mesmo nível de A), e é usado para testar o fator B (subparcela) e a interação A×B: <span class="math inline">\(F = QMB/QME(b)\)</span> e <span class="math inline">\(F = QM_{AxB}/QME(b)\)</span>. Como o Erro(b) tende a ser menor que o Erro(a), o fator alocado na subparcela — e a interação — são estimados com maior precisão.</p>
+</section>
+<section id="exemplo-em-r-resistência-à-tração-do-papel" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-em-r-resistência-à-tração-do-papel">Exemplo em R: resistência à tração do papel</h2>
+<p>Em R, a estrutura de dois erros (Erro(a) para a parcela principal, Erro(b) para a subparcela) é declarada explicitamente com o termo <code>Error()</code> dentro do <code>aov()</code>. O exemplo a seguir — também um clássico do livro de Montgomery — avalia a resistência à tração do papel em função do método de preparo da polpa (fator da parcela principal, 3 níveis) e da temperatura de cozimento (fator da subparcela, 4 níveis), em 3 repetições (blocos):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Whole-plot factor: método de preparo da polpa (3 níveis)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Subplot factor: temperatura de cozimento (4 níveis)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Réplicas (blocos): 3</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>paper <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Replicate =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> <span class="dv">12</span>)),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Method =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">each =</span> <span class="dv">4</span>), <span class="dv">3</span>)),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Temperature =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">200</span>,<span class="dv">225</span>,<span class="dv">250</span>,<span class="dv">275</span>), <span class="dv">9</span>)),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Strength =</span> <span class="fu">c</span>(</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Réplica 1</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="dv">30</span>,<span class="dv">35</span>,<span class="dv">37</span>,<span class="dv">36</span>,  <span class="dv">34</span>,<span class="dv">41</span>,<span class="dv">38</span>,<span class="dv">42</span>,  <span class="dv">29</span>,<span class="dv">26</span>,<span class="dv">33</span>,<span class="dv">36</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Réplica 2</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">28</span>,<span class="dv">32</span>,<span class="dv">40</span>,<span class="dv">41</span>,  <span class="dv">31</span>,<span class="dv">36</span>,<span class="dv">42</span>,<span class="dv">40</span>,  <span class="dv">31</span>,<span class="dv">30</span>,<span class="dv">32</span>,<span class="dv">40</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Réplica 3</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="dv">31</span>,<span class="dv">37</span>,<span class="dv">41</span>,<span class="dv">40</span>,  <span class="dv">35</span>,<span class="dv">40</span>,<span class="dv">39</span>,<span class="dv">44</span>,  <span class="dv">32</span>,<span class="dv">34</span>,<span class="dv">39</span>,<span class="dv">45</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Erro(a) = Replicate/Method (parcela principal); Erro(b) = resíduo (subparcela)</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>paper.aov <span class="ot">&lt;-</span> <span class="fu">aov</span>(Strength <span class="sc">~</span> Method <span class="sc">*</span> Temperature <span class="sc">+</span> <span class="fu">Error</span>(Replicate<span class="sc">/</span>Method), <span class="at">data =</span> paper)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(paper.aov)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A saída do <code>summary()</code> retorna duas tabelas de ANOVA separadas — uma dentro de <code>Error: Replicate:Method</code> (o Erro(a), usado para testar o efeito do Método) e outra dentro de <code>Error: Within</code> (o Erro(b), usado para testar o efeito da Temperatura e a interação Método×Temperatura) — exatamente a estrutura de dois estratos de erro apresentada acima.</p>
+</section>
+<section id="exemplo-de-referência-métodos-de-plantio-e-espaçamento-em-soja" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-de-referência-métodos-de-plantio-e-espaçamento-em-soja">Exemplo de referência: métodos de plantio e espaçamento em soja</h2>
+<p>Um experimento avaliou o efeito de Métodos de Plantio (4 níveis: convencional — M1, plantio direto com herbicida A — M2, B — M3, C — M4) e Espaçamento entre linhas em cm (4 níveis: 17, 34, 51 e 68 — E1 a E4) sobre o rendimento de soja. Os métodos de plantio constituíram as parcelas principais, arranjadas em blocos casualizados com 4 repetições, e os espaçamentos, as subparcelas (4 repetições por parcela; 16 repetições por subparcela).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/parcela_subdividida_dados_soja.png" class="img-fluid figure-img"></p>
+<figcaption>Dados de rendimento de soja (kg/ha) para as 16 combinações de método de plantio × espaçamento, em 4 blocos</figcaption>
+</figure>
+</div>
+</section>
+<section id="split-plot-artigo" class="level2">
+<h2 class="anchored" data-anchor-id="split-plot-artigo">Aplicação em artigo científico</h2>
+<p><strong>Cobertura de solo (TNT) e dias após o transplantio em planta ornamental</strong> (<a href="https://doi.org/10.1590/S1806-66902013000400016">DOI: 10.1590/S1806-66902013000400016</a>). Nas parcelas, os tratamentos se constituíram de dois sistemas de cultivo (com e sem cobertura de solo em polipropileno preto, TNT); nas subparcelas, as épocas de amostragem das plantas: 14, 28, 42, 56, 70, 84, 98 e 112 dias após o transplantio (DAT), com 4 repetições. Foram avaliados o acúmulo de massa seca em diferentes partes da planta, área foliar e taxas de crescimento.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/anova/parcela_subdividida_artigo_tnt.png" class="img-fluid figure-img"></p>
+<figcaption>Arranjo em parcelas subdivididas do experimento com TNT: 4 blocos, cada um com uma parcela sem TNT e uma parcela com TNT, subdivididas nas 8 épocas de amostragem</figcaption>
+</figure>
+</div>
+<p><strong>Principais resultados</strong>: o efeito de TNT (fator da parcela principal) não foi significativo para nenhuma das respostas avaliadas, e não houve interação significativa entre TNT e dias após o transplantio — ou seja, a cobertura de solo não influenciou o acúmulo de massa seca, a área foliar ou as taxas de crescimento. Já o efeito de dias após o transplantio (fator da subparcela, quantitativo) foi significativo para praticamente todas as respostas, sendo complementado por análise de regressão: por exemplo, os frutos se comportaram como dreno preferencial da planta, chegando ao final do ciclo (112 DAT) com 47,77% do total da massa seca acumulada.</p>
+</section>
+</section>
+<section id="exercício-complementar-anova-em-r" class="level1">
+<h1>Exercício complementar: ANOVA em R</h1>
+<p>Como exercício de fixação, considere um DCC avaliando o efeito de 5 concentrações de um determinado composto (15, 20, 25, 30 e 35) sobre a resistência de fibras de algodão, com 5 repetições cada:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>Concentracao <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">30</span>,<span class="dv">30</span>,<span class="dv">30</span>,<span class="dv">30</span>,<span class="dv">35</span>,<span class="dv">35</span>,<span class="dv">35</span>,<span class="dv">35</span>,<span class="dv">35</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>Repeticao <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>Resistencia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">15</span>,<span class="dv">11</span>,<span class="dv">9</span>,<span class="dv">12</span>,<span class="dv">17</span>,<span class="dv">12</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">25</span>,<span class="dv">22</span>,<span class="dv">19</span>,<span class="dv">23</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">11</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(dados)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA (DCC)</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(Resistencia <span class="sc">~</span> <span class="fu">factor</span>(Concentracao), <span class="at">data =</span> dados)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparações múltiplas de Tukey</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>tukey_res <span class="ot">&lt;-</span> <span class="fu">HSD.test</span>(anova, <span class="at">trt =</span> <span class="st">'factor(Concentracao)'</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>tukey_res</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Script completo disponível para download na seção de materiais abaixo.</p>
+</section>
+<section id="materiais-e-referências" class="level1">
+<h1>Materiais e Referências</h1>
+<p>O conteúdo desta página foi construído a partir do material didático “Análise de Variância” elaborado por <strong>Paula Bracco</strong>, adaptado do material da prof. Lisiane Selau. Slides originais (PDF):</p>
+<ul>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/anova/1_introducao_experimentos.pdf">1. Introdução aos Experimentos</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/anova/2_dcc.pdf">2. Delineamento Inteiramente Casualizado (DCC)</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/anova/3_blocos_completos.pdf">3. Delineamento em Blocos Completos (DBC)</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/anova/4_experimentos_fatoriais.pdf">4. Experimentos Fatoriais</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/anova/5_parcela_subdividida.pdf">5. Experimentos em Parcela Subdividida</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/anova/algodao_resistencia.R">Script R: exemplo de ANOVA (resistência de fibras de algodão)</a></li>
+</ul>
+<p>Os demais exemplos em R reproduzidos ao longo da página vêm da coleção de scripts do professor (pasta <code>codigos/</code>, prefixo <code>area_3</code>):</p>
+<ul>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/codigos/anova/area_3_1_anova_DCC.R">Script: ANOVA no DCC (variedades de cana-de-açúcar)</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/codigos/anova/area_3_2_anova_DCC_blocos_casualizados.R">Script: ANOVA no DBC (cultivares de trigo)</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/codigos/anova/area_3_2_anova_DCC_blocos_casualizados_experimento_ludico.R">Script: ANOVA no DBC — experimento lúdico (comparação de sabores)</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/codigos/anova/area_3_3_fatorial_dois_fatores.R">Script: experimentos fatoriais com dois fatores (hormônio×sexo; adubo mineral×orgânico em blocos)</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/codigos/anova/area_3_4_fatorial_tres_fatores.R">Script: experimentos fatoriais com três fatores</a></li>
+<li><a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/codigos/anova/area_3_5_split_plot.R">Script: parcela subdividida / split-plot</a></li>
+</ul>
+<p><strong>Artigos científicos utilizados como exemplos de aplicação:</strong></p>
+<ul>
+<li>Enxertia em mudas de baruzeiro — <a href="https://doi.org/10.5902/1980509869090">DOI: 10.5902/1980509869090</a></li>
+<li>Irrigação em feijão-vagem — <a href="https://doi.org/10.1590/S0100-69162011000200012">DOI: 10.1590/S0100-69162011000200012</a></li>
+<li>Nutrientes do solo em cassava (mandioca) — <a href="https://irjaes.com/wp-content/uploads/2020/10/IRJAES-V5N1P211Y20.pdf">artigo completo</a></li>
+<li>Cobertura de solo (TNT) em planta ornamental — <a href="https://doi.org/10.1590/S1806-66902013000400016">DOI: 10.1590/S1806-66902013000400016</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/6_anova.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/6_anova.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>

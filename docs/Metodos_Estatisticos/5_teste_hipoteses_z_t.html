@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Teste de Hipóteses: Teste z e Teste t de Student – Teaching</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../figs/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-eef78bce6e6d37c27bc985c3ac861da9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Teaching</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Procurar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-temas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Temas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-temas">    
+        <li>
+    <a class="dropdown-item" href="../Estatistica_Aplicada_Negocios/1_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Estatística Aplicada a Negócios</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html">
+ <span class="dropdown-text">Métodos Estatísticos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Int_Prob/1_experimento_aleatorio.html">
+ <span class="dropdown-text">Introdução à Probabilidade</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Probabilidade_B/LGN.html">
+ <span class="dropdown-text">Probabilidade Avançada</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Modelos_Lineares/paradoxo_simpson.html">
+ <span class="dropdown-text">Modelos Lineares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Multivariada/Componentes_Principais.html">
+ <span class="dropdown-text">Análise Multivariada</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html">Teste de Hipóteses: z e t (Semanas 9-10)</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html">Teste de Hipóteses: Teste z e Teste t de Student</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Apresentação</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/0_apresentacao_da_disciplina.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação da Disciplina</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introdução e Análise Exploratória</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/1_introducao_exploratoria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introdução à Estatística e Análise Exploratória de Dados</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/2_descritiva_medidas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estatística Descritiva - Medidas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Probabilidade (Semanas 5-6)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/3_probabilidade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilidade</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Amostragem e Estimação (Semanas 7-8)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/4_amostragem_estimacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Amostragem e Estimação</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: z e t (Semanas 9-10)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Teste de Hipóteses: Teste z e Teste t de Student</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teste de Hipóteses: ANOVA (Semanas 11-15)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/6_anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: ANOVA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Correlação, Regressão e Qui-Quadrado (Semanas 16-18)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Metodos_Estatisticos/7_correlacao_regressao_qui_quadrado.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teste de Hipóteses: Correlação, Regressão e Qui-Quadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#testes-de-hipótese-conceitos-fundamentais" id="toc-testes-de-hipótese-conceitos-fundamentais" class="nav-link" data-scroll-target="#testes-de-hipótese-conceitos-fundamentais">Testes de Hipótese: Conceitos Fundamentais</a>
+  <ul class="collapse">
+  <li><a href="#hipótese-nula-e-hipótese-alternativa" id="toc-hipótese-nula-e-hipótese-alternativa" class="nav-link" data-scroll-target="#hipótese-nula-e-hipótese-alternativa">Hipótese nula e hipótese alternativa</a></li>
+  <li><a href="#exemplo-de-referência-a-moeda-desequilibrada" id="toc-exemplo-de-referência-a-moeda-desequilibrada" class="nav-link" data-scroll-target="#exemplo-de-referência-a-moeda-desequilibrada">Exemplo de referência: a moeda desequilibrada</a>
+  <ul class="collapse">
+  <li><a href="#distribuição-de-referência" id="toc-distribuição-de-referência" class="nav-link" data-scroll-target="#distribuição-de-referência">Distribuição de referência</a></li>
+  <li><a href="#valor-p" id="toc-valor-p" class="nav-link" data-scroll-target="#valor-p">Valor-p</a></li>
+  </ul></li>
+  <li><a href="#nível-de-significância-e-regra-de-decisão" id="toc-nível-de-significância-e-regra-de-decisão" class="nav-link" data-scroll-target="#nível-de-significância-e-regra-de-decisão">Nível de significância e regra de decisão</a></li>
+  <li><a href="#um-pouco-da-filosofia-por-trás-das-interpretações" id="toc-um-pouco-da-filosofia-por-trás-das-interpretações" class="nav-link" data-scroll-target="#um-pouco-da-filosofia-por-trás-das-interpretações">Um pouco da “filosofia” por trás das interpretações</a></li>
+  <li><a href="#tipos-de-erro-em-um-teste-estatístico" id="toc-tipos-de-erro-em-um-teste-estatístico" class="nav-link" data-scroll-target="#tipos-de-erro-em-um-teste-estatístico">Tipos de erro em um teste estatístico</a></li>
+  </ul></li>
+  <li><a href="#testes-de-hipótese-comparação-de-médias" id="toc-testes-de-hipótese-comparação-de-médias" class="nav-link" data-scroll-target="#testes-de-hipótese-comparação-de-médias">Testes de Hipótese: comparação de médias</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/5_teste_hipoteses_z_t.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/5_teste_hipoteses_z_t.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html">Teste de Hipóteses: z e t (Semanas 9-10)</a></li><li class="breadcrumb-item"><a href="../Metodos_Estatisticos/5_teste_hipoteses_z_t.html">Teste de Hipóteses: Teste z e Teste t de Student</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Teste de Hipóteses: Teste z e Teste t de Student</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>Este material cobre as <strong>Semanas 9 e 10</strong> do plano de ensino: conceitos fundamentais de teste de hipóteses, teste para a média populacional (teste <span class="math inline">\(z\)</span> com variância conhecida ou <span class="math inline">\(n&gt;30\)</span>; teste <span class="math inline">\(t\)</span> de Student com variância desconhecida e <span class="math inline">\(n\)</span> até 30), teste <span class="math inline">\(t\)</span> para amostras pareadas, teste <span class="math inline">\(z\)</span>/<span class="math inline">\(t\)</span> para amostras independentes, e análise contextualizada de artigo científico.</p>
+<p>Slides originais disponíveis <a href="https://github.com/renanxcortes/teaching/raw/refs/heads/main/Metodos_Estatisticos/slides/semana_9_a_10.pptx">AQUI</a>.</p>
+<p>Alguns materiais desta seção são adaptados de Pedro A. Barbetta, <em>Estatística Aplicada às Ciências Sociais</em>, 6ª ed., Editora da UFSC, 2006.</p>
+</section>
+<section id="testes-de-hipótese-conceitos-fundamentais" class="level1">
+<h1>Testes de Hipótese: Conceitos Fundamentais</h1>
+<p>A lógica geral de um teste de hipótese segue o mesmo ciclo já visto nas semanas anteriores — população, amostra, amostragem — acrescido de uma etapa de decisão: partimos de uma <strong>população</strong> sobre a qual temos uma hipótese que queremos colocar à prova; coletamos uma <strong>amostra</strong>, cujos dados servirão de base para aceitar ou rejeitar essa hipótese; e, a partir da amostragem, chegamos à <strong>decisão do teste estatístico</strong>.</p>
+<section id="hipótese-nula-e-hipótese-alternativa" class="level2">
+<h2 class="anchored" data-anchor-id="hipótese-nula-e-hipótese-alternativa">Hipótese nula e hipótese alternativa</h2>
+<p>Todo teste de hipótese contrapõe duas afirmações sobre a população:</p>
+<ul>
+<li><strong>Hipótese nula (<span class="math inline">\(H_0\)</span>)</strong>: a afirmação “padrão” ou de “não-efeito”, que assumimos verdadeira até que haja evidência suficiente para rejeitá-la.</li>
+<li><strong>Hipótese alternativa (<span class="math inline">\(H_1\)</span>)</strong>: a afirmação que estamos, de fato, interessados em sustentar com os dados.</li>
+</ul>
+<p><strong>Exemplos aplicados:</strong></p>
+<ul>
+<li><em>Problema:</em> Em uma região em estudo, a propensão de fumar nos homens é diferente da das mulheres? <span class="math inline">\(H_0\)</span>: a proporção de homens fumantes é igual à de mulheres fumantes, na população em estudo. <span class="math inline">\(H_1\)</span>: essas proporções são diferentes.</li>
+<li><em>Problema:</em> Um agrônomo deseja saber se uma nova cultivar de soja (Cultivar B) produz mais que a cultivar tradicional (Cultivar A). <span class="math inline">\(H_0\)</span>: a produtividade entre os dois cultivares é igual, na população em estudo. <span class="math inline">\(H_1\)</span>: a produtividade entre os dois cultivares é diferente.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_9_a_10/soja_cultivares.jpg" class="img-fluid figure-img"></p>
+<figcaption>Colheita de soja: pano de fundo do exemplo de comparação de produtividade entre duas cultivares</figcaption>
+</figure>
+</div>
+<ul>
+<li><em>Problema:</em> um pesquisador quer saber se o pH médio de uma amostra de solo em um talhão é diferente de 6,0 (por exemplo, encontrou uma média amostral de 6,3). <span class="math inline">\(H_0\)</span>: o pH médio populacional do talhão é igual a 6,0. <span class="math inline">\(H_1\)</span>: o pH médio é diferente de 6,0.</li>
+</ul>
+</section>
+<section id="exemplo-de-referência-a-moeda-desequilibrada" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-de-referência-a-moeda-desequilibrada">Exemplo de referência: a moeda desequilibrada</h2>
+<p>Para fixar a lógica do teste de hipótese de forma bem concreta, considere o exemplo clássico da moeda: suspeita-se que uma moeda não seja perfeitamente equilibrada (probabilidade de cara <span class="math inline">\(\neq\)</span> probabilidade de coroa <span class="math inline">\(\neq 0{,}5\)</span>). Definindo o parâmetro <span class="math inline">\(\pi\)</span> = probabilidade de cara:</p>
+<p><span class="math display">\[
+H_0: \pi = 0{,}5 \qquad \text{vs.} \qquad H_1: \pi \neq 0{,}5
+\]</span></p>
+<p><strong>Amostragem para o exemplo:</strong> realiza-se <span class="math inline">\(n=10\)</span> lançamentos da moeda. A estatística do teste é <span class="math inline">\(Y\)</span> = número total de caras nos 10 lançamentos. Na amostra observada, obtivemos 7 caras (e 3 coroas). Qual deve ser a decisão do teste — aceitar <span class="math inline">\(H_0\)</span> ou rejeitar <span class="math inline">\(H_0\)</span> em favor de <span class="math inline">\(H_1\)</span>?</p>
+<section id="distribuição-de-referência" class="level3">
+<h3 class="anchored" data-anchor-id="distribuição-de-referência">Distribuição de referência</h3>
+<p>O que pode ocorrer na amostra de <span class="math inline">\(n=10\)</span> lançamentos, <strong>se <span class="math inline">\(H_0\)</span> for verdadeira</strong> (moeda honesta)? Nesse caso, <span class="math inline">\(Y\)</span> segue uma distribuição binomial com <span class="math inline">\(n=10\)</span> e <span class="math inline">\(\pi=0{,}5\)</span>. A ideia central de um teste de hipótese é comparar o resultado observado (7 caras) com essa distribuição de referência — se o resultado for muito “estranho” para essa distribuição, o teste rejeita <span class="math inline">\(H_0\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_9_a_10/binomial_dist.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição da estatística Y = número de caras em 10 lançamentos de uma moeda honesta (H0 verdadeira): os resultados mais prováveis estão em torno de 5 caras</figcaption>
+</figure>
+</div>
+</section>
+<section id="valor-p" class="level3">
+<h3 class="anchored" data-anchor-id="valor-p">Valor-p</h3>
+<p>O <strong>valor-p</strong> é a probabilidade da estatística de teste acusar um resultado tão ou mais distante do esperado por <span class="math inline">\(H_0\)</span> quanto o da amostra observada. Em outras palavras, um valor-p muito baixo significa que seria muito improvável que aquela amostra (no exemplo, 7 caras) tivesse vindo da distribuição assumindo <span class="math inline">\(H_0\)</span> verdadeira (moeda honesta). O valor-p é calculado com base na distribuição de referência:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_9_a_10/valor_p_calculo.png" class="img-fluid figure-img"></p>
+<figcaption>Cálculo do valor-p para o exemplo da moeda: somando as probabilidades dos resultados tão ou mais extremos que 7 caras (em ambas as direções), obtém-se p = 0,344 (34,4%)</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+p = p(0) + p(1) + p(2) + p(3) + p(7) + p(8) + p(9) + p(10) = 0{,}344 \; (34{,}4\%)
+\]</span></p>
+</section>
+</section>
+<section id="nível-de-significância-e-regra-de-decisão" class="level2">
+<h2 class="anchored" data-anchor-id="nível-de-significância-e-regra-de-decisão">Nível de significância e regra de decisão</h2>
+<p>Em Estatística nunca trabalhamos com erro zero — “na prática”, nunca saberemos com certeza absoluta se a moeda é verdadeiramente honesta ou não. Para decidir entre aceitar ou rejeitar <span class="math inline">\(H_0\)</span>, precisamos primeiro estabelecer qual “grau de erro” estamos dispostos a cometer: o <strong>nível de significância</strong>, representado pela letra grega <span class="math inline">\(\alpha\)</span>.</p>
+<ul>
+<li><strong>Nível de significância (<span class="math inline">\(\alpha\)</span>)</strong>: é a probabilidade de o teste rejeitar <span class="math inline">\(H_0\)</span> quando <span class="math inline">\(H_0\)</span> for, na verdade, verdadeira (uma decisão errada). É comum usar <span class="math inline">\(\alpha = 0{,}05\)</span> (5%), arbitrado pelo(a) pesquisador(a).</li>
+<li><strong>Regra de decisão baseada no valor-p</strong>:
+<ul>
+<li>se valor-p <span class="math inline">\(&gt; \alpha\)</span>: <strong>aceita</strong> <span class="math inline">\(H_0\)</span>;</li>
+<li>se valor-p <span class="math inline">\(\leq \alpha\)</span>: <strong>rejeita</strong> <span class="math inline">\(H_0\)</span>, em favor de <span class="math inline">\(H_1\)</span>.</li>
+</ul></li>
+</ul>
+<p><strong>Voltando ao exemplo da moeda:</strong> como valor-p <span class="math inline">\(= 0{,}344\)</span> não é uma probabilidade desprezível frente a <span class="math inline">\(\alpha = 5\%\)</span>, é mais prudente <strong>não rejeitar <span class="math inline">\(H_0\)</span></strong> e assumir que a moeda é honesta.</p>
+</section>
+<section id="um-pouco-da-filosofia-por-trás-das-interpretações" class="level2">
+<h2 class="anchored" data-anchor-id="um-pouco-da-filosofia-por-trás-das-interpretações">Um pouco da “filosofia” por trás das interpretações</h2>
+<p>Quando o teste <strong>rejeita</strong> <span class="math inline">\(H_0\)</span> em favor de <span class="math inline">\(H_1\)</span>, a probabilidade de estarmos tomando a decisão errada é, no máximo, igual ao nível de significância <span class="math inline">\(\alpha\)</span> adotado — temos, portanto, “certa garantia” da veracidade de <span class="math inline">\(H_1\)</span>.</p>
+<p>A interpretação é um pouco diferente quando o teste <strong>aceita</strong> a hipótese nula <span class="math inline">\(H_0\)</span> (valor-p <span class="math inline">\(&gt; \alpha\)</span>): dizemos que os dados <em>estão em conformidade</em> com a hipótese nula. Isso não implica que <span class="math inline">\(H_0\)</span> seja realmente verdadeira, mas sim que os dados não mostraram evidência suficiente para rejeitá-la — por isso, continuamos acreditando em sua veracidade até prova em contrário (Barbetta, 2006).</p>
+</section>
+<section id="tipos-de-erro-em-um-teste-estatístico" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-erro-em-um-teste-estatístico">Tipos de erro em um teste estatístico</h2>
+<p>Como toda decisão estatística envolve incerteza, existem dois tipos possíveis de erro, organizados em uma tabela 2×2 cruzando a decisão tomada com a realidade (desconhecida) do parâmetro:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/semana_9_a_10/tipos_de_erros.png" class="img-fluid figure-img"></p>
+<figcaption>Tabela de tipos de erro em um teste de hipótese: Erro Tipo I (rejeitar H0 quando H0 é verdadeira, com probabilidade alfa) e Erro Tipo II (aceitar H0 quando H0 é falsa, com probabilidade beta)</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Erro Tipo I</strong> (probabilidade <span class="math inline">\(\alpha\)</span>): rejeitar <span class="math inline">\(H_0\)</span> quando <span class="math inline">\(H_0\)</span> é, na verdade, verdadeira — um “falso alarme”. É o erro que controlamos diretamente ao escolher o nível de significância.</li>
+<li><strong>Erro Tipo II</strong> (probabilidade <span class="math inline">\(\beta\)</span>): aceitar <span class="math inline">\(H_0\)</span> quando <span class="math inline">\(H_0\)</span> é, na verdade, falsa — deixar passar um efeito real que existia. Está relacionado ao conceito de <strong>poder do teste</strong> (<span class="math inline">\(1-\beta\)</span>): a capacidade do teste de detectar corretamente um efeito real, quando ele de fato existe.</li>
+</ul>
+<p>Existe uma tensão inerente entre os dois tipos de erro: para um tamanho de amostra fixo, reduzir <span class="math inline">\(\alpha\)</span> (ser mais rigoroso para rejeitar <span class="math inline">\(H_0\)</span>) tende a aumentar <span class="math inline">\(\beta\)</span> (maior chance de deixar passar um efeito real), e vice-versa. Aumentar o tamanho da amostra é, em geral, a forma mais eficaz de reduzir os dois tipos de erro simultaneamente — outra conexão direta com a discussão de tamanho de amostra da seção anterior.</p>
+</section>
+</section>
+<section id="testes-de-hipótese-comparação-de-médias" class="level1">
+<h1>Testes de Hipótese: comparação de médias</h1>
+<p>Para os demais tópicos do cronograma — teste <span class="math inline">\(z\)</span> e teste <span class="math inline">\(t\)</span> de Student para a média populacional (com variância conhecida ou desconhecida), teste <span class="math inline">\(t\)</span> para amostras pareadas, e teste <span class="math inline">\(z\)</span>/<span class="math inline">\(t\)</span> para amostras independentes (variâncias iguais ou diferentes) — usaremos como referência principal o material <a href="https://www.ufrgs.br/probabilidade-estatistica/slides/slides_3/3-2_Testes%20de%20Hipoteses_Medias.pdf">Testes de Hipóteses: Médias (UFRGS EAD)</a>.</p>
+<p>A ideia central, no entanto, é sempre a mesma que construímos passo a passo acima com o exemplo da moeda: (1) formular <span class="math inline">\(H_0\)</span> e <span class="math inline">\(H_1\)</span>; (2) calcular uma estatística de teste a partir da amostra; (3) compará-la com sua distribuição de referência (normal, para o teste <span class="math inline">\(z\)</span>; <span class="math inline">\(t\)</span> de Student, para o teste <span class="math inline">\(t\)</span>) para obter o valor-p; e (4) decidir, com base em <span class="math inline">\(\alpha\)</span>, se rejeitamos ou não <span class="math inline">\(H_0\)</span>. A diferença entre teste <span class="math inline">\(z\)</span> e teste <span class="math inline">\(t\)</span> está na distribuição de referência usada: o teste <span class="math inline">\(z\)</span> assume que a variância populacional é conhecida (ou que <span class="math inline">\(n&gt;30\)</span>, pela aproximação assintótica), enquanto o teste <span class="math inline">\(t\)</span> de Student é usado quando a variância populacional é desconhecida e precisa ser estimada a partir da própria amostra — situação típica em experimentos agronômicos e zootécnicos com poucas repetições.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Metodos_Estatisticos/5_teste_hipoteses_z_t.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Metodos_Estatisticos/5_teste_hipoteses_z_t.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>

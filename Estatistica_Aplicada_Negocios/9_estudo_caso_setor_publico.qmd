@@ -1,0 +1,29 @@
+---
+title: "Estudo de Caso: Setor Público"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Nem todo problema de "negócio" é privado: órgãos públicos também produzem e consomem indicadores estatísticos para apoiar decisões. Este estudo de caso utiliza dados públicos do **IDESE** (Índice de Desenvolvimento Socioeconômico) do Rio Grande do Sul, disponibilizados pelo [Departamento de Economia e Estatística do RS (DEE-RS, antiga FEE-RS)](https://dee.rs.gov.br/idese).
+
+O IDESE sintetiza, por município/COREDE, indicadores nas dimensões de Educação, Renda e Saúde, permitindo explorar:
+
+- **Estatística descritiva** e comparações regionais ao longo do tempo
+- **Visualização geoespacial** (mapas) de indicadores socioeconômicos
+- Construção de **dashboards** para acompanhamento de políticas públicas
+
+Contexto de negócio relacionado: Setor Público.

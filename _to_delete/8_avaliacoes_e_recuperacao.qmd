@@ -1,0 +1,44 @@
+---
+title: "Avaliações e Recuperação"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute:
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Cronograma de avaliações
+
+De acordo com o plano de ensino oficial (Período Letivo 2026/2), a disciplina possui três avaliações parciais e uma avaliação de recuperação:
+
+| Avaliação | Semanas do conteúdo cobrado | Peso | Data prevista |
+|---|---|---|---|
+| Prova 1 | Semanas 1 a 6 (Estatística Descritiva e Probabilidade) | 1/3 | 21/09/2026 |
+| Prova 2 | Semanas 7 a 10 (Amostragem, Estimação e Testes z/t) | 1/3 | 30/10/2026 |
+| Prova 3 | Semanas 11 a 18 (ANOVA, Correlação, Regressão e Qui-Quadrado) | 1/3 | 07/12/2026 |
+| Recuperação (presencial) | Todo o conteúdo programático | — | 14/12/2026 |
+
+A Média Final (MF) é calculada como a **média aritmética simples** das três provas. Consulte a página de [Apresentação da Disciplina](0_apresentacao_da_disciplina.qmd) para os critérios completos de atribuição de conceito e a fórmula de recuperação.
+
+# Sobre a recuperação
+
+Os(as) alunos(as) que não atingirem o conceito mínimo para aprovação e tiverem frequência mínima de 75% da carga horária prevista poderão fazer uma (única) avaliação de recuperação, presencial, abrangendo **todo** o conteúdo programático da disciplina — e não apenas a área com menor desempenho. A nova Média Final é calculada como:
+
+$$
+\text{Média final após recuperação} = (0{,}4 \times MF) + (0{,}6 \times \text{Nota da avaliação de recuperação})
+$$
+
+Note a importância da consistência ao longo do semestre para garantir uma boa MF, já que ela ainda pesa 40% na média final mesmo após a recuperação.
+
+# Datas e formato exato
+
+Datas, formato (prova escrita, trabalho, etc.) e conteúdo detalhado de cada avaliação são divulgados e atualizados ao longo do semestre no Moodle da disciplina.
